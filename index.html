@@ -65,17 +65,17 @@
 				box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 			}
 			
-			/* App icon styling - Fixed sizing */
+			/* App icon styling - Fixed sizing with no shadow */
 			.app-icon {
 				width: 120px !important;
 				height: 120px !important;
 				border-radius: 22px;
 				margin-bottom: 1.5rem;
-				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 				object-fit: cover;
 				display: block;
 				margin-left: auto;
 				margin-right: auto;
+				background: transparent;
 			}
 			
 			/* Apple-style bold font for app titles */
@@ -137,6 +137,11 @@
 				.spotlight {
 					flex-direction: column;
 					text-align: center;
+				}
+				
+				/* Fix for even-numbered spotlights (like Cyphre) on mobile */
+				.spotlight:nth-child(even) {
+					flex-direction: column;
 				}
 				
 				.spotlight .image {
