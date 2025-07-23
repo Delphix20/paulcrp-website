@@ -171,10 +171,28 @@
 				line-height: 1.8 !important;
 			}
 			
+			/* Banner text styling with proper spacing */
+			.banner-text {
+				margin-bottom: 0.5rem !important;
+				line-height: 1.6 !important;
+			}
+			
+			.banner-description {
+				margin-top: 1.5rem !important;
+			}
+			
 			/* Mobile-specific line spacing fix */
 			@media (max-width: 768px) {
 				#banner .inner p {
 					line-height: 2.2 !important;
+				}
+				
+				.banner-text {
+					margin-bottom: 0.3rem !important;
+				}
+				
+				.banner-description {
+					margin-top: 2rem !important;
 				}
 			}
 		</style>
@@ -208,8 +226,8 @@
 					<section id="banner">
 						<div class="inner">
 							<h2>Paul Crăpătureanu</h2>
-							<p>Independent Game Developer<br /><br />
-							Creating engaging mobile experiences<br />
+							<p class="banner-text">Independent Game Developer</p>
+							<p class="banner-text banner-description">Creating engaging mobile experiences<br />
 							that challenge your mind and reflexes.</p>
 							<ul class="actions special">
 								<li><a href="#games" class="button primary scrolly">View My Games</a></li>
