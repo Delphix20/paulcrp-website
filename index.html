@@ -6,11 +6,72 @@
 -->
 <html>
 	<head>
-		<title>Spectral by HTML5 UP</title>
+		<title>Paul Crăpătureanu - Game Developer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Custom color scheme: Grey and Dark Blue */
+			:root {
+				--primary-color: #2c3e50;
+				--secondary-color: #34495e;
+				--accent-color: #5d6d7e;
+				--light-grey: #ecf0f1;
+				--dark-grey: #7f8c8d;
+			}
+			
+			/* Override orange colors with blue/grey */
+			.button.primary {
+				background-color: var(--primary-color) !important;
+				border-color: var(--primary-color) !important;
+			}
+			
+			.button.primary:hover {
+				background-color: var(--secondary-color) !important;
+			}
+			
+			.major.style1:before {
+				background-color: var(--primary-color) !important;
+			}
+			
+			.major.style2:before {
+				background-color: var(--accent-color) !important;
+			}
+			
+			.major.style3:before {
+				background-color: var(--dark-grey) !important;
+			}
+			
+			#header.alt {
+				background: rgba(44, 62, 80, 0.9);
+			}
+			
+			.spotlight .content h2 {
+				color: var(--primary-color);
+			}
+			
+			/* Game cards styling */
+			.game-card {
+				background: rgba(255, 255, 255, 0.9);
+				padding: 2rem;
+				border-radius: 8px;
+				margin-bottom: 2rem;
+				text-align: center;
+				border: 2px solid var(--light-grey);
+			}
+			
+			.game-card h3 {
+				color: var(--primary-color);
+				margin-bottom: 1rem;
+			}
+			
+			.coming-soon {
+				background-color: var(--dark-grey) !important;
+				cursor: not-allowed !important;
+				opacity: 0.7 !important;
+			}
+		</style>
 	</head>
 	<body class="landing is-preload">
 
@@ -19,7 +80,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Spectral</a></h1>
+						<h1><a href="index.html">Paul CRP Games</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -27,10 +88,9 @@
 									<div id="menu">
 										<ul>
 											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
+											<li><a href="#games">Games</a></li>
+											<li><a href="#about">About</a></li>
+											<li><a href="#contact">Contact</a></li>
 										</ul>
 									</div>
 								</li>
@@ -41,106 +101,106 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h2>Spectral</h2>
-							<p>Another fine responsive<br />
-							site template freebie<br />
-							crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
+							<h2>Paul Crăpătureanu</h2>
+							<p>Independent Game Developer<br />
+							Creating engaging mobile experiences<br />
+							that challenge your mind and reflexes.</p>
 							<ul class="actions special">
-								<li><a href="#" class="button primary">Activate</a></li>
+								<li><a href="#games" class="button primary scrolly">View My Games</a></li>
 							</ul>
 						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
+						<a href="#about" class="more scrolly">Learn More</a>
 					</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
+				<!-- About -->
+					<section id="about" class="wrapper style1 special">
 						<div class="inner">
 							<header class="major">
-								<h2>Arcu aliquet vel lobortis ata nisl<br />
-								eget augue amet aliquet nisl cep donec</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+								<h2>Crafting Mobile Gaming Experiences</h2>
+								<p>From mind-bending puzzles to fast-paced arcade action, each game is designed<br />
+								to provide hours of entertainment and challenge players worldwide.</p>
 							</header>
 							<ul class="icons major">
-								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
-								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
-								<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
+								<li><span class="icon fa-gem major style1"><span class="label">Quality</span></span></li>
+								<li><span class="icon fa-heart major style2"><span class="label">Passion</span></span></li>
+								<li><span class="icon solid fa-code major style3"><span class="label">Innovation</span></span></li>
 							</ul>
 						</div>
 					</section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
+				<!-- Games -->
+					<section id="games" class="wrapper alt style2">
 						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							<div class="image game-card">
+								<h3>NeuraRush</h3>
+								<p>Brain Boost Games - Mind-bending puzzle adventure that challenges your cognitive abilities</p>
+								<a href="https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300" class="button primary" target="_blank">Download on App Store</a>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							<div class="image game-card">
+								<h3>Cyphre</h3>
+								<p>Puzzle Ring Challenge - Cryptographic mind games that test your problem-solving skills</p>
+								<a href="https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455" class="button primary" target="_blank">Download on App Store</a>
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+							<div class="image game-card">
+								<h3>Pop Pop Aliens</h3>
+								<p>Arcade Hunter - Fast-paced alien blasting action with increasing difficulty and clever decoys</p>
+								<a href="https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031" class="button primary" target="_blank">Download on App Store</a>
 							</div>
 						</section>
 					</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
+				<!-- Coming Soon -->
+					<section id="upcoming" class="wrapper style3 special">
 						<div class="inner">
 							<header class="major">
-								<h2>Accumsan mus tortor nunc aliquet</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+								<h2>More Games in Development</h2>
+								<p>Building the next generation of mobile entertainment with innovative gameplay<br />
+								and engaging mechanics that keep players coming back for more.</p>
 							</header>
 							<ul class="features">
-								<li class="icon fa-paper-plane">
-									<h3>Arcu accumsan</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon solid fa-gamepad">
+									<h3>Pop Pop Piggies</h3>
+									<p>Whack-a-piggie with clever decoys and progressive difficulty. Test your reflexes and avoid the traps!</p>
+									<a href="#" class="button small coming-soon" onclick="return false;">Coming Soon</a>
 								</li>
-								<li class="icon solid fa-laptop">
-									<h3>Ac Augue Eget</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon solid fa-puzzle-piece">
+									<h3>Future Projects</h3>
+									<p>More exciting games are in the pipeline. Each one designed to push the boundaries of mobile gaming.</p>
 								</li>
-								<li class="icon solid fa-code">
-									<h3>Mus Scelerisque</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon solid fa-mobile-alt">
+									<h3>Cross-Platform</h3>
+									<p>Developing games that work seamlessly across all iOS devices, from iPhone to iPad.</p>
 								</li>
-								<li class="icon solid fa-headphones-alt">
-									<h3>Mauris Imperdiet</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon solid fa-trophy">
+									<h3>Game Center</h3>
+									<p>All games feature leaderboards and achievements to compete with friends and players worldwide.</p>
 								</li>
 								<li class="icon fa-heart">
-									<h3>Aenean Primis</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+									<h3>Player-Focused</h3>
+									<p>Every game is crafted with player experience in mind, ensuring fun and engaging gameplay.</p>
 								</li>
-								<li class="icon fa-flag">
-									<h3>Tortor Ut</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+								<li class="icon fa-rocket">
+									<h3>Innovation</h3>
+									<p>Constantly exploring new game mechanics and technologies to create unique experiences.</p>
 								</li>
 							</ul>
 						</div>
 					</section>
 
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
+				<!-- Contact -->
+					<section id="contact" class="wrapper style4">
 						<div class="inner">
 							<header>
-								<h2>Arcue ut vel commodo</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+								<h2>Get in Touch</h2>
+								<p>Follow my game development journey and connect with the gaming community.</p>
 							</header>
 							<ul class="actions stacked">
-								<li><a href="#" class="button fit primary">Activate</a></li>
-								<li><a href="#" class="button fit">Learn More</a></li>
+								<li><a href="https://x.com/PopPopAliens" class="button fit primary" target="_blank">Follow on X</a></li>
+								<li><a href="mailto:paul@paulcrp.com" class="button fit">Send Email</a></li>
 							</ul>
 						</div>
 					</section>
@@ -148,14 +208,11 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+							<li><a href="https://x.com/PopPopAliens" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+							<li><a href="mailto:paul@paulcrp.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; 2025 Paul Crăpătureanu</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
