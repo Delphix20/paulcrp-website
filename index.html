@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			/* Import Apple-style font */
+			@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
+			
 			/* Custom color scheme: Grey and Dark Blue */
 			:root {
 				--primary-color: #2c3e50;
@@ -53,21 +56,98 @@
 			
 			/* Game cards styling */
 			.game-card {
-				background: rgba(255, 255, 255, 0.9);
+				background: rgba(255, 255, 255, 0.95);
 				padding: 2rem;
-				border-radius: 8px;
+				border-radius: 15px;
 				margin-bottom: 2rem;
 				text-align: center;
 				border: 2px solid var(--light-grey);
+				box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 			}
 			
+			/* App icon styling */
+			.app-icon {
+				width: 80px;
+				height: 80px;
+				border-radius: 18px;
+				margin-bottom: 1.5rem;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+			}
+			
+			/* Apple-style bold font for app titles */
 			.game-card h3 {
+				font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+				font-weight: 700 !important;
 				color: var(--primary-color);
 				margin-bottom: 1rem;
+				font-size: 1.5rem;
+				letter-spacing: -0.02em;
 			}
 			
 			.game-card p {
 				color: var(--primary-color) !important;
+				margin-bottom: 1.5rem;
+				line-height: 1.5;
+			}
+			
+			/* App Store badge styling */
+			.app-store-badge {
+				width: 150px;
+				height: auto;
+				transition: transform 0.2s ease;
+			}
+			
+			.app-store-badge:hover {
+				transform: scale(1.05);
+			}
+			
+			/* Game spotlight layout adjustments */
+			.spotlight {
+				display: flex;
+				align-items: center;
+				padding: 3rem 0;
+			}
+			
+			.spotlight .image {
+				flex: 0 0 auto;
+				margin-right: 3rem;
+			}
+			
+			.spotlight .content {
+				flex: 1;
+				text-align: left;
+			}
+			
+			.spotlight:nth-child(even) {
+				flex-direction: row-reverse;
+			}
+			
+			.spotlight:nth-child(even) .image {
+				margin-left: 3rem;
+				margin-right: 0;
+			}
+			
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
+				.spotlight {
+					flex-direction: column;
+					text-align: center;
+				}
+				
+				.spotlight .image {
+					margin-right: 0;
+					margin-bottom: 2rem;
+				}
+				
+				.spotlight:nth-child(even) .image {
+					margin-left: 0;
+					margin-right: 0;
+					margin-bottom: 2rem;
+				}
+				
+				.spotlight .content {
+					text-align: center;
+				}
 			}
 			
 			.coming-soon {
@@ -134,27 +214,46 @@
 
 				<!-- Games -->
 					<section id="games" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image game-card">
-								<h3>NeuraRush</h3>
-								<p>Brain Boost Games - Mind-bending puzzle adventure that challenges your cognitive abilities</p>
-								<a href="https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300" class="button primary" target="_blank">Download on App Store</a>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image game-card">
-								<h3>Cyphre</h3>
-								<p>Puzzle Ring Challenge - Cryptographic mind games that test your problem-solving skills</p>
-								<a href="https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455" class="button primary" target="_blank">Download on App Store</a>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image game-card">
-								<h3>Pop Pop Aliens</h3>
-								<p>Arcade Hunter - Fast-paced alien blasting action with increasing difficulty and clever decoys</p>
-								<a href="https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031" class="button primary" target="_blank">Download on App Store</a>
-							</div>
-						</section>
+						<div class="inner">
+							<section class="spotlight">
+								<div class="image">
+									<img src="images/neurarush-icon.png" alt="NeuraRush App Icon" class="app-icon">
+								</div>
+								<div class="content game-card">
+									<h3>NeuraRush</h3>
+									<p>Brain Boost Games - Mind-bending puzzle adventure that challenges your cognitive abilities and pushes your mental limits.</p>
+									<a href="https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300" target="_blank">
+										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+									</a>
+								</div>
+							</section>
+							
+							<section class="spotlight">
+								<div class="image">
+									<img src="images/cypher-icon.png" alt="Cyphre App Icon" class="app-icon">
+								</div>
+								<div class="content game-card">
+									<h3>Cyphre</h3>
+									<p>Puzzle Ring Challenge - Cryptographic mind games that test your problem-solving skills and logical thinking abilities.</p>
+									<a href="https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455" target="_blank">
+										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+									</a>
+								</div>
+							</section>
+							
+							<section class="spotlight">
+								<div class="image">
+									<img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens App Icon" class="app-icon">
+								</div>
+								<div class="content game-card">
+									<h3>Pop Pop Aliens</h3>
+									<p>Arcade Hunter - Fast-paced alien blasting action with increasing difficulty, clever decoys, and endless entertainment.</p>
+									<a href="https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031" target="_blank">
+										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+									</a>
+								</div>
+							</section>
+						</div>
 					</section>
 
 				<!-- Coming Soon -->
@@ -216,7 +315,7 @@
 							<li><a href="mailto:paul@paulcrp.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; 2024 Paul Crăpătureanu</li>
+							<li>&copy; 2025 Paul Crăpătureanu</li>
 						</ul>
 					</footer>
 
