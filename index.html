@@ -165,6 +165,18 @@
 				cursor: not-allowed !important;
 				opacity: 0.7 !important;
 			}
+			
+			/* Ensure line spacing is visible on all devices */
+			#banner .inner p {
+				line-height: 1.8 !important;
+			}
+			
+			/* Mobile-specific line spacing fix */
+			@media (max-width: 768px) {
+				#banner .inner p {
+					line-height: 2.2 !important;
+				}
+			}
 		</style>
 	</head>
 	<body class="landing is-preload">
