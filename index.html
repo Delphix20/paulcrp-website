@@ -65,13 +65,17 @@
 				box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 			}
 			
-			/* App icon styling */
+			/* App icon styling - Fixed sizing */
 			.app-icon {
-				width: 80px;
-				height: 80px;
-				border-radius: 18px;
+				width: 120px !important;
+				height: 120px !important;
+				border-radius: 22px;
 				margin-bottom: 1.5rem;
 				box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+				object-fit: cover;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
 			}
 			
 			/* Apple-style bold font for app titles */
@@ -111,6 +115,7 @@
 			.spotlight .image {
 				flex: 0 0 auto;
 				margin-right: 3rem;
+				min-width: 120px;
 			}
 			
 			.spotlight .content {
@@ -230,7 +235,7 @@
 							
 							<section class="spotlight">
 								<div class="image">
-									<img src="images/cypher-icon.png" alt="Cyphre App Icon" class="app-icon">
+									<img src="images/cyphre-icon.png" alt="Cyphre App Icon" class="app-icon">
 								</div>
 								<div class="content game-card">
 									<h3>Cyphre</h3>
