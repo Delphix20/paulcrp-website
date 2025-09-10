@@ -1,1 +1,615 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Privacy Policy and Terms & Conditions - ProScan PDF</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<style>
+			/* Dark theme styling for legal documents */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+				line-height: 1.6;
+				color: white;
+				background-color: #0A1E3F;
+				padding: 2rem 1rem;
+			}
+			
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+				background: rgba(255, 255, 255, 0.05);
+				padding: 3rem;
+				border-radius: 10px;
+				box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+				backdrop-filter: blur(10px);
+			}
+			
+			h1 {
+				color: #07F0FF;
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
+				font-weight: 700;
+				text-shadow: 0 0 10px rgba(7, 240, 255, 0.3);
+			}
+			
+			h2 {
+				color: #07F0FF;
+				font-size: 1.8rem;
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+				font-weight: 600;
+				text-shadow: 0 0 8px rgba(7, 240, 255, 0.2);
+			}
+			
+			h3 {
+				color: #07F0FF;
+				font-size: 1.3rem;
+				margin-top: 1.5rem;
+				margin-bottom: 0.8rem;
+				font-weight: 600;
+				opacity: 0.9;
+			}
+			
+			p {
+				margin-bottom: 1rem;
+				text-align: justify;
+				color: white;
+			}
+			
+			.last-updated {
+				color: rgba(255, 255, 255, 0.7);
+				font-style: italic;
+				margin-bottom: 2rem;
+			}
+			
+			ul {
+				margin-left: 1.5rem;
+				margin-bottom: 1rem;
+			}
+			
+			li {
+				margin-bottom: 0.5rem;
+				color: white;
+			}
+			
+			.contact-info {
+				background: rgba(7, 240, 255, 0.1);
+				padding: 1.5rem;
+				border-radius: 8px;
+				margin-top: 2rem;
+				border: 1px solid rgba(7, 240, 255, 0.2);
+			}
+			
+			.contact-info h3 {
+				margin-top: 0;
+			}
+			
+			a {
+				color: #07F0FF;
+				text-decoration: none;
+			}
+			
+			a:hover {
+				text-decoration: underline;
+				text-shadow: 0 0 5px rgba(7, 240, 255, 0.5);
+			}
+			
+			.important-notice {
+				background: rgba(255, 243, 205, 0.1);
+				border: 1px solid rgba(255, 234, 167, 0.3);
+				padding: 1rem;
+				border-radius: 8px;
+				margin: 1rem 0;
+				color: white;
+			}
+			
+			.warning-notice {
+				background: rgba(248, 215, 218, 0.1);
+				border: 1px solid rgba(245, 198, 203, 0.3);
+				padding: 1rem;
+				border-radius: 8px;
+				margin: 1rem 0;
+				color: white;
+			}
+			
+			strong {
+				color: #07F0FF;
+				font-weight: 600;
+			}
+			
+			.section-divider {
+				height: 2px;
+				background: linear-gradient(90deg, transparent, #07F0FF, transparent);
+				margin: 3rem 0;
+				opacity: 0.5;
+			}
+			
+			@media (max-width: 768px) {
+				.container {
+					padding: 1.5rem;
+					margin: 1rem;
+				}
+				
+				h1 {
+					font-size: 2rem;
+				}
+				
+				h2 {
+					font-size: 1.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- PRIVACY POLICY SECTION -->
+			<h1>Privacy Policy for ProScan PDF</h1>
+			<p class="last-updated">Last updated: December 10, 2024</p>
 
+			<p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use ProScan PDF and tells You about Your privacy rights and how the law protects You.</p>
+
+			<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
+
+			<div class="important-notice">
+				<strong>Important:</strong> ProScan PDF is designed with privacy in mind. All document scanning, OCR processing, and PDF operations are performed locally on your device. We do not upload, store, or transmit your scanned documents or their content to our servers.
+			</div>
+
+			<h2>Interpretation and Definitions</h2>
+
+			<h3>Interpretation</h3>
+			<p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+
+			<h3>Definitions</h3>
+			<p>For the purposes of this Privacy Policy:</p>
+
+			<p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
+
+			<p><strong>Application</strong> refers to ProScan PDF, the document scanning software program provided by the Company.</p>
+
+			<p><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to ProScan PDF.</p>
+
+			<p><strong>Country</strong> refers to: Romania</p>
+
+			<p><strong>Device</strong> means any device that can access the Service such as a smartphone, tablet, or other mobile device.</p>
+
+			<p><strong>Document Data</strong> refers to any scanned documents, images, PDFs, OCR text, or other content created or processed through the Service.</p>
+
+			<p><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</p>
+
+			<p><strong>Service</strong> refers to the Application.</p>
+
+			<p><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself.</p>
+
+			<p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
+
+			<h2>Document Privacy and Local Processing</h2>
+
+			<h3>Local Processing</h3>
+			<p>ProScan PDF is designed to protect your document privacy. All core functionality operates locally on your device:</p>
+			<ul>
+				<li><strong>Document Scanning:</strong> All camera-based document scanning is processed locally</li>
+				<li><strong>OCR (Optical Character Recognition):</strong> Text extraction from documents occurs entirely on your device using Apple's Vision framework</li>
+				<li><strong>PDF Creation and Editing:</strong> PDF generation, organization, signing, and password protection are performed locally</li>
+				<li><strong>Document Storage:</strong> All scanned documents and created PDFs are stored locally on your device</li>
+			</ul>
+
+			<p><strong>We do not upload, access, or store your documents on our servers.</strong> Your scanned documents, OCR text, and PDF files remain private and under your control.</p>
+
+			<h3>Camera and Photo Library Access</h3>
+			<p>The App requires access to your device camera and photo library to function:</p>
+			<ul>
+				<li><strong>Camera Access:</strong> Used for scanning documents and capturing images</li>
+				<li><strong>Photo Library Access:</strong> Used for importing existing photos to convert to PDFs</li>
+			</ul>
+
+			<p>This access is used solely for the stated functionality. We do not access other photos or use your camera for any purpose other than document scanning.</p>
+
+			<h2>Collecting and Using Your Personal Data</h2>
+
+			<h3>Types of Data Collected</h3>
+
+			<h3>Personal Data</h3>
+			<p>While using Our Service, We may collect certain personally identifiable information that can be used to contact or identify You. This may include:</p>
+			<ul>
+				<li>Usage Data</li>
+				<li>Device identifiers (for app functionality and crash reporting)</li>
+				<li>App performance and error data</li>
+			</ul>
+
+			<h3>Usage Data</h3>
+			<p>Usage Data is collected automatically when using the Service and may include information such as:</p>
+			<ul>
+				<li>Device type and operating system version</li>
+				<li>App version and build information</li>
+				<li>Feature usage patterns (e.g., which scan modes are used most frequently)</li>
+				<li>Performance metrics and crash reports</li>
+				<li>Session duration and frequency of use</li>
+			</ul>
+
+			<p><strong>Important:</strong> Usage data does NOT include the content of your documents, scanned text, or any personal information contained within your PDFs.</p>
+
+			<h2>Subscription and Payment Information</h2>
+			<p>If you purchase a subscription through the App Store, payment processing is handled entirely by Apple. We do not collect or store your payment information. Apple may share limited information about your subscription status with us, such as:</p>
+			<ul>
+				<li>Subscription status (active, expired, canceled)</li>
+				<li>Subscription duration</li>
+				<li>Purchase date</li>
+				<li>Anonymous transaction identifiers</li>
+			</ul>
+
+			<h2>Third-Party Services</h2>
+
+			<h3>Analytics and Crash Reporting</h3>
+			<p>We may use third-party services to analyze app usage and diagnose technical issues. These services may collect:</p>
+			<ul>
+				<li>App usage statistics and feature adoption</li>
+				<li>Device performance data</li>
+				<li>Crash reports and error logs</li>
+				<li>Session analytics</li>
+			</ul>
+
+			<p>This information is used solely to improve our Service and fix technical issues. No document content or personal information from your scanned documents is included in these reports.</p>
+
+			<h3>Apple Services</h3>
+			<p>The App integrates with Apple services including:</p>
+			<ul>
+				<li><strong>App Store Connect:</strong> For subscription management</li>
+				<li><strong>Vision Framework:</strong> For OCR processing (processed locally on device)</li>
+				<li><strong>PDFKit:</strong> For PDF operations (processed locally on device)</li>
+				<li><strong>QuickLook:</strong> For document viewing and markup</li>
+			</ul>
+
+			<h2>Use of Your Personal Data</h2>
+			<p>The Company may use Personal Data for the following purposes:</p>
+
+			<ul>
+				<li><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service and improve functionality.</li>
+				<li><strong>To manage Your subscription</strong>: to manage Your subscription status and provide access to premium features.</li>
+				<li><strong>To provide technical support</strong>: to respond to Your support requests and resolve technical issues.</li>
+				<li><strong>To contact You</strong>: To contact You regarding important updates, security notifications, or changes to our Service.</li>
+				<li><strong>To improve our Service</strong>: to analyze usage patterns and improve app functionality and user experience.</li>
+				<li><strong>For crash reporting and bug fixes</strong>: to identify and resolve technical issues and improve app stability.</li>
+				<li><strong>For legal compliance</strong>: to comply with applicable laws and regulations.</li>
+			</ul>
+
+			<h2>Your Privacy Rights and Choices</h2>
+			<p>You have certain rights regarding your personal data:</p>
+
+			<ul>
+				<li><strong>Access</strong>: You can request access to the personal data we have collected about you.</li>
+				<li><strong>Correction</strong>: You can request that we correct any inaccurate personal data.</li>
+				<li><strong>Deletion</strong>: You can request that we delete your personal data, subject to certain legal limitations.</li>
+				<li><strong>Data Portability</strong>: You can request a copy of your data in a portable format.</li>
+				<li><strong>Withdraw Consent</strong>: You can withdraw your consent to data processing where consent is the legal basis.</li>
+			</ul>
+
+			<p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section.</p>
+
+			<h3>Device-Level Privacy Controls</h3>
+			<p>You can control many privacy aspects through your device settings:</p>
+			<ul>
+				<li><strong>Camera Access:</strong> Disable in iOS Settings > ProScan PDF > Camera</li>
+				<li><strong>Photo Library Access:</strong> Manage in iOS Settings > ProScan PDF > Photos</li>
+				<li><strong>Analytics:</strong> Opt out in iOS Settings > Privacy & Security > Analytics & Improvements</li>
+			</ul>
+
+			<h2>Data Retention</h2>
+			<p>We retain Your Personal Data only for as long as necessary for the purposes set out in this Privacy Policy:</p>
+
+			<ul>
+				<li><strong>Usage Analytics:</strong> Typically retained for 2 years for trend analysis</li>
+				<li><strong>Crash Reports:</strong> Retained until the issue is resolved, typically 1-3 months</li>
+				<li><strong>Support Communications:</strong> Retained for 2 years for quality assurance</li>
+				<li><strong>Subscription Data:</strong> Retained as long as legally required for financial records</li>
+			</ul>
+
+			<p><strong>Your Document Data:</strong> All documents, scans, and PDFs are stored locally on your device. We do not have access to this data and cannot delete it remotely. You maintain full control over your documents and can delete them directly from the app or your device.</p>
+
+			<h2>Data Security</h2>
+			<p>The security of Your Personal Data is important to Us. We implement appropriate technical and organizational measures to protect your data:</p>
+
+			<ul>
+				<li><strong>Local Processing:</strong> Document content is processed locally, reducing exposure risks</li>
+				<li><strong>Encryption:</strong> Data transmitted to our servers is encrypted in transit</li>
+				<li><strong>Access Controls:</strong> Limited access to personal data within our organization</li>
+				<li><strong>Regular Security Updates:</strong> We regularly update our security measures</li>
+			</ul>
+
+			<p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect Your Personal Data, we cannot guarantee its absolute security.</p>
+
+			<h2>International Data Transfers</h2>
+			<p>Your information may be transferred to and processed in countries other than your own. When we transfer data internationally, we ensure appropriate safeguards are in place:</p>
+
+			<ul>
+				<li>Adequacy decisions by relevant authorities</li>
+				<li>Standard Contractual Clauses approved by relevant authorities</li>
+				<li>Certification schemes and codes of conduct</li>
+			</ul>
+
+			<h2>Children's Privacy</h2>
+			<p>Our Service is not intended for children under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us.</p>
+
+			<p>If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+
+			<h2>Changes to this Privacy Policy</h2>
+			<p>We may update Our Privacy Policy from time to time. We will notify You of any changes by:</p>
+
+			<ul>
+				<li>Posting the new Privacy Policy on this page</li>
+				<li>Updating the "Last updated" date at the top of this Privacy Policy</li>
+				<li>Sending a notification through the app for significant changes</li>
+				<li>Email notification if we have your email address</li>
+			</ul>
+
+			<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+			<!-- SECTION DIVIDER -->
+			<div class="section-divider"></div>
+
+			<!-- TERMS AND CONDITIONS SECTION -->
+			<h1>Terms and Conditions for ProScan PDF</h1>
+			<p class="last-updated">Last updated: December 10, 2024</p>
+
+			<p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the ProScan PDF mobile application (the "Service") operated by us ("us", "we", or "our").</p>
+
+			<p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
+
+			<p>By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.</p>
+
+			<h2>Definitions</h2>
+
+			<p>For the purposes of these Terms and Conditions:</p>
+
+			<p><strong>Application</strong> refers to ProScan PDF, the software program provided by the Company.</p>
+
+			<p><strong>Company</strong> (referred to as either "the Company", "we", "us" or "our") refers to ProScan PDF.</p>
+
+			<p><strong>Device</strong> means any device that can access the Service such as a smartphone, tablet, or other mobile device.</p>
+
+			<p><strong>Service</strong> refers to the Application.</p>
+
+			<p><strong>Terms and Conditions</strong> (also referred to as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</p>
+
+			<p><strong>You</strong> refers to the individual accessing or using the Service.</p>
+
+			<h2>Use License</h2>
+
+			<h3>Grant of License</h3>
+			<p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable license to:</p>
+			<ul>
+				<li>Download, install, and use the Application on your personal mobile devices</li>
+				<li>Use the Application for personal, non-commercial document scanning and PDF creation</li>
+				<li>Create, view, organize, and manage PDF documents using the Application's features</li>
+			</ul>
+
+			<h3>License Restrictions</h3>
+			<p>You may not:</p>
+			<ul>
+				<li>Copy, modify, distribute, sell, or lease any part of the Application</li>
+				<li>Reverse engineer, decompile, or attempt to extract the source code of the Application</li>
+				<li>Use the Application for any unlawful purpose or in violation of these Terms</li>
+				<li>Remove, alter, or obscure any proprietary notices on the Application</li>
+				<li>Use the Application to scan documents that violate applicable laws or third-party rights</li>
+				<li>Attempt to disable or circumvent any security features of the Application</li>
+			</ul>
+
+			<h2>Subscription and Payment Terms</h2>
+
+			<h3>Free Trial</h3>
+			<p>We may offer a free trial period for new users. During the trial period, you have access to all premium features of the Application. The trial period duration will be clearly indicated in the app.</p>
+
+			<h3>Subscription Plans</h3>
+			<p>After the trial period, continued access to premium features requires an active subscription. Subscription plans and pricing are displayed in the Application and may include:</p>
+			<ul>
+				<li>Monthly subscriptions</li>
+				<li>Annual subscriptions</li>
+				<li>Other plans as we may offer from time to time</li>
+			</ul>
+
+			<h3>Payment and Billing</h3>
+			<ul>
+				<li>All payments are processed through the Apple App Store</li>
+				<li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
+				<li>Your Apple ID will be charged for renewal within 24 hours prior to the end of the current period</li>
+				<li>You can manage or cancel your subscription through your Apple ID account settings</li>
+				<li>No refunds are provided for unused portions of subscriptions, except as required by applicable law</li>
+			</ul>
+
+			<h3>Changes to Subscription Terms</h3>
+			<p>We reserve the right to change subscription prices and terms. Price changes will be communicated in advance and will not affect your current subscription period.</p>
+
+			<h2>Acceptable Use</h2>
+
+			<h3>Permitted Uses</h3>
+			<p>You may use the Application to:</p>
+			<ul>
+				<li>Scan personal and business documents</li>
+				<li>Create, organize, and manage PDF files</li>
+				<li>Extract text from documents using OCR technology</li>
+				<li>Add digital signatures to PDFs</li>
+				<li>Password-protect your documents</li>
+				<li>Share documents through supported platforms</li>
+			</ul>
+
+			<h3>Prohibited Uses</h3>
+			<p>You may not use the Application to:</p>
+			<ul>
+				<li>Scan or process documents that contain illegal content</li>
+				<li>Violate any intellectual property rights</li>
+				<li>Scan confidential documents belonging to others without permission</li>
+				<li>Create fraudulent or deceptive documents</li>
+				<li>Violate any applicable laws or regulations</li>
+				<li>Interfere with or disrupt the Application's functionality</li>
+				<li>Attempt to gain unauthorized access to other users' data</li>
+			</ul>
+
+			<div class="warning-notice">
+				<strong>Legal Responsibility:</strong> You are solely responsible for ensuring that your use of the Application complies with all applicable laws and regulations in your jurisdiction.
+			</div>
+
+			<h2>User Content and Data</h2>
+
+			<h3>Your Documents</h3>
+			<p>You retain all rights to the documents you scan and PDFs you create using the Application. We do not claim ownership of your content.</p>
+
+			<h3>Local Storage</h3>
+			<p>All documents and PDFs are stored locally on your device. We do not have access to your document content and do not store your documents on our servers.</p>
+
+			<h3>Data Backup</h3>
+			<p>You are responsible for backing up your documents. We recommend using iCloud or other backup solutions to protect your important documents.</p>
+
+			<h3>Content Responsibility</h3>
+			<p>You are solely responsible for:</p>
+			<ul>
+				<li>The legality and appropriateness of documents you scan</li>
+				<li>Obtaining necessary permissions for scanning third-party documents</li>
+				<li>Ensuring your documents do not violate intellectual property rights</li>
+				<li>Complying with data protection laws when scanning personal information</li>
+			</ul>
+
+			<h2>Privacy and Data Protection</h2>
+
+			<p>Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.</p>
+
+			<div class="important-notice">
+				<strong>Privacy Commitment:</strong> We do not access, store, or transmit your scanned documents. All document processing occurs locally on your device.
+			</div>
+
+			<h2>Intellectual Property</h2>
+
+			<h3>Application Ownership</h3>
+			<p>The Application, including its design, code, features, and all intellectual property rights, is owned by us and protected by intellectual property laws.</p>
+
+			<h3>Trademarks</h3>
+			<p>"ProScan PDF" and related logos are our trademarks. You may not use our trademarks without our prior written consent.</p>
+
+			<h3>Third-Party Content</h3>
+			<p>The Application may include third-party software components that are subject to their own license terms.</p>
+
+			<h2>Disclaimers and Limitations</h2>
+
+			<h3>Service Availability</h3>
+			<p>While we strive to maintain the Application's availability, we do not guarantee uninterrupted access. The Service may be temporarily unavailable due to maintenance, updates, or technical issues.</p>
+
+			<h3>OCR Accuracy</h3>
+			<p>The OCR (Optical Character Recognition) feature is provided for convenience. We do not guarantee 100% accuracy in text recognition and recommend reviewing extracted text for accuracy.</p>
+
+			<h3>Document Security</h3>
+			<p>While we implement security measures, you are responsible for:</p>
+			<ul>
+				<li>Securing your device and protecting your documents</li>
+				<li>Using strong passwords for password-protected PDFs</li>
+				<li>Backing up important documents</li>
+			</ul>
+
+			<h3>Limitation of Liability</h3>
+			<p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, documents, or business opportunities.</p>
+
+			<h2>Termination</h2>
+
+			<h3>Termination by You</h3>
+			<p>You may terminate your use of the Application at any time by deleting it from your device and canceling any active subscriptions.</p>
+
+			<h3>Termination by Us</h3>
+			<p>We may terminate or suspend your access to the Service if you violate these Terms, though this typically will not affect documents stored locally on your device.</p>
+
+			<h3>Effect of Termination</h3>
+			<p>Upon termination:</p>
+			<ul>
+				<li>Your license to use the Application ends</li>
+				<li>You should delete the Application from your devices</li>
+				<li>Documents stored locally on your device remain your property</li>
+				<li>Subscription charges will continue until canceled through the App Store</li>
+			</ul>
+
+			<h2>Updates and Modifications</h2>
+
+			<h3>Application Updates</h3>
+			<p>We may update the Application to:</p>
+			<ul>
+				<li>Add new features and functionality</li>
+				<li>Improve performance and fix bugs</li>
+				<li>Enhance security</li>
+				<li>Comply with new regulations</li>
+			</ul>
+
+			<h3>Terms Updates</h3>
+			<p>We may modify these Terms from time to time. We will notify you of material changes through:</p>
+			<ul>
+				<li>In-app notifications</li>
+				<li>Email notifications (if we have your email)</li>
+				<li>Updates to this document</li>
+			</ul>
+
+			<p>Continued use of the Application after such modifications constitutes acceptance of the updated Terms.</p>
+
+			<h2>Support and Contact</h2>
+
+			<h3>Technical Support</h3>
+			<p>If you experience technical issues or have questions about the Application, please contact us at the email address provided below.</p>
+
+			<h3>Feedback</h3>
+			<p>We welcome your feedback and suggestions for improving the Application. Any feedback you provide may be used to enhance the Service.</p>
+
+			<h2>Governing Law and Disputes</h2>
+
+			<p>These Terms shall be governed by and construed in accordance with the laws of Romania, without regard to its conflict of law principles.</p>
+
+			<p>Any disputes arising from these Terms or your use of the Application will be resolved through good faith negotiation. If resolution cannot be reached, disputes will be subject to the jurisdiction of the courts of Romania.</p>
+
+			<h2>Apple App Store Terms</h2>
+
+			<p>If you download the Application from the Apple App Store, the following additional terms apply:</p>
+
+			<ul>
+				<li>These Terms are between you and us, not Apple</li>
+				<li>Apple has no responsibility for the Application or its content</li>
+				<li>Apple has no obligation to provide maintenance or support for the Application</li>
+				<li>In the event of any failure of the Application to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price (if any) for the Application</li>
+				<li>Apple is not responsible for addressing any claims relating to the Application or your possession/use of the Application</li>
+				<li>Apple is a third-party beneficiary of these Terms and may enforce these Terms against you</li>
+			</ul>
+
+			<h2>Miscellaneous</h2>
+
+			<h3>Entire Agreement</h3>
+			<p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding the use of the Application.</p>
+
+			<h3>Severability</h3>
+			<p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
+
+			<h3>Assignment</h3>
+			<p>You may not assign or transfer these Terms or your rights under these Terms without our prior written consent. We may assign these Terms without restriction.</p>
+
+			<h3>Waiver</h3>
+			<p>Our failure to enforce any right or provision of these Terms will not constitute a waiver of future enforcement of that right or provision.</p>
+
+			<h3>Language</h3>
+			<p>These Terms may be translated into other languages for convenience. In case of any inconsistency between the English version and any translation, the English version shall prevail.</p>
+
+			<h2>Acknowledgment</h2>
+
+			<p>By using the Application, you acknowledge that:</p>
+			<ul>
+				<li>You have read and understood these Terms and Conditions</li>
+				<li>You agree to be bound by these Terms</li>
+				<li>You are at least 13 years old (or the minimum age required in your jurisdiction)</li>
+				<li>You have the legal capacity to enter into this agreement</li>
+				<li>Your use of the Application will comply with all applicable laws</li>
+			</ul>
+
+			<div class="contact-info">
+				<h3>Contact Us</h3>
+				<p>If you have any questions about this Privacy Policy or Terms and Conditions, please contact us:</p>
+				<p>By email: <a href="mailto:devpaulcrp@gmail.com">devpaulcrp@gmail.com</a></p>
+				<p>For privacy concerns, legal questions, or general support inquiries</p>
+			</div>
+		</div>
+	</body>
+</html>
