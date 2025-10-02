@@ -14,6 +14,8 @@
 		<style>
 			/* Import Apple-style font */
 			@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
+			/* Import handwritten font for quote */
+			@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap');
 			
 			/* Custom color scheme: Grey and Dark Blue */
 			:root {
@@ -187,6 +189,31 @@
 				margin-top: 2rem !important;
 			}
 			
+			/* Quote styling */
+			.quote-container {
+				margin-top: 3rem;
+				margin-bottom: 2rem;
+				padding: 2rem 1rem;
+			}
+			
+			.inspirational-quote {
+				font-family: 'Dancing Script', cursive;
+				font-size: 1.8rem;
+				font-weight: 700;
+				color: rgba(255, 255, 255, 0.95);
+				line-height: 1.6;
+				margin-bottom: 0.5rem;
+				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+			}
+			
+			.quote-author {
+				font-family: 'Dancing Script', cursive;
+				font-size: 1.3rem;
+				font-weight: 600;
+				color: rgba(255, 255, 255, 0.85);
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+			}
+			
 			/* Mobile-specific line spacing fix */
 			@media (max-width: 768px) {
 				#banner .inner p {
@@ -204,6 +231,19 @@
 				/* More spacing for button on mobile */
 				#banner .actions.special {
 					margin-top: 2.5rem !important;
+				}
+				
+				/* Adjust quote for mobile */
+				.inspirational-quote {
+					font-size: 1.4rem;
+				}
+				
+				.quote-author {
+					font-size: 1.1rem;
+				}
+				
+				.quote-container {
+					padding: 1.5rem 0.5rem;
 				}
 			}
 		</style>
@@ -245,6 +285,12 @@
 								<li><a href="#games" class="button primary scrolly">View My Games</a></li>
 								<li><a href="#apps" class="button primary scrolly">View My Apps</a></li>
 							</ul>
+							
+							<!-- Henry Ford Quote -->
+							<div class="quote-container">
+								<p class="inspirational-quote">"Whether you think you can or you think you can't, you're right."</p>
+								<p class="quote-author">Henry Ford</p>
+							</div>
 						</div>
 						<a href="#about" class="more scrolly">Learn More</a>
 					</section>
@@ -347,6 +393,8 @@
 									</a>
 								</div>
 							</section>
+						</div>
+					</section>
 							
 				<!-- Apps -->
 					<section id="apps" class="wrapper alt style2">
