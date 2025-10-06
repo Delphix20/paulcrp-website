@@ -31,7 +31,10 @@
       #header.alt { background: rgba(44, 62, 80, 0.9); }
       .spotlight .content h2 { color: var(--primary-color); }
 
+      /* Card */
       .game-card {
+        position: relative; /* ensure it sits above backgrounds on mobile */
+        z-index: 1;
         background: rgba(255, 255, 255, 0.95);
         padding: 2rem;
         border-radius: 15px;
@@ -91,14 +94,28 @@
       .spotlight .content {
         flex: 1;
         text-align: left;
+        overflow: visible; /* prevent clipping on small screens */
       }
       .spotlight.reverse { flex-direction: row-reverse !important; }
       .spotlight.reverse .image { margin: 0 0 0 3rem; }
 
+      /* --- Mobile fixes: ensure descriptions always show, esp. in .reverse rows --- */
       @media (max-width: 768px) {
-        .spotlight { flex-direction: column !important; text-align: center; }
-        .spotlight .image { margin: 0 0 1.5rem 0 !important; }
-        .spotlight .content { text-align: center; }
+        .spotlight {
+          flex-direction: column !important;
+          text-align: center;
+        }
+        /* Force stack order: image first, content second for ALL rows (reverse included) */
+        .spotlight .image { order: 1; margin: 0 0 1.25rem 0 !important; width: 100% !important; }
+        .spotlight .content { order: 2; width: 100% !important; text-align: center; }
+
+        /* Make sure paragraph is visible and not overlapped */
+        .game-card { margin: 0 0 2rem 0; }
+        .game-card p { display: block !important; opacity: 1 !important; visibility: visible !important; }
+
+        /* Avoid any stray theme rules affecting reverse rows on mobile */
+        .spotlight.reverse { flex-direction: column !important; }
+        .spotlight.reverse .image { margin: 0 0 1.25rem 0 !important; }
       }
 
       .coming-soon {
@@ -107,6 +124,7 @@
         opacity: 0.7 !important;
       }
 
+      /* Banner tweaks */
       #banner .inner p { line-height: 1.8 !important; }
       .banner-text { margin-bottom: 0.5rem !important; line-height: 1.6 !important; }
       .banner-description { margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; }
@@ -342,7 +360,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Auto-alternation script: keeps pattern for any new rows you add -->
+    <!-- Auto-alternation script -->
     <script>
       (function () {
         function applyAlternation(container) {
