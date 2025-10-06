@@ -138,23 +138,13 @@
 			/* Responsive adjustments */
 			@media (max-width: 768px) {
 				.spotlight {
-					flex-direction: column;
+					flex-direction: column !important;
 					text-align: center;
 				}
 				
-				/* Fix for even-numbered spotlights (like Cyphre) on mobile */
-				.spotlight:nth-child(even) {
-					flex-direction: column;
-				}
-				
 				.spotlight .image {
-					margin-right: 0;
-					margin-bottom: 2rem;
-				}
-				
-				.spotlight:nth-child(even) .image {
-					margin-left: 0;
-					margin-right: 0;
+					margin-right: 0 !important;
+					margin-left: 0 !important;
 					margin-bottom: 2rem;
 				}
 				
@@ -343,8 +333,8 @@
 								</div>
 							</section>
 							
-							<section class="spotlight">
-								<div class="image">
+							<section class="spotlight" style="flex-direction: row-reverse;">
+								<div class="image" style="margin-left: 3rem; margin-right: 0;">
 									<img src="images/eyecolorcam-icon.png" alt="Eye Color Cam App Icon" class="app-icon">
 								</div>
 								<div class="content game-card">
@@ -372,8 +362,8 @@
 				<!-- Games -->
 					<section id="games" class="wrapper alt style2">
 						<div class="inner">
-							<section class="spotlight">
-								<div class="image">
+							<section class="spotlight" style="flex-direction: row-reverse;">
+								<div class="image" style="margin-left: 3rem; margin-right: 0;">
 									<img src="images/neurarush-icon.png" alt="NeuraRush App Icon" class="app-icon">
 								</div>
 								<div class="content game-card">
@@ -398,8 +388,8 @@
 								</div>
 							</section>
 							
-							<section class="spotlight">
-								<div class="image">
+							<section class="spotlight" style="flex-direction: row-reverse;">
+								<div class="image" style="margin-left: 3rem; margin-right: 0;">
 									<img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens App Icon" class="app-icon">
 								</div>
 								<div class="content game-card">
@@ -424,8 +414,8 @@
 								</div>
 							</section>
 							
-							<section class="spotlight">
-								<div class="image">
+							<section class="spotlight" style="flex-direction: row-reverse;">
+								<div class="image" style="margin-left: 3rem; margin-right: 0;">
 									<img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits App Icon" class="app-icon">
 								</div>
 								<div class="content game-card">
