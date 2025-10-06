@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-								<title>Paul Crăpătureanu - App Developer</title>
+		<title>Paul Crăpătureanu - App Developer</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -31,30 +31,12 @@
 				background-color: var(--primary-color) !important;
 				border-color: var(--primary-color) !important;
 			}
-			
-			.button.primary:hover {
-				background-color: var(--secondary-color) !important;
-			}
-			
-			.major.style1:before {
-				background-color: var(--primary-color) !important;
-			}
-			
-			.major.style2:before {
-				background-color: var(--accent-color) !important;
-			}
-			
-			.major.style3:before {
-				background-color: var(--dark-grey) !important;
-			}
-			
-			#header.alt {
-				background: rgba(44, 62, 80, 0.9);
-			}
-			
-			.spotlight .content h2 {
-				color: var(--primary-color);
-			}
+			.button.primary:hover { background-color: var(--secondary-color) !important; }
+			.major.style1:before { background-color: var(--primary-color) !important; }
+			.major.style2:before { background-color: var(--accent-color) !important; }
+			.major.style3:before { background-color: var(--dark-grey) !important; }
+			#header.alt { background: rgba(44, 62, 80, 0.9); }
+			.spotlight .content h2 { color: var(--primary-color); }
 			
 			/* Game cards styling */
 			.game-card {
@@ -103,45 +85,42 @@
 				height: auto;
 				transition: transform 0.2s ease;
 			}
+			.app-store-badge:hover { transform: scale(1.05); }
 			
-			.app-store-badge:hover {
-				transform: scale(1.05);
-			}
-			
-			/* Game spotlight layout adjustments */
+			/* Spotlight layout: consistent alignment + alternation */
 			.spotlight {
 				display: flex;
 				align-items: center;
 				padding: 3rem 0;
+				gap: 3rem; /* consistent spacing between icon column and content */
 			}
-			
+			/* Fixed icon column so all icons share the same vertical line */
 			.spotlight .image {
-				flex: 0 0 auto;
-				margin-right: 3rem;
-				margin-left: 0;
+				flex: 0 0 160px;              /* fixed column width for perfect vertical alignment */
+				display: flex;
+				justify-content: center;      /* center the icon within the fixed column */
+				align-items: center;
+				margin: 0 !important;         /* wipe any inline margins */
 			}
-			
 			.spotlight .content {
 				flex: 1;
 				text-align: left;
 			}
+			/* Alternate rows by flipping direction */
+			.spotlight.reverse { flex-direction: row-reverse; }
 			
 			/* Responsive adjustments */
 			@media (max-width: 768px) {
 				.spotlight {
 					flex-direction: column !important;
 					text-align: center;
+					gap: 1.75rem;
 				}
-				
 				.spotlight .image {
-					margin-right: 0 !important;
-					margin-left: 0 !important;
-					margin-bottom: 2rem;
+					flex: 0 0 auto;
+					margin-bottom: 0.5rem !important;
 				}
-				
-				.spotlight .content {
-					text-align: center;
-				}
+				.spotlight .content { text-align: center; }
 			}
 			
 			.coming-soon {
@@ -151,362 +130,329 @@
 			}
 			
 			/* Ensure line spacing is visible on all devices */
-			#banner .inner p {
-				line-height: 1.8 !important;
-			}
+			#banner .inner p { line-height: 1.8 !important; }
 			
 			/* Banner text styling with proper spacing */
-			.banner-text {
-				margin-bottom: 0.5rem !important;
-				line-height: 1.6 !important;
-			}
-			
-			.banner-description {
-				margin-top: 1.5rem !important;
-				margin-bottom: 1.5rem !important;
-			}
+			.banner-text { margin-bottom: 0.5rem !important; line-height: 1.6 !important; }
+			.banner-description { margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; }
 			
 			/* Move the "View My Games" button down */
-			#banner .actions.special {
-				margin-top: 3.5rem !important;
-			}
+			#banner .actions.special { margin-top: 3.5rem !important; }
 			
 			/* Quote styling */
 			.quote-container {
-				margin-top: 1.5rem;
-				margin-bottom: 2.5rem;
-				padding: 2rem 1rem;
-				display: inline-block;
-				text-align: left;
+				margin-top: 1.5rem; margin-bottom: 2.5rem;
+				padding: 2rem 1rem; display: inline-block; text-align: left;
 			}
-			
 			#banner .quote-container p,
 			#banner .inspirational-quote,
 			#banner .quote-author,
 			.inspirational-quote {
 				font-family: 'Allura', cursive;
-				font-size: 1.4rem;
-				font-weight: 400;
+				font-size: 1.4rem; font-weight: 400;
 				color: rgba(255, 255, 255, 0.95);
-				line-height: 1.6;
-				margin-bottom: 0.3rem;
+				line-height: 1.6; margin-bottom: 0.3rem;
 				text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-				display: block;
-				text-transform: none !important;
-				letter-spacing: normal !important;
+				display: block; text-transform: none !important; letter-spacing: normal !important;
 			}
-			
 			#banner .quote-author,
 			.quote-author {
 				font-family: 'Allura', cursive;
-				font-size: 0.9rem;
-				font-weight: 400;
+				font-size: 0.9rem; font-weight: 400;
 				color: rgba(255, 255, 255, 0.85);
 				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-				text-align: right;
-				display: block;
-				text-transform: none !important;
-				letter-spacing: normal !important;
+				text-align: right; display: block; text-transform: none !important; letter-spacing: normal !important;
 			}
 			
 			/* Mobile-specific line spacing fix */
 			@media (max-width: 768px) {
-				#banner .inner p {
-					line-height: 2.2 !important;
-				}
-				
-				.banner-text {
-					margin-bottom: 0.3rem !important;
-				}
-				
-				.banner-description {
-					margin-top: 2rem !important;
-				}
-				
-				/* More spacing for button on mobile */
-				#banner .actions.special {
-					margin-top: 2.5rem !important;
-				}
-				
-				/* Adjust quote for mobile */
-				.inspirational-quote {
-					font-size: 0.95rem;
-				}
-				
-				.quote-author {
-					font-size: 0.8rem;
-				}
-				
-				.quote-container {
-					padding: 1.5rem 0.5rem;
-				}
+				#banner .inner p { line-height: 2.2 !important; }
+				.banner-text { margin-bottom: 0.3rem !important; }
+				.banner-description { margin-top: 2rem !important; }
+				#banner .actions.special { margin-top: 2.5rem !important; }
+				.inspirational-quote { font-size: 0.95rem; }
+				.quote-author { font-size: 0.8rem; }
+				.quote-container { padding: 1.5rem 0.5rem; }
 			}
 		</style>
 	</head>
 	<body class="landing is-preload">
 
 		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+		<div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Paul CRP</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="#apps">Apps</a></li>
-											<li><a href="#games">Games</a></li>
-											<li><a href="#about">About</a></li>
-											<li><a href="#contact">Contact</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
+			<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="index.html">Paul CRP</a></h1>
+				<nav id="nav">
+					<ul>
+						<li class="special">
+							<a href="#menu" class="menuToggle"><span>Menu</span></a>
+							<div id="menu">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="#apps">Apps</a></li>
+									<li><a href="#games">Games</a></li>
+									<li><a href="#about">About</a></li>
+									<li><a href="#contact">Contact</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h2>Paul Crăpătureanu</h2>
+					<p class="banner-text">Independent App Developer</p>
+					<p class="banner-text banner-description">Creating engaging mobile experiences<br />
+					that challenge your mind and reflexes.</p>
+					<ul class="actions special">
+						<li><a href="#apps" class="button primary scrolly">View My Apps</a></li>
+						<li><a href="#games" class="button primary scrolly">View My Games</a></li>
+					</ul>
+					
+					<!-- Henry Ford Quote -->
+					<div class="quote-container">
+						<p class="inspirational-quote">"Whether you think you can or you think you can't, you're right."</p>
+						<p class="quote-author">Henry Ford</p>
+					</div>
+				</div>
+				<a href="#about" class="more scrolly">Learn More</a>
+			</section>
+
+			<!-- About -->
+			<section id="about" class="wrapper style1 special">
+				<div class="inner">
+					<header class="major">
+						<h2>Crafting Mobile Gaming Experiences & Utility Apps</h2>
+						<p>From mind-bending puzzles to fast-paced arcade action, each game is designed<br />
+						to provide hours of entertainment and challenge players worldwide.<br /><br />
+						Beyond gaming, I also develop practical utility apps that solve real-world problems,<br />
+						bringing professional-grade tools to your mobile device for enhanced productivity.</p>
 					</header>
+					<ul class="icons major">
+						<li><span class="icon fa-gem major style1"><span class="label">Quality</span></span></li>
+						<li><span class="icon fa-heart major style2"><span class="label">Passion</span></span></li>
+						<li><span class="icon solid fa-code major style3"><span class="label">Innovation</span></span></li>
+					</ul>
+				</div>
+			</section>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>Paul Crăpătureanu</h2>
-							<p class="banner-text">Independent App Developer</p>
-							<p class="banner-text banner-description">Creating engaging mobile experiences<br />
-							that challenge your mind and reflexes.</p>
-							<ul class="actions special">
-								<li><a href="#apps" class="button primary scrolly">View My Apps</a></li>
-								<li><a href="#games" class="button primary scrolly">View My Games</a></li>
-							</ul>
-							
-						<!-- Henry Ford Quote -->
-						<div class="quote-container">
-							<p class="inspirational-quote">"Whether you think you can or you think you can't, you're right."</p>
-							<p class="quote-author">Henry Ford</p>
-						</div>
-						</div>
-						<a href="#about" class="more scrolly">Learn More</a>
-					</section>
+			<!-- Apps -->
+			<section id="apps" class="wrapper alt style2">
+				<div class="inner">
 
-				<!-- About -->
-					<section id="about" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Crafting Mobile Gaming Experiences & Utility Apps</h2>
-								<p>From mind-bending puzzles to fast-paced arcade action, each game is designed<br />
-								to provide hours of entertainment and challenge players worldwide.<br /><br />
-								Beyond gaming, I also develop practical utility apps that solve real-world problems,<br />
-								bringing professional-grade tools to your mobile device for enhanced productivity.</p>
-							</header>
-							<ul class="icons major">
-								<li><span class="icon fa-gem major style1"><span class="label">Quality</span></span></li>
-								<li><span class="icon fa-heart major style2"><span class="label">Passion</span></span></li>
-								<li><span class="icon solid fa-code major style3"><span class="label">Innovation</span></span></li>
-							</ul>
+					<!-- 1. ProScan (icon left) -->
+					<section class="spotlight">
+						<div class="image">
+							<img src="images/proscan-icon.png" alt="ProScan PDF App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>ProScan PDF</h3>
+							<p>Newest cutting-edge AI-powered mobile camera scanning app. Scan, Edit, Sign, Lock, OCR & much more. No ads, no watermarks. Exactly how a pro scanning app should be.</p>
+							<a href="https://apps.apple.com/app/proscan-pdf-scan-sign-ocr/id6752308731" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
 						</div>
 					</section>
-
-				<!-- Apps -->
-					<section id="apps" class="wrapper alt style2">
-						<div class="inner">
-							<section class="spotlight">
-								<div class="image">
-									<img src="images/proscan-icon.png" alt="ProScan PDF App Icon" class="app-icon">
-								</div>
-								<div class="content game-card">
-									<h3>ProScan PDF</h3>
-									<p>Newest cutting-edge AI-powered mobile camera scanning app. Scan, Edit, Sign, Lock, OCR & much more. No ads, no watermarks. Exactly how a pro scanning app should be.</p>
-									<a href="https://apps.apple.com/app/proscan-pdf-scan-sign-ocr/id6752308731" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-							</section>
-							
-							<section class="spotlight" style="flex-direction: row-reverse;">
-								<div class="image" style="margin-left: 3rem; margin-right: 0;">
-									<img src="images/eyecolorcam-icon.png" alt="Eye Color Cam App Icon" class="app-icon">
-								</div>
-								<div class="content game-card">
-									<h3>Eye Color Cam</h3>
-									<p>Transform your eye color instantly with AR technology! Choose from 30 stunning shades and textures to create your perfect look with realistic color changes.</p>
-									<a href="https://apps.apple.com/app/eye-color-cam-live-filters/id6752640752" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-							</section>
-							
-							<section class="spotlight">
-								<div class="image">
-									<img src="images/dashpal-icon.png" alt="Dash Pal App Icon" class="app-icon">
-								</div>
-								<div class="content game-card">
-									<h3>Dash Pal</h3>
-									<p>Your all-in-one motion dashboard. Whether you're driving, cycling, flying, sailing, or walking, Dash Pal turns your iPhone or iPad into a smart live dashboard that adapts to every journey.</p>
-									<button class="app-store-badge coming-soon" disabled>Coming Soon</button>
-								</div>
-							</section>
+					
+					<!-- 2. Eye Color Cam (icon right) -->
+					<section class="spotlight reverse">
+						<div class="image">
+							<img src="images/eyecolorcam-icon.png" alt="Eye Color Cam App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>Eye Color Cam</h3>
+							<p>Transform your eye color instantly with AR technology! Choose from 30 stunning shades and textures to create your perfect look with realistic color changes.</p>
+							<a href="https://apps.apple.com/app/eye-color-cam-live-filters/id6752640752" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
+						</div>
+					</section>
+					
+					<!-- 3. Dash Pal (icon left) -->
+					<section class="spotlight">
+						<div class="image">
+							<img src="images/dashpal-icon.png" alt="Dash Pal App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>Dash Pal</h3>
+							<p>Your all-in-one motion dashboard. Whether you're driving, cycling, flying, sailing, or walking, Dash Pal turns your iPhone or iPad into a smart live dashboard that adapts to every journey.</p>
+							<button class="app-store-badge coming-soon" disabled>Coming Soon</button>
 						</div>
 					</section>
 
-				<!-- Games -->
-					<section id="games" class="wrapper alt style2">
-						<div class="inner">
-							<section class="spotlight">
-								<div class="content game-card">
-									<h3>NeuraRush</h3>
-									<p>Brain Boost Games - 15 Brain-Boosting Mini Games that challenge your cognitive abilities, train memory, reflexes and problem-solving abilities.</p>
-									<a href="https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-								<div class="image">
-									<img src="images/neurarush-icon.png" alt="NeuraRush App Icon" class="app-icon">
-								</div>
-							</section>
-							
-							<section class="spotlight">
-								<div class="image" style="margin-left: 3rem;">
-									<img src="images/cyphre-icon.png" alt="Cyphre App Icon" class="app-icon">
-								</div>
-								<div class="content game-card">
-									<h3>Cyphre</h3>
-									<p>Puzzle Ring Challenge - Think. Align. Unlock. Addictive symbol decoder that challenges your brain.</p>
-									<a href="https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-							</section>
-							
-							<section class="spotlight">
-								<div class="content game-card">
-									<h3>Pop Pop Aliens</h3>
-									<p>Arcade Hunter - Fast-paced alien blasting action with increasing difficulty, clever decoys, and endless entertainment.</p>
-									<a href="https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-								<div class="image">
-									<img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens App Icon" class="app-icon">
-								</div>
-							</section>
-							
-							<section class="spotlight">
-								<div class="image" style="margin-left: 3rem;">
-									<img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies App Icon" class="app-icon">
-								</div>
-								<div class="content game-card">
-									<h3>Pop Pop Piggies</h3>
-									<p>Arcade Hunter - Whack-a-piggie mayhem with tricky decoys and lightning-fast action. Test your reflexes and avoid the sneaky impostors!</p>
-									<a href="https://apps.apple.com/app/pop-pop-piggies-arcade-hunter/id6748965914" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-							</section>
-							
-							<section class="spotlight">
-								<div class="content game-card">
-									<h3>Bouncy Fruits</h3>
-									<p>Smash the bouncing fruits while avoiding tricky decoys! Master combos, use shields, and level up through stunning visuals and immersive audio.</p>
-									<a href="https://apps.apple.com/app/bouncy-fruits-tap-smash-frenzy/id6751171271" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-								<div class="image">
-									<img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits App Icon" class="app-icon">
-								</div>
-							</section>
-							
-							<section class="spotlight">
-								<div class="image" style="margin-left: 3rem;">
-									<img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits App Icon" class="app-icon">
-								</div>
-								<div class="content game-card">
-									<h3>Pop Pop Fruits</h3>
-									<p>Pop the Fruits with blazing speed, but avoid the crafty decoys! Dive into a fruit popping frenzy that will test your speed, precision and split-second decision making!</p>
-									<a href="https://apps.apple.com/app/pop-pop-fruits-tap-frenzy/id6749312011" target="_blank">
-										<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
-									</a>
-								</div>
-							</section>
+				</div>
+			</section>
+
+			<!-- Games -->
+			<section id="games" class="wrapper alt style2">
+				<div class="inner">
+
+					<!-- 4. NeuraRush (icon right) -->
+					<section class="spotlight reverse">
+						<div class="image">
+							<img src="images/neurarush-icon.png" alt="NeuraRush App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>NeuraRush</h3>
+							<p>Brain Boost Games - 15 Brain-Boosting Mini Games that challenge your cognitive abilities, train memory, reflexes and problem-solving abilities.</p>
+							<a href="https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
+						</div>
+					</section>
+					
+					<!-- 5. Cyphre (icon left) -->
+					<section class="spotlight">
+						<div class="image">
+							<img src="images/cyphre-icon.png" alt="Cyphre App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>Cyphre</h3>
+							<p>Puzzle Ring Challenge - Think. Align. Unlock. Addictive symbol decoder that challenges your brain.</p>
+							<a href="https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
+						</div>
+					</section>
+					
+					<!-- 6. Pop Pop Aliens (icon right) -->
+					<section class="spotlight reverse">
+						<div class="image">
+							<img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>Pop Pop Aliens</h3>
+							<p>Arcade Hunter - Fast-paced alien blasting action with increasing difficulty, clever decoys, and endless entertainment.</p>
+							<a href="https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
+						</div>
+					</section>
+					
+					<!-- 7. Pop Pop Piggies (icon left) -->
+					<section class="spotlight">
+						<div class="image">
+							<img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>Pop Pop Piggies</h3>
+							<p>Arcade Hunter - Whack-a-piggie mayhem with tricky decoys and lightning-fast action. Test your reflexes and avoid the sneaky impostors!</p>
+							<a href="https://apps.apple.com/app/pop-pop-piggies-arcade-hunter/id6748965914" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
+						</div>
+					</section>
+					
+					<!-- 8. Bouncy Fruits (icon right) -->
+					<section class="spotlight reverse">
+						<div class="image">
+							<img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>Bouncy Fruits</h3>
+							<p>Smash the bouncing fruits while avoiding tricky decoys! Master combos, use shields, and level up through stunning visuals and immersive audio.</p>
+							<a href="https://apps.apple.com/app/bouncy-fruits-tap-smash-frenzy/id6751171271" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
+						</div>
+					</section>
+					
+					<!-- 9. Pop Pop Fruits (icon left) -->
+					<section class="spotlight">
+						<div class="image">
+							<img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits App Icon" class="app-icon">
+						</div>
+						<div class="content game-card">
+							<h3>Pop Pop Fruits</h3>
+							<p>Pop the Fruits with blazing speed, but avoid the crafty decoys! Dive into a fruit popping frenzy that will test your speed, precision and split-second decision making!</p>
+							<a href="https://apps.apple.com/app/pop-pop-fruits-tap-frenzy/id6749312011" target="_blank">
+								<img src="images/app-store-badge.svg" alt="Download on App Store" class="app-store-badge">
+							</a>
 						</div>
 					</section>
 
-				<!-- Coming Soon -->
-					<section id="upcoming" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>More Apps in Development</h2>
-								<p>Building the next generation mobile apps and games with innovative features, <br />gameplay
-								and engaging mechanics that keep users coming back for more.</p>
-							</header>
-							<ul class="features">
-								<li class="icon solid fa-puzzle-piece">
-									<h3>Future Projects</h3>
-									<p>More exciting games are in the pipeline. Each one designed to push the boundaries of mobile gaming.</p>
-								</li>
-								<li class="icon solid fa-mobile-alt">
-									<h3>Cross-Platform</h3>
-									<p>Developing apps that work seamlessly across all iOS devices, from iPhone to iPad.</p>
-								</li>
-								<li class="icon solid fa-trophy">
-									<h3>Game Center</h3>
-									<p>All games feature leaderboards and achievements to compete with friends and players worldwide.</p>
-								</li>
-								<li class="icon fa-heart">
-									<h3>Player-Focused</h3>
-									<p>Every game is crafted with player experience in mind, ensuring fun and engaging gameplay.</p>
-								</li>
-								<li class="icon fa-rocket">
-									<h3>Innovation</h3>
-									<p>Constantly exploring new game mechanics and technologies to create unique experiences.</p>
-								</li>
-								<li class="icon solid fa-gamepad">
-									<h3>Quality First</h3>
-									<p>Each release is thoroughly tested and polished to deliver the best possible gaming experience.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
+				</div>
+			</section>
 
-				<!-- Contact -->
-					<section id="contact" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Get in Touch</h2>
-								<p>Follow my app development journey.</p>
-							</header>
-							<ul class="actions stacked">
-								<li><a href="https://x.com/PopPopAliens" class="button fit primary" target="_blank">Follow on X</a></li>
-								<li><a href="https://instagram.com/paul_crp" class="button fit primary" target="_blank">Follow on Instagram</a></li>
-								<li><a href="mailto:devpaulcrp@gmail.com" class="button fit primary">Send Email</a></li>
-							</ul>
-						</div>
-					</section>
+			<!-- Coming Soon -->
+			<section id="upcoming" class="wrapper style3 special">
+				<div class="inner">
+					<header class="major">
+						<h2>More Apps in Development</h2>
+						<p>Building the next generation mobile apps and games with innovative features, <br />gameplay
+						and engaging mechanics that keep users coming back for more.</p>
+					</header>
+					<ul class="features">
+						<li class="icon solid fa-puzzle-piece">
+							<h3>Future Projects</h3>
+							<p>More exciting games are in the pipeline. Each one designed to push the boundaries of mobile gaming.</p>
+						</li>
+						<li class="icon solid fa-mobile-alt">
+							<h3>Cross-Platform</h3>
+							<p>Developing apps that work seamlessly across all iOS devices, from iPhone to iPad.</p>
+						</li>
+						<li class="icon solid fa-trophy">
+							<h3>Game Center</h3>
+							<p>All games feature leaderboards and achievements to compete with friends and players worldwide.</p>
+						</li>
+						<li class="icon fa-heart">
+							<h3>Player-Focused</h3>
+							<p>Every game is crafted with player experience in mind, ensuring fun and engaging gameplay.</p>
+						</li>
+						<li class="icon fa-rocket">
+							<h3>Innovation</h3>
+							<p>Constantly exploring new game mechanics and technologies to create unique experiences.</p>
+						</li>
+						<li class="icon solid fa-gamepad">
+							<h3>Quality First</h3>
+							<p>Each release is thoroughly tested and polished to deliver the best possible gaming experience.</p>
+						</li>
+					</ul>
+				</div>
+			</section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="https://x.com/PopPopAliens" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-							<li><a href="https://instagram.com/paul_crp" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-							<li><a href="mailto:devpaulcrp@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; 2025 Paul Crp</li>
-						</ul>
-					</footer>
+			<!-- Contact -->
+			<section id="contact" class="wrapper style4">
+				<div class="inner">
+					<header>
+						<h2>Get in Touch</h2>
+						<p>Follow my app development journey.</p>
+					</header>
+					<ul class="actions stacked">
+						<li><a href="https://x.com/PopPopAliens" class="button fit primary" target="_blank">Follow on X</a></li>
+						<li><a href="https://instagram.com/paul_crp" class="button fit primary" target="_blank">Follow on Instagram</a></li>
+						<li><a href="mailto:devpaulcrp@gmail.com" class="button fit primary">Send Email</a></li>
+					</ul>
+				</div>
+			</section>
 
-			</div>
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://x.com/PopPopAliens" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+					<li><a href="https://instagram.com/paul_crp" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+					<li><a href="mailto:devpaulcrp@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; 2025 Paul Crp</li>
+				</ul>
+			</footer>
+
+		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
