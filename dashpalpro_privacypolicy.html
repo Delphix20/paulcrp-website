@@ -192,8 +192,7 @@
 			<p>Dash Pal Pro: Race&Track Tools is designed to protect your privacy completely. All core functionality operates locally on your device:</p>
 			<ul>
 				<li><strong>GPS Processing:</strong> All location and speed data is processed locally on your device</li>
-				<li><strong>Motion Sensors:</strong> Accelerometer, gyroscope, and magnetometer data is processed in real-time locally</li>
-				<li><strong>Barometer Data:</strong> Altitude and pressure readings are processed locally</li>
+				<li><strong>Motion Sensors:</strong> Accelerometer and gyroscope data is processed in real-time locally for G-force calculations</li>
 				<li><strong>Performance Calculations:</strong> All speed metrics, G-force calculations, 0-60/0-100 times, and quarter-mile measurements occur on your device</li>
 				<li><strong>Trip Data:</strong> All trip statistics, distance, duration, and route information remain on your device</li>
 			</ul>
@@ -202,10 +201,8 @@
 			<h3>Location and Sensor Access</h3>
 			<p>The App requires access to various device sensors to function:</p>
 			<ul>
-				<li><strong>Location Services (GPS):</strong> Required for speed tracking, distance measurement, and navigation features</li>
-				<li><strong>Motion & Fitness:</strong> Used for accelerometer data to calculate G-forces and performance metrics</li>
-				<li><strong>Motion Sensors:</strong> Gyroscope and magnetometer for orientation, heading, and tilt detection</li>
-				<li><strong>Barometer:</strong> For altitude measurement and vertical speed calculation</li>
+				<li><strong>Location Services (GPS):</strong> Required for speed tracking, distance measurement, and performance metrics</li>
+				<li><strong>Motion & Fitness:</strong> Used for accelerometer and gyroscope data to calculate G-forces, acceleration times, and performance metrics</li>
 			</ul>
 			<p>This access is used solely for the stated functionality. All sensor data is processed locally and never transmitted to external servers.</p>
 
@@ -255,27 +252,9 @@
 			<ul>
 				<li><strong>App Store Connect:</strong> For subscription and in-app purchase management</li>
 				<li><strong>Core Location:</strong> For GPS and location services (processed locally on device)</li>
-				<li><strong>Core Motion:</strong> For accelerometer, gyroscope, and motion data (processed locally on device)</li>
-				<li><strong>HealthKit (Optional):</strong> For reading step count, heart rate, and active energy data if user grants permission</li>
+				<li><strong>Core Motion:</strong> For accelerometer and gyroscope data (processed locally on device)</li>
 			</ul>
 			<p>All processing through these frameworks occurs locally on your device. No data is transmitted to Apple or us through these services, except for standard App Store purchase verification.</p>
-
-			<h2>HealthKit Integration (Optional)</h2>
-			<p>If you choose to grant access, the app can read the following HealthKit data:</p>
-			<ul>
-				<li>Step count</li>
-				<li>Heart rate</li>
-				<li>Active energy burned</li>
-			</ul>
-			<p>This data is:</p>
-			<ul>
-				<li>Only accessed when you explicitly grant permission</li>
-				<li>Used solely to display health metrics within the app</li>
-				<li>Never uploaded to our servers</li>
-				<li>Never shared with third parties</li>
-				<li>Processed entirely on your device</li>
-			</ul>
-			<p>You can revoke HealthKit access at any time through iOS Settings → Health → Data Access & Devices → Dash Pal Pro.</p>
 
 			<h2>Use of Your Personal Data</h2>
 			<p>Since we do not collect any personal data, we do not use, process, store, or share any of your personal information. The app functions entirely locally on your device without any data transmission to external servers.</p>
@@ -285,7 +264,6 @@
 			<ul>
 				<li><strong>Location Access:</strong> You can manage location permissions in iOS Settings → Dash Pal Pro → Location</li>
 				<li><strong>Motion & Fitness:</strong> You can control motion access in iOS Settings → Privacy → Motion & Fitness</li>
-				<li><strong>HealthKit Access:</strong> You can manage health data permissions in iOS Settings → Health → Data Access & Devices</li>
 				<li><strong>App Deletion:</strong> You can delete the app at any time, which removes all app data from your device</li>
 			</ul>
 
@@ -354,8 +332,8 @@
 			<ul>
 				<li>Download, install, and use the Application on your personal mobile devices</li>
 				<li>Use the Application for personal speed tracking, trip monitoring, and performance measurement</li>
-				<li>Access various travel modes (car, bike, train, plane, boat, walk) and their respective dashboards</li>
-				<li>Track performance metrics such as speed, distance, G-forces, and acceleration times</li>
+				<li>Access various performance modes and their respective dashboards</li>
+				<li>Track performance metrics such as speed, acceleration times, G-forces, and lap times</li>
 			</ul>
 
 			<h3>License Restrictions</h3>
@@ -371,11 +349,11 @@
 
 			<h2>Subscription and Purchase Terms</h2>
 			
-			<h3>Free Features</h3>
-			<p>Dash Pal Pro: Race&Track Tools provides basic speed tracking features for free. Free features may include limited access to certain dashboards and metrics.</p>
+			<h3>Free Trial</h3>
+			<p>Dash Pal Pro: Race&Track Tools provides a 7-day free trial. During this period, you have full access to all features without charge.</p>
 
 			<h3>Premium Features</h3>
-			<p>Premium features are available through the following options:</p>
+			<p>After the free trial, premium features are available through the following options:</p>
 			<ul>
 				<li><strong>Monthly Subscription ($0.99/month):</strong> Auto-renewable monthly subscription</li>
 				<li><strong>Yearly Subscription ($4.99/year):</strong> Auto-renewable yearly subscription (best value)</li>
@@ -387,7 +365,7 @@
 				<li>Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period</li>
 				<li>Your Apple ID account will be charged for renewal within 24 hours prior to the end of the current period</li>
 				<li>You can manage subscriptions and turn off auto-renewal in your Apple ID account settings</li>
-				<li>Any unused portion of a free trial period will be forfeited when you purchase a subscription</li>
+				<li>Any unused portion of the free trial period will be forfeited when you purchase a subscription</li>
 				<li>The lifetime purchase is a one-time payment with no expiration or renewal</li>
 			</ul>
 
@@ -406,9 +384,9 @@
 			<ul>
 				<li>Track your speed and performance metrics while traveling</li>
 				<li>Monitor trip statistics including distance, duration, and average speed</li>
-				<li>Measure performance metrics like 0-60 times, quarter-mile times, and G-forces</li>
-				<li>Record elevation gain/loss and altitude information</li>
-				<li>Use different travel mode dashboards for various activities</li>
+				<li>Measure performance metrics like 0-60 times, 0-100 times, quarter-mile times, and G-forces</li>
+				<li>Record lap times on tracks</li>
+				<li>Use different performance mode dashboards for various activities</li>
 			</ul>
 
 			<h3>Prohibited Uses</h3>
@@ -422,7 +400,7 @@
 			</ul>
 
 			<div class="warning-notice">
-				<strong>Safety Warning:</strong> Never use this app in a way that distracts you from safe operation of a vehicle. Always obey traffic laws and speed limits. The app is intended for informational and entertainment purposes only.
+				<strong>Safety Warning:</strong> Never use this app in a way that distracts you from safe operation of a vehicle. Always obey traffic laws and speed limits. Performance testing features should only be used in controlled, legal environments such as racetracks. The app is intended for informational and entertainment purposes only.
 			</div>
 
 			<h2>User Responsibility and Safety</h2>
@@ -434,14 +412,14 @@
 				<li>You must comply with all applicable traffic laws and speed limits</li>
 				<li>The app should not be used as a primary navigation or speed reference while driving</li>
 				<li>You should set up the app before beginning travel, not while in motion</li>
-				<li>Performance features (0-60, quarter-mile) should only be used in controlled, legal environments</li>
+				<li>Performance features (0-60, 0-100, quarter-mile, lap timing) should only be used in controlled, legal environments</li>
 			</ul>
 
 			<h3>Accuracy Disclaimer</h3>
 			<p>While we strive for accuracy, you acknowledge that:</p>
 			<ul>
 				<li>GPS-based speed and location measurements may have inherent inaccuracies</li>
-				<li>Sensor readings (G-forces, altitude) are estimates and may vary</li>
+				<li>Sensor readings (G-forces, acceleration times) are estimates and may vary</li>
 				<li>Environmental factors can affect GPS accuracy</li>
 				<li>The app is not a substitute for your vehicle's speedometer</li>
 				<li>Performance timing features are for entertainment purposes only</li>
@@ -470,7 +448,7 @@
 			<h3>No Warranty</h3>
 			<p>The Application is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to:</p>
 			<ul>
-				<li>Accuracy of speed, distance, or location measurements</li>
+				<li>Accuracy of speed, distance, acceleration times, or location measurements</li>
 				<li>Reliability of GPS or sensor data</li>
 				<li>Compatibility with all devices or iOS versions</li>
 				<li>Uninterrupted or error-free operation</li>
@@ -513,7 +491,7 @@
 			<h3>Application Updates</h3>
 			<p>We may update the Application to:</p>
 			<ul>
-				<li>Add new features and travel mode dashboards</li>
+				<li>Add new features and performance mode dashboards</li>
 				<li>Improve accuracy and performance</li>
 				<li>Enhance user interface and experience</li>
 				<li>Fix bugs and improve stability</li>
