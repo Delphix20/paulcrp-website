@@ -90,7 +90,7 @@
     }
 
     .card .hd{
-      padding: 16px 18px 10px;
+      padding: 16px 18px 12px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       display: flex;
       align-items: center;
@@ -98,9 +98,22 @@
       gap: 12px;
     }
 
+    /* Default section titles */
     .card h3{
       margin: 0;
       font-size: 16px;
+      color: var(--purple);
+    }
+
+    /* ✅ Bigger title only for Privacy Policy card */
+    .policy-title{
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+    }
+
+    .policy-title span{
       color: var(--purple);
     }
 
@@ -112,20 +125,6 @@
 
     .card .bd{
       padding: 14px 18px 18px;
-    }
-
-    .hero h2{
-      margin: 0;
-      font-size: 26px;
-      color: #fff;
-    }
-
-    .hero h2 span{ color: var(--purple); }
-
-    .hero p{
-      margin-top: 10px;
-      color: var(--muted);
-      max-width: 78ch;
     }
 
     .callout{
@@ -166,10 +165,10 @@
     </header>
 
     <main>
-      <!-- ✅ SECOND CARD WITH EFFECTIVE DATE ON THE RIGHT -->
-      <section class="card hero">
+      <!-- Privacy Policy card with larger title -->
+      <section class="card">
         <div class="hd">
-          <h3><span>NeuraRush</span> Privacy Policy</h3>
+          <h3 class="policy-title"><span>NeuraRush</span> Privacy Policy</h3>
           <div class="effective">Effective: 2025-06-07</div>
         </div>
         <div class="bd">
