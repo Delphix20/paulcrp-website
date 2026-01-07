@@ -70,52 +70,6 @@
       letter-spacing: 0.3px;
     }
 
-    .badge{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,0.18);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .hero{
-      margin-top: 16px;
-      padding: 20px 18px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      box-shadow: var(--shadow);
-    }
-
-    .hero h2{
-      margin: 0 0 6px;
-      font-size: 28px;
-      line-height: 1.2;
-      color: #ffffff;
-    }
-
-    .hero h2 span{ color: var(--purple); }
-
-    .hero p{
-      margin: 10px 0 0;
-      color: var(--muted);
-      max-width: 78ch;
-    }
-
-    .callout{
-      margin-top: 12px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(176,124,255,0.25);
-      background: rgba(176,124,255,0.10);
-      color: rgba(255,255,255,0.88);
-    }
-
     main{
       margin-top: 14px;
       display: grid;
@@ -138,6 +92,10 @@
     .card .hd{
       padding: 16px 18px 10px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
     .card h3{
@@ -146,8 +104,36 @@
       color: var(--purple);
     }
 
+    .effective{
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
     .card .bd{
       padding: 14px 18px 18px;
+    }
+
+    .hero h2{
+      margin: 0;
+      font-size: 26px;
+      color: #fff;
+    }
+
+    .hero h2 span{ color: var(--purple); }
+
+    .hero p{
+      margin-top: 10px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .callout{
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(176,124,255,0.25);
+      background: rgba(176,124,255,0.10);
     }
 
     ul{
@@ -175,29 +161,29 @@
 <body>
   <div class="wrap">
     <header>
-      <!-- Centered, larger icon -->
       <img class="appicon" src="images/neurarush-icon.png" alt="NeuraRush app icon" />
-
       <h1>NeuraRush – Brain Boost Games</h1>
-
-      <div class="badge">
-        🗓️ Effective: <strong>2025-06-07</strong>
-      </div>
     </header>
 
-    <section class="hero">
-      <h2><span>NeuraRush</span> Privacy Policy</h2>
-      <p>
-        This Privacy Policy applies to the NeuraRush app (the “Application”) for mobile devices, provided as a Freemium
-        service (the “Service”). The Service is provided <strong>“AS IS”</strong>.
-      </p>
-      <div class="callout">
-        <strong>Quick summary:</strong> The Application may use limited device and usage information to operate,
-        improve gameplay, and fix issues. The Application does not gather precise location information.
-      </div>
-    </section>
-
     <main>
+      <!-- ✅ SECOND CARD WITH EFFECTIVE DATE ON THE RIGHT -->
+      <section class="card hero">
+        <div class="hd">
+          <h3><span>NeuraRush</span> Privacy Policy</h3>
+          <div class="effective">Effective: 2025-06-07</div>
+        </div>
+        <div class="bd">
+          <p>
+            This Privacy Policy applies to the NeuraRush app (the “Application”) for mobile devices, provided as a Freemium
+            service (the “Service”). The Service is provided <strong>“AS IS”</strong>.
+          </p>
+          <div class="callout">
+            <strong>Quick summary:</strong> The Application may use limited device and usage information to operate,
+            improve gameplay, and fix issues. The Application does not gather precise location information.
+          </div>
+        </div>
+      </section>
+
       <section class="grid">
         <article class="card">
           <div class="hd"><h3>Information Collection and Use</h3></div>
@@ -209,9 +195,6 @@
               <li>Time spent in the Application</li>
               <li>Your mobile device operating system</li>
             </ul>
-            <p class="muted" style="margin-top:12px;">
-              The Application does <strong>not</strong> gather precise information about your mobile device’s location.
-            </p>
           </div>
         </article>
 
@@ -219,8 +202,8 @@
           <div class="hd"><h3>Third Party Access</h3></div>
           <div class="bd">
             <p>
-              Only aggregated, anonymized data may be periodically transmitted to external services to help improve
-              the Application. Information may also be disclosed when required by law or to protect users and the Service.
+              Aggregated, anonymized data may be shared with external services to improve the Application or when required
+              by law.
             </p>
           </div>
         </article>
@@ -228,50 +211,7 @@
         <article class="card">
           <div class="hd"><h3>Opt-Out Rights</h3></div>
           <div class="bd">
-            <p>
-              You can stop all information collection by uninstalling the Application using standard uninstall processes
-              available on your device or app marketplace.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="hd"><h3>Data Retention</h3></div>
-          <div class="bd">
-            <p>
-              User-provided data may be retained for as long as you use the Application and for a reasonable time afterward.
-              You may request deletion by contacting
-              <a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a>.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="hd"><h3>Children</h3></div>
-          <div class="bd">
-            <p>
-              The Application is not intended to knowingly collect data from children under the age of 13.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="hd"><h3>Security</h3></div>
-          <div class="bd">
-            <p>
-              Reasonable physical, electronic, and procedural safeguards may be used to protect information
-              processed by the Service.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="hd"><h3>Changes</h3></div>
-          <div class="bd">
-            <p>
-              This Privacy Policy may be updated periodically. Continued use of the Application indicates acceptance
-              of any changes.
-            </p>
+            <p>You can stop all information collection by uninstalling the Application.</p>
           </div>
         </article>
 
@@ -279,7 +219,7 @@
           <div class="hd"><h3>Contact</h3></div>
           <div class="bd">
             <p>
-              If you have any questions regarding privacy, please contact:
+              Questions regarding privacy can be sent to
               <a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a>.
             </p>
           </div>
