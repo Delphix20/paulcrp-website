@@ -8,31 +8,30 @@
 
   <style>
     :root{
-      --bg: #07070b;
+      --bg1:#0b0614;           /* dark purple */
+      --bg2:#12061f;           /* slightly deeper */
       --card: rgba(255,255,255,0.06);
       --card2: rgba(255,255,255,0.04);
       --text: rgba(255,255,255,0.92);
       --muted: rgba(255,255,255,0.70);
       --border: rgba(255,255,255,0.10);
       --purple: #b07cff;
-      --purple2: #7c3aed;
-      --link: #c7a6ff;
+      --link: #d2b7ff;
       --shadow: 0 18px 60px rgba(0,0,0,0.55);
       --radius: 18px;
-      --max: 980px;
+      --max: 920px;
     }
 
     *{ box-sizing: border-box; }
     html, body { height: 100%; }
+
     body{
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+                   Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(176,124,255,0.18), transparent 55%),
-                  radial-gradient(900px 500px at 85% 15%, rgba(124,58,237,0.16), transparent 55%),
-                  radial-gradient(900px 600px at 60% 90%, rgba(176,124,255,0.12), transparent 55%),
-                  var(--bg);
-      line-height: 1.6;
+      line-height: 1.65;
+      background: linear-gradient(180deg, var(--bg1), var(--bg2));
     }
 
     a{ color: var(--link); text-decoration: none; }
@@ -41,20 +40,24 @@
     .wrap{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 28px 18px 48px;
+      padding: 26px 18px 48px;
     }
 
     header{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
       padding: 18px 18px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
+    }
+
+    .topline{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .brand{
@@ -64,14 +67,14 @@
       min-width: 0;
     }
 
-    .logo{
-      width: 44px;
-      height: 44px;
+    .appicon{
+      width: 46px;
+      height: 46px;
       border-radius: 14px;
-      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.18), transparent 45%),
-                  linear-gradient(135deg, rgba(176,124,255,0.95), rgba(124,58,237,0.95));
-      box-shadow: 0 10px 25px rgba(124,58,237,0.25);
       border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 10px 25px rgba(176,124,255,0.18);
+      object-fit: cover;
+      background: rgba(255,255,255,0.06);
       flex: 0 0 auto;
     }
 
@@ -84,6 +87,12 @@
       text-overflow: ellipsis;
     }
 
+    .sub{
+      margin-top: 2px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     .badge{
       display: inline-flex;
       align-items: center;
@@ -91,20 +100,15 @@
       padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(0,0,0,0.25);
+      background: rgba(0,0,0,0.18);
       color: var(--muted);
       font-size: 13px;
       flex: 0 0 auto;
     }
 
-    main{
-      margin-top: 18px;
-      display: grid;
-      gap: 14px;
-    }
-
     .hero{
-      padding: 22px 18px;
+      margin-top: 16px;
+      padding: 20px 18px;
       border-radius: var(--radius);
       border: 1px solid var(--border);
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
@@ -118,15 +122,31 @@
       color: #ffffff;
       letter-spacing: 0.2px;
     }
-    .hero h2 span{
-      color: var(--purple);
-    }
+
+    .hero h2 span{ color: var(--purple); }
+
     .hero p{
       margin: 10px 0 0;
       color: var(--muted);
       max-width: 78ch;
     }
 
+    .callout{
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(176,124,255,0.25);
+      background: rgba(176,124,255,0.10);
+      color: rgba(255,255,255,0.88);
+    }
+
+    main{
+      margin-top: 14px;
+      display: grid;
+      gap: 14px;
+    }
+
+    /* ✅ One column layout always */
     .grid{
       display: grid;
       grid-template-columns: 1fr;
@@ -159,7 +179,6 @@
 
     .card .bd{
       padding: 14px 18px 18px;
-      color: var(--text);
     }
 
     ul{
@@ -169,14 +188,20 @@
     li{ margin: 6px 0; color: var(--text); }
     .muted{ color: var(--muted); }
 
-    .callout{
+    .kvs{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
       margin-top: 10px;
+    }
+
+    .kv{
       padding: 12px 14px;
       border-radius: 14px;
-      border: 1px solid rgba(176,124,255,0.25);
-      background: rgba(176,124,255,0.10);
-      color: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.12);
     }
+    .kv b{ color: #fff; }
 
     footer{
       margin-top: 18px;
@@ -187,25 +212,6 @@
       color: var(--muted);
       font-size: 13px;
       box-shadow: var(--shadow);
-    }
-
-    .kvs{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .kv{
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.18);
-    }
-    .kv b{ color: #fff; }
-
-    @media (min-width: 860px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-      .kvs{ grid-template-columns: 1fr 1fr; }
     }
 
     /* Print-friendly */
@@ -221,40 +227,42 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>NeuraRush – Brain Boost Games</h1>
-          <div class="muted" style="font-size:13px;margin-top:2px;">Privacy Policy</div>
+      <div class="topline">
+        <div class="brand">
+          <!-- ✅ App icon at the top -->
+          <img class="appicon" src="neurarush-icon.png" alt="NeuraRush app icon" />
+          <div>
+            <h1>NeuraRush – Brain Boost Games</h1>
+            <div class="sub">Privacy Policy</div>
+          </div>
         </div>
-      </div>
-      <div class="badge" aria-label="Effective date">
-        <span aria-hidden="true">🗓️</span>
-        <span>Effective: <strong>2025-06-07</strong></span>
+
+        <div class="badge" aria-label="Effective date">
+          <span aria-hidden="true">🗓️</span>
+          <span>Effective: <strong>2025-06-07</strong></span>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <h2><span>NeuraRush</span> Privacy Policy</h2>
-        <p>
-          This Privacy Policy applies to the NeuraRush app (the “Application”) for mobile devices, provided as a Freemium
-          service (the “Service”). The Service is provided <strong>“AS IS”</strong>.
-        </p>
-        <div class="callout">
-          <strong>Quick summary:</strong> We collect limited device and usage data to operate and improve the app.
-          We don’t collect precise location data. If you contact us, we use your message to respond.
-        </div>
-      </section>
+    <section class="hero">
+      <h2><span>NeuraRush</span> Privacy Policy</h2>
+      <p>
+        This Privacy Policy applies to the NeuraRush app (the “Application”) for mobile devices, provided as a Freemium
+        service (the “Service”). The Service is provided <strong>“AS IS”</strong>.
+      </p>
+      <div class="callout">
+        <strong>Quick summary:</strong> The Application may use limited device and usage information to operate,
+        improve gameplay, and fix issues. The Application does not gather precise location information.
+      </div>
+    </section>
 
+    <main>
       <section class="grid">
         <article class="card">
-          <div class="hd">
-            <h3>Information Collection and Use</h3>
-          </div>
+          <div class="hd"><h3>Information Collection and Use</h3></div>
           <div class="bd">
             <p class="muted">
-              The Application collects information when you download and use it. This information may include:
+              The Application may collect information when you download and use it. This may include:
             </p>
             <ul>
               <li>Your device’s Internet Protocol address (e.g., IP address)</li>
@@ -269,39 +277,39 @@
 
             <div class="kvs">
               <div class="kv">
-                <b>Why we collect this:</b>
-                <div class="muted">To operate the Service, understand performance, improve gameplay, and fix bugs.</div>
+                <b>Purpose</b>
+                <div class="muted">This information may be used to operate the Service, improve features, and troubleshoot issues.</div>
               </div>
               <div class="kv">
-                <b>Contact info you provide:</b>
-                <div class="muted">If you email us, we use your message to respond and provide support.</div>
+                <b>Messages you send</b>
+                <div class="muted">If you contact us, the information you provide may be used to respond and provide support.</div>
               </div>
             </div>
 
             <p style="margin-top:12px;">
-              The Service Provider may use the information you provided to contact you from time to time to provide you with
-              important information, required notices, and marketing promotions.
+              The Service Provider may use the information you provide to contact you from time to time to provide important information,
+              required notices, and marketing promotions.
             </p>
 
             <p class="muted" style="margin-top:10px;">
-              For a better experience, while using the Application, the Service Provider may require you to provide certain
-              personally identifiable information. Any information requested will be retained and used as described in this Privacy Policy.
+              For a better experience, while using the Application, the Service Provider may ask you to provide certain personally identifiable
+              information. Any information requested will be retained and used as described in this Privacy Policy.
             </p>
           </div>
         </article>
 
         <article class="card">
-          <div class="hd">
-            <h3>Third Party Access</h3>
-          </div>
+          <div class="hd"><h3>Third Party Access</h3></div>
           <div class="bd">
             <p>
-              Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving
-              the Application and their service. The Service Provider may share your information with third parties in the ways described
-              in this Privacy Policy.
+              Only aggregated, anonymized data may be periodically transmitted to external services to aid the Service Provider in improving
+              the Application and their service. The Service Provider may share information with third parties in the ways described in this
+              Privacy Policy.
             </p>
 
-            <p class="muted" style="margin-top:10px;">The Service Provider may disclose User Provided and Automatically Collected Information:</p>
+            <p class="muted" style="margin-top:10px;">
+              The Service Provider may disclose User Provided and Automatically Collected Information:
+            </p>
             <ul>
               <li>As required by law, such as to comply with a subpoena or similar legal process</li>
               <li>When disclosure is necessary to protect rights, your safety, or the safety of others; investigate fraud; or respond to a government request</li>
@@ -311,9 +319,7 @@
         </article>
 
         <article class="card">
-          <div class="hd">
-            <h3>Opt-Out Rights</h3>
-          </div>
+          <div class="hd"><h3>Opt-Out Rights</h3></div>
           <div class="bd">
             <p>
               You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall
@@ -323,9 +329,7 @@
         </article>
 
         <article class="card">
-          <div class="hd">
-            <h3>Data Retention Policy</h3>
-          </div>
+          <div class="hd"><h3>Data Retention Policy</h3></div>
           <div class="bd">
             <p>
               The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter.
@@ -339,9 +343,7 @@
         </article>
 
         <article class="card">
-          <div class="hd">
-            <h3>Children</h3>
-          </div>
+          <div class="hd"><h3>Children</h3></div>
           <div class="bd">
             <p>
               The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.
@@ -365,9 +367,7 @@
         </article>
 
         <article class="card">
-          <div class="hd">
-            <h3>Security</h3>
-          </div>
+          <div class="hd"><h3>Security</h3></div>
           <div class="bd">
             <p>
               The Service Provider is concerned about safeguarding the confidentiality of your information. The Service Provider provides physical,
@@ -377,9 +377,7 @@
         </article>
 
         <article class="card">
-          <div class="hd">
-            <h3>Changes</h3>
-          </div>
+          <div class="hd"><h3>Changes</h3></div>
           <div class="bd">
             <p>
               This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes by updating
@@ -390,9 +388,7 @@
         </article>
 
         <article class="card">
-          <div class="hd">
-            <h3>Your Consent</h3>
-          </div>
+          <div class="hd"><h3>Your Consent</h3></div>
           <div class="bd">
             <p>
               By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as
@@ -401,16 +397,13 @@
           </div>
         </article>
 
-        <article class="card" style="grid-column: 1 / -1;">
-          <div class="hd">
-            <h3>Contact Us</h3>
-          </div>
+        <article class="card">
+          <div class="hd"><h3>Contact Us</h3></div>
           <div class="bd">
             <p>
               If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the
               Service Provider via email at <a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a>.
             </p>
-
             <p class="muted" style="margin-top:12px;">
               This privacy policy page was generated by an App Privacy Policy Generator.
             </p>
@@ -419,12 +412,8 @@
       </section>
 
       <footer>
-        <div>
-          © <span id="y"></span> NeuraRush. All rights reserved.
-        </div>
-        <div style="margin-top:6px;">
-          File: <span class="muted">neurarush_privacypolicy.html</span>
-        </div>
+        <div>© <span id="y"></span> NeuraRush. All rights reserved.</div>
+        <div style="margin-top:6px;">File: <span class="muted">neurarush_privacypolicy.html</span></div>
       </footer>
     </main>
   </div>
