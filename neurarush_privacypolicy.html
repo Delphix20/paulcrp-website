@@ -43,6 +43,7 @@
       padding: 28px 18px 48px;
     }
 
+    /* Top header (icon + app name only) */
     header{
       text-align: center;
       padding: 26px 18px 22px;
@@ -54,11 +55,11 @@
     }
 
     .appicon{
-      width: 88px;
-      height: 88px;
-      border-radius: 22px;
+      width: 96px;
+      height: 96px;
+      border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 14px 30px rgba(176,124,255,0.25);
+      box-shadow: 0 16px 34px rgba(176,124,255,0.25);
       object-fit: cover;
       background: rgba(255,255,255,0.06);
       margin-bottom: 12px;
@@ -87,13 +88,14 @@
       border-radius: var(--radius);
       background: linear-gradient(180deg, var(--card), var(--card2));
       box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
     .card .hd{
       padding: 16px 18px 12px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 12px;
     }
@@ -103,16 +105,18 @@
       margin: 0;
       font-size: 16px;
       color: var(--purple);
+      letter-spacing: 0.2px;
     }
 
-    /* ✅ Bigger title only for Privacy Policy card */
+    /* BIG policy title only */
     .policy-title{
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
+      margin: 0;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      line-height: 1.15;
       color: #ffffff;
     }
-
     .policy-title span{
       color: var(--purple);
     }
@@ -121,6 +125,7 @@
       font-size: 13px;
       color: var(--muted);
       white-space: nowrap;
+      padding-top: 6px; /* align better with larger title */
     }
 
     .card .bd{
@@ -133,6 +138,7 @@
       border-radius: 14px;
       border: 1px solid rgba(176,124,255,0.25);
       background: rgba(176,124,255,0.10);
+      color: rgba(255,255,255,0.90);
     }
 
     ul{
@@ -154,6 +160,21 @@
       text-align: center;
       box-shadow: var(--shadow);
     }
+
+    /* Small-screen tweaks */
+    @media (max-width: 420px){
+      .policy-title{ font-size: 30px; }
+      .effective{ padding-top: 4px; }
+    }
+
+    /* Print-friendly */
+    @media print{
+      body{ background: #fff; color: #000; }
+      header, .card, footer{ box-shadow: none; background: #fff; border-color: #ddd; }
+      .policy-title span, .card h3{ color: #6d28d9; }
+      a{ color: #6d28d9; text-decoration: underline; }
+      .callout{ border-color: #ddd; background: #f6f6f6; color: #000; }
+    }
   </style>
 </head>
 
@@ -165,35 +186,49 @@
     </header>
 
     <main>
-      <!-- Privacy Policy card with larger title -->
+      <!-- Policy intro card (big title + effective date on right) -->
       <section class="card">
         <div class="hd">
-          <h3 class="policy-title"><span>NeuraRush</span> Privacy Policy</h3>
-          <div class="effective">Effective: 2025-06-07</div>
+          <div class="policy-title"><span>NeuraRush</span> Privacy Policy</div>
+          <div class="effective">Effective: <strong>2025-06-07</strong></div>
         </div>
         <div class="bd">
           <p>
-            This Privacy Policy applies to the NeuraRush app (the “Application”) for mobile devices, provided as a Freemium
-            service (the “Service”). The Service is provided <strong>“AS IS”</strong>.
+            This privacy policy applies to the NeuraRush app (hereby referred to as "Application") for mobile devices
+            that was created by (hereby referred to as "Service Provider") as a Freemium service.
+            This service is intended for use "AS IS".
           </p>
-          <div class="callout">
-            <strong>Quick summary:</strong> The Application may use limited device and usage information to operate,
-            improve gameplay, and fix issues. The Application does not gather precise location information.
-          </div>
         </div>
       </section>
 
+      <!-- FULL original content restored below -->
       <section class="grid">
         <article class="card">
           <div class="hd"><h3>Information Collection and Use</h3></div>
           <div class="bd">
-            <p class="muted">The Application may collect information when you download and use it. This may include:</p>
+            <p>
+              The Application may collect information when you download and use it. This information may include information such as
+            </p>
             <ul>
-              <li>Your device’s Internet Protocol address (e.g., IP address)</li>
-              <li>App screens/pages you visit, including time and date</li>
-              <li>Time spent in the Application</li>
-              <li>Your mobile device operating system</li>
+              <li>Your device's Internet Protocol address (e.g. IP address)</li>
+              <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li>
+              <li>The time spent on the Application</li>
+              <li>The operating system you use on your mobile device</li>
             </ul>
+
+            <p style="margin-top:12px;">
+              The Application does not gather precise information about the location of your mobile device.
+            </p>
+
+            <p style="margin-top:12px;">
+              The Service Provider may use the information you provided to contact you from time to time to provide you with important information,
+              required notices and marketing promotions.
+            </p>
+
+            <p style="margin-top:12px;">
+              For a better experience, while using the Application, the Service Provider may require you to provide us with certain personally identifiable information.
+              The information that the Service Provider request will be retained by them and used as described in this privacy policy.
+            </p>
           </div>
         </article>
 
@@ -201,24 +236,101 @@
           <div class="hd"><h3>Third Party Access</h3></div>
           <div class="bd">
             <p>
-              Aggregated, anonymized data may be shared with external services to improve the Application or when required
-              by law.
+              Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service.
+              The Service Provider may share your information with third parties in the ways that are described in this privacy statement.
             </p>
+
+            <p style="margin-top:12px;">
+              The Service Provider may disclose User Provided and Automatically Collected Information:
+            </p>
+            <ul>
+              <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+              <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
+              <li>with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
+            </ul>
           </div>
         </article>
 
         <article class="card">
           <div class="hd"><h3>Opt-Out Rights</h3></div>
           <div class="bd">
-            <p>You can stop all information collection by uninstalling the Application.</p>
+            <p>
+              You can stop all collection of information by the Application easily by uninstalling it.
+              You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.
+            </p>
           </div>
         </article>
 
         <article class="card">
-          <div class="hd"><h3>Contact</h3></div>
+          <div class="hd"><h3>Data Retention Policy</h3></div>
           <div class="bd">
             <p>
-              Questions regarding privacy can be sent to
+              The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter.
+              If you'd like them to delete User Provided Data that you have provided via the Application, please contact them at
+              <a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a> and they will respond in a reasonable time.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="hd"><h3>Children</h3></div>
+          <div class="bd">
+            <p>
+              The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.
+            </p>
+
+            <p style="margin-top:12px;">
+              The Service Provider does not knowingly collect personally identifiable information from children.
+              The Service Provider encourages all children to never submit any personally identifiable information through the Application and/or Services.
+              The Service Provider encourage parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing
+              their children never to provide personally identifiable information through the Application and/or Services without their permission.
+            </p>
+
+            <p style="margin-top:12px;">
+              If you have reason to believe that a child has provided personally identifiable information to the Service Provider through the Application and/or Services,
+              please contact the Service Provider (<a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a>) so that they will be able to take the necessary actions.
+              You must also be at least 16 years of age to consent to the processing of your personally identifiable information in your country
+              (in some countries we may allow your parent or guardian to do so on your behalf).
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="hd"><h3>Security</h3></div>
+          <div class="bd">
+            <p>
+              The Service Provider is concerned about safeguarding the confidentiality of your information.
+              The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="hd"><h3>Changes</h3></div>
+          <div class="bd">
+            <p>
+              This Privacy Policy may be updated from time to time for any reason.
+              The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy.
+              You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="hd"><h3>Your Consent</h3></div>
+          <div class="bd">
+            <p>
+              By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="hd"><h3>Contact Us</h3></div>
+          <div class="bd">
+            <p>
+              If you have any questions regarding privacy while using the Application, or have questions about the practices,
+              please contact the Service Provider via email at
               <a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a>.
             </p>
           </div>
