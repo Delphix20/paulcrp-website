@@ -8,8 +8,8 @@
 
   <style>
     :root{
-      --bg1:#0b0614;           /* dark purple */
-      --bg2:#12061f;           /* slightly deeper */
+      --bg1:#0b0614;
+      --bg2:#12061f;
       --card: rgba(255,255,255,0.06);
       --card2: rgba(255,255,255,0.04);
       --text: rgba(255,255,255,0.92);
@@ -146,7 +146,6 @@
       gap: 14px;
     }
 
-    /* ✅ One column layout always */
     .grid{
       display: grid;
       grid-template-columns: 1fr;
@@ -214,7 +213,6 @@
       box-shadow: var(--shadow);
     }
 
-    /* Print-friendly */
     @media print{
       body{ background: #fff; color: #000; }
       header, .hero, .card, footer{ box-shadow: none; background: #fff; border-color: #ddd; }
@@ -229,8 +227,8 @@
     <header>
       <div class="topline">
         <div class="brand">
-          <!-- ✅ App icon at the top -->
-          <img class="appicon" src="neurarush-icon.png" alt="NeuraRush app icon" />
+          <!-- ✅ FIXED PATH -->
+          <img class="appicon" src="images/neurarush-icon.png" alt="NeuraRush app icon" />
           <div>
             <h1>NeuraRush – Brain Boost Games</h1>
             <div class="sub">Privacy Policy</div>
