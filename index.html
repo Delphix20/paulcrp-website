@@ -171,6 +171,12 @@
         .quote-author { font-size: 0.8rem; }
         .quote-container { padding: 1.5rem 0.5rem; }
       }
+
+      /* Ensure all major icons are equally visible (prevent any theme opacity differences) */
+      #about .icons.major .icon {
+        opacity: 1 !important;
+        filter: none !important;
+      }
     </style>
   </head>
   <body class="landing is-preload">
@@ -224,8 +230,10 @@
           <header class="major">
             <h2>BUILDING SMART UTILITY APPS &amp; ADDICTIVE GAMES</h2>
             <p>
-              I build polished iOS utility apps that help people move faster: build wealth, scan documents, track progress, and get more done with less effort.<br />
-              When it’s time to play, I craft quick, satisfying games designed to sharpen reflexes, challenge the brain, and keep every session fun.
+              I build polished iOS utility apps that help people move faster: build wealth,<br />
+              scan documents, track progress, and get more done with less effort.<br />
+              When it’s time to play, I craft quick, satisfying games designed<br />
+              to sharpen reflexes, challenge the brain, and keep every session fun.
             </p>
           </header>
           <ul class="icons major">
