@@ -72,8 +72,29 @@
         line-height: 1.5;
       }
 
-      /* Reuse existing sizing for BOTH new custom buttons */
-      .app-store-badge { width: 150px; height: auto; transition: transform 0.2s ease; }
+      /* ===== BUTTON FIXES + 1.2x SIZE ===== */
+
+      /* Remove dotted/underlined link styling around image-buttons (Spectral can add borders/underline) */
+      .game-card a {
+        text-decoration: none !important;
+        border-bottom: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      .game-card a:focus,
+      .game-card a:active,
+      .game-card a:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      .game-card a img {
+        border: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Reuse existing sizing for BOTH new custom buttons — now 1.2x bigger (150px -> 180px) */
+      .app-store-badge { width: 180px !important; height: auto; transition: transform 0.2s ease; }
       .app-store-badge:hover { transform: scale(1.05); }
 
       /* Neutralize Spectral's default nth-child flip; we control with .reverse */
