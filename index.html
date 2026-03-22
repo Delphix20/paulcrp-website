@@ -1,6 +1,931 @@
 <!DOCTYPE HTML>
 <!--
+  Spectral by HTML5 UP<!DOCTYPE HTML>
+<!--
   Spectral by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Paul Crăpătureanu - App Developer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap');
+
+      :root {
+        --primary-color: #0f172a;
+        --secondary-color: #244c7a;
+        --accent-color: #5db4ff;
+        --accent-soft: #bfe4ff;
+        --mint-color: #8fe3c4;
+        --light-grey: #eef6ff;
+        --mid-grey: #b6c4d6;
+        --dark-grey: #5f7188;
+        --glass-white: rgba(255, 255, 255, 0.58);
+        --glass-stroke: rgba(255, 255, 255, 0.5);
+        --glass-shadow: rgba(28, 72, 122, 0.14);
+      }
+
+      body, #page-wrapper {
+        background: linear-gradient(
+          180deg,
+          var(--page-a) 0%,
+          var(--page-b) 18%,
+          var(--page-c) 36%,
+          var(--page-d) 58%,
+          var(--page-e) 78%,
+          var(--page-f) 100%
+        ) !important;
+      }
+
+      body {
+        position: relative;
+        overflow-x: hidden;
+        --page-a: #aab8c8;
+        --page-b: #86a9d6;
+        --page-c: #84b8af;
+        --page-d: #a6b5c6;
+        --page-e: #83aad9;
+        --page-f: #80b9af;
+        --bg-shift-y: 0px;
+        --bg-tilt-x: 0px;
+      }
+
+      body:before {
+        content: "";
+        position: fixed;
+        inset: -12%;
+        pointer-events: none;
+        z-index: -1;
+        background:
+          radial-gradient(70% 44% at 18% 8%, rgba(108, 124, 150, 0.72), transparent 48%),
+          radial-gradient(56% 42% at 72% 22%, rgba(72, 146, 239, 0.74), transparent 46%),
+          radial-gradient(54% 42% at 30% 48%, rgba(66, 170, 135, 0.4), transparent 46%),
+          radial-gradient(56% 42% at 68% 62%, rgba(78, 154, 241, 0.68), transparent 46%),
+          radial-gradient(64% 46% at 24% 88%, rgba(70, 176, 142, 0.38), transparent 48%);
+        transform: translate3d(var(--bg-tilt-x), var(--bg-shift-y), 0) scale(1.04);
+        filter: blur(24px);
+        transition: transform 0.14s linear;
+      }
+
+      #banner {
+        background: transparent !important;
+      }
+
+      #banner:before,
+      #banner:after {
+        background: transparent !important;
+      }
+
+      .button,
+      .button.primary {
+        background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(229,241,255,0.78)) !important;
+        border: 1px solid rgba(255,255,255,0.75) !important;
+        border-radius: 18px !important;
+        color: var(--primary-color) !important;
+        box-shadow:
+          0 10px 30px rgba(77, 137, 196, 0.16),
+          inset 0 1px 0 rgba(255,255,255,0.95) !important;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+      }
+
+      .button.primary:hover,
+      .button:hover {
+        background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(214,234,255,0.84)) !important;
+        transform: translateY(-1px);
+      }
+
+      .major.style1:before { background-color: var(--secondary-color) !important; }
+      .major.style2:before { background-color: var(--accent-color) !important; }
+      .major.style3:before { background-color: var(--mint-color) !important; }
+
+      #header,
+      #header.alt {
+        background: rgba(255, 255, 255, 0.28) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 10px 30px rgba(32, 92, 150, 0.1);
+      }
+
+      #header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      #header a,
+      #header span,
+      #header h1 a,
+      #header.alt a,
+      #header.alt span,
+      #header.alt h1 a {
+        color: var(--primary-color) !important;
+      }
+
+      #footer {
+        background: rgba(255, 255, 255, 0.18) !important;
+        border-top: 1px solid rgba(255,255,255,0.65);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        box-shadow: 0 -10px 30px rgba(32, 92, 150, 0.08);
+      }
+
+      #footer .icons a,
+      #footer .copyright {
+        color: var(--primary-color) !important;
+      }
+
+      .spotlight .content h2 { color: var(--primary-color); }
+
+      .wrapper.style1,
+      .wrapper.style2,
+      .wrapper.style4,
+      .wrapper.alt.style2 {
+        background: transparent !important;
+      }
+
+      #about,
+      #apps,
+      #games,
+      #contact {
+        position: relative;
+        overflow: hidden;
+      }
+
+      #about:before,
+      #apps:before,
+      #games:before,
+      #contact:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: none;
+      }
+
+      /* Card */
+      .game-card {
+        position: relative; /* ensure it sits above backgrounds on mobile */
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(240,246,253,0.28));
+        padding: 2rem;
+        border-radius: 24px;
+        margin-bottom: 2rem;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        box-shadow:
+          0 18px 40px rgba(28, 72, 122, 0.1),
+          inset 0 1px 0 rgba(255,255,255,0.62);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+      }
+
+      .app-icon {
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 22px;
+        margin-bottom: 1.5rem;
+        object-fit: cover;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background: transparent;
+      }
+
+      .game-card h3 {
+        font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+        font-weight: 700 !important;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        letter-spacing: -0.02em;
+        text-transform: none !important;
+      }
+
+      .game-card p {
+        color: var(--primary-color) !important;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      /* ===== BUTTON FIXES + 1.2x SIZE ===== */
+
+      /* Remove dotted/underlined link styling around image-buttons (Spectral can add borders/underline) */
+      .game-card a {
+        text-decoration: none !important;
+        border-bottom: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      .game-card a:focus,
+      .game-card a:active,
+      .game-card a:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+      .game-card a img {
+        border: 0 !important;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      /* Reuse existing sizing for BOTH new custom buttons — now 1.2x bigger (150px -> 180px) */
+      .app-store-badge { width: 180px !important; height: auto; transition: transform 0.2s ease; }
+      .app-store-badge:hover { transform: scale(1.05); }
+
+      /* Neutralize Spectral's default nth-child flip; we control with .reverse */
+      .wrapper.alt.style2 .spotlight { flex-direction: row; }
+      .wrapper.alt.style2 .spotlight:nth-child(2n) { flex-direction: row; }
+
+      .spotlight {
+        display: flex;
+        align-items: center;
+        padding: 3rem 0;
+        background: transparent !important;
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+        box-shadow: none !important;
+      }
+      .spotlight .image {
+        flex: 0 0 auto;
+        margin: 0 3rem 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .spotlight .content {
+        flex: 1;
+        text-align: left;
+        overflow: visible; /* prevent clipping on small screens */
+      }
+      .spotlight.reverse { flex-direction: row-reverse !important; }
+      .spotlight.reverse .image { margin: 0 0 0 3rem; }
+
+      .wrapper.alt.style2 .spotlight,
+      .wrapper.alt.style2 .spotlight:nth-child(2n),
+      .wrapper.alt.style2 .spotlight:nth-child(2n+1) {
+        background: transparent !important;
+      }
+
+      .wrapper.alt.style2 .spotlight:before,
+      .wrapper.alt.style2 .spotlight:after {
+        display: none !important;
+      }
+
+      .scroll-reveal-card,
+      .scroll-reveal-icon {
+        opacity: 0;
+        will-change: transform, opacity, filter;
+      }
+
+      .scroll-reveal-card {
+        transform: translate3d(0, 26px, 0) scale(0.985);
+        filter: blur(0.8px);
+        transition:
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.8s ease,
+          filter 0.8s ease;
+      }
+
+      .scroll-reveal-icon {
+        transform: translate3d(0, 22px, 0) scale(0.94);
+        filter: blur(0.6px);
+        transition:
+          transform 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.72s ease,
+          filter 0.72s ease;
+      }
+
+      .scroll-reveal-card.is-visible,
+      .scroll-reveal-icon.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+      }
+
+      .scroll-reveal-icon.is-visible {
+        transition-delay: 0.06s;
+      }
+
+      /* --- Mobile fixes: ensure descriptions always show, esp. in .reverse rows --- */
+      @media (max-width: 768px) {
+        .spotlight {
+          flex-direction: column !important;
+          text-align: center;
+        }
+        /* Force stack order: image first, content second for ALL rows (reverse included) */
+        .spotlight .image { order: 1; margin: 0 0 1.25rem 0 !important; width: 100% !important; }
+        .spotlight .content { order: 2; width: 100% !important; text-align: center; }
+
+        /* Make sure paragraph is visible and not overlapped */
+        .game-card { margin: 0 0 2rem 0; }
+        .game-card p { display: block !important; opacity: 1 !important; visibility: visible !important; }
+
+        /* Avoid any stray theme rules affecting reverse rows on mobile */
+        .spotlight.reverse { flex-direction: column !important; }
+        .spotlight.reverse .image { margin: 0 0 1.25rem 0 !important; }
+      }
+
+      .coming-soon {
+        background-color: var(--dark-grey) !important;
+        cursor: not-allowed !important;
+        opacity: 0.7 !important;
+      }
+
+      /* Banner tweaks */
+      #banner .inner p { line-height: 1.8 !important; }
+      .banner-text { margin-bottom: 0.5rem !important; line-height: 1.6 !important; }
+      .banner-description { margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; }
+      #banner .actions.special { margin-top: 3.5rem !important; }
+
+      .quote-container { margin-top: 1.5rem; margin-bottom: 2.5rem; padding: 2rem 1rem; display: inline-block; text-align: left; }
+      .inspirational-quote, .quote-author {
+        font-family: 'Allura', cursive;
+        color: rgba(15, 23, 42, 0.92);
+        text-shadow: none;
+        display: block;
+        text-transform: none !important;
+      }
+      .inspirational-quote { font-size: 1.4rem; line-height: 1.6; margin-bottom: 0.3rem; }
+      .quote-author { font-size: 0.9rem; text-align: right; color: rgba(36, 76, 122, 0.8); }
+
+      @media (max-width: 768px) {
+        #banner .inner p { line-height: 2.2 !important; }
+        .banner-description { margin-top: 2rem !important; }
+        #banner .actions.special { margin-top: 2.5rem !important; }
+        .inspirational-quote { font-size: 0.95rem; }
+        .quote-author { font-size: 0.8rem; }
+        .quote-container { padding: 1.5rem 0.5rem; }
+      }
+
+      /* Ensure all major icons are equally visible (prevent any theme opacity differences) */
+      #about .icons.major .icon {
+        opacity: 1 !important;
+        filter: none !important;
+      }
+
+      #about .major p,
+      #contact header p,
+      #banner .inner p,
+      #footer,
+      .wrapper,
+      .spotlight .content p {
+        color: var(--primary-color) !important;
+      }
+
+      #contact .inner,
+      #about .inner {
+        background: linear-gradient(180deg, rgba(255,255,255,0.48), rgba(243,248,255,0.36));
+        border: 1px solid rgba(255,255,255,0.5);
+        border-radius: 28px;
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 18px 40px rgba(36, 76, 122, 0.08);
+        padding: 2.5rem;
+      }
+
+      #banner .inner,
+      #banner .inner h2,
+      #banner .inner p,
+      #banner .quote-container,
+      #banner .quote-author,
+      #banner .inspirational-quote {
+        color: var(--primary-color) !important;
+      }
+
+      #banner .inner {
+        text-shadow: none;
+      }
+
+      #banner p.banner-text,
+      #banner p.banner-description,
+      #banner p.banner-text *,
+      #banner p.banner-description *,
+      #banner a.more,
+      #banner a.more:after,
+      #about .major h2,
+      #contact header h2 {
+        color: #000 !important;
+      }
+
+      #banner a.more {
+        border-bottom-color: transparent !important;
+      }
+
+      #banner a.more:after {
+        border-left-color: #000 !important;
+        border-bottom-color: #000 !important;
+        border-top-color: transparent !important;
+        border-right-color: transparent !important;
+      }
+
+      #banner .inner h2:before,
+      #banner .inner h2:after {
+        display: none !important;
+        content: none !important;
+      }
+
+      .hero-name {
+        font-family: 'Cormorant Garamond', 'Times New Roman', serif !important;
+        font-weight: 700 !important;
+        font-size: clamp(3.2rem, 8vw, 5.4rem) !important;
+        letter-spacing: -0.03em;
+        line-height: 0.95;
+        text-transform: none !important;
+        margin-bottom: 0.35rem !important;
+        overflow: visible;
+      }
+
+      .hero-name .name-part {
+        display: inline-block;
+        opacity: 0;
+        filter: blur(6px);
+      }
+
+      body:not(.is-preload) .hero-name .name-part {
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        animation-fill-mode: forwards;
+      }
+
+      body:not(.is-preload) .hero-name .name-part:first-child {
+        animation-name: nameLeftIn;
+        animation-delay: 0.08s;
+      }
+
+      body:not(.is-preload) .hero-name .name-part:last-child {
+        animation-name: nameRightIn;
+        animation-delay: 0.18s;
+      }
+
+      @keyframes nameLeftIn {
+        from {
+          opacity: 0;
+          transform: translateX(-36px);
+          filter: blur(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes nameRightIn {
+        from {
+          opacity: 0;
+          transform: translateX(36px);
+          filter: blur(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+          filter: blur(0);
+        }
+      }
+
+      #banner .inner,
+      #apps .inner,
+      #games .inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      #menu {
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.4), rgba(226,237,249,0.26)) !important;
+        backdrop-filter: blur(26px);
+        -webkit-backdrop-filter: blur(26px);
+        border-left: 1px solid rgba(255,255,255,0.48);
+        box-shadow: -16px 0 40px rgba(25, 68, 116, 0.12);
+      }
+
+      #menu ul {
+        border-top: 0 !important;
+      }
+
+      #menu ul li {
+        border-top: 0 !important;
+      }
+
+      #menu ul li a {
+        color: var(--primary-color) !important;
+        border: 0 !important;
+        border-radius: 16px;
+        margin-bottom: 0.45rem;
+        padding: 0.95rem 1rem !important;
+        background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(238,245,252,0.2));
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.65),
+          0 8px 24px rgba(25, 68, 116, 0.06);
+      }
+
+      #menu ul li a:hover {
+        background: linear-gradient(180deg, rgba(255,255,255,0.56), rgba(231,242,255,0.28));
+      }
+
+      #menu .close {
+        color: var(--primary-color) !important;
+      }
+
+      .brand-icon-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .brand-icon-row img {
+        width: 42px;
+        height: 42px;
+        object-fit: cover;
+        border-radius: 11px;
+        box-shadow: 0 8px 18px rgba(22, 54, 94, 0.12);
+        background: rgba(255,255,255,0.35);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .brand-icon-row a {
+        border-bottom: 0 !important;
+      }
+
+      .brand-icon-row a:hover img {
+        transform: scale(1.14);
+        box-shadow: 0 12px 26px rgba(22, 54, 94, 0.18);
+      }
+    </style>
+  </head>
+  <body class="landing is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+      <!-- Header -->
+      <header id="header" class="alt">
+        <h1><a href="index.html">Paul CRP</a></h1>
+        <nav id="nav">
+          <ul>
+            <li class="special">
+              <a href="#menu" class="menuToggle"><span>Menu</span></a>
+              <div id="menu">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#apps">Apps</a></li>
+                  <li><a href="#games">Games</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Banner -->
+      <section id="banner">
+        <div class="inner">
+          <h2 class="hero-name">
+            <span class="name-part">Paul</span>
+            <span class="name-part">Crăpătureanu</span>
+          </h2>
+          <p class="banner-text" style="color:#000;">Independent App Developer</p>
+          <p class="banner-text banner-description" style="color:#000;">Creating engaging mobile experiences<br />
+          that challenge your mind and reflexes.</p>
+          <ul class="actions special">
+            <li><a href="#apps" class="button primary scrolly">View My Apps</a></li>
+            <li><a href="#games" class="button primary scrolly">View My Games</a></li>
+          </ul>
+          <div class="quote-container">
+            <p class="inspirational-quote">"Whether you think you can or you think you can't, you're right."</p>
+            <p class="quote-author">Henry Ford</p>
+          </div>
+        </div>
+        <a href="#about" class="more scrolly" style="color:#000;">Learn More</a>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="wrapper style1 special">
+        <div class="inner">
+          <header class="major">
+            <h2>BUILDING SMART UTILITY APPS &amp; ADDICTIVE GAMES</h2>
+            <p>
+              I build polished iOS utility apps that help people move faster: build wealth,<br />
+              scan documents, track progress, and get more done with less effort.<br />
+              When it’s time to play, I craft quick, satisfying games designed<br />
+              to sharpen reflexes, challenge the brain, and keep every session fun.
+            </p>
+          </header>
+          <div class="brand-icon-row">
+            <a href="#alma-card"><img src="images/alma-icon.png" alt="Alma"></a>
+            <a href="#wealthboost-card"><img src="images/wealthboostappicon.png" alt="WealthBoost AI"></a>
+            <a href="#proscan-card"><img src="images/proscan-icon.png" alt="ProScan PDF"></a>
+            <a href="#eyecolorcam-card"><img src="images/eyecolorcam-icon.png" alt="Eye Color Cam"></a>
+            <a href="#dashpal-card"><img src="images/dashpal-icon.png" alt="Dash Pal"></a>
+            <a href="#neurarush-card"><img src="images/neurarush-icon.png" alt="NeuraRush"></a>
+            <a href="#cyphre-card"><img src="images/cyphre-icon.png" alt="Cyphre"></a>
+            <a href="#poppopaliens-card"><img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens"></a>
+            <a href="#poppoppiggies-card"><img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies"></a>
+            <a href="#bouncyfruits-card"><img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits"></a>
+            <a href="#poppopfruits-card"><img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits"></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Apps -->
+      <section id="apps" class="wrapper alt style2">
+        <div class="inner">
+
+          <!-- Alma -->
+          <section id="alma-card" class="spotlight">
+            <div class="image"><img src="images/alma-icon.png" alt="Alma: Mood &amp; Wellness Tracker" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Alma: Mood &amp; Wellness Tracker</h3>
+              <p>
+                A calm daily wellness companion for tracking mood, sleep, hydration, movement, and breathing.
+                Alma turns quick check-ins into a clear Balance Score, gentle insights, and a simple history
+                that helps you understand how your days are really going.
+              </p>
+              <a href="https://apps.apple.com/app/alma-mood-wellness-tracker/id6760351892" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <!-- WealthBoost AI -->
+          <section id="wealthboost-card" class="spotlight reverse">
+            <div class="image"><img src="images/wealthboostappicon.png" alt="WealthBoost AI" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>WealthBoost AI</h3>
+              <p>AI-powered money coach to build better financial habits through daily missions, progress tracking, and personalized insights.</p>
+
+              <a href="https://apps.apple.com/app/wealthboost-ai-money-coach/id6756603789" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+              <a href="https://wealthboost.app/" target="_blank">
+                <img src="images/visitwebsite-button.png" class="app-store-badge" alt="Visit Website">
+              </a>
+            </div>
+          </section>
+
+          <!-- ProScan PDF -->
+          <section id="proscan-card" class="spotlight reverse">
+            <div class="image"><img src="images/proscan-icon.png" alt="ProScan PDF" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>ProScan PDF</h3>
+              <p>Newest cutting-edge AI-powered mobile camera scanning app. Scan, Edit, Sign, Lock, OCR & more. No ads, no watermarks. Exactly how a pro scanning app should be.</p>
+              <a href="https://apps.apple.com/app/proscan-pdf-scan-sign-ocr/id6752308731" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+              <a href="https://proscanpdf.com/" target="_blank">
+                <img src="images/visitwebsite-button.png" class="app-store-badge" alt="Visit Website">
+              </a>
+            </div>
+          </section>
+
+          <section id="eyecolorcam-card" class="spotlight">
+            <div class="image"><img src="images/eyecolorcam-icon.png" alt="Eye Color Cam" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Eye Color Cam</h3>
+              <p>Transform your eye color instantly with AR! Choose from 30 stunning shades and textures to create your perfect look with realistic color changes.</p>
+              <a href="https://apps.apple.com/app/eye-color-cam-live-filters/id6752640752" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <section id="dashpal-card" class="spotlight reverse">
+            <div class="image"><img src="images/dashpal-icon.png" alt="Dash Pal" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Dash Pal</h3>
+              <p>Your all-in-one motion dashboard. Whether you're driving, cycling, flying, sailing, or walking, Dash Pal turns your iPhone into a live dashboard that adapts to every journey.</p>
+              <a href="https://apps.apple.com/ro/app/dash-pal-gps-speedometer/id6753625350" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </section>
+
+      <!-- Games -->
+      <section id="games" class="wrapper alt style2">
+        <div class="inner">
+
+          <section id="neurarush-card" class="spotlight reverse">
+            <div class="image"><img src="images/neurarush-icon.png" alt="NeuraRush" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>NeuraRush</h3>
+              <p>Brain Boost Games - 15 Brain-Boosting Mini Games that challenge memory, reflexes and problem-solving abilities.</p>
+              <a href="https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <section id="cyphre-card" class="spotlight">
+            <div class="image"><img src="images/cyphre-icon.png" alt="Cyphre" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Cyphre</h3>
+              <p>Puzzle Ring Challenge - Think. Align. Unlock. Addictive symbol decoder that challenges your brain.</p>
+              <a href="https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <section id="poppopaliens-card" class="spotlight reverse">
+            <div class="image"><img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Pop Pop Aliens</h3>
+              <p>Arcade Hunter - Fast-paced alien blasting action with increasing difficulty, clever decoys, and endless entertainment.</p>
+              <a href="https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <section id="poppoppiggies-card" class="spotlight">
+            <div class="image"><img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Pop Pop Piggies</h3>
+              <p>Whack-a-piggie mayhem with tricky decoys and lightning-fast action. Test your reflexes and avoid the sneaky impostors!</p>
+              <a href="https://apps.apple.com/app/pop-pop-piggies-arcade-hunter/id6748965914" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <section id="bouncyfruits-card" class="spotlight reverse">
+            <div class="image"><img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Bouncy Fruits</h3>
+              <p>Smash the bouncing fruits while avoiding tricky decoys! Master combos, use shields, and level up through stunning visuals and immersive audio.</p>
+              <a href="https://apps.apple.com/app/bouncy-fruits-tap-smash-frenzy/id6751171271" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <section id="poppopfruits-card" class="spotlight">
+            <div class="image"><img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Pop Pop Fruits</h3>
+              <p>Pop the Fruits with blazing speed, but avoid the crafty decoys! Dive into a fruit popping frenzy that will test your speed and precision!</p>
+              <a href="https://apps.apple.com/app/pop-pop-fruits-tap-frenzy/id6749312011" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="wrapper style4">
+        <div class="inner">
+          <header><h2>Get in Touch</h2><p>Follow my app development journey.</p></header>
+          <ul class="actions stacked">
+            <li><a href="https://x.com/PopPopAliens" class="button fit primary" target="_blank">Follow on X</a></li>
+            <li><a href="https://instagram.com/paul_crp" class="button fit primary" target="_blank">Follow on Instagram</a></li>
+            <li><a href="mailto:devpaulcrp@gmail.com" class="button fit primary">Send Email</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <ul class="icons">
+          <li><a href="https://x.com/PopPopAliens" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+          <li><a href="https://instagram.com/paul_crp" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+          <li><a href="mailto:devpaulcrp@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; 2026 Paul Crp</li>
+        </ul>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Auto-alternation script -->
+    <script>
+      (function () {
+        function applyAlternation(container) {
+          const rows = Array.from(container.querySelectorAll(':scope > section.spotlight'));
+          if (!rows.length) return;
+          const startReverse = rows[0].classList.contains('reverse');
+          rows.forEach((row, i) => {
+            const shouldBeReverse = startReverse ? (i % 2 === 0) : (i % 2 === 1);
+            row.classList.toggle('reverse', shouldBeReverse);
+          });
+        }
+        function setup(container) {
+          applyAlternation(container);
+          const mo = new MutationObserver(() => applyAlternation(container));
+          mo.observe(container, { childList: true, subtree: false });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+          const apps  = document.querySelector('#apps .inner');
+          const games = document.querySelector('#games .inner');
+          if (apps)  setup(apps);
+          if (games) setup(games);
+
+          document.querySelectorAll('.spotlight .content.game-card').forEach((el) => {
+            el.classList.add('scroll-reveal-card');
+          });
+
+          document.querySelectorAll('.spotlight .image').forEach((el) => {
+            el.classList.add('scroll-reveal-icon');
+          });
+
+          document.querySelectorAll('#about .inner, #contact .inner').forEach((el) => {
+            el.classList.add('scroll-reveal-card');
+          });
+
+          const revealElements = document.querySelectorAll('.scroll-reveal-card, .scroll-reveal-icon');
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            });
+          }, {
+            threshold: 0.18,
+            rootMargin: '0px 0px -6% 0px'
+          });
+
+          revealElements.forEach((el) => observer.observe(el));
+
+          const root = document.body;
+          const mix = (a, b, t) => Math.round(a + (b - a) * t);
+          const rgb = (r, g, b) => `rgb(${r}, ${g}, ${b})`;
+          const updateBackground = () => {
+            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+            const shiftY = Math.round(progress * 140 - 28);
+            const tiltX = Math.round((progress - 0.5) * 36);
+            const cycle = progress * Math.PI * 6;
+            const wave1 = (Math.sin(cycle - Math.PI / 2) + 1) / 2;
+            const wave2 = (Math.sin(cycle + Math.PI / 6) + 1) / 2;
+            const wave3 = (Math.sin(cycle + Math.PI * 0.9) + 1) / 2;
+
+            const grayBlue = (intensity = 1) => rgb(
+              mix(176, 122, intensity),
+              mix(188, 146, intensity),
+              mix(206, 182, intensity)
+            );
+
+            const blue = (intensity = 1) => rgb(
+              mix(136, 72, intensity),
+              mix(164, 146, intensity * 0.88),
+              mix(214, 246, intensity)
+            );
+
+            const green = (intensity = 1) => rgb(
+              mix(134, 94, intensity),
+              mix(186, 194, intensity * 0.75),
+              mix(178, 160, intensity * 0.7)
+            );
+
+            root.style.setProperty('--page-a', grayBlue(wave1 * 0.9));
+            root.style.setProperty('--page-b', blue(wave1));
+            root.style.setProperty('--page-c', green(wave2));
+            root.style.setProperty('--page-d', grayBlue(wave2 * 0.85));
+            root.style.setProperty('--page-e', blue(wave3));
+            root.style.setProperty('--page-f', green(wave3));
+            root.style.setProperty('--bg-shift-y', `${shiftY}px`);
+            root.style.setProperty('--bg-tilt-x', `${tiltX}px`);
+          };
+
+          updateBackground();
+          window.addEventListener('scroll', updateBackground, { passive: true });
+          window.addEventListener('resize', updateBackground);
+        });
+      })();
+    </script>
+  </body>
+</html>
+
   html5up.net | @ajlkn
   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
