@@ -165,10 +165,10 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 		font-weight: 800;
-		letter-spacing: 0.225em;
+		letter-spacing: normal;
 		line-height: 1em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
+		text-transform: none;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2422,13 +2422,13 @@ input, select, textarea {
 		font-size: 0.8em;
 		font-weight: 600;
 		height: 3.125em;
-		letter-spacing: 0.225em;
+		letter-spacing: normal;
 		line-height: 3.125em;
 		max-width: 30em;
 		padding: 0 2.75em;
 		text-align: center;
 		text-decoration: none;
-		text-transform: uppercase;
+		text-transform: none;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -3386,10 +3386,10 @@ input, select, textarea {
 					color: inherit;
 					display: block;
 					font-size: 0.8em;
-					letter-spacing: 0.225em;
+					letter-spacing: normal;
 					outline: 0;
 					text-decoration: none;
-					text-transform: uppercase;
+					text-transform: none;
 				}
 
 					@media screen and (max-width: 736px) {
@@ -3507,9 +3507,9 @@ input, select, textarea {
 						color: #fff;
 						display: block;
 						font-size: 0.8em;
-						letter-spacing: 0.225em;
+						letter-spacing: normal;
 						padding: 0 1.5em;
-						text-transform: uppercase;
+						text-transform: none;
 					}
 
 						#header nav > ul > li > a.menuToggle {
