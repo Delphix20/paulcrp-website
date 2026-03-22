@@ -46,10 +46,10 @@
         overflow-x: hidden;
         --page-a: #aab8c8;
         --page-b: #6e98ca;
-        --page-c: #67b8a8;
+        --page-c: #84b8af;
         --page-d: #a6b5c6;
         --page-e: #6a97cd;
-        --page-f: #63b6a6;
+        --page-f: #80b9af;
         --bg-shift-y: 0px;
         --bg-tilt-x: 0px;
       }
@@ -63,9 +63,9 @@
         background:
           radial-gradient(70% 44% at 18% 8%, rgba(108, 124, 150, 0.72), transparent 48%),
           radial-gradient(56% 42% at 76% 28%, rgba(34, 116, 231, 0.82), transparent 46%),
-          radial-gradient(54% 42% at 30% 48%, rgba(32, 176, 125, 0.64), transparent 46%),
+          radial-gradient(54% 42% at 30% 48%, rgba(66, 170, 135, 0.4), transparent 46%),
           radial-gradient(56% 42% at 74% 68%, rgba(28, 122, 235, 0.74), transparent 46%),
-          radial-gradient(64% 46% at 24% 88%, rgba(34, 176, 130, 0.64), transparent 48%);
+          radial-gradient(64% 46% at 24% 88%, rgba(70, 176, 142, 0.38), transparent 48%);
         transform: translate3d(var(--bg-tilt-x), var(--bg-shift-y), 0) scale(1.04);
         filter: blur(24px);
         transition: transform 0.14s linear;
@@ -404,8 +404,10 @@
         text-shadow: none;
       }
 
-      #banner .banner-text,
-      #banner .banner-description,
+      #banner p.banner-text,
+      #banner p.banner-description,
+      #banner p.banner-text *,
+      #banner p.banner-description *,
       #banner .more,
       #banner .more:after,
       #about .major h2,
@@ -417,11 +419,52 @@
         border-bottom-color: transparent !important;
       }
 
+      #banner .more:after {
+        border-color: #000 !important;
+      }
+
       #banner .inner,
       #apps .inner,
       #games .inner {
         position: relative;
         z-index: 1;
+      }
+
+      #menu {
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.4), rgba(226,237,249,0.26)) !important;
+        backdrop-filter: blur(26px);
+        -webkit-backdrop-filter: blur(26px);
+        border-left: 1px solid rgba(255,255,255,0.48);
+        box-shadow: -16px 0 40px rgba(25, 68, 116, 0.12);
+      }
+
+      #menu ul {
+        border-top: 0 !important;
+      }
+
+      #menu ul li {
+        border-top: 0 !important;
+      }
+
+      #menu ul li a {
+        color: var(--primary-color) !important;
+        border: 0 !important;
+        border-radius: 16px;
+        margin-bottom: 0.45rem;
+        padding: 0.95rem 1rem !important;
+        background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(238,245,252,0.2));
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.65),
+          0 8px 24px rgba(25, 68, 116, 0.06);
+      }
+
+      #menu ul li a:hover {
+        background: linear-gradient(180deg, rgba(255,255,255,0.56), rgba(231,242,255,0.28));
+      }
+
+      #menu .close {
+        color: var(--primary-color) !important;
       }
     </style>
   </head>
@@ -483,9 +526,9 @@
             </p>
           </header>
           <ul class="icons major">
-            <li><span class="icon solid fa-code major style1"><span class="label">Coding</span></span></li>
-            <li><span class="icon solid fa-mobile-alt major style1"><span class="label">Mobile</span></span></li>
-            <li><span class="icon solid fa-rocket major style1"><span class="label">Innovation</span></span></li>
+            <li><span class="icon solid fa-layer-group major style1"><span class="label">Products</span></span></li>
+            <li><span class="icon solid fa-mobile-screen-button major style1"><span class="label">iOS</span></span></li>
+            <li><span class="icon solid fa-wand-magic-sparkles major style1"><span class="label">Polish</span></span></li>
           </ul>
         </div>
       </section>
@@ -494,24 +537,8 @@
       <section id="apps" class="wrapper alt style2">
         <div class="inner">
 
-          <!-- WealthBoost AI -->
-          <section class="spotlight">
-            <div class="image"><img src="images/wealthboostappicon.png" alt="WealthBoost AI" class="app-icon"></div>
-            <div class="content game-card">
-              <h3>WealthBoost AI</h3>
-              <p>AI-powered money coach to build better financial habits through daily missions, progress tracking, and personalized insights.</p>
-
-              <a href="https://apps.apple.com/app/wealthboost-ai-money-coach/id6756603789" target="_blank">
-                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
-              </a>
-              <a href="https://wealthboost.app/" target="_blank">
-                <img src="images/visitwebsite-button.png" class="app-store-badge" alt="Visit Website">
-              </a>
-            </div>
-          </section>
-
           <!-- Alma -->
-          <section class="spotlight reverse">
+          <section class="spotlight">
             <div class="image"><img src="images/alma-icon.png" alt="Alma: Mood &amp; Wellness Tracker" class="app-icon"></div>
             <div class="content game-card">
               <h3>Alma: Mood &amp; Wellness Tracker</h3>
@@ -522,6 +549,22 @@
               </p>
               <a href="https://apps.apple.com/app/alma-mood-wellness-tracker/id6760351892" target="_blank">
                 <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+            </div>
+          </section>
+
+          <!-- WealthBoost AI -->
+          <section class="spotlight reverse">
+            <div class="image"><img src="images/wealthboostappicon.png" alt="WealthBoost AI" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>WealthBoost AI</h3>
+              <p>AI-powered money coach to build better financial habits through daily missions, progress tracking, and personalized insights.</p>
+
+              <a href="https://apps.apple.com/app/wealthboost-ai-money-coach/id6756603789" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download on the App Store">
+              </a>
+              <a href="https://wealthboost.app/" target="_blank">
+                <img src="images/visitwebsite-button.png" class="app-store-badge" alt="Visit Website">
               </a>
             </div>
           </section>
@@ -705,6 +748,10 @@
             el.classList.add('scroll-reveal-icon');
           });
 
+          document.querySelectorAll('#about .inner, #contact .inner').forEach((el) => {
+            el.classList.add('scroll-reveal-card');
+          });
+
           const revealElements = document.querySelectorAll('.scroll-reveal-card, .scroll-reveal-icon');
           const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach((entry) => {
@@ -745,9 +792,9 @@
             );
 
             const green = (intensity = 1) => rgb(
-              mix(104, 34, intensity),
-              mix(172, 184, intensity),
-              mix(162, 138, intensity * 0.9)
+              mix(134, 94, intensity),
+              mix(186, 194, intensity * 0.75),
+              mix(178, 160, intensity * 0.7)
             );
 
             root.style.setProperty('--page-a', grayBlue(wave1 * 0.9));
