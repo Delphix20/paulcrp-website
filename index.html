@@ -14,7 +14,8 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800&display=swap');
 
       :root {
         --primary-color: #0f172a;
@@ -435,8 +436,8 @@
 
       .hero-name {
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
-        font-weight: 800 !important;
-        font-size: clamp(3.1rem, 7.4vw, 5rem) !important;
+        font-weight: 700 !important;
+        font-size: clamp(2.45rem, 6vw, 4rem) !important;
         letter-spacing: -0.05em;
         line-height: 0.95;
         text-transform: none !important;
@@ -444,24 +445,40 @@
         overflow: visible;
       }
 
-      .hero-name .name-part {
+      .hero-name-alt {
+        font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+        font-weight: 800 !important;
+        font-size: clamp(2.35rem, 5.8vw, 3.85rem) !important;
+        letter-spacing: -0.045em;
+        line-height: 0.95;
+        text-transform: none !important;
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.55rem !important;
+        overflow: visible;
+      }
+
+      .hero-name .name-part,
+      .hero-name-alt .name-part {
         display: inline-block;
         opacity: 0;
         filter: blur(6px);
       }
 
-      body:not(.is-preload) .hero-name .name-part {
+      body:not(.is-preload) .hero-name .name-part,
+      body:not(.is-preload) .hero-name-alt .name-part {
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
         animation-fill-mode: forwards;
       }
 
-      body:not(.is-preload) .hero-name .name-part:first-child {
+      body:not(.is-preload) .hero-name .name-part:first-child,
+      body:not(.is-preload) .hero-name-alt .name-part:first-child {
         animation-name: nameLeftIn;
         animation-delay: 0.08s;
       }
 
-      body:not(.is-preload) .hero-name .name-part:last-child {
+      body:not(.is-preload) .hero-name .name-part:last-child,
+      body:not(.is-preload) .hero-name-alt .name-part:last-child {
         animation-name: nameRightIn;
         animation-delay: 0.18s;
       }
@@ -595,6 +612,10 @@
       <section id="banner">
         <div class="inner">
           <h2 class="hero-name">
+            <span class="name-part">Paul</span>
+            <span class="name-part">Crăpătureanu</span>
+          </h2>
+          <h2 class="hero-name-alt">
             <span class="name-part">Paul</span>
             <span class="name-part">Crăpătureanu</span>
           </h2>
