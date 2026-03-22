@@ -30,8 +30,7 @@
       }
 
       body, #page-wrapper {
-        background:
-          linear-gradient(90deg, #8fb2d6 0%, #7fa7d3 18%, #5e94cf 50%, #79a8d0 82%, #a9c5e1 100%) !important;
+        background: linear-gradient(180deg, #b8c7d8 0%, #89add6 46%, #70b8b1 100%) !important;
       }
 
       body {
@@ -48,17 +47,17 @@
         pointer-events: none;
         z-index: -1;
         background:
-          radial-gradient(90% 65% at 50% 8%, rgba(27, 96, 214, 0.42), transparent 58%),
-          radial-gradient(78% 72% at 50% 50%, rgba(34, 160, 109, 0.42), transparent 60%),
-          radial-gradient(82% 68% at 50% 94%, rgba(26, 138, 98, 0.36), transparent 56%);
+          radial-gradient(74% 46% at 18% 10%, rgba(93, 111, 142, 0.68), transparent 50%),
+          radial-gradient(58% 46% at 74% 40%, rgba(33, 116, 231, 0.72), transparent 48%),
+          radial-gradient(58% 46% at 28% 72%, rgba(18, 128, 233, 0.62), transparent 48%),
+          radial-gradient(72% 50% at 80% 96%, rgba(27, 168, 121, 0.56), transparent 52%);
         transform: translate3d(var(--bg-tilt-x), var(--bg-shift-y), 0) scale(1.04);
-        filter: blur(28px);
+        filter: blur(24px);
         transition: transform 0.14s linear;
       }
 
       #banner {
-        background:
-          linear-gradient(180deg, #44658c 0%, #3a5b81 52%, #345173 100%) !important;
+        background: transparent !important;
       }
 
       #banner:before,
@@ -97,6 +96,14 @@
         box-shadow: 0 10px 30px rgba(32, 92, 150, 0.1);
       }
 
+      #header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+
       #header.alt a,
       #header.alt span,
       #header.alt h1 a {
@@ -104,8 +111,7 @@
       }
 
       #footer {
-        background:
-          linear-gradient(180deg, rgba(68, 101, 140, 0.92), rgba(52, 81, 115, 0.94)) !important;
+        background: rgba(255, 255, 255, 0.18) !important;
         border-top: 1px solid rgba(255,255,255,0.65);
         backdrop-filter: blur(22px);
         -webkit-backdrop-filter: blur(22px);
@@ -114,7 +120,7 @@
 
       #footer .icons a,
       #footer .copyright {
-        color: white !important;
+        color: var(--primary-color) !important;
       }
 
       .spotlight .content h2 { color: var(--primary-color); }
@@ -372,11 +378,11 @@
       #banner .quote-container,
       #banner .quote-author,
       #banner .inspirational-quote {
-        color: white !important;
+        color: var(--primary-color) !important;
       }
 
       #banner .inner {
-        text-shadow: 0 2px 12px rgba(16, 24, 40, 0.25);
+        text-shadow: none;
       }
 
       #banner .inner,
