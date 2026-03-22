@@ -3629,8 +3629,8 @@ input, select, textarea {
 			}
 
 		#banner p {
-			letter-spacing: 0.225em;
-			text-transform: uppercase;
+			letter-spacing: normal;
+			text-transform: none;
 		}
 
 			#banner p a {
@@ -3656,14 +3656,14 @@ input, select, textarea {
 			font-size: 0.8em;
 			height: 8.5em;
 			left: 50%;
-			letter-spacing: 0.225em;
+			letter-spacing: normal;
 			margin-left: -8.5em;
 			opacity: 1;
 			outline: 0;
-			padding-left: 0.225em;
+			padding-left: 0;
 			position: absolute;
 			text-align: center;
-			text-transform: uppercase;
+			text-transform: none;
 			width: 16em;
 			z-index: 1;
 		}
