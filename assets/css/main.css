@@ -3673,6 +3673,7 @@ input, select, textarea {
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: contain;
+				filter: brightness(0);
 				bottom: 4em;
 				content: '';
 				display: block;
