@@ -31,18 +31,15 @@
 
       body, #page-wrapper {
         background:
-          radial-gradient(circle at 8% 10%, rgba(120, 192, 255, 0.42), transparent 24%),
-          radial-gradient(circle at 90% 12%, rgba(143, 227, 196, 0.3), transparent 22%),
-          radial-gradient(circle at 18% 72%, rgba(186, 216, 255, 0.35), transparent 24%),
-          linear-gradient(180deg, #eef6ff 0%, #e9f2ff 42%, #f5fbff 100%) !important;
+          linear-gradient(180deg, #f4f8fc 0%, #eef4fb 52%, #f7fbff 100%) !important;
       }
 
       #banner {
         background:
-          radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.84), transparent 18%),
-          radial-gradient(circle at 80% 18%, rgba(93, 180, 255, 0.3), transparent 22%),
-          radial-gradient(circle at 55% 82%, rgba(143, 227, 196, 0.22), transparent 20%),
-          linear-gradient(180deg, #edf6ff 0%, #e4f0ff 52%, #eff7ff 100%) !important;
+          radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.18), transparent 18%),
+          radial-gradient(circle at 78% 18%, rgba(91, 164, 255, 0.16), transparent 22%),
+          radial-gradient(circle at 56% 80%, rgba(118, 219, 186, 0.1), transparent 20%),
+          linear-gradient(180deg, #51657d 0%, #465a72 52%, #3e5169 100%) !important;
       }
 
       #banner:before,
@@ -88,7 +85,8 @@
       }
 
       #footer {
-        background: rgba(255, 255, 255, 0.42) !important;
+        background:
+          linear-gradient(180deg, rgba(81, 101, 125, 0.8), rgba(62, 81, 105, 0.82)) !important;
         border-top: 1px solid rgba(255,255,255,0.65);
         backdrop-filter: blur(22px);
         -webkit-backdrop-filter: blur(22px);
@@ -97,7 +95,7 @@
 
       #footer .icons a,
       #footer .copyright {
-        color: var(--primary-color) !important;
+        color: white !important;
       }
 
       .spotlight .content h2 { color: var(--primary-color); }
@@ -114,6 +112,7 @@
       #games,
       #contact {
         position: relative;
+        overflow: hidden;
       }
 
       #about:before,
@@ -124,36 +123,14 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-      }
-
-      #about:before {
-        background:
-          radial-gradient(circle at 15% 20%, rgba(191, 228, 255, 0.28), transparent 22%),
-          radial-gradient(circle at 82% 78%, rgba(143, 227, 196, 0.18), transparent 20%);
-      }
-
-      #apps:before {
-        background:
-          radial-gradient(circle at 84% 18%, rgba(93, 180, 255, 0.18), transparent 18%),
-          radial-gradient(circle at 16% 82%, rgba(191, 228, 255, 0.22), transparent 22%);
-      }
-
-      #games:before {
-        background:
-          radial-gradient(circle at 18% 24%, rgba(143, 227, 196, 0.16), transparent 20%),
-          radial-gradient(circle at 80% 74%, rgba(93, 180, 255, 0.14), transparent 20%);
-      }
-
-      #contact:before {
-        background:
-          radial-gradient(circle at 50% 10%, rgba(191, 228, 255, 0.18), transparent 20%);
+        background: none;
       }
 
       /* Card */
       .game-card {
         position: relative; /* ensure it sits above backgrounds on mobile */
         z-index: 1;
-        background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(243,249,255,0.58));
+        background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(240,246,253,0.76));
         padding: 2rem;
         border-radius: 24px;
         margin-bottom: 2rem;
@@ -311,13 +288,26 @@
 
       #contact .inner,
       #about .inner {
-        background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(244,249,255,0.3));
+        background: linear-gradient(180deg, rgba(255,255,255,0.48), rgba(243,248,255,0.36));
         border: 1px solid rgba(255,255,255,0.5);
         border-radius: 28px;
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
         box-shadow: 0 18px 40px rgba(36, 76, 122, 0.08);
         padding: 2.5rem;
+      }
+
+      #banner .inner,
+      #banner .inner h2,
+      #banner .inner p,
+      #banner .quote-container,
+      #banner .quote-author,
+      #banner .inspirational-quote {
+        color: white !important;
+      }
+
+      #banner .inner {
+        text-shadow: 0 2px 12px rgba(16, 24, 40, 0.25);
       }
 
       #banner .inner,
