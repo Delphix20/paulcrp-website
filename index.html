@@ -30,12 +30,15 @@
       }
 
       body, #page-wrapper {
-        background: linear-gradient(180deg, #b8c7d8 0%, #89add6 46%, #70b8b1 100%) !important;
+        background: linear-gradient(180deg, var(--page-top) 0%, var(--page-mid) 46%, var(--page-bottom) 100%) !important;
       }
 
       body {
         position: relative;
         overflow-x: hidden;
+        --page-top: #b8c7d8;
+        --page-mid: #89add6;
+        --page-bottom: #70b8b1;
         --bg-shift-y: 0px;
         --bg-tilt-x: 0px;
       }
@@ -88,8 +91,9 @@
       .major.style2:before { background-color: var(--accent-color) !important; }
       .major.style3:before { background-color: var(--mint-color) !important; }
 
+      #header,
       #header.alt {
-        background: rgba(255, 255, 255, 0.45) !important;
+        background: rgba(255, 255, 255, 0.28) !important;
         border-bottom: 1px solid rgba(255,255,255,0.65);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -104,6 +108,9 @@
         z-index: 1000;
       }
 
+      #header a,
+      #header span,
+      #header h1 a,
       #header.alt a,
       #header.alt span,
       #header.alt h1 a {
@@ -688,11 +695,32 @@
           revealElements.forEach((el) => observer.observe(el));
 
           const root = document.body;
+          const mix = (a, b, t) => Math.round(a + (b - a) * t);
+          const rgb = (r, g, b) => `rgb(${r}, ${g}, ${b})`;
           const updateBackground = () => {
             const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
             const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
             const shiftY = Math.round(progress * 140 - 28);
             const tiltX = Math.round((progress - 0.5) * 36);
+            const cycle = progress * Math.PI * 4;
+            const blueWave = (Math.sin(cycle - Math.PI / 2) + 1) / 2;
+            const greenWave = (Math.sin(cycle + Math.PI / 3) + 1) / 2;
+
+            const topR = mix(132, 86, blueWave * 0.9);
+            const topG = mix(148, 120, blueWave * 0.9);
+            const topB = mix(166, 184, blueWave);
+
+            const midR = mix(96, 48, blueWave);
+            const midG = mix(138, 116 + Math.round(greenWave * 14), blueWave * 0.8);
+            const midB = mix(180, 244, blueWave);
+
+            const bottomR = mix(83, 42, greenWave * 0.9);
+            const bottomG = mix(144, 176, greenWave);
+            const bottomB = mix(159, 188, greenWave * 0.8 + blueWave * 0.2);
+
+            root.style.setProperty('--page-top', rgb(topR, topG, topB));
+            root.style.setProperty('--page-mid', rgb(midR, midG, midB));
+            root.style.setProperty('--page-bottom', rgb(bottomR, bottomG, bottomB));
             root.style.setProperty('--bg-shift-y', `${shiftY}px`);
             root.style.setProperty('--bg-tilt-x', `${tiltX}px`);
           };
