@@ -31,15 +31,34 @@
 
       body, #page-wrapper {
         background:
-          linear-gradient(180deg, #f4f8fc 0%, #eef4fb 52%, #f7fbff 100%) !important;
+          linear-gradient(90deg, #8fb2d6 0%, #7fa7d3 18%, #5e94cf 50%, #79a8d0 82%, #a9c5e1 100%) !important;
+      }
+
+      body {
+        position: relative;
+        overflow-x: hidden;
+        --bg-shift-y: 0px;
+        --bg-tilt-x: 0px;
+      }
+
+      body:before {
+        content: "";
+        position: fixed;
+        inset: -12%;
+        pointer-events: none;
+        z-index: -1;
+        background:
+          radial-gradient(90% 65% at 50% 8%, rgba(27, 96, 214, 0.42), transparent 58%),
+          radial-gradient(78% 72% at 50% 50%, rgba(34, 160, 109, 0.42), transparent 60%),
+          radial-gradient(82% 68% at 50% 94%, rgba(26, 138, 98, 0.36), transparent 56%);
+        transform: translate3d(var(--bg-tilt-x), var(--bg-shift-y), 0) scale(1.04);
+        filter: blur(28px);
+        transition: transform 0.14s linear;
       }
 
       #banner {
         background:
-          radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.18), transparent 18%),
-          radial-gradient(circle at 78% 18%, rgba(91, 164, 255, 0.16), transparent 22%),
-          radial-gradient(circle at 56% 80%, rgba(118, 219, 186, 0.1), transparent 20%),
-          linear-gradient(180deg, #51657d 0%, #465a72 52%, #3e5169 100%) !important;
+          linear-gradient(180deg, #44658c 0%, #3a5b81 52%, #345173 100%) !important;
       }
 
       #banner:before,
@@ -86,7 +105,7 @@
 
       #footer {
         background:
-          linear-gradient(180deg, rgba(81, 101, 125, 0.8), rgba(62, 81, 105, 0.82)) !important;
+          linear-gradient(180deg, rgba(68, 101, 140, 0.92), rgba(52, 81, 115, 0.94)) !important;
         border-top: 1px solid rgba(255,255,255,0.65);
         backdrop-filter: blur(22px);
         -webkit-backdrop-filter: blur(22px);
@@ -130,15 +149,15 @@
       .game-card {
         position: relative; /* ensure it sits above backgrounds on mobile */
         z-index: 1;
-        background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(240,246,253,0.76));
+        background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(240,246,253,0.28));
         padding: 2rem;
         border-radius: 24px;
         margin-bottom: 2rem;
         text-align: center;
-        border: 1px solid var(--glass-stroke);
+        border: 1px solid rgba(255, 255, 255, 0.34);
         box-shadow:
-          0 20px 45px var(--glass-shadow),
-          inset 0 1px 0 rgba(255,255,255,0.92);
+          0 18px 40px rgba(28, 72, 122, 0.1),
+          inset 0 1px 0 rgba(255,255,255,0.62);
         backdrop-filter: blur(22px);
         -webkit-backdrop-filter: blur(22px);
       }
@@ -204,6 +223,10 @@
         display: flex;
         align-items: center;
         padding: 3rem 0;
+        background: transparent !important;
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+        box-shadow: none !important;
       }
       .spotlight .image {
         flex: 0 0 auto;
@@ -219,6 +242,52 @@
       }
       .spotlight.reverse { flex-direction: row-reverse !important; }
       .spotlight.reverse .image { margin: 0 0 0 3rem; }
+
+      .wrapper.alt.style2 .spotlight,
+      .wrapper.alt.style2 .spotlight:nth-child(2n),
+      .wrapper.alt.style2 .spotlight:nth-child(2n+1) {
+        background: transparent !important;
+      }
+
+      .wrapper.alt.style2 .spotlight:before,
+      .wrapper.alt.style2 .spotlight:after {
+        display: none !important;
+      }
+
+      .scroll-reveal-card,
+      .scroll-reveal-icon {
+        opacity: 0;
+        will-change: transform, opacity, filter;
+      }
+
+      .scroll-reveal-card {
+        transform: translate3d(0, 26px, 0) scale(0.985);
+        filter: blur(0.8px);
+        transition:
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.8s ease,
+          filter 0.8s ease;
+      }
+
+      .scroll-reveal-icon {
+        transform: translate3d(0, 22px, 0) scale(0.94);
+        filter: blur(0.6px);
+        transition:
+          transform 0.72s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.72s ease,
+          filter 0.72s ease;
+      }
+
+      .scroll-reveal-card.is-visible,
+      .scroll-reveal-icon.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+      }
+
+      .scroll-reveal-icon.is-visible {
+        transition-delay: 0.06s;
+      }
 
       /* --- Mobile fixes: ensure descriptions always show, esp. in .reverse rows --- */
       @media (max-width: 768px) {
@@ -552,7 +621,7 @@
           <li><a href="mailto:devpaulcrp@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
         </ul>
         <ul class="copyright">
-          <li>&copy; 2025 Paul Crp</li>
+          <li>&copy; 2026 Paul Crp</li>
         </ul>
       </footer>
 
@@ -589,6 +658,42 @@
           const games = document.querySelector('#games .inner');
           if (apps)  setup(apps);
           if (games) setup(games);
+
+          document.querySelectorAll('.spotlight .content.game-card').forEach((el) => {
+            el.classList.add('scroll-reveal-card');
+          });
+
+          document.querySelectorAll('.spotlight .image').forEach((el) => {
+            el.classList.add('scroll-reveal-icon');
+          });
+
+          const revealElements = document.querySelectorAll('.scroll-reveal-card, .scroll-reveal-icon');
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            });
+          }, {
+            threshold: 0.18,
+            rootMargin: '0px 0px -6% 0px'
+          });
+
+          revealElements.forEach((el) => observer.observe(el));
+
+          const root = document.body;
+          const updateBackground = () => {
+            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+            const shiftY = Math.round(progress * 140 - 28);
+            const tiltX = Math.round((progress - 0.5) * 36);
+            root.style.setProperty('--bg-shift-y', `${shiftY}px`);
+            root.style.setProperty('--bg-tilt-x', `${tiltX}px`);
+          };
+
+          updateBackground();
+          window.addEventListener('scroll', updateBackground, { passive: true });
+          window.addEventListener('resize', updateBackground);
         });
       })();
     </script>
