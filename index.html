@@ -45,10 +45,10 @@
         position: relative;
         overflow-x: hidden;
         --page-a: #aab8c8;
-        --page-b: #6e98ca;
+        --page-b: #86a9d6;
         --page-c: #84b8af;
         --page-d: #a6b5c6;
-        --page-e: #6a97cd;
+        --page-e: #83aad9;
         --page-f: #80b9af;
         --bg-shift-y: 0px;
         --bg-tilt-x: 0px;
@@ -62,9 +62,9 @@
         z-index: -1;
         background:
           radial-gradient(70% 44% at 18% 8%, rgba(108, 124, 150, 0.72), transparent 48%),
-          radial-gradient(56% 42% at 76% 28%, rgba(34, 116, 231, 0.82), transparent 46%),
+          radial-gradient(56% 42% at 72% 22%, rgba(72, 146, 239, 0.74), transparent 46%),
           radial-gradient(54% 42% at 30% 48%, rgba(66, 170, 135, 0.4), transparent 46%),
-          radial-gradient(56% 42% at 74% 68%, rgba(28, 122, 235, 0.74), transparent 46%),
+          radial-gradient(56% 42% at 68% 62%, rgba(78, 154, 241, 0.68), transparent 46%),
           radial-gradient(64% 46% at 24% 88%, rgba(70, 176, 142, 0.38), transparent 48%);
         transform: translate3d(var(--bg-tilt-x), var(--bg-shift-y), 0) scale(1.04);
         filter: blur(24px);
@@ -408,19 +408,22 @@
       #banner p.banner-description,
       #banner p.banner-text *,
       #banner p.banner-description *,
-      #banner .more,
-      #banner .more:after,
+      #banner a.more,
+      #banner a.more:after,
       #about .major h2,
       #contact header h2 {
         color: #000 !important;
       }
 
-      #banner .more {
+      #banner a.more {
         border-bottom-color: transparent !important;
       }
 
-      #banner .more:after {
-        border-color: #000 !important;
+      #banner a.more:after {
+        border-left-color: #000 !important;
+        border-bottom-color: #000 !important;
+        border-top-color: transparent !important;
+        border-right-color: transparent !important;
       }
 
       #banner .inner,
@@ -466,6 +469,24 @@
       #menu .close {
         color: var(--primary-color) !important;
       }
+
+      .brand-icon-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .brand-icon-row img {
+        width: 42px;
+        height: 42px;
+        object-fit: cover;
+        border-radius: 11px;
+        box-shadow: 0 8px 18px rgba(22, 54, 94, 0.12);
+        background: rgba(255,255,255,0.35);
+      }
     </style>
   </head>
   <body class="landing is-preload">
@@ -498,8 +519,8 @@
       <section id="banner">
         <div class="inner">
           <h2>Paul Crăpătureanu</h2>
-          <p class="banner-text">Independent App Developer</p>
-          <p class="banner-text banner-description">Creating engaging mobile experiences<br />
+          <p class="banner-text" style="color:#000;">Independent App Developer</p>
+          <p class="banner-text banner-description" style="color:#000;">Creating engaging mobile experiences<br />
           that challenge your mind and reflexes.</p>
           <ul class="actions special">
             <li><a href="#apps" class="button primary scrolly">View My Apps</a></li>
@@ -510,7 +531,7 @@
             <p class="quote-author">Henry Ford</p>
           </div>
         </div>
-        <a href="#about" class="more scrolly">Learn More</a>
+        <a href="#about" class="more scrolly" style="color:#000;">Learn More</a>
       </section>
 
       <!-- About -->
@@ -525,11 +546,19 @@
               to sharpen reflexes, challenge the brain, and keep every session fun.
             </p>
           </header>
-          <ul class="icons major">
-            <li><span class="icon solid fa-layer-group major style1"><span class="label">Products</span></span></li>
-            <li><span class="icon solid fa-mobile-screen-button major style1"><span class="label">iOS</span></span></li>
-            <li><span class="icon solid fa-wand-magic-sparkles major style1"><span class="label">Polish</span></span></li>
-          </ul>
+          <div class="brand-icon-row">
+            <img src="images/alma-icon.png" alt="Alma">
+            <img src="images/wealthboostappicon.png" alt="WealthBoost AI">
+            <img src="images/proscan-icon.png" alt="ProScan PDF">
+            <img src="images/eyecolorcam-icon.png" alt="Eye Color Cam">
+            <img src="images/dashpal-icon.png" alt="Dash Pal">
+            <img src="images/neurarush-icon.png" alt="NeuraRush">
+            <img src="images/cyphre-icon.png" alt="Cyphre">
+            <img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens">
+            <img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies">
+            <img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits">
+            <img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits">
+          </div>
         </div>
       </section>
 
@@ -786,9 +815,9 @@
             );
 
             const blue = (intensity = 1) => rgb(
-              mix(108, 34, intensity),
-              mix(146, 122, intensity * 0.9),
-              mix(202, 241, intensity)
+              mix(136, 72, intensity),
+              mix(164, 146, intensity * 0.88),
+              mix(214, 246, intensity)
             );
 
             const green = (intensity = 1) => rgb(
