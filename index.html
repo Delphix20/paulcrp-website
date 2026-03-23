@@ -502,24 +502,26 @@
       body:not(.is-preload) .hero-mark-top,
       body:not(.is-preload) .hero-mark-line,
       body:not(.is-preload) .hero-mark-bottom {
-        animation-duration: 0.95s;
         animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
         animation-fill-mode: forwards;
       }
 
       body:not(.is-preload) .hero-mark-top {
         animation-name: heroTopIn;
+        animation-duration: 0.72s;
         animation-delay: 0.08s;
       }
 
       body:not(.is-preload) .hero-mark-line {
         animation-name: heroLineIn;
-        animation-delay: 0.16s;
+        animation-duration: 0.56s;
+        animation-delay: 0.46s;
       }
 
       body:not(.is-preload) .hero-mark-bottom {
         animation-name: heroBottomIn;
-        animation-delay: 0.22s;
+        animation-duration: 0.72s;
+        animation-delay: 0.82s;
       }
 
       @keyframes heroTopIn {
@@ -650,13 +652,13 @@
       }
 
       body:not(.is-preload) .banner-sequence {
-        animation: bannerFadeIn 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation: bannerFadeIn 0.46s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       }
 
-      body:not(.is-preload) .banner-sequence-1 { animation-delay: 0.36s; }
-      body:not(.is-preload) .banner-sequence-2 { animation-delay: 0.48s; }
-      body:not(.is-preload) .banner-sequence-3 { animation-delay: 0.60s; }
-      body:not(.is-preload) .banner-sequence-4 { animation-delay: 0.72s; }
+      body:not(.is-preload) .banner-sequence-1 { animation-delay: 1.50s; }
+      body:not(.is-preload) .banner-sequence-2 { animation-delay: 1.84s; }
+      body:not(.is-preload) .banner-sequence-3 { animation-delay: 2.18s; }
+      body:not(.is-preload) .banner-sequence-4 { animation-delay: 2.42s; }
 
       @keyframes bannerFadeIn {
         from {
