@@ -41,12 +41,12 @@
           180deg,
           #c7d8ff 0%,
           #dde0e6 12%,
-          #e0d7ff 28%,
-          #b5ffe7 44%,
-          #c7d8ff 68%,
-          #dde0e6 78%,
-          #e0d7ff 90%,
-          #b5ffe7 100%
+          #e0d7ff 24%,
+          #dde0e6 38%,
+          #c7d8ff 54%,
+          #b5ffe7 68%,
+          #dde0e6 84%,
+          #c7d8ff 100%
         ) !important;
       }
 
@@ -322,13 +322,25 @@
         .spotlight {
           flex-direction: column !important;
           text-align: center;
+          align-items: center !important;
         }
         /* Force stack order: image first, content second for ALL rows (reverse included) */
         .spotlight .image { order: 1; margin: 0 0 1.25rem 0 !important; width: 100% !important; }
-        .spotlight .content { order: 2; width: 100% !important; text-align: center; }
+        .spotlight .content {
+          order: 2;
+          width: min(100%, 34rem) !important;
+          max-width: 34rem !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: center;
+        }
 
         /* Make sure paragraph is visible and not overlapped */
-        .game-card { margin: 0 0 2rem 0; }
+        .game-card {
+          width: min(100%, 34rem) !important;
+          max-width: 34rem !important;
+          margin: 0 auto 2rem auto;
+        }
         .game-card p { display: block !important; opacity: 1 !important; visibility: visible !important; }
 
         /* Avoid any stray theme rules affecting reverse rows on mobile */
@@ -720,17 +732,17 @@
             </p>
           </header>
           <div class="brand-icon-row">
-            <a href="#alma-card"><img src="images/alma-icon.png" alt="Alma"></a>
-            <a href="#wealthboost-card"><img src="images/wealthboostappicon.png" alt="WealthBoost AI"></a>
-            <a href="#proscan-card"><img src="images/proscan-icon.png" alt="ProScan PDF"></a>
-            <a href="#eyecolorcam-card"><img src="images/eyecolorcam-icon.png" alt="Eye Color Cam"></a>
-            <a href="#dashpal-card"><img src="images/dashpal-icon.png" alt="Dash Pal"></a>
-            <a href="#neurarush-card"><img src="images/neurarush-icon.png" alt="NeuraRush"></a>
-            <a href="#cyphre-card"><img src="images/cyphre-icon.png" alt="Cyphre"></a>
-            <a href="#poppopaliens-card"><img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens"></a>
-            <a href="#poppoppiggies-card"><img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies"></a>
-            <a href="#bouncyfruits-card"><img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits"></a>
-            <a href="#poppopfruits-card"><img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits"></a>
+            <a href="#alma-card" class="scrolly"><img src="images/alma-icon.png" alt="Alma"></a>
+            <a href="#wealthboost-card" class="scrolly"><img src="images/wealthboostappicon.png" alt="WealthBoost AI"></a>
+            <a href="#proscan-card" class="scrolly"><img src="images/proscan-icon.png" alt="ProScan PDF"></a>
+            <a href="#eyecolorcam-card" class="scrolly"><img src="images/eyecolorcam-icon.png" alt="Eye Color Cam"></a>
+            <a href="#dashpal-card" class="scrolly"><img src="images/dashpal-icon.png" alt="Dash Pal"></a>
+            <a href="#neurarush-card" class="scrolly"><img src="images/neurarush-icon.png" alt="NeuraRush"></a>
+            <a href="#cyphre-card" class="scrolly"><img src="images/cyphre-icon.png" alt="Cyphre"></a>
+            <a href="#poppopaliens-card" class="scrolly"><img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens"></a>
+            <a href="#poppoppiggies-card" class="scrolly"><img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies"></a>
+            <a href="#bouncyfruits-card" class="scrolly"><img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits"></a>
+            <a href="#poppopfruits-card" class="scrolly"><img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits"></a>
           </div>
         </div>
       </section>
