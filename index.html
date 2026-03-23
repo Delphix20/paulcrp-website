@@ -9,8 +9,8 @@
     <title>Paul Crăpătureanu - App Developer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="main.css" />
+    <noscript><link rel="stylesheet" href="noscript.css" /></noscript>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
@@ -39,24 +39,18 @@
       body, #page-wrapper {
         background: linear-gradient(
           180deg,
-          var(--page-a) 0%,
-          var(--page-b) 18%,
-          var(--page-c) 36%,
-          var(--page-d) 58%,
-          var(--page-e) 78%,
-          var(--page-f) 100%
+          #c7d8ff 0%,
+          #dde0e6 20%,
+          #e0d7ff 40%,
+          #b5ffe7 60%,
+          #c7d8ff 80%,
+          #dde0e6 100%
         ) !important;
       }
 
       body {
         position: relative;
         overflow-x: hidden;
-        --page-a: #aab8c8;
-        --page-b: #86a9d6;
-        --page-c: #84b8af;
-        --page-d: #a6b5c6;
-        --page-e: #83aad9;
-        --page-f: #80b9af;
         --bg-shift-y: 0px;
         --bg-tilt-x: 0px;
       }
@@ -68,11 +62,11 @@
         pointer-events: none;
         z-index: -1;
         background:
-          radial-gradient(70% 44% at 18% 8%, rgba(108, 124, 150, 0.72), transparent 48%),
-          radial-gradient(56% 42% at 72% 22%, rgba(72, 146, 239, 0.74), transparent 46%),
-          radial-gradient(54% 42% at 30% 48%, rgba(66, 170, 135, 0.4), transparent 46%),
-          radial-gradient(56% 42% at 68% 62%, rgba(78, 154, 241, 0.68), transparent 46%),
-          radial-gradient(64% 46% at 24% 88%, rgba(70, 176, 142, 0.38), transparent 48%);
+          radial-gradient(70% 44% at 18% 8%, rgba(199, 216, 255, 0.72), transparent 48%),
+          radial-gradient(56% 42% at 72% 22%, rgba(221, 224, 230, 0.64), transparent 46%),
+          radial-gradient(54% 42% at 30% 48%, rgba(224, 215, 255, 0.58), transparent 46%),
+          radial-gradient(56% 42% at 68% 62%, rgba(181, 255, 231, 0.54), transparent 46%),
+          radial-gradient(64% 46% at 24% 88%, rgba(199, 216, 255, 0.52), transparent 48%);
         transform: translate3d(var(--bg-tilt-x), var(--bg-shift-y), 0) scale(1.04);
         filter: blur(24px);
         transition: transform 0.14s linear;
@@ -360,8 +354,8 @@
         display: block;
         text-transform: none !important;
       }
-      .inspirational-quote { font-size: 1.4rem; line-height: 1.6; margin-bottom: 0.3rem; }
-      .quote-author { font-size: 0.9rem; text-align: right; color: rgba(36, 76, 122, 0.8); }
+      .inspirational-quote { font-size: 1.4rem; line-height: 1.6; margin-bottom: 0.3rem; letter-spacing: 0.03em !important; }
+      .quote-author { font-size: 0.9rem; text-align: right; color: rgba(36, 76, 122, 0.8); letter-spacing: 0.05em !important; }
 
       @media (max-width: 768px) {
         #banner .inner p { line-height: 2.2 !important; }
@@ -443,42 +437,77 @@
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
         font-weight: 700 !important;
         font-size: clamp(1.25rem, 3.1vw, 2rem) !important;
-        letter-spacing: -0.05em;
         line-height: 0.95;
         text-transform: none !important;
         margin-bottom: 0.35rem !important;
         overflow: visible;
-        display: block !important;
+        display: flex !important;
         width: 100%;
-        text-align: center;
+        justify-content: center;
       }
 
-      .hero-name .name-part {
-        display: inline-block;
+      .hero-mark {
+        display: inline-grid;
+        grid-template-columns: 4.25ch;
+        justify-items: stretch;
+        row-gap: 0.22rem;
+      }
+
+      .hero-mark-top,
+      .hero-mark-bottom,
+      .hero-mark-line {
         opacity: 0;
         filter: blur(6px);
       }
 
-      body:not(.is-preload) .hero-name .name-part {
-        animation-duration: 1s;
+      .hero-mark-top {
+        text-align: center;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-mark-line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform-origin: center;
+      }
+
+      .hero-mark-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        letter-spacing: 0;
+      }
+
+      body:not(.is-preload) .hero-mark-top,
+      body:not(.is-preload) .hero-mark-line,
+      body:not(.is-preload) .hero-mark-bottom {
+        animation-duration: 0.95s;
         animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
         animation-fill-mode: forwards;
       }
 
-      body:not(.is-preload) .hero-name .name-part:first-child {
-        animation-name: nameLeftIn;
+      body:not(.is-preload) .hero-mark-top {
+        animation-name: heroTopIn;
         animation-delay: 0.08s;
       }
 
-      body:not(.is-preload) .hero-name .name-part:last-child {
-        animation-name: nameRightIn;
-        animation-delay: 0.18s;
+      body:not(.is-preload) .hero-mark-line {
+        animation-name: heroLineIn;
+        animation-delay: 0.16s;
       }
 
-      @keyframes nameLeftIn {
+      body:not(.is-preload) .hero-mark-bottom {
+        animation-name: heroBottomIn;
+        animation-delay: 0.22s;
+      }
+
+      @keyframes heroTopIn {
         from {
           opacity: 0;
-          transform: translateX(-36px);
+          transform: translateY(-24px);
           filter: blur(6px);
         }
         to {
@@ -488,10 +517,23 @@
         }
       }
 
-      @keyframes nameRightIn {
+      @keyframes heroLineIn {
         from {
           opacity: 0;
-          transform: translateX(36px);
+          transform: scaleX(0.2);
+          filter: blur(4px);
+        }
+        to {
+          opacity: 1;
+          transform: scaleX(1);
+          filter: blur(0);
+        }
+      }
+
+      @keyframes heroBottomIn {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
           filter: blur(6px);
         }
         to {
@@ -572,6 +614,44 @@
         transform: scale(1.14);
         box-shadow: 0 12px 26px rgba(22, 54, 94, 0.18);
       }
+
+
+      .mobile-only-break { display: none; }
+      .desktop-only-break { display: inline; }
+
+      @media (max-width: 768px) {
+        .mobile-only-break { display: inline; }
+        .desktop-only-break { display: none; }
+      }
+
+
+      .banner-sequence {
+        opacity: 0;
+        transform: translateY(10px);
+        filter: blur(4px);
+      }
+
+      body:not(.is-preload) .banner-sequence {
+        animation: bannerFadeIn 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      body:not(.is-preload) .banner-sequence-1 { animation-delay: 0.36s; }
+      body:not(.is-preload) .banner-sequence-2 { animation-delay: 0.48s; }
+      body:not(.is-preload) .banner-sequence-3 { animation-delay: 0.60s; }
+      body:not(.is-preload) .banner-sequence-4 { animation-delay: 0.72s; }
+
+      @keyframes bannerFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+          filter: blur(4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+      }
     </style>
   </head>
   <body class="landing is-preload">
@@ -604,17 +684,19 @@
       <section id="banner">
         <div class="inner">
           <h2 class="hero-name">
-            <span class="name-part">PAUL</span>
-            <span class="name-part">CRP</span>
+            <span class="hero-mark" aria-label="PAUL CRP">
+              <span class="hero-mark-top">PAUL</span>
+              <span class="hero-mark-line"></span>
+              <span class="hero-mark-bottom"><span>C</span><span>R</span><span>P</span></span>
+            </span>
           </h2>
-          <p class="banner-text" style="color:#000;">Independent App Developer</p>
-          <p class="banner-text banner-description" style="color:#000;">Creating engaging mobile experiences<br />
-          that challenge your mind and reflexes.</p>
-          <ul class="actions special">
+          <p class="banner-text banner-sequence banner-sequence-1" style="color:#000;">Independent App Developer</p>
+          <p class="banner-text banner-description banner-sequence banner-sequence-2" style="color:#000;">Creating engaging mobile experiences<span class="desktop-only-break"> </span><br class="mobile-only-break" />that challenge your mind and reflexes.</p>
+          <ul class="actions special banner-sequence banner-sequence-3">
             <li><a href="#apps" class="button primary scrolly">View My Apps</a></li>
             <li><a href="#games" class="button primary scrolly">View My Games</a></li>
           </ul>
-          <div class="quote-container">
+          <div class="quote-container banner-sequence banner-sequence-4">
             <p class="inspirational-quote">"Whether you think you can or you think you can't, you're right."</p>
             <p class="quote-author">Henry Ford</p>
           </div>
@@ -660,7 +742,8 @@
             <div class="content game-card">
               <h3>Alma: Mood &amp; Wellness Tracker</h3>
               <p>
-                A daily wellness companion for tracking mood, sleep, hydration, movement, and breathing.
+                A calm daily wellness companion for tracking mood, sleep, hydration, movement, and breathing.
+                <br />
                 Alma turns quick check-ins into a clear Balance Score, gentle insights, and a simple history
                 that helps you understand how your days are really going.
               </p>
@@ -831,8 +914,8 @@
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="util.js"></script>
+    <script src="main.js"></script>
 
     <!-- Auto-alternation script -->
     <script>
@@ -884,42 +967,11 @@
           revealElements.forEach((el) => observer.observe(el));
 
           const root = document.body;
-          const mix = (a, b, t) => Math.round(a + (b - a) * t);
-          const rgb = (r, g, b) => `rgb(${r}, ${g}, ${b})`;
           const updateBackground = () => {
             const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
             const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
             const shiftY = Math.round(progress * 140 - 28);
             const tiltX = Math.round((progress - 0.5) * 36);
-            const cycle = progress * Math.PI * 6;
-            const wave1 = (Math.sin(cycle - Math.PI / 2) + 1) / 2;
-            const wave2 = (Math.sin(cycle + Math.PI / 6) + 1) / 2;
-            const wave3 = (Math.sin(cycle + Math.PI * 0.9) + 1) / 2;
-
-            const grayBlue = (intensity = 1) => rgb(
-              mix(176, 122, intensity),
-              mix(188, 146, intensity),
-              mix(206, 182, intensity)
-            );
-
-            const blue = (intensity = 1) => rgb(
-              mix(136, 72, intensity),
-              mix(164, 146, intensity * 0.88),
-              mix(214, 246, intensity)
-            );
-
-            const green = (intensity = 1) => rgb(
-              mix(134, 94, intensity),
-              mix(186, 194, intensity * 0.75),
-              mix(178, 160, intensity * 0.7)
-            );
-
-            root.style.setProperty('--page-a', grayBlue(wave1 * 0.9));
-            root.style.setProperty('--page-b', blue(wave1));
-            root.style.setProperty('--page-c', green(wave2));
-            root.style.setProperty('--page-d', grayBlue(wave2 * 0.85));
-            root.style.setProperty('--page-e', blue(wave3));
-            root.style.setProperty('--page-f', green(wave3));
             root.style.setProperty('--bg-shift-y', `${shiftY}px`);
             root.style.setProperty('--bg-tilt-x', `${tiltX}px`);
           };
