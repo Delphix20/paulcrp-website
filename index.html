@@ -879,7 +879,7 @@
       <section id="games" class="wrapper alt style2">
         <div class="inner">
 
-          <section id="neurarush-card" class="spotlight reverse">
+          <section id="neurarush-card" class="spotlight">
             <div class="image"><img src="images/neurarush-icon.png" alt="NeuraRush" class="app-icon"></div>
             <div class="content game-card">
               <h3>NeuraRush</h3>
@@ -890,7 +890,7 @@
             </div>
           </section>
 
-          <section id="cyphre-card" class="spotlight">
+          <section id="cyphre-card" class="spotlight reverse">
             <div class="image"><img src="images/cyphre-icon.png" alt="Cyphre" class="app-icon"></div>
             <div class="content game-card">
               <h3>Cyphre</h3>
@@ -901,7 +901,7 @@
             </div>
           </section>
 
-          <section id="poppopaliens-card" class="spotlight reverse">
+          <section id="poppopaliens-card" class="spotlight">
             <div class="image"><img src="images/poppopaliens-icon.png" alt="Pop Pop Aliens" class="app-icon"></div>
             <div class="content game-card">
               <h3>Pop Pop Aliens</h3>
@@ -912,7 +912,7 @@
             </div>
           </section>
 
-          <section id="poppoppiggies-card" class="spotlight">
+          <section id="poppoppiggies-card" class="spotlight reverse">
             <div class="image"><img src="images/poppoppiggies-icon.png" alt="Pop Pop Piggies" class="app-icon"></div>
             <div class="content game-card">
               <h3>Pop Pop Piggies</h3>
@@ -923,7 +923,7 @@
             </div>
           </section>
 
-          <section id="bouncyfruits-card" class="spotlight reverse">
+          <section id="bouncyfruits-card" class="spotlight">
             <div class="image"><img src="images/bouncyfruits-icon.png" alt="Bouncy Fruits" class="app-icon"></div>
             <div class="content game-card">
               <h3>Bouncy Fruits</h3>
@@ -934,7 +934,7 @@
             </div>
           </section>
 
-          <section id="poppopfruits-card" class="spotlight">
+          <section id="poppopfruits-card" class="spotlight reverse">
             <div class="image"><img src="images/poppopfruits-icon.png" alt="Pop Pop Fruits" class="app-icon"></div>
             <div class="content game-card">
               <h3>Pop Pop Fruits</h3>
@@ -986,23 +986,27 @@
     <!-- Auto-alternation script -->
     <script>
       (function () {
-        function applyAlternation(container) {
-          const rows = Array.from(container.querySelectorAll(':scope > section.spotlight'));
+        function allSpotlightRows() {
+          return Array.from(document.querySelectorAll('#apps .inner > section.spotlight, #games .inner > section.spotlight'));
+        }
+
+        function applyAlternation() {
+          const rows = allSpotlightRows();
           if (!rows.length) return;
-          const startReverse = rows[0].classList.contains('reverse');
           rows.forEach((row, i) => {
-            const shouldBeReverse = startReverse ? (i % 2 === 0) : (i % 2 === 1);
-            row.classList.toggle('reverse', shouldBeReverse);
+            row.classList.toggle('reverse', i % 2 === 1);
           });
         }
+
         function setup(container) {
-          applyAlternation(container);
-          const mo = new MutationObserver(() => applyAlternation(container));
+          const mo = new MutationObserver(() => applyAlternation());
           mo.observe(container, { childList: true, subtree: false });
         }
+
         document.addEventListener('DOMContentLoaded', () => {
           const apps  = document.querySelector('#apps .inner');
           const games = document.querySelector('#games .inner');
+          applyAlternation();
           if (apps)  setup(apps);
           if (games) setup(games);
 
