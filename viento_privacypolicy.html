@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Privacy Policy and Terms - Viento</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			:root {
+				--bg: #030407;
+				--panel: rgba(255, 255, 255, 0.055);
+				--panel-strong: rgba(255, 255, 255, 0.105);
+				--text: rgba(255, 255, 255, 0.96);
+				--muted: rgba(255, 255, 255, 0.72);
+				--soft: rgba(255, 255, 255, 0.58);
+				--hairline: rgba(255, 255, 255, 0.20);
+				--accent: #b8d0eb;
+				--accent-soft: rgba(184, 208, 235, 0.15);
+				--warning: rgba(255, 255, 255, 0.10);
+				--shadow: rgba(0, 0, 0, 0.42);
+			}
+
+			body {
+				font-family: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+				font-weight: 300;
+				line-height: 1.7;
+				color: var(--text);
+				background:
+					radial-gradient(circle at 86% 8%, rgba(48, 58, 73, 0.54), transparent 31%),
+					radial-gradient(circle at 8% 86%, rgba(20, 31, 44, 0.70), transparent 35%),
+					linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 36%, rgba(0, 0, 0, 0.42)),
+					var(--bg);
+				min-height: 100vh;
+				padding: 2rem 1rem;
+			}
+
+			.container {
+				max-width: 920px;
+				margin: 0 auto;
+				padding: 3rem;
+				background: rgba(255, 255, 255, 0.035);
+				border: 1px solid var(--hairline);
+				border-radius: 8px;
+				box-shadow: 0 28px 80px var(--shadow);
+				backdrop-filter: blur(18px);
+			}
+
+			.hero {
+				text-align: center;
+				margin-bottom: 2.2rem;
+			}
+
+			h1 {
+				font-size: 3rem;
+				font-weight: 300;
+				letter-spacing: 0;
+				line-height: 1.08;
+				margin-bottom: 0.4rem;
+			}
+
+			.hero-subtitle {
+				color: var(--muted);
+				font-size: 1.18rem;
+				font-weight: 300;
+				text-align: center;
+				margin: 0;
+			}
+
+			.last-updated {
+				color: var(--soft);
+				font-size: 0.95rem;
+				text-align: center;
+				margin-bottom: 2.2rem;
+			}
+
+			h2 {
+				font-size: 1.55rem;
+				font-weight: 300;
+				color: var(--text);
+				margin-top: 2.2rem;
+				margin-bottom: 0.8rem;
+				padding-bottom: 0.75rem;
+				border-bottom: 1px solid var(--hairline);
+			}
+
+			h3 {
+				font-size: 1.1rem;
+				font-weight: 300;
+				color: var(--text);
+				margin-top: 1.45rem;
+				margin-bottom: 0.55rem;
+			}
+
+			p {
+				margin-bottom: 1rem;
+				color: var(--muted);
+			}
+
+			ul {
+				margin-left: 1.25rem;
+				margin-bottom: 1rem;
+				color: var(--muted);
+			}
+
+			li {
+				margin-bottom: 0.55rem;
+			}
+
+			strong {
+				color: var(--text);
+				font-weight: 400;
+			}
+
+			a {
+				color: var(--accent);
+				text-decoration: none;
+				font-weight: 400;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			.notice {
+				background: var(--panel);
+				border: 1px solid var(--hairline);
+				border-radius: 8px;
+				padding: 1rem 1.1rem;
+				margin: 1rem 0;
+			}
+
+			.notice.accent {
+				background: var(--accent-soft);
+			}
+
+			.contact-info {
+				background: var(--panel-strong);
+				border: 1px solid var(--hairline);
+				border-radius: 8px;
+				padding: 1.25rem;
+				margin-top: 2rem;
+			}
+
+			.contact-info h3 {
+				margin-top: 0;
+			}
+
+			.section-divider {
+				height: 1px;
+				background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.36), transparent);
+				margin: 2.6rem 0 0;
+			}
+
+			@media (max-width: 768px) {
+				body {
+					padding: 0.85rem 0.55rem;
+				}
+
+				.container {
+					padding: 1.35rem;
+				}
+
+				h1 {
+					font-size: 2.35rem;
+				}
+
+				h2 {
+					font-size: 1.35rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="hero">
+				<h1>Viento</h1>
+				<p class="hero-subtitle">Privacy Policy and Terms</p>
+			</div>
+
+			<p class="last-updated">Last updated: May 18, 2026</p>
+
+			<p>This document explains how Viento handles information, how weather data is provided, and the terms that apply when you use the app.</p>
+
+			<p>Viento is a minimal weather app designed to show current weather, hourly forecasts, 10-day forecasts, wind, light, air, pressure, saved locations, app settings, and severe weather alerts where available. By using Viento, you agree to the practices described below.</p>
+
+			<div class="notice accent">
+				<strong>Local-first design:</strong> Viento stores your app settings and saved locations on your device using Apple system storage. Viento does not currently operate a custom backend server for your weather history, saved places, or settings.
+			</div>
+
+			<div class="notice">
+				<strong>Weather notice:</strong> Weather data, forecasts, severe weather alerts, sunrise and sunset times, pressure, precipitation, humidity, visibility, wind, and related values are informational only. Weather can change quickly, and Viento should not be used as your only source for safety-critical decisions.
+			</div>
+
+			<h2>Interpretation and Definitions</h2>
+
+			<h3>Definitions</h3>
+			<p>For the purposes of this document:</p>
+			<p><strong>Application</strong> refers to Viento.</p>
+			<p><strong>Company</strong> refers to Viento.</p>
+			<p><strong>Country</strong> refers to: Romania.</p>
+			<p><strong>Device</strong> means any device that can access the Application, such as an iPhone.</p>
+			<p><strong>Personal Data</strong> means information that relates to an identified or identifiable individual.</p>
+			<p><strong>Service</strong> refers to the Application.</p>
+			<p><strong>Usage Data</strong> refers to data collected automatically from use of the Service or related technical systems.</p>
+			<p><strong>You</strong> means the individual using the Service.</p>
+
+			<h2>What Viento Collects and Stores</h2>
+
+			<h3>Location data</h3>
+			<p>Viento can request access to your device location so it can show weather for your current location. Location permission is controlled by iOS. If you allow location access, Viento may use your current device location to request weather data.</p>
+			<ul>
+				<li>Your current location is used to display current weather and forecasts for where you are</li>
+				<li>You can deny or revoke location permission through iPhone Settings</li>
+				<li>If location access is unavailable, some current-location features may not work until you choose or add another location</li>
+			</ul>
+
+			<h3>Saved locations</h3>
+			<p>Viento lets you search for, save, select, and remove weather locations. Saved location data may include a place name, subtitle or region text, latitude, longitude, and the selected location identifier.</p>
+			<ul>
+				<li>Saved locations are stored locally on your device</li>
+				<li>Current Location is treated separately from manually saved places</li>
+				<li>Removing the app from your device may delete locally stored saved locations, subject to iOS behavior</li>
+			</ul>
+
+			<h3>Settings and preferences</h3>
+			<p>Viento stores app preferences needed to provide your selected experience, including:</p>
+			<ul>
+				<li>Temperature unit, such as Celsius or Fahrenheit</li>
+				<li>Wind unit, such as km/h, m/s, mph, or knots</li>
+				<li>Precipitation unit, such as millimeters or inches</li>
+				<li>Distance unit, such as kilometers or miles</li>
+				<li>Pressure unit, such as hPa, mb, or inHg</li>
+				<li>Severe weather notification preference</li>
+				<li>Whether the first-launch onboarding has been completed</li>
+			</ul>
+
+			<h3>Weather data</h3>
+			<p>Viento uses Apple WeatherKit to request weather data for the selected location. This may include current conditions, temperature, hourly forecast, daily forecast, wind, gusts, wind direction, sunrise, sunset, moon phase, precipitation chance, precipitation amount, humidity, visibility, pressure, pressure trend, and severe weather alerts where available.</p>
+
+			<p>Weather data is provided by Apple WeatherKit and related Apple services. Viento does not create the underlying weather forecast data and does not control whether severe weather alerts are available for every location.</p>
+
+			<h3>Notifications</h3>
+			<p>If you enable Severe alerts in Viento Settings and grant notification permission, Viento may schedule a local iOS notification when a severe weather alert is issued for the selected location and available through WeatherKit.</p>
+			<ul>
+				<li>Notification permission is controlled by iOS</li>
+				<li>You can disable notifications inside Viento or through iPhone Settings</li>
+				<li>Notification sound behavior is controlled by iOS notification settings, Focus modes, device volume, and Apple system behavior</li>
+				<li>Viento does not guarantee delivery of every notification</li>
+				<li>Viento does not currently operate a server that continuously monitors weather alerts while the app is closed</li>
+			</ul>
+
+			<h3>Usage and technical data</h3>
+			<p>Viento does not currently operate a custom analytics backend for your saved locations, selected location, or app settings. Limited technical information may still be processed by Apple or system services, such as:</p>
+			<ul>
+				<li>App version and build information</li>
+				<li>Device type and operating system version</li>
+				<li>Crash logs and performance diagnostics if you have enabled sharing diagnostics with Apple</li>
+				<li>Notification authorization status managed by iOS</li>
+				<li>Purchase or entitlement status if Viento offers paid features, subscriptions, or in-app purchases in the future</li>
+			</ul>
+
+			<h2>How Viento Uses Your Data</h2>
+			<p>Viento may use stored or permitted data to:</p>
+			<ul>
+				<li>Show current weather for your current or selected location</li>
+				<li>Display hourly, daily, wind, light, air, and pressure information</li>
+				<li>Search for and save locations you choose</li>
+				<li>Apply your preferred units and notification settings</li>
+				<li>Show in-app severe weather indicators when alerts are available</li>
+				<li>Schedule local notifications if you enable severe weather notifications</li>
+				<li>Remember that onboarding has been completed</li>
+				<li>Maintain app reliability, stability, and support diagnostics</li>
+			</ul>
+
+			<h2>Storage and Sync</h2>
+			<p>Viento stores core app preferences and saved locations locally on your device using Apple system storage. Viento does not currently provide custom account sync or a custom cloud backend for saved locations or settings.</p>
+			<ul>
+				<li>Saved locations and settings are stored on your device</li>
+				<li>Weather requests are made for the selected location when needed</li>
+				<li>Deleting the app may remove local app data from your device, subject to iOS behavior</li>
+				<li>If a future version adds iCloud sync, subscriptions, widgets, or other cloud-connected features, this policy may be updated</li>
+			</ul>
+
+			<h2>Third-Party and Apple Services</h2>
+			<p>Viento relies on Apple-provided systems and services needed to run the app, such as:</p>
+			<ul>
+				<li>Core Location for current location permission and location access</li>
+				<li>MapKit or Apple location services for location search and geocoding features</li>
+				<li>WeatherKit for weather conditions, forecasts, and severe weather alerts</li>
+				<li>UserNotifications for local severe weather notifications if enabled</li>
+				<li>App Store and StoreKit if paid features, subscriptions, or in-app purchases are offered in the future</li>
+				<li>Apple diagnostics and crash-reporting systems if you have enabled sharing diagnostics with Apple</li>
+			</ul>
+
+			<h2>Weather and Safety Disclaimers</h2>
+			<p>Viento is a weather information app. It is not an emergency alert system, public safety system, aviation tool, marine navigation tool, professional meteorological system, or substitute for official government warnings, emergency instructions, or professional judgment.</p>
+
+			<p>Severe weather alerts may not be available in every country, region, or location. Alert timing, content, severity, and availability are provided by Apple WeatherKit and its sources. You remain responsible for checking official local weather services, emergency authorities, and safety instructions when weather conditions may be dangerous.</p>
+
+			<h2>Subscriptions, Purchases, and Payments</h2>
+			<p>Viento may be offered as a free app and may add paid features, subscriptions, widgets, or other premium features in the future. If Viento offers paid features, payments will be processed by Apple through your App Store account.</p>
+			<ul>
+				<li>We do not collect or store your full payment card details</li>
+				<li>Apple may provide limited purchase or subscription status information needed to unlock, restore, or manage paid features</li>
+				<li>Subscriptions, if offered, renew and cancel according to Apple's App Store rules and your App Store account settings</li>
+			</ul>
+
+			<h2>How Long Data Is Retained</h2>
+			<p>Viento may keep locally stored app data for as long as it is needed to provide the app experience, unless you delete saved locations, change settings, revoke permissions, remove the app, or remove data through Apple-managed systems where applicable. Apple may retain technical, diagnostic, purchase, or service-related data according to Apple's systems and policies.</p>
+
+			<h2>Your Choices and Rights</h2>
+			<p>You may be able to:</p>
+			<ul>
+				<li>Allow, deny, or revoke location permission through iPhone Settings</li>
+				<li>Add, select, or remove saved locations inside Viento</li>
+				<li>Change temperature, wind, precipitation, distance, and pressure units inside Viento Settings</li>
+				<li>Enable or disable severe weather notifications inside Viento Settings or iPhone Settings</li>
+				<li>Disable notification sounds or adjust notification behavior through iPhone Settings</li>
+				<li>Delete local app data by removing Viento from your device</li>
+				<li>Manage purchases or subscriptions through App Store settings if paid features are offered</li>
+			</ul>
+
+			<h2>Children's Privacy</h2>
+			<p>Viento is not directed to children under 13. We do not knowingly collect personal data from children under 13. If you believe a child has provided personal data through Viento, contact us and we will review the issue.</p>
+
+			<h2>Changes to This Policy</h2>
+			<p>We may update this document from time to time. When we do, we will update the "Last updated" date above. Your continued use of Viento after changes become effective means you accept the updated terms.</p>
+
+			<div class="section-divider"></div>
+
+			<h2>Terms of Use</h2>
+			<p>By using Viento, you agree to use the app lawfully and responsibly. You agree not to misuse the app, interfere with the app's operation, attempt to bypass purchase logic if paid features are offered, or interfere with location, WeatherKit, notification, or Apple system services.</p>
+
+			<p>Viento is provided on an "as is" and "as available" basis to the maximum extent permitted by applicable law. We make no guarantee that the app will always be uninterrupted, error-free, available, accurate, timely, or suitable for every location, weather condition, emergency situation, travel plan, outdoor activity, or personal need.</p>
+
+			<p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, consequential, or punitive damages arising from use of the app. You remain responsible for checking official sources, local authorities, emergency guidance, and real-world conditions before making decisions based on weather information shown in Viento.</p>
+
+			<div class="contact-info">
+				<h3>Contact</h3>
+				<p>If you have questions about this Privacy Policy and Terms document, contact us using the support contact listed on the App Store product page for Viento.</p>
+			</div>
+		</div>
+	</body>
+</html>
