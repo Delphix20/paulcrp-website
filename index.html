@@ -244,6 +244,16 @@
       .world-cup-promo-cta {
         margin-left: auto;
         flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.38rem 0.46rem;
+        background: #ffffff;
+        border-radius: 14px;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), 0 8px 18px rgba(0, 0, 0, 0.18);
+      }
+
+      .world-cup-promo-cta img {
         width: 142px !important;
         height: auto !important;
         border-radius: 0;
@@ -851,7 +861,9 @@
           <span class="world-cup-promo-title">World Football Cup 2026</span>
           <span class="world-cup-promo-detail">Live scores, alerts, lineups, stats and knockout paths for every match.</span>
         </span>
-        <img src="images/downloadappstore-button.png" class="world-cup-promo-cta" alt="Download on the App Store">
+        <span class="world-cup-promo-cta">
+          <img src="images/downloadappstore-button.png" alt="Download on the App Store">
+        </span>
       </a>
 
       <!-- Banner -->
