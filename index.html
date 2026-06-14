@@ -174,50 +174,40 @@
       }
 
       .world-cup-promo {
-        position: fixed;
-        top: 3em;
-        left: 0;
-        right: 0;
-        z-index: 999;
+        position: relative;
+        z-index: 2;
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 1rem;
-        width: 100%;
-        margin: 0;
-        padding: 0.72rem 1.25rem;
-        box-sizing: border-box;
+        width: min(92%, 58rem);
+        margin: 5.35rem auto -1.85rem auto;
+        padding: 0.9rem 1rem;
         color: #ffffff !important;
         text-decoration: none !important;
-        border: 0 !important;
-        border-bottom: 1px solid rgba(255,255,255,0.12) !important;
-        border-radius: 0;
-        background:
-          linear-gradient(90deg, rgba(7, 200, 81, 0.2), rgba(93, 180, 255, 0.14)),
-          #071a3a;
+        border: 1px solid rgba(255, 255, 255, 0.14) !important;
+        border-radius: 24px;
+        background: #071a3a;
         box-shadow:
-          0 12px 28px rgba(5, 20, 48, 0.24),
-          inset 0 1px 0 rgba(255,255,255,0.1);
+          0 16px 36px rgba(5, 20, 48, 0.22),
+          inset 0 1px 0 rgba(255,255,255,0.12);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       }
 
       .world-cup-promo:hover {
-        transform: none;
-        background:
-          linear-gradient(90deg, rgba(7, 200, 81, 0.26), rgba(93, 180, 255, 0.2)),
-          #09214a;
+        transform: translateY(-2px);
+        background: #09214a;
         box-shadow:
-          0 14px 30px rgba(5, 20, 48, 0.28),
-          inset 0 1px 0 rgba(255,255,255,0.12);
+          0 20px 42px rgba(5, 20, 48, 0.28),
+          inset 0 1px 0 rgba(255,255,255,0.14);
       }
 
       .world-cup-promo img {
-        width: 42px;
-        height: 42px;
+        width: 56px;
+        height: 56px;
         flex: 0 0 auto;
-        border-radius: 10px;
+        border-radius: 14px;
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
       }
 
@@ -225,7 +215,6 @@
         display: grid;
         gap: 0.12rem;
         min-width: 0;
-        max-width: 42rem;
       }
 
       .world-cup-promo-kicker,
@@ -241,18 +230,19 @@
 
       .world-cup-promo-title {
         color: #ffffff;
-        font-size: 0.98rem;
+        font-size: 1.05rem;
         font-weight: 800;
         line-height: 1.22;
       }
 
       .world-cup-promo-detail {
         color: rgba(255, 255, 255, 0.78);
-        font-size: 0.8rem;
+        font-size: 0.86rem;
         line-height: 1.35;
       }
 
       .world-cup-promo-cta {
+        margin-left: auto;
         flex: 0 0 auto;
         color: #071a3a;
         background: #8fe3c4;
@@ -260,10 +250,6 @@
         border-radius: 999px;
         padding: 0.48rem 0.76rem;
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.38);
-      }
-
-      #banner {
-        padding-top: 4.75rem;
       }
 
       #footer {
@@ -510,22 +496,24 @@
 
       @media (max-width: 768px) {
         .world-cup-promo {
-          padding: 0.68rem 0.85rem;
+          width: min(92%, 34rem);
+          margin: 5rem auto -1.15rem auto;
+          padding: 0.85rem;
           gap: 0.75rem;
         }
 
         .world-cup-promo img {
-          width: 38px;
-          height: 38px;
-          border-radius: 9px;
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
         }
 
         .world-cup-promo-title {
-          font-size: 0.88rem;
+          font-size: 0.95rem;
         }
 
         .world-cup-promo-detail {
-          font-size: 0.72rem;
+          font-size: 0.78rem;
         }
 
         .world-cup-promo-cta {
