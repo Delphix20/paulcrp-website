@@ -1,0 +1,110 @@
+Hero Quote Restore Notes
+========================
+
+Purpose
+-------
+This file documents the Henry Ford quote that used to appear in the hero/banner area of paulcrp.com before it was replaced by the World Football Cup 2026 promo banner.
+
+Original Quote Content
+----------------------
+Quote:
+"Whether you think you can or you think you can't, you're right."
+
+Author:
+Henry Ford
+
+Original Placement
+------------------
+The quote was inside the hero section:
+section id="banner" > div class="inner"
+
+It appeared after the main hero buttons:
+- View Our Apps
+- View Our Games
+
+It used the same hero entrance animation slot:
+banner-sequence banner-sequence-4
+
+Original HTML
+-------------
+<div class="quote-container banner-sequence banner-sequence-4">
+  <p class="inspirational-quote">"Whether you think you can or you think you can't, you're right."</p>
+  <p class="quote-author">Henry Ford</p>
+</div>
+
+Original CSS
+------------
+.quote-container {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem 1rem;
+  display: inline-block;
+  text-align: left;
+}
+
+.inspirational-quote,
+.quote-author {
+  font-family: 'Allura', cursive !important;
+  color: rgba(15, 23, 42, 0.92);
+  text-shadow: none;
+  display: block;
+  text-transform: none !important;
+}
+
+.inspirational-quote {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.055em !important;
+}
+
+.quote-author {
+  font-size: 0.9rem;
+  text-align: right;
+  color: rgba(36, 76, 122, 0.8);
+  letter-spacing: 0.05em !important;
+}
+
+Original Mobile CSS
+-------------------
+Inside @media (max-width: 768px):
+
+.inspirational-quote {
+  font-size: 0.95rem;
+}
+
+.quote-author {
+  font-size: 0.8rem;
+}
+
+.quote-container {
+  padding: 1.5rem 0.5rem;
+}
+
+Original Banner Color Rule
+--------------------------
+The quote was included in this selector so it used the hero text color:
+
+#banner .inner,
+#banner .inner h2,
+#banner .inner p,
+#banner .quote-container,
+#banner .quote-author,
+#banner .inspirational-quote {
+  color: var(--primary-color) !important;
+}
+
+Font Dependency
+---------------
+The quote used the Allura cursive font. The page already imported it at the top:
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+Restore Guidance
+----------------
+To restore the quote later:
+1. Replace or move the current promo banner from the hero area.
+2. Add the Original HTML after the hero buttons.
+3. Re-add the Original CSS and Original Mobile CSS.
+4. Add the quote classes back to the banner color rule if needed.
+
