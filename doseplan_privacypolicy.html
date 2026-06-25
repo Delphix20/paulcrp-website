@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Privacy Policy and Terms - DosePlan</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			:root {
+				--bg: #f8f4e9;
+				--panel: rgba(255, 255, 255, 0.88);
+				--text: #1a1b2f;
+				--muted: #5d6170;
+				--green: #269d92;
+				--purple: #58167b;
+				--rose: #b85c7a;
+				--sand: #e4d4b2;
+				--amber: #b88280;
+				--orange: #fc794f;
+				--water: #24a3a6;
+				--green-soft: rgba(38, 157, 146, 0.13);
+				--purple-soft: rgba(88, 22, 123, 0.12);
+				--rose-soft: rgba(184, 92, 122, 0.14);
+				--sand-soft: rgba(228, 212, 178, 0.30);
+				--orange-soft: rgba(252, 121, 79, 0.14);
+				--border: rgba(88, 22, 123, 0.16);
+				--green-border: rgba(38, 157, 146, 0.24);
+				--orange-border: rgba(252, 121, 79, 0.26);
+			}
+
+			body {
+				font-family: 'Nunito', 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+				line-height: 1.65;
+				color: var(--text);
+				background:
+					radial-gradient(circle at 14% 8%, rgba(252, 121, 79, 0.16), transparent 28%),
+					radial-gradient(circle at 88% 16%, rgba(38, 157, 146, 0.16), transparent 30%),
+					radial-gradient(circle at 52% 38%, rgba(88, 22, 123, 0.14), transparent 34%),
+					radial-gradient(circle at 22% 82%, rgba(184, 92, 122, 0.12), transparent 30%),
+					linear-gradient(180deg, #fffaf2 0%, #f8f4e9 48%, #f4ead9 100%);
+				padding: 2rem 1rem;
+			}
+
+			.container {
+				max-width: 940px;
+				margin: 0 auto;
+				background: var(--panel);
+				padding: 3rem;
+				border-radius: 26px;
+				box-shadow: 0 18px 54px rgba(26, 27, 47, 0.12);
+				border: 1px solid rgba(255, 255, 255, 0.74);
+				backdrop-filter: blur(14px);
+			}
+
+			h1 {
+				color: var(--text);
+				font-size: 2.25rem;
+				margin-bottom: 0.35rem;
+				font-weight: 800;
+				letter-spacing: -0.02em;
+			}
+
+			h2 {
+				color: var(--purple);
+				font-size: 1.55rem;
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+				font-weight: 800;
+				letter-spacing: -0.01em;
+			}
+
+			h3 {
+				color: var(--text);
+				font-size: 1.12rem;
+				margin-top: 1.4rem;
+				margin-bottom: 0.75rem;
+				font-weight: 800;
+			}
+
+			p {
+				margin-bottom: 1rem;
+				text-align: justify;
+				color: var(--text);
+			}
+
+			.last-updated {
+				color: var(--muted);
+				font-style: italic;
+				margin-bottom: 2rem;
+				text-align: center;
+			}
+
+			ul {
+				margin-left: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			li {
+				margin-bottom: 0.55rem;
+				color: var(--text);
+			}
+
+			a {
+				color: var(--purple);
+				text-decoration: none;
+				font-weight: 800;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			strong {
+				color: var(--purple);
+				font-weight: 800;
+			}
+
+			.brand {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 0;
+				margin-bottom: 8px;
+			}
+
+			.brand-dose {
+				color: var(--purple);
+			}
+
+			.brand-plan {
+				color: var(--green);
+			}
+
+			.hero-subtitle {
+				margin: 0;
+				font-size: 1.25rem;
+				color: var(--purple);
+				font-weight: 800;
+				text-align: center;
+			}
+
+			.important-notice,
+			.warning-notice,
+			.local-notice,
+			.health-notice {
+				padding: 1rem 1.1rem;
+				border-radius: 18px;
+				margin: 1rem 0;
+				color: var(--text);
+			}
+
+			.important-notice {
+				background: var(--purple-soft);
+				border: 1px solid var(--border);
+			}
+
+			.warning-notice {
+				background: var(--orange-soft);
+				border: 1px solid var(--orange-border);
+			}
+
+			.local-notice {
+				background: var(--green-soft);
+				border: 1px solid var(--green-border);
+			}
+
+			.health-notice {
+				background: var(--rose-soft);
+				border: 1px solid rgba(184, 92, 122, 0.28);
+			}
+
+			.contact-info {
+				background: var(--green-soft);
+				padding: 1.4rem;
+				border-radius: 18px;
+				margin-top: 2rem;
+				border: 1px solid var(--green-border);
+			}
+
+			.contact-info h3 {
+				margin-top: 0;
+			}
+
+			.section-divider {
+				height: 2px;
+				background: linear-gradient(90deg, transparent, rgba(88, 22, 123, 0.54), rgba(38, 157, 146, 0.54), transparent);
+				margin: 2.4rem 0;
+			}
+
+			.badge-row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.65rem;
+				justify-content: center;
+				margin: 1.4rem 0 0;
+			}
+
+			.badge {
+				display: inline-flex;
+				align-items: center;
+				border-radius: 999px;
+				padding: 0.5rem 0.75rem;
+				background: rgba(255, 255, 255, 0.52);
+				border: 1px solid rgba(255, 255, 255, 0.68);
+				color: var(--purple);
+				font-weight: 800;
+				font-size: 0.92rem;
+			}
+
+			@media (max-width: 768px) {
+				body {
+					padding: 1rem 0.55rem;
+				}
+
+				.container {
+					padding: 1.45rem;
+					margin: 0.5rem;
+					border-radius: 22px;
+				}
+
+				h1 {
+					font-size: 1.72rem;
+				}
+
+				h2 {
+					font-size: 1.35rem;
+				}
+
+				p {
+					text-align: left;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div style="text-align: center; margin-bottom: 2rem;">
+				<div class="brand">
+					<h1 style="margin: 0;"><span class="brand-dose">Dose</span><span class="brand-plan">Plan</span></h1>
+				</div>
+				<p class="hero-subtitle">Privacy Policy and Terms</p>
+				<div class="badge-row">
+					<span class="badge">GLP-1 tracker</span>
+					<span class="badge">Personal medication logging</span>
+					<span class="badge">Not medical advice</span>
+				</div>
+			</div>
+
+			<p class="last-updated">Last updated: June 25, 2026</p>
+
+			<p>This document explains how DosePlan handles your information, how subscriptions and payments work, and the terms that apply when you use the app.</p>
+
+			<p>DosePlan is a personal tracking app designed to help you organize information about an already prescribed GLP-1 or other medication routine, including treatment schedules, dose logs, side-effect check-ins, daily routine targets, inventory and refill reminders, progress photos, weight entries, widgets, and doctor report exports. By using DosePlan, you agree to the practices and terms described below.</p>
+
+			<div class="important-notice">
+				<strong>Important:</strong> DosePlan is a personal tracking and organization tool. It is not a medical device, clinic, pharmacy, telehealth service, emergency service, diagnostic tool, treatment service, or substitute for a licensed clinician, pharmacist, medication label, medication guide, or official care plan.
+			</div>
+
+			<div class="warning-notice">
+				<strong>Medical safety notice:</strong> DosePlan does not prescribe medication, recommend medication, recommend doses, recommend dose changes, diagnose symptoms, determine whether a treatment is appropriate, determine whether a side effect is serious, or tell you when to start, stop, increase, decrease, skip, restart, or combine any medication. Always follow your prescription label and instructions from your doctor, pharmacist, or other licensed clinician. Contact a clinician promptly for medical questions and seek emergency help for urgent symptoms.
+			</div>
+
+			<div class="local-notice">
+				<strong>Local-first design:</strong> DosePlan is designed to load from data stored on your device first. If iCloud sync is available and enabled for your Apple account, selected app data may sync through Apple's private iCloud services associated with your Apple ID.
+			</div>
+
+			<div class="health-notice">
+				<strong>Health information:</strong> DosePlan may contain health-related information that you choose to enter, import from Apple Health, or include in reports. Treat exported reports, screenshots, and shared files as sensitive information.
+			</div>
+
+			<h2>Interpretation and Definitions</h2>
+
+			<h3>Definitions</h3>
+			<p>For the purposes of this document:</p>
+			<p><strong>Application</strong> or <strong>App</strong> refers to DosePlan, also described as GLP-1 Tracker - DosePlan or GLP-1 Tracker: DosePlan.</p>
+			<p><strong>Company</strong>, <strong>we</strong>, <strong>us</strong>, or <strong>our</strong> refers to DosePlan and its developer.</p>
+			<p><strong>Device</strong> means any device that can access the Application, such as an iPhone or iPad.</p>
+			<p><strong>Health Data</strong> means health, wellness, medication, routine, symptom, photo, weight, activity, or related information that you enter, import, store, or generate in DosePlan.</p>
+			<p><strong>Personal Data</strong> means information that relates to an identified or identifiable individual.</p>
+			<p><strong>Service</strong> refers to the Application.</p>
+			<p><strong>Subscription</strong> means an auto-renewable subscription purchased through Apple's in-app purchase system.</p>
+			<p><strong>You</strong> means the individual using the Service.</p>
+
+			<h2>What DosePlan Collects and Stores</h2>
+
+			<h3>Data you enter or create</h3>
+			<p>DosePlan may store information that you provide, generate, or save inside the app, including:</p>
+			<ul>
+				<li>Treatment entries, including medication or compound name, form such as pen, pill, or vial, dose amount, dose unit, frequency, scheduled time, treatment start date, next dose date, dose reminder settings, and related notes.</li>
+				<li>Dose logs, including date, time, medication, form, dose, injection or application site when applicable, missed or logged status, and optional notes.</li>
+				<li>Inventory information, including remaining supply, refill reminders, refill timing, vial details, BAC water values, concentration or draw-volume calculations, and refill history.</li>
+				<li>Clinician plan or treatment timeline information that you choose to enter for personal reference.</li>
+				<li>Routine targets and logs, such as protein, water, fiber, movement, daily care completion, and pinned support routine checklists.</li>
+				<li>Symptom check-ins, severity choices, no-symptom entries, dates, and notes.</li>
+				<li>Weight logs, goal weight, Health-imported weight entries, chart selections, and related progress information.</li>
+				<li>Progress photos, photo tags, photo dates, optional notes, and associated weight values when available.</li>
+				<li>Notification preferences, unit preferences, onboarding choices, widget snapshot data, and other app settings.</li>
+				<li>Generated PDF doctor reports before you save, share, or export them.</li>
+			</ul>
+
+			<h3>Apple Health data</h3>
+			<p>If you grant permission, DosePlan may read selected Apple Health data, such as step count and body weight, to display movement progress and import weight entries. DosePlan does not request Apple Health access unless you choose to connect it. You can change or revoke Apple Health permissions at any time in the Health app or iOS Settings.</p>
+
+			<p>DosePlan does not use Apple Health data for advertising, marketing, or sale to third parties. DosePlan does not write false or intentionally inaccurate data to Apple Health. DosePlan currently uses Apple Health data only to provide functionality directly to you inside the app.</p>
+
+			<h3>Photos and photo library access</h3>
+			<p>If you add progress photos, DosePlan may access the camera or photo picker only after you initiate that action and grant the relevant permission. Progress photos are used to help you compare your own progress over time. They are not reviewed by us, sold by us, or used for advertising.</p>
+
+			<h3>Notifications</h3>
+			<p>If you allow notifications, DosePlan may schedule local reminders for doses and refills based on the information you enter. Notifications are generated by your device. They are reminders only and may be delayed, silenced, missed, or unavailable depending on your device settings, Focus modes, battery state, network state, operating system behavior, or other factors. You remain responsible for following your medication label and clinician instructions.</p>
+
+			<h3>Subscriptions and purchase data</h3>
+			<p>DosePlan uses Apple's StoreKit and App Store systems to process subscriptions, purchases, trials, renewals, cancellations, refunds, and restore purchases. We do not receive your full payment card number. Apple may provide transaction status information needed to unlock paid features and manage access.</p>
+
+			<h3>Technical and usage data</h3>
+			<p>DosePlan may use technical information provided by Apple or your device to operate the app, process subscriptions, diagnose crashes, support widgets, store settings, and keep the app functioning. DosePlan does not currently include third-party advertising SDKs or third-party behavioral advertising.</p>
+
+			<h2>How Data Is Stored</h2>
+
+			<h3>On-device storage</h3>
+			<p>DosePlan is designed as a local-first app. Your app data is stored primarily on your device using Apple's app storage technologies. If the app is deleted, local app data may also be deleted from that device unless it exists in an Apple-managed backup or iCloud sync location.</p>
+
+			<h3>iCloud sync</h3>
+			<p>If iCloud is enabled for your Apple ID and available for DosePlan, certain app data may sync through Apple's iCloud and CloudKit infrastructure so that your DosePlan data can appear on your other devices signed in to the same Apple ID. iCloud availability, timing, conflict handling, backups, security, account access, and retention are controlled in part by Apple and your Apple ID settings.</p>
+
+			<p>DosePlan is designed to keep working from local device data without waiting for iCloud sync. If the same item is edited on multiple devices before sync completes, the app and Apple's sync systems may resolve the conflict based on the latest available saved state or the app's own update logic. Review important entries after editing on multiple devices.</p>
+
+			<h3>Widget data</h3>
+			<p>DosePlan widgets may use a small app-group snapshot of selected information, such as next dose, routine progress, and inventory status, so widgets can display useful information. Widget data is limited to what is needed for widget display and may be temporarily stale until iOS refreshes the widget.</p>
+
+			<h3>Generated files and sharing</h3>
+			<p>Doctor reports and other exports are created on your device. If you choose to share a PDF, save a file, send it to another app, email it, message it, print it, or upload it elsewhere, that copy is handled by the destination you choose. DosePlan cannot control privacy or security after you share or export information outside the app.</p>
+
+			<h2>How DosePlan Uses Information</h2>
+
+			<p>DosePlan uses information you enter, import, or create to:</p>
+			<ul>
+				<li>Show your next scheduled dose, last dose, dose interval progress, overdue status, and dose history.</li>
+				<li>Track multiple treatments, forms, schedules, and related inventory.</li>
+				<li>Estimate remaining supply and refill timing based on your entries.</li>
+				<li>Display routine progress, support routines, symptom patterns, weight trends, progress photos, and insights.</li>
+				<li>Create doctor report PDFs based on the period and sections you select.</li>
+				<li>Schedule local notifications for dose and refill reminders if you allow notifications.</li>
+				<li>Sync selected data across your own Apple devices through iCloud if available.</li>
+				<li>Show widgets and preserve settings across app launches.</li>
+				<li>Process and restore subscriptions through Apple.</li>
+				<li>Respond to support requests if you contact us.</li>
+			</ul>
+
+			<h2>What DosePlan Does Not Do</h2>
+
+			<p>DosePlan does not:</p>
+			<ul>
+				<li>Provide medical advice, diagnosis, treatment, emergency care, or medication prescribing.</li>
+				<li>Replace your doctor, pharmacist, clinician, prescription label, medication guide, or official care plan.</li>
+				<li>Confirm that your medication, compound, dose, concentration, schedule, vial preparation, or route of administration is safe or appropriate.</li>
+				<li>Automatically contact a clinician, pharmacy, emergency service, or caregiver.</li>
+				<li>Sell your Health Data.</li>
+				<li>Use Apple Health data for advertising, marketing, or third-party data mining.</li>
+				<li>Operate as an electronic health record, pharmacy system, clinical decision support system, or HIPAA-covered provider portal.</li>
+			</ul>
+
+			<h2>Medical and Medication Terms</h2>
+
+			<h3>Already prescribed treatment only</h3>
+			<p>DosePlan is intended only for personal organization of treatment information that you already have from a licensed clinician, prescription label, pharmacy label, medication guide, or other authorized medical source. Do not use DosePlan to decide whether to start a GLP-1 medication, compounded medication, peptide, vitamin injection, pill, or any other treatment.</p>
+
+			<h3>No dosing recommendations</h3>
+			<p>Any dose, schedule, frequency, unit, medication name, compound name, or vial value entered in DosePlan is entered by you. DosePlan may display, format, calculate, or organize the values you enter, but this does not mean DosePlan has verified that the values are correct, safe, approved, prescribed, or appropriate for you.</p>
+
+			<h3>Vial and reconstitution tools</h3>
+			<p>DosePlan may include vial, concentration, remaining amount, and draw-volume tools. These tools are arithmetic aids for values you enter. They are not medical, pharmacy, sterility, safety, compatibility, dosing, or preparation instructions. Vial preparation, storage, sterility, route of administration, dose units, concentration, and injection technique must come from your clinician, pharmacist, manufacturer instructions, prescription label, or medication guide.</p>
+
+			<h3>Symptoms and side effects</h3>
+			<p>Symptom check-ins and side-effect patterns are personal logs only. DosePlan does not determine whether symptoms are normal, dangerous, related to a medication, unrelated to a medication, or in need of urgent care. If you experience severe, worsening, unusual, or concerning symptoms, contact a licensed clinician or emergency service as appropriate.</p>
+
+			<h3>Weight, routine, nutrition, and movement</h3>
+			<p>Protein, water, fiber, movement, weight, photo, and support-routine features are personal tracking features. They do not create a nutrition plan, exercise prescription, medical treatment plan, or guarantee any result. Discuss nutrition, hydration, movement, constipation, appetite, weight-loss goals, and medication side effects with a clinician when appropriate.</p>
+
+			<h3>Reports for appointments</h3>
+			<p>Doctor reports are summaries of information stored in DosePlan. They may be incomplete, inaccurate, or outdated if your entries are incomplete, inaccurate, or not synced. Review reports before sharing them. A report is not a medical record unless your clinician chooses to treat it as part of your care documentation.</p>
+
+			<h2>Third-Party Services</h2>
+
+			<p>DosePlan may rely on Apple services and frameworks, including iOS, iCloud, CloudKit, Apple Health, HealthKit, Photos, Camera, UserNotifications, StoreKit, App Store subscriptions, App Store receipt or transaction systems, App Store review prompts, and Apple device backup or restore systems.</p>
+
+			<p>Your use of Apple services is also governed by Apple's terms, privacy policies, and settings. We do not control Apple's systems, Apple ID security, iCloud availability, App Store billing, subscription cancellation flow, refund decisions, or Health app permission interface.</p>
+
+			<h2>Subscriptions, Trials, Payments, and Cancellation</h2>
+
+			<h3>Auto-renewable subscriptions</h3>
+			<p>DosePlan may offer monthly and yearly auto-renewable subscriptions. Subscription prices, trial availability, billing periods, renewal terms, and currency may vary by country, App Store storefront, promotion, tax rules, and Apple account settings.</p>
+
+			<h3>Free trials and renewals</h3>
+			<p>If a free trial is offered and you start it, Apple may automatically renew the subscription at the end of the trial unless you cancel before the renewal deadline shown by Apple. Review the App Store purchase sheet before confirming any purchase.</p>
+
+			<h3>Managing and cancelling</h3>
+			<p>You can manage or cancel subscriptions in your Apple ID subscription settings. Deleting DosePlan does not automatically cancel an active subscription. Refunds, billing questions, and cancellation timing are handled by Apple under App Store rules.</p>
+
+			<h3>Restore purchases</h3>
+			<p>DosePlan may include a restore purchases option that asks Apple for current entitlement information. Restore availability depends on your Apple ID, App Store status, network connectivity, and Apple's systems.</p>
+
+			<h3>Apple standard EULA</h3>
+			<p>Unless DosePlan provides a separate custom end user license agreement for a specific distribution, your licensed use of the app is also governed by Apple's standard Licensed Application End User License Agreement, available at <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a>.</p>
+
+			<h2>Privacy Choices and Controls</h2>
+
+			<h3>Apple Health permissions</h3>
+			<p>You can grant, deny, or revoke Apple Health permissions in the Health app or iOS Settings. If you revoke access, DosePlan may stop importing new Health data, but previously imported entries may remain in DosePlan until you delete them inside the app or delete app data.</p>
+
+			<h3>Notifications</h3>
+			<p>You can turn notifications on or off in iOS Settings. If notifications are disabled, dose and refill reminders may not appear.</p>
+
+			<h3>Photos</h3>
+			<p>You can control camera and photo library permissions in iOS Settings. Photos already saved in DosePlan remain in app storage unless you delete them in DosePlan or delete app data.</p>
+
+			<h3>iCloud</h3>
+			<p>You can manage iCloud availability through Apple ID and iCloud settings. Disabling iCloud may stop syncing across devices. Depending on Apple settings and previous sync state, existing data may remain on one or more devices or in iCloud until removed through Apple-controlled tools or app deletion flows.</p>
+
+			<h3>Deleting data</h3>
+			<p>You can delete many entries directly inside DosePlan, including treatments, dose logs, weight entries, progress photos, and related records. You can also delete the app from your device. Some information may remain in Apple backups, iCloud, exported files, shared PDFs, emails, messages, or third-party destinations that you control or selected.</p>
+
+			<h2>Data Sharing</h2>
+
+			<p>DosePlan does not sell your Personal Data or Health Data. DosePlan does not share Apple Health data for advertising or marketing. DosePlan may share limited information only in these situations:</p>
+			<ul>
+				<li>With Apple services necessary to provide iCloud sync, App Store subscriptions, StoreKit purchase validation, Apple Health access, notifications, app distribution, crash diagnostics, and related platform functionality.</li>
+				<li>With people or services you choose when you export, share, send, print, or save a report, image, screenshot, PDF, or other file.</li>
+				<li>With support channels if you contact us and choose to include information in your message.</li>
+				<li>If required by law, legal process, or a valid request from a competent authority.</li>
+				<li>To protect rights, safety, security, or prevent fraud, abuse, or technical harm.</li>
+			</ul>
+
+			<h2>Data Security</h2>
+
+			<p>DosePlan uses Apple's platform security features, app sandboxing, local device storage, iCloud/CloudKit where enabled, and App Store purchase systems. No method of storage or transmission is perfectly secure. You are responsible for protecting your device, passcode, Apple ID, iCloud account, device backups, exported files, shared reports, and any devices where your data may appear.</p>
+
+			<h2>Data Accuracy</h2>
+
+			<p>DosePlan depends on the information you enter, import, or approve. Medication names, dose units, schedules, inventory values, vial calculations, weight entries, symptom logs, progress photos, and reports may be wrong if the underlying entries are wrong, incomplete, duplicated, stale, or not synced. Review information before relying on it for appointment preparation or personal organization.</p>
+
+			<h2>Children</h2>
+
+			<p>DosePlan is not intended for children. Do not use DosePlan if you are under the age required to manage health-related information and App Store purchases in your country without appropriate parent, guardian, or clinician involvement. We do not knowingly collect personal information from children through our own servers. If you believe a child has provided information through a support message, contact us so we can address it.</p>
+
+			<h2>International Use</h2>
+
+			<p>DosePlan may be used in different countries, but medication names, approved indications, compounding rules, prescription requirements, pharmacy rules, units, labeling, privacy rules, and medical standards vary by location. You are responsible for using DosePlan only in ways that comply with laws and medical guidance applicable to you.</p>
+
+			<h2>Availability and Changes</h2>
+
+			<p>DosePlan may change, add, remove, or modify features over time. We may update this Privacy Policy and Terms from time to time. The updated version will be identified by the "Last updated" date. Continued use of DosePlan after an update means you accept the updated document.</p>
+
+			<h2>Limitations of Liability</h2>
+
+			<p>To the maximum extent permitted by applicable law, DosePlan and its developer are not liable for medical decisions, medication errors, missed doses, incorrect dose entries, incorrect vial calculations, incorrect inventory estimates, delayed notifications, missed notifications, iCloud sync delays, deleted data, exported file handling, App Store billing decisions, clinician decisions, pharmacy decisions, or outcomes related to your medication, treatment, health, symptoms, weight, routine, or use of the app.</p>
+
+			<p>You agree that you are responsible for checking all medication and health-related information against your prescription label, medication guide, clinician instructions, pharmacy instructions, and your own records.</p>
+
+			<h2>Contact</h2>
+
+			<div class="contact-info">
+				<h3>Questions or support</h3>
+				<p>If you have questions about this Privacy Policy and Terms or need support for DosePlan, contact:</p>
+				<p><strong>Developer website:</strong> <a href="https://paulcrp.com">https://paulcrp.com</a></p>
+				<p>Please do not send urgent medical questions, emergency information, or time-sensitive treatment instructions to support. Contact a licensed clinician, pharmacist, emergency service, or local emergency number for medical issues.</p>
+			</div>
+
+			<div class="section-divider"></div>
+
+			<p style="text-align: center; color: var(--muted); margin-bottom: 0;">DosePlan is a personal tracking tool for information you choose to enter. It does not provide medical advice.</p>
+		</div>
+	</body>
+</html>
