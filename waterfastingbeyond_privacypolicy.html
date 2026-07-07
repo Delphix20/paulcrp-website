@@ -1,0 +1,502 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Privacy Policy and Terms - Water Fasting: Beyond</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			:root {
+				--canvas-top: #FBF6EC;
+				--warm-canvas: #F4EBDD;
+				--sand: #E6D4BC;
+				--surface: rgba(255, 249, 239, 0.92);
+				--surface-raised: rgba(248, 239, 226, 0.88);
+				--ink: #10233F;
+				--deep-blue: #17385F;
+				--slate: #486177;
+				--water: #2F6F86;
+				--sage: #5F7E68;
+				--brass: #B88A3B;
+				--clay: #B56A4B;
+				--muted: #8A8176;
+				--line: rgba(16, 35, 63, 0.11);
+				--blue-soft: rgba(23, 56, 95, 0.10);
+				--water-soft: rgba(47, 111, 134, 0.12);
+				--brass-soft: rgba(184, 138, 59, 0.16);
+				--clay-soft: rgba(181, 106, 75, 0.14);
+				--shadow: rgba(16, 35, 63, 0.13);
+			}
+
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+				line-height: 1.68;
+				color: var(--ink);
+				background:
+					radial-gradient(circle at 12% 8%, rgba(184, 138, 59, 0.18), transparent 28%),
+					radial-gradient(circle at 86% 12%, rgba(47, 111, 134, 0.16), transparent 30%),
+					radial-gradient(circle at 20% 84%, rgba(23, 56, 95, 0.12), transparent 34%),
+					linear-gradient(180deg, var(--canvas-top) 0%, var(--warm-canvas) 46%, #EFE1CF 100%);
+				min-height: 100vh;
+				padding: 2rem 1rem;
+			}
+
+			.container {
+				max-width: 960px;
+				margin: 0 auto;
+				background: var(--surface);
+				padding: 3rem;
+				border-radius: 28px;
+				border: 1px solid rgba(255, 255, 255, 0.78);
+				box-shadow: 0 22px 58px var(--shadow);
+				backdrop-filter: blur(16px);
+			}
+
+			.hero {
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+
+			.brand {
+				margin-bottom: 0.45rem;
+			}
+
+			h1 {
+				font-size: 2.42rem;
+				line-height: 1.05;
+				font-weight: 300;
+				letter-spacing: 0;
+				color: var(--ink);
+			}
+
+			.brand-subtitle {
+				display: block;
+				margin-top: 0.18rem;
+				font-size: 1.18rem;
+				font-weight: 300;
+				color: var(--slate);
+			}
+
+			.hero-subtitle {
+				margin: 0.9rem 0 0;
+				font-size: 1.1rem;
+				font-weight: 700;
+				color: var(--deep-blue);
+			}
+
+			.last-updated {
+				text-align: left;
+				color: var(--muted);
+				font-style: italic;
+				margin-top: 0.35rem;
+				margin-bottom: 2rem;
+				display: block;
+				width: 100%;
+			}
+
+			h2 {
+				color: var(--deep-blue);
+				font-size: 1.48rem;
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+				font-weight: 800;
+				letter-spacing: 0;
+			}
+
+			h3 {
+				color: var(--ink);
+				font-size: 1.08rem;
+				margin-top: 1.35rem;
+				margin-bottom: 0.72rem;
+				font-weight: 800;
+			}
+
+			p {
+				margin-bottom: 1rem;
+				color: var(--ink);
+				text-align: justify;
+			}
+
+			ul {
+				margin-left: 1.35rem;
+				margin-bottom: 1rem;
+			}
+
+			li {
+				margin-bottom: 0.55rem;
+			}
+
+			strong {
+				color: var(--deep-blue);
+				font-weight: 800;
+			}
+
+			a {
+				color: var(--deep-blue);
+				text-decoration: none;
+				font-weight: 800;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+
+			.important-notice,
+			.warning-notice,
+			.local-notice,
+			.health-notice,
+			.payment-notice {
+				padding: 1rem 1.1rem;
+				border-radius: 20px;
+				margin: 1rem 0;
+				color: var(--ink);
+			}
+
+			.important-notice {
+				background: var(--blue-soft);
+				border: 1px solid rgba(23, 56, 95, 0.18);
+			}
+
+			.warning-notice {
+				background: var(--clay-soft);
+				border: 1px solid rgba(181, 106, 75, 0.26);
+			}
+
+			.local-notice {
+				background: var(--water-soft);
+				border: 1px solid rgba(47, 111, 134, 0.24);
+			}
+
+			.health-notice {
+				background: var(--brass-soft);
+				border: 1px solid rgba(184, 138, 59, 0.28);
+			}
+
+			.payment-notice {
+				background: rgba(95, 126, 104, 0.13);
+				border: 1px solid rgba(95, 126, 104, 0.24);
+			}
+
+			.section-divider {
+				height: 1px;
+				background: linear-gradient(90deg, transparent, rgba(184, 138, 59, 0.52), rgba(23, 56, 95, 0.16), transparent);
+				margin: 2.45rem 0;
+			}
+
+			.hero-divider {
+				height: 1px;
+				background: linear-gradient(90deg, transparent, rgba(184, 138, 59, 0.52), rgba(23, 56, 95, 0.16), transparent);
+				margin: 1.25rem 0 1.05rem;
+			}
+
+			.contact-info {
+				background: var(--surface-raised);
+				border: 1px solid var(--line);
+				border-radius: 22px;
+				padding: 1.35rem;
+				margin-top: 2rem;
+			}
+
+			.contact-info h3 {
+				margin-top: 0;
+			}
+
+			.footer-note {
+				text-align: center;
+				color: var(--muted);
+				margin-bottom: 0;
+				font-weight: 300;
+				line-height: 1.35;
+			}
+
+			.footer-note strong {
+				color: var(--ink);
+				font-weight: 300;
+			}
+
+			@media (max-width: 768px) {
+				body {
+					padding: 1rem 0.55rem;
+				}
+
+				.container {
+					padding: 1.45rem;
+					border-radius: 24px;
+					margin: 0.5rem;
+				}
+
+				h1 {
+					font-size: 1.9rem;
+				}
+
+				.brand-subtitle {
+					font-size: 1rem;
+				}
+
+				h2 {
+					font-size: 1.28rem;
+				}
+
+				p {
+					text-align: left;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="hero">
+				<div class="brand">
+					<h1>Beyond <span class="brand-subtitle">Water Fasting</span></h1>
+				</div>
+				<div class="hero-divider"></div>
+				<p class="hero-subtitle">Privacy Policy and Terms</p>
+				<p class="last-updated">Last updated: July 7, 2026</p>
+			</div>
+
+			<p>This Privacy Policy and Terms document explains how Water Fasting: Beyond, also referred to as Beyond, handles information, how subscriptions and payments work, and the terms that apply when you use the app.</p>
+
+			<p>Beyond is a personal fasting companion designed to help you track fasts, water intake, body check-ins, symptoms, sleep, steps, weight, progress photos, reflections, milestones, achievements, and refeed planning. By using Beyond, you agree to the practices and terms described below.</p>
+
+			<div class="important-notice">
+				<strong>Important:</strong> Beyond is an informational and personal tracking tool only. It is not a medical device, clinic, telehealth service, nutrition service, emergency service, diagnostic tool, treatment service, fasting program, supervised fasting service, or substitute for advice from a licensed physician, dietitian, pharmacist, or other qualified healthcare professional.
+			</div>
+
+			<div class="warning-notice">
+				<strong>Fasting safety notice:</strong> You are solely responsible for deciding whether fasting is appropriate for you, for consulting a qualified healthcare professional before starting a fast, and for stopping fasting and seeking medical attention when needed. Prolonged fasting, water-only fasting, dry fasting, rapid weight loss, electrolyte imbalance, dehydration, refeeding problems, medication timing changes, dizziness, fainting, weakness, confusion, rapid or irregular heartbeat, chest pain, severe headache, seizure, or other symptoms can be serious. Beyond cannot determine whether fasting is safe for you.
+			</div>
+
+			<div class="local-notice">
+				<strong>Local-first design:</strong> Beyond is designed to store your app data on your device first using Apple's app storage technologies. We do not operate a custom account system or custom backend server for your fasting history, check-ins, weight logs, reflections, or progress photos at this time.
+			</div>
+
+			<div class="health-notice">
+				<strong>Health-related information:</strong> Beyond may contain sensitive health, wellness, body, symptom, weight, photo, activity, and fasting information that you choose to enter or import. Treat exports, screenshots, shared comparison images, and device backups as sensitive information.
+			</div>
+
+			<h2>Interpretation and Definitions</h2>
+
+			<h3>Definitions</h3>
+			<p>For the purposes of this document:</p>
+			<p><strong>Application</strong> or <strong>App</strong> refers to Water Fasting: Beyond.</p>
+			<p><strong>Beyond</strong>, <strong>Company</strong>, <strong>we</strong>, <strong>us</strong>, or <strong>our</strong> refers to Water Fasting: Beyond and its developer.</p>
+			<p><strong>Device</strong> means any device that can access the Application, such as an iPhone or iPad.</p>
+			<p><strong>Health Data</strong> means fasting, wellness, water, symptom, check-in, sleep, step, weight, photo, reflection, activity, or related information that you enter, import, store, or generate in Beyond.</p>
+			<p><strong>Personal Data</strong> means information that relates to an identified or identifiable individual.</p>
+			<p><strong>Service</strong> refers to the Application.</p>
+			<p><strong>Subscription</strong> means an auto-renewable subscription purchased through Apple's in-app purchase system.</p>
+			<p><strong>You</strong> means the individual using the Service.</p>
+
+			<h2>What Beyond Collects and Stores</h2>
+
+			<h3>Data you enter, create, or save</h3>
+			<p>Beyond may store information that you provide, generate, or save inside the app, including:</p>
+			<ul>
+				<li>Fast sessions, including start time, end time, target duration, resume window status, completed fast history, milestones, checkpoints, achievements, and related progress.</li>
+				<li>Water intake logs, daily water target, drink size, water unit preference, and water progress.</li>
+				<li>Check-ins, including mood, energy, hunger, selected symptoms, safety signals, score calculations, and recommended next actions.</li>
+				<li>Sleep entries, including fell-asleep time, woke-up time, sleep duration, and sleep-day history.</li>
+				<li>Step count information imported from Apple Health if you grant permission.</li>
+				<li>Weight logs, target weight, weight unit preference, weight history, weight change, and related progress information.</li>
+				<li>Progress photos, photo dates, optional notes, photo angle labels, associated weight values when available, and comparison selections.</li>
+				<li>Journal reflections, selected reflection badges, saved note dates, and reflection history.</li>
+				<li>Safety-event entries created when you tap symptom or stop-signal cards.</li>
+				<li>Refeed planning selections and informational refeed guidance shown by the app.</li>
+				<li>Notification preferences, onboarding choices, time format, unit preferences, app target settings, and other app settings.</li>
+				<li>Generated comparison images or export images before you save or share them.</li>
+			</ul>
+
+			<h3>Apple Health data</h3>
+			<p>If you grant permission, Beyond may read your step count from Apple Health to show movement context during a fast and to calculate daily score components. Beyond does not request Apple Health access unless you choose to connect it during onboarding or from the app. You can change or revoke Apple Health permissions at any time in the Health app or iOS Settings.</p>
+
+			<p>Beyond does not sell Apple Health data, use Apple Health data for advertising, use Apple Health data for marketing, or share Apple Health data with data brokers. Beyond currently uses Apple Health data only to provide functionality directly to you inside the app.</p>
+
+			<h3>Photos, camera, and photo library</h3>
+			<p>If you add progress photos, Beyond may access the camera or photo picker only after you initiate that action and grant the relevant permission. Progress photos are used for your own private tracking and comparison. They are not reviewed by us, sold by us, or used for advertising.</p>
+
+			<p>If you choose to save an exported comparison image to your photo library, Beyond may request add-only photo library permission. After an image is saved or shared outside Beyond, the destination app, service, device, or account you choose controls that copy.</p>
+
+			<h3>Notifications</h3>
+			<p>If you allow notifications, Beyond may schedule local notifications for fasting checkpoints, milestone celebrations, water progress, check-ins, refeed planning, resume windows, sleep, weight, activity guidance, or other reminders based on your settings and app data. Notifications are generated by your device and may be delayed, silenced, missed, or unavailable depending on iOS permissions, Focus modes, notification settings, battery state, device state, operating system behavior, or other factors.</p>
+
+			<p>Notifications are reminders only. They do not create medical supervision, emergency monitoring, or a guarantee that a safety issue will be detected.</p>
+
+			<h3>Subscriptions and purchase data</h3>
+			<p>Beyond uses Apple's StoreKit and App Store systems to process subscriptions, purchases, trials, renewals, cancellations, refunds, and restore purchases. We do not receive or store your full payment card number. Apple may provide transaction and entitlement status information needed to unlock paid features and manage access.</p>
+
+			<h3>Technical and diagnostic data</h3>
+			<p>Beyond may use technical information provided by Apple or your device to operate the app, process subscriptions, store settings, diagnose crashes, support App Store distribution, and keep the app functioning. Beyond does not currently include third-party advertising SDKs or third-party behavioral advertising.</p>
+
+			<h2>How Data Is Stored</h2>
+
+			<h3>On-device storage</h3>
+			<p>Beyond is designed as a local-first app. Your app data is stored primarily on your device using Apple's app storage technologies. If the app is deleted, local app data may also be deleted from that device unless it exists in an Apple-managed backup or another Apple-managed storage location.</p>
+
+			<h3>Apple backups and device services</h3>
+			<p>Depending on your device settings, Apple may include app data in encrypted device backups, iCloud backups, device restore flows, diagnostics, or other Apple-controlled systems. Apple controls Apple ID security, backup availability, backup retention, App Store billing systems, and operating system permission interfaces.</p>
+
+			<h3>Generated files and sharing</h3>
+			<p>Progress comparison images, screenshots, exported images, or other generated files are created on your device. If you choose to save, share, message, email, print, upload, or send a file to another app or service, that copy is handled by the destination you choose. Beyond cannot control privacy or security after you share or export information outside the app.</p>
+
+			<h2>How Beyond Uses Information</h2>
+
+			<p>Beyond uses information you enter, import, or create to:</p>
+			<ul>
+				<li>Display your current fast, elapsed time, time remaining, target duration, resume status, and fast history.</li>
+				<li>Show fasting checkpoints, body timeline information, milestones, achievements, and related educational notes.</li>
+				<li>Track water intake, daily water progress, drink size, and water history.</li>
+				<li>Calculate check-in scores, body status, score factors, and recommended next actions based on the information available in the app.</li>
+				<li>Show sleep, steps, weight, progress photos, photo comparisons, trends, statistics, and calendar summaries.</li>
+				<li>Save journal reflections and organize them by day.</li>
+				<li>Show refeed-planning information based on the fast duration shown in the app.</li>
+				<li>Schedule local notifications if you allow them.</li>
+				<li>Process and restore subscriptions through Apple.</li>
+				<li>Preserve settings across app launches.</li>
+				<li>Respond to support requests if you contact us through the developer website or App Store support channels.</li>
+			</ul>
+
+			<h2>What Beyond Does Not Do</h2>
+
+			<p>Beyond does not:</p>
+			<ul>
+				<li>Provide medical advice, diagnosis, treatment, emergency care, clinical supervision, nutrition therapy, fasting supervision, or personalized medical recommendations.</li>
+				<li>Determine whether fasting, prolonged fasting, water-only fasting, electrolytes, caffeine, supplements, refeeding, exercise, or any other behavior is safe or appropriate for you.</li>
+				<li>Replace a licensed physician, registered dietitian, pharmacist, therapist, emergency service, or other qualified professional.</li>
+				<li>Monitor you in real time for medical emergencies or automatically contact emergency services, clinicians, caregivers, or family members.</li>
+				<li>Guarantee weight loss, health improvement, metabolic benefit, autophagy, ketosis, safety, adherence, or any result.</li>
+				<li>Sell your Health Data.</li>
+				<li>Use Apple Health data for advertising, marketing, or third-party data mining.</li>
+				<li>Operate as an electronic health record, HIPAA-covered provider portal, medical device, clinical decision support system, or remote patient monitoring service.</li>
+			</ul>
+
+			<h2>Fasting, Medical Responsibility, and Safety Terms</h2>
+
+			<h3>Consult a qualified healthcare professional before fasting</h3>
+			<p>Before starting any fast, especially a fast longer than a typical overnight fast, you should consult a qualified healthcare professional who understands your medical history, medications, age, weight, pregnancy or breastfeeding status, diet, activity level, and health conditions. This is especially important for prolonged fasts, repeated fasts, water-only fasts, or fasts longer than 24 hours.</p>
+
+			<h3>You are responsible for your fasting decisions</h3>
+			<p>You choose whether to start, continue, pause, end, resume, or repeat a fast. You choose what to drink, whether to use electrolytes, how active to be, when to sleep, when to stop, how to refeed, and when to seek medical care. Beyond may display information, reminders, checklists, stop signals, or scores, but those displays do not mean Beyond has verified that fasting is safe for you.</p>
+
+			<h3>People who should avoid fasting or seek medical guidance first</h3>
+			<p>Do not use Beyond to decide whether fasting is appropriate if you are under 18, pregnant, breastfeeding, underweight, malnourished, recovering from illness or surgery, highly active in a way that requires reliable fueling, or if you have a history of disordered eating, diabetes, hypoglycemia, kidney disease, heart disease, liver disease, gout, gallbladder disease, fainting, seizures, electrolyte disorders, blood pressure problems, or any condition affected by food, fluid, minerals, or medication timing.</p>
+
+			<p>If you take insulin, glucose-lowering medication, blood pressure medication, diuretics, psychiatric medication, seizure medication, blood thinners, heart medication, kidney medication, or any medication that may be affected by food intake, hydration, electrolytes, caffeine, or fasting, speak with a healthcare professional before fasting or changing timing.</p>
+
+			<h3>Stop signals and urgent symptoms</h3>
+			<p>Stop fasting and seek medical attention if you experience fainting, near-fainting, chest pain, confusion, severe weakness, seizure, shortness of breath, rapid or irregular heartbeat, severe or worsening headache, persistent vomiting, severe dizziness, severe dehydration signs, inability to keep fluids down, new neurological symptoms, or any symptom that feels serious, unusual, worsening, or unsafe.</p>
+
+			<h3>Hydration, electrolytes, caffeine, and allowed drinks</h3>
+			<p>Beyond may show general informational content about water, unsweetened drinks, black coffee, tea, minerals, electrolytes, or refeed planning. This content is not a prescription, nutrition plan, electrolyte protocol, or medical instruction. You are responsible for confirming with a healthcare professional what is appropriate for your body, medications, health status, and fast duration.</p>
+
+			<h3>Refeeding and ending a fast</h3>
+			<p>Ending a long fast can carry risk if food is restarted too quickly or without an appropriate plan. Beyond may display refeed-planning information, but it does not supervise refeeding, diagnose refeeding risk, prescribe foods, or calculate individual medical needs. For prolonged fasts, repeated fasts, undernutrition, rapid weight loss, or any medical condition, consult a qualified healthcare professional before ending or restarting food.</p>
+
+			<h3>Information may be incomplete or inaccurate</h3>
+			<p>Scores, charts, check-ins, trend lines, achievements, progress estimates, water progress, steps, sleep, weight changes, photo comparisons, and recommended next actions depend on the information available in the app. They may be wrong, incomplete, delayed, duplicated, stale, or misleading if entries are missing, inaccurate, imported incorrectly, manually entered incorrectly, or not updated.</p>
+
+			<h2>Third-Party Services</h2>
+
+			<p>Beyond may rely on Apple services and frameworks, including iOS, SwiftData or app storage, Apple Health, HealthKit, Photos, Camera, UserNotifications, StoreKit, App Store subscriptions, App Store transaction systems, App Store review prompts, Apple diagnostics, and Apple device backup or restore systems.</p>
+
+			<p>Your use of Apple services is also governed by Apple's terms, privacy policies, and settings. We do not control Apple's systems, Apple ID security, Health app permission screens, App Store billing, subscription cancellation flow, refund decisions, notification delivery, device backups, or operating system behavior.</p>
+
+			<h2>Subscriptions, Trials, Payments, and Cancellation</h2>
+
+			<div class="payment-notice">
+				<strong>Payment processing:</strong> Beyond subscriptions are processed by Apple through your App Store account. Review Apple's purchase sheet before confirming any subscription, trial, renewal, or payment.
+			</div>
+
+			<h3>Auto-renewable subscriptions</h3>
+			<p>Beyond may offer monthly and yearly auto-renewable subscriptions. Subscription prices, trial availability, billing periods, renewal terms, currency, taxes, and promotional offers may vary by country, App Store storefront, Apple account, eligibility, and time.</p>
+
+			<h3>Free trials and renewals</h3>
+			<p>If a free trial or introductory offer is available and you start it, Apple may automatically renew the subscription at the end of the trial or offer period unless you cancel before the renewal deadline shown by Apple. You are responsible for reviewing the App Store purchase sheet and Apple subscription settings.</p>
+
+			<h3>Managing and cancelling</h3>
+			<p>You can manage or cancel subscriptions in your Apple ID subscription settings. Deleting Beyond does not automatically cancel an active subscription. Refunds, billing questions, trial eligibility, renewal timing, and cancellation effects are handled by Apple under App Store rules.</p>
+
+			<h3>Restore purchases</h3>
+			<p>Beyond may include a restore purchases option that asks Apple for current entitlement information. Restore availability depends on your Apple ID, App Store status, network connectivity, subscription state, and Apple's systems.</p>
+
+			<h3>Apple standard EULA</h3>
+			<p>Unless Beyond provides a separate custom end user license agreement for a specific distribution, your licensed use of the app is also governed by Apple's standard Licensed Application End User License Agreement, available at <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a>.</p>
+
+			<h2>Privacy Choices and Controls</h2>
+
+			<h3>Apple Health permissions</h3>
+			<p>You can grant, deny, or revoke Apple Health permissions in the Health app or iOS Settings. If you revoke access, Beyond may stop importing new step data, but previously saved step entries may remain in Beyond until you delete them inside the app or delete app data.</p>
+
+			<h3>Notifications</h3>
+			<p>You can turn notifications on or off in iOS Settings. If notifications are disabled, fasting reminders, checkpoint notifications, refeed reminders, and other alerts may not appear.</p>
+
+			<h3>Photos and camera</h3>
+			<p>You can control camera and photo library permissions in iOS Settings. Photos already saved in Beyond remain in app storage unless you delete them in Beyond or delete app data.</p>
+
+			<h3>Deleting app data</h3>
+			<p>You can delete many entries directly inside Beyond, including fast history, weight logs, progress photos, reflections, and related records where the app provides a delete action. You can also delete the app from your device. Some information may remain in Apple backups, exported files, shared images, screenshots, messages, emails, or third-party destinations that you control or selected.</p>
+
+			<h3>Device, Apple ID, and backup controls</h3>
+			<p>You are responsible for protecting your device, passcode, Face ID or Touch ID access, Apple ID, iCloud settings, backups, shared devices, and exported files. If another person can access your unlocked device or Apple account, they may be able to view app data.</p>
+
+			<h2>Data Sharing</h2>
+
+			<p>Beyond does not sell your Personal Data or Health Data. Beyond does not share Apple Health data for advertising or marketing. Beyond may share or make limited information available only in these situations:</p>
+			<ul>
+				<li>With Apple services necessary to provide HealthKit step access, App Store subscriptions, StoreKit purchase validation, notifications, app distribution, crash diagnostics, backups, and related platform functionality.</li>
+				<li>With people, apps, or services you choose when you export, save, share, send, print, upload, or screenshot a report, image, comparison, note, or other file.</li>
+				<li>With support channels if you contact us and choose to include information in your message.</li>
+				<li>If required by law, legal process, or a valid request from a competent authority.</li>
+				<li>To protect rights, safety, security, or prevent fraud, abuse, or technical harm.</li>
+			</ul>
+
+			<h2>Data Security</h2>
+
+			<p>Beyond uses Apple's platform security features, app sandboxing, local device storage, HealthKit permission controls, photo permission controls, notification permission controls, and App Store purchase systems. No method of storage or transmission is perfectly secure. You are responsible for protecting your device, passcode, Apple ID, iCloud account, device backups, exported files, shared images, and any device where your data may appear.</p>
+
+			<h2>Data Accuracy and Availability</h2>
+
+			<p>Beyond depends on the information you enter, import, or approve. Fasting times, water logs, step counts, sleep logs, check-ins, symptoms, weight entries, progress photos, refeed guidance, and notification schedules may be wrong if the underlying data is wrong, incomplete, duplicated, delayed, stale, or affected by Apple system behavior.</p>
+
+			<p>Beyond may change, pause, remove, or modify features over time. We do not guarantee that the app will always be available, uninterrupted, error-free, medically appropriate, or compatible with every device, operating system version, health condition, fasting goal, or personal need.</p>
+
+			<h2>Children and Minors</h2>
+
+			<p>Beyond is not intended for children or minors. Do not use Beyond if you are under 18. Fasting may be inappropriate or unsafe for minors unless directly supervised by qualified healthcare professionals and guardians. We do not knowingly collect personal information from children through our own servers.</p>
+
+			<h2>International Use</h2>
+
+			<p>Beyond may be used in different countries, but medical standards, fasting guidance, nutrition practices, emergency care access, privacy rules, consumer protection rules, and subscription rules vary by location. You are responsible for using Beyond only in ways that comply with laws and medical guidance applicable to you.</p>
+
+			<h2>Changes to This Policy</h2>
+
+			<p>We may update this Privacy Policy and Terms from time to time. The updated version will be identified by the "Last updated" date. Continued use of Beyond after an update means you accept the updated document.</p>
+
+			<h2>Limitations of Liability</h2>
+
+			<p>To the maximum extent permitted by applicable law, Beyond and its developer are not liable for fasting decisions, medical decisions, delayed medical care, failure to seek medical care, dehydration, electrolyte imbalance, fainting, injury, symptom progression, refeeding issues, medication timing issues, weight changes, missed notifications, delayed notifications, incorrect entries, incorrect calculations, missing data, imported step errors, deleted data, exported file handling, App Store billing decisions, Apple system behavior, or outcomes related to your fast, health, nutrition, hydration, medication, activity, sleep, weight, or use of the app.</p>
+
+			<p>You agree that you are responsible for checking all health-related information with qualified healthcare professionals, for using your own judgment, and for seeking urgent care when symptoms or circumstances require it.</p>
+
+			<h2>Contact</h2>
+
+			<div class="contact-info">
+				<h3>Questions or support</h3>
+				<p>If you have questions about this Privacy Policy and Terms or need support for Beyond, use the developer website:</p>
+				<p><strong>Developer website:</strong> <a href="https://paulcrp.com">https://paulcrp.com</a></p>
+				<p>Please do not send urgent medical questions, emergency information, or time-sensitive fasting decisions through support. Contact a licensed healthcare professional, emergency service, or local emergency number for medical issues.</p>
+			</div>
+
+			<div class="section-divider"></div>
+
+			<p class="footer-note"><strong>Beyond</strong><br />Personal water fasting companion</p>
+		</div>
+	</body>
+</html>
