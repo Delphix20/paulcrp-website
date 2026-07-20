@@ -336,6 +336,13 @@
         margin-left: auto;
         margin-right: auto;
         background: transparent;
+        transition: transform 0.18s ease;
+      }
+
+      @media (hover: hover) {
+        .spotlight .app-icon:hover {
+          transform: translateY(-3px);
+        }
       }
 
       .game-card h3 {
