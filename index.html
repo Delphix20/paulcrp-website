@@ -175,33 +175,17 @@
 
       #header nav > ul > li > a.menuToggle {
         border-bottom: 0 !important;
-        border-radius: 14px;
-        transition:
-          background-color 0.18s ease,
-          box-shadow 0.18s ease,
-          transform 0.18s ease;
+        transition: transform 0.18s ease;
       }
 
       #header nav > ul > li > a.menuToggle:after {
         filter: brightness(0) saturate(100%) !important;
-        opacity: 0.82;
-        transform-origin: center;
-        transition: transform 0.18s ease, opacity 0.18s ease;
+        opacity: 1;
       }
 
       #header nav > ul > li > a.menuToggle:hover,
       #header nav > ul > li > a.menuToggle:focus-visible {
-        background: rgba(255, 255, 255, 0.42);
-        box-shadow:
-          0 6px 16px rgba(32, 92, 150, 0.10),
-          inset 0 1px 0 rgba(255, 255, 255, 0.82);
         transform: translateY(-1px);
-      }
-
-      #header nav > ul > li > a.menuToggle:hover:after,
-      #header nav > ul > li > a.menuToggle:focus-visible:after {
-        opacity: 1;
-        transform: scaleX(1.12);
       }
 
       #header nav > ul > li > a.menuToggle:active {
@@ -764,16 +748,19 @@
         color: var(--primary-color) !important;
         filter: brightness(0) saturate(100%) !important;
         opacity: 0.78;
-        transition: opacity 0.18s ease;
+        transform-origin: calc(100% - 1.65em) 1.5em;
+        transition: opacity 0.18s ease, transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       #menu .close:hover,
       #menu .close:focus-visible {
         opacity: 1;
+        transform: rotate(90deg) scale(1.06);
       }
 
       #menu .close:active {
         opacity: 0.58;
+        transform: rotate(90deg) scale(0.94);
       }
 
       .brand-icon-row {
