@@ -352,6 +352,12 @@
       .app-store-badge { width: 180px !important; height: auto; transition: transform 0.2s ease; }
       .app-store-badge:hover { transform: scale(1.05); }
 
+      @media (min-width: 769px) {
+        .game-card > a:first-of-type .app-store-badge {
+          margin-left: -14px;
+        }
+      }
+
       /* Neutralize Spectral's default nth-child flip; we control with .reverse */
       .wrapper.alt.style2 .spotlight { flex-direction: row; }
       .wrapper.alt.style2 .spotlight:nth-child(2n) { flex-direction: row; }
