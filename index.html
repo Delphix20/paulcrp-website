@@ -187,20 +187,40 @@
         justify-content: center;
         overflow: hidden;
         border: 0;
-        color: #10274b;
+        color: #050505;
         font-style: normal;
         text-align: center;
       }
 
       .handwritten-quote-text {
+        position: relative;
+        z-index: 0;
         display: grid;
         justify-items: center;
         max-width: 100%;
+        padding: 0.38rem 1.25rem 0.45rem;
         font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive !important;
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 1.15;
         letter-spacing: 0 !important;
+      }
+
+      .handwritten-quote-text:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 19px 25px 18px 23px / 17px 21px 19px 24px;
+        background: rgba(255, 255, 255, 0.26);
+        box-shadow:
+          0 9px 22px rgba(28, 72, 122, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        opacity: 0;
+        transform: rotate(-0.35deg) scaleX(0.985);
       }
 
       .handwritten-quote-line {
@@ -209,6 +229,7 @@
         white-space: nowrap;
         font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive !important;
         font-weight: 400 !important;
+        color: #050505;
         opacity: 0;
         clip-path: inset(0 100% 0 0);
         will-change: clip-path, opacity;
@@ -216,6 +237,16 @@
 
       body:not(.is-preload) .handwritten-quote-line-1 {
         animation: writeQuote 3.2s linear 2.82s forwards;
+      }
+
+      body:not(.is-preload) .handwritten-quote-text:before {
+        animation: quoteGlassIn 0.48s ease 2.62s forwards;
+      }
+
+      @keyframes quoteGlassIn {
+        to {
+          opacity: 1;
+        }
       }
 
       @keyframes writeQuote {
@@ -234,6 +265,11 @@
           animation: none;
           opacity: 1;
           clip-path: none;
+        }
+
+        body:not(.is-preload) .handwritten-quote-text:before {
+          animation: none;
+          opacity: 1;
         }
       }
 
@@ -484,6 +520,7 @@
 
         .handwritten-quote-text {
           font-size: 0.95rem;
+          padding: 0.34rem 0.75rem 0.4rem;
         }
 
         #banner .inner p { line-height: 2.2 !important; }
