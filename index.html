@@ -173,91 +173,66 @@
         color: var(--primary-color) !important;
       }
 
-      .world-cup-promo {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        width: min(92%, 58rem);
-        margin: 1.5rem auto 2.5rem auto;
-        padding: 0.9rem 1rem;
-        color: #ffffff !important;
-        text-decoration: none !important;
-        border: 1px solid rgba(255, 255, 255, 0.14) !important;
-        border-radius: 24px;
-        background: #071a3a;
-        box-shadow:
-          0 16px 36px rgba(5, 20, 48, 0.22),
-          inset 0 1px 0 rgba(255,255,255,0.12);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-      }
-
-      .world-cup-promo:hover {
-        transform: translateY(-2px);
-        background: #09214a;
-        box-shadow:
-          0 20px 42px rgba(5, 20, 48, 0.28),
-          inset 0 1px 0 rgba(255,255,255,0.14);
-      }
-
-      .world-cup-promo img {
-        width: 56px;
-        height: 56px;
-        flex: 0 0 auto;
-        border-radius: 14px;
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
-      }
-
-      .world-cup-promo-copy {
-        display: grid;
-        gap: 0.12rem;
-        min-width: 0;
-      }
-
-      .world-cup-promo-kicker,
-      .world-cup-promo-cta {
-        font-size: 0.72rem;
-        font-weight: 800;
-        text-transform: uppercase;
-      }
-
-      .world-cup-promo-kicker {
-        color: #8fe3c4;
-      }
-
-      .world-cup-promo-title {
-        color: #ffffff;
-        font-size: 1.05rem;
-        font-weight: 800;
-        line-height: 1.22;
-      }
-
-      .world-cup-promo-detail {
-        color: rgba(255, 255, 255, 0.78);
-        font-size: 0.86rem;
-        line-height: 1.35;
-      }
-
-      .world-cup-promo-cta {
-        margin-left: auto;
-        flex: 0 0 auto;
+      .handwritten-quote {
+        width: min(92%, 52rem);
+        min-height: 4.5rem;
+        margin: 1.45rem auto 1.85rem;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0.38rem 0.46rem;
-        background: #ffffff;
-        border-radius: 14px;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.65), 0 8px 18px rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+        border: 0;
+        color: #10274b;
+        font-style: normal;
+        text-align: center;
       }
 
-      .world-cup-promo-cta img {
-        width: 142px !important;
-        height: auto !important;
-        border-radius: 0;
-        box-shadow: none;
+      .handwritten-quote-text {
+        display: grid;
+        justify-items: center;
+        max-width: 100%;
+        font-family: 'Allura', 'Segoe Script', 'Bradley Hand', cursive !important;
+        font-size: 2.75rem;
+        font-weight: 400;
+        line-height: 1.15;
+        letter-spacing: 0 !important;
+      }
+
+      .handwritten-quote-line {
+        display: block;
+        max-width: 100%;
+        white-space: nowrap;
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+        will-change: clip-path, opacity;
+      }
+
+      body:not(.is-preload) .handwritten-quote-line-1 {
+        animation: writeQuote 1.7s linear 2.82s forwards;
+      }
+
+      body:not(.is-preload) .handwritten-quote-line-2 {
+        animation: writeQuote 1.55s linear 4.42s forwards;
+      }
+
+      @keyframes writeQuote {
+        0% {
+          opacity: 1;
+          clip-path: inset(0 100% 0 0);
+        }
+        100% {
+          opacity: 1;
+          clip-path: inset(0 0 0 0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body:not(.is-preload) .handwritten-quote-line {
+          animation: none;
+          opacity: 1;
+          clip-path: none;
+        }
       }
 
       #footer {
@@ -492,34 +467,26 @@
       #banner .actions.special { margin-top: 3.5rem !important; }
 
       @media (max-width: 768px) {
-        .world-cup-promo {
-          width: min(92%, 34rem);
-          margin: 1.25rem auto 2rem auto;
-          padding: 0.85rem;
-          gap: 0.75rem;
+        .handwritten-quote {
+          width: min(98%, 34rem);
+          min-height: 5.5rem;
+          margin-top: 1.2rem;
+          margin-bottom: 1.6rem;
         }
 
-        .world-cup-promo img {
-          width: 48px;
-          height: 48px;
-          border-radius: 12px;
-        }
-
-        .world-cup-promo-title {
-          font-size: 0.95rem;
-        }
-
-        .world-cup-promo-detail {
-          font-size: 0.78rem;
-        }
-
-        .world-cup-promo-cta {
-          display: none;
+        .handwritten-quote-text {
+          font-size: 1.75rem;
         }
 
         #banner .inner p { line-height: 2.2 !important; }
         .banner-description { margin-top: 2rem !important; }
         #banner .actions.special { margin-top: 2.5rem !important; }
+      }
+
+      @media (max-width: 360px) {
+        .handwritten-quote-text {
+          font-size: 1.55rem;
+        }
       }
 
       /* Ensure all major icons are equally visible (prevent any theme opacity differences) */
@@ -794,8 +761,6 @@
       body:not(.is-preload) .banner-sequence-1 { animation-delay: 1.50s; }
       body:not(.is-preload) .banner-sequence-2 { animation-delay: 1.84s; }
       body:not(.is-preload) .banner-sequence-3 { animation-delay: 2.18s; }
-      body:not(.is-preload) .banner-sequence-4 { animation-delay: 2.42s; }
-
       @keyframes bannerFadeIn {
         from {
           opacity: 0;
@@ -852,18 +817,12 @@
             <li><a href="#apps" class="button primary scrolly">View Our Apps</a></li>
             <li><a href="#games" class="button primary scrolly">View Our Games</a></li>
           </ul>
-          <!-- World Cup App Promo -->
-          <a class="world-cup-promo banner-sequence banner-sequence-4" href="https://apps.apple.com/app/world-football-cup-2026/id6775471221" target="_blank" aria-label="Download World Football Cup 2026 on the App Store">
-            <img src="images/worldfootballcup-icon.png" alt="World Football Cup 2026 logo">
-            <span class="world-cup-promo-copy">
-              <span class="world-cup-promo-kicker">Featured app</span>
-              <span class="world-cup-promo-title">World Football Cup 2026</span>
-              <span class="world-cup-promo-detail">Live scores, alerts, lineups, stats and knockout paths for every match.</span>
+          <blockquote class="handwritten-quote" aria-label="No one ever made a difference by being like everyone else">
+            <span class="handwritten-quote-text" aria-hidden="true">
+              <span class="handwritten-quote-line handwritten-quote-line-1">No one ever made a difference</span>
+              <span class="handwritten-quote-line handwritten-quote-line-2">by being like everyone else</span>
             </span>
-            <span class="world-cup-promo-cta">
-              <img src="images/downloadappstore-button.png" alt="Download on the App Store">
-            </span>
-          </a>
+          </blockquote>
         </div>
         <a href="#about" class="more scrolly" style="color:#000;">Learn more</a>
       </section>
@@ -882,6 +841,7 @@
             </p>
           </header>
           <div class="brand-icon-row">
+            <a href="#waterfasting-card" class="scrolly"><img src="images/waterfasting-icon.png" alt="Water Fasting: Beyond"></a>
             <a href="#doseplan-card" class="scrolly"><img src="images/doseplan-icon.png" alt="DosePlan"></a>
             <a href="#worldfootballcup-card" class="scrolly"><img src="images/worldfootballcup-icon.png" alt="World Football Cup 2026"></a>
             <a href="#alma-card" class="scrolly"><img src="images/alma-icon.png" alt="Alma"></a>
@@ -905,6 +865,21 @@
       <!-- Apps -->
       <section id="apps" class="wrapper alt style2">
         <div class="inner">
+
+          <!-- Water Fasting: Beyond -->
+          <section id="waterfasting-card" class="spotlight">
+            <div class="image"><img src="images/waterfasting-icon.png" alt="Water Fasting: Beyond" class="app-icon"></div>
+            <div class="content game-card">
+              <h3>Water Fasting: Beyond</h3>
+              <p>
+                A premium fasting companion for preparing and tracking water fasts. Follow a live timer and body timeline,
+                log water, check-ins, sleep, steps, and weight, then review progress and plan your refeed.
+              </p>
+              <a href="https://apps.apple.com/app/water-fasting-beyond/id6786837206" target="_blank">
+                <img src="images/downloadappstore-button.png" class="app-store-badge" alt="Download Water Fasting: Beyond on the App Store">
+              </a>
+            </div>
+          </section>
 
           <!-- DosePlan -->
           <section id="doseplan-card" class="spotlight">
