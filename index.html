@@ -192,6 +192,20 @@
         transform: translateY(0) scale(0.97);
       }
 
+      #header h1 a {
+        display: inline-block;
+        transition: transform 0.18s ease;
+      }
+
+      #header h1 a:hover,
+      #header h1 a:focus-visible {
+        transform: translateY(-1px);
+      }
+
+      #header h1 a:active {
+        transform: translateY(0) scale(0.97);
+      }
+
       .handwritten-quote {
         width: min(96%, 68rem);
         min-height: 3.5rem;
