@@ -561,6 +561,32 @@
         color: #000 !important;
       }
 
+      #about header.major h2 {
+        border-bottom: 0 !important;
+      }
+
+      #about header.major h2:after {
+        content: '';
+        position: absolute;
+        right: 6%;
+        bottom: 0;
+        left: 6%;
+        display: block;
+        height: 1px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.88) 18%,
+          rgba(137, 148, 164, 0.58) 50%,
+          rgba(255, 255, 255, 0.88) 82%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        box-shadow:
+          0 1px 3px rgba(15, 23, 42, 0.12),
+          0 -1px 1px rgba(255, 255, 255, 0.48);
+      }
+
       #banner a.more {
         border-bottom-color: transparent !important;
       }
