@@ -22,7 +22,7 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@700&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800&display=swap');
 
@@ -178,8 +178,8 @@
       }
 
       .handwritten-quote {
-        width: min(92%, 52rem);
-        min-height: 4.5rem;
+        width: min(96%, 68rem);
+        min-height: 3.5rem;
         margin: 1.45rem auto 1.85rem;
         padding: 0;
         display: flex;
@@ -196,8 +196,8 @@
         display: grid;
         justify-items: center;
         max-width: 100%;
-        font-family: 'Allura', 'Segoe Script', 'Bradley Hand', cursive !important;
-        font-size: 2.75rem;
+        font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive !important;
+        font-size: 1.8rem;
         font-weight: 400;
         line-height: 1.15;
         letter-spacing: 0 !important;
@@ -207,7 +207,7 @@
         display: block;
         max-width: 100%;
         white-space: nowrap;
-        font-family: 'Allura', 'Segoe Script', 'Bradley Hand', cursive !important;
+        font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive !important;
         font-weight: 400 !important;
         opacity: 0;
         clip-path: inset(0 100% 0 0);
@@ -215,11 +215,7 @@
       }
 
       body:not(.is-preload) .handwritten-quote-line-1 {
-        animation: writeQuote 1.7s linear 2.82s forwards;
-      }
-
-      body:not(.is-preload) .handwritten-quote-line-2 {
-        animation: writeQuote 1.55s linear 4.42s forwards;
+        animation: writeQuote 3.2s linear 2.82s forwards;
       }
 
       @keyframes writeQuote {
@@ -481,13 +477,13 @@
       @media (max-width: 768px) {
         .handwritten-quote {
           width: min(98%, 34rem);
-          min-height: 5.5rem;
+          min-height: 3.25rem;
           margin-top: 1.2rem;
           margin-bottom: 1.6rem;
         }
 
         .handwritten-quote-text {
-          font-size: 1.75rem;
+          font-size: 0.95rem;
         }
 
         #banner .inner p { line-height: 2.2 !important; }
@@ -497,7 +493,7 @@
 
       @media (max-width: 360px) {
         .handwritten-quote-text {
-          font-size: 1.55rem;
+          font-size: 0.84rem;
         }
       }
 
@@ -831,8 +827,7 @@
           </ul>
           <blockquote class="handwritten-quote" aria-label="No one ever made a difference by being like everyone else">
             <span class="handwritten-quote-text" aria-hidden="true">
-              <span class="handwritten-quote-line handwritten-quote-line-1">No one ever made a difference</span>
-              <span class="handwritten-quote-line handwritten-quote-line-2">by being like everyone else</span>
+              <span class="handwritten-quote-line handwritten-quote-line-1">&quot;No one ever made a difference by being like everyone else&quot;</span>
             </span>
           </blockquote>
         </div>
