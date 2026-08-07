@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#23212C">
+  <meta name="description" content="Privacy Policy and Terms of Use for the You Become iOS app.">
+  <title>You Become - Privacy Policy and Terms of Use</title>
+  <style>
+    @font-face {
+      font-family: "Godber";
+      src: url("assets/webfonts/godber-regular.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    :root {
+      --cosmic: #23212c;
+      --cosmic-raised: #302e3a;
+      --vanilla: #f1fec8;
+      --text: #f7f5f2;
+      --muted: #c7c4cc;
+      --soft: #a9a5b1;
+      --mint: #a9dfc8;
+      --coral: #ff8b78;
+      --periwinkle: #a9b5ff;
+      --line: rgba(241, 254, 200, 0.16);
+      --glass: rgba(255, 255, 255, 0.065);
+      --glass-strong: rgba(255, 255, 255, 0.09);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cosmic);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, #4d506f 0, #353443 310px, var(--cosmic) 740px),
+        var(--cosmic);
+      font-family: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.68;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--vanilla);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--mint);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .shell {
+      width: min(100% - 40px, 980px);
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      padding: 72px 0 52px;
+    }
+
+    .hero-inner {
+      max-width: 790px;
+    }
+
+    .app-icon {
+      width: 78px;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 26px;
+      color: var(--vanilla);
+      background: linear-gradient(180deg, #4d506f, #23212c);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28), inset 0 1px rgba(255, 255, 255, 0.16);
+      font-family: "Godber", "Avenir Next", Avenir, sans-serif;
+      font-size: 70px;
+      font-weight: 400;
+      line-height: 0.8;
+      text-align: center;
+    }
+
+    .app-icon span {
+      display: block;
+      transform: translate(2px, 2px);
+    }
+
+    .eyebrow {
+      margin: 0 auto 12px;
+      width: max-content;
+      max-width: 100%;
+      color: var(--vanilla);
+      font-family: "Godber", "Avenir Next", Avenir, sans-serif;
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 1.05;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .brand-divider {
+      width: 224px;
+      height: 1px;
+      margin: 0 auto 18px;
+      background: var(--vanilla);
+      opacity: 0.62;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      letter-spacing: 0;
+      line-height: 1.16;
+    }
+
+    h1 {
+      margin-bottom: 14px;
+      color: var(--vanilla);
+      font-family: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 39px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin: 0 auto;
+      color: #efedf2;
+      font-size: 22px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .updated {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: -34px 0 28px;
+    }
+
+    .summary-item,
+    .policy-card,
+    .notice,
+    .toc {
+      border: 1px solid var(--line);
+      background: var(--glass);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px) saturate(125%);
+      -webkit-backdrop-filter: blur(22px) saturate(125%);
+    }
+
+    .summary-item {
+      min-height: 116px;
+      padding: 20px;
+      border-radius: 28px;
+    }
+
+    .summary-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--vanilla);
+      font-weight: 700;
+    }
+
+    .summary-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .toc {
+      margin-bottom: 20px;
+      padding: 20px 22px;
+      border-radius: 28px;
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--text);
+    }
+
+    .toc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+    }
+
+    .toc a {
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      color: var(--vanilla);
+    }
+
+    main {
+      padding-bottom: 72px;
+    }
+
+    .policy-card {
+      margin-bottom: 16px;
+      padding: 34px 36px;
+      border-radius: 28px;
+    }
+
+    .policy-card h2 {
+      margin-bottom: 18px;
+      color: var(--vanilla);
+      font-family: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 28px;
+    }
+
+    .policy-card h3 {
+      margin: 28px 0 9px;
+      color: var(--mint);
+      font-size: 18px;
+    }
+
+    .policy-card p,
+    .policy-card ul {
+      margin-top: 0;
+    }
+
+    .policy-card p:last-child,
+    .policy-card ul:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      padding-left: 24px;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    .notice {
+      margin: 18px 0;
+      padding: 20px 22px;
+      border-left: 3px solid var(--coral);
+      border-radius: 28px;
+      background: var(--glass-strong);
+      box-shadow: none;
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    .notice.mint {
+      border-left-color: var(--mint);
+    }
+
+    .contact-box p {
+      margin: 0;
+    }
+
+    .website-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--soft);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    @media (max-width: 720px) {
+      body {
+        font-size: 16px;
+      }
+
+      .shell {
+        width: min(100% - 28px, 980px);
+      }
+
+      .hero {
+        min-height: 390px;
+        padding: 52px 0 58px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .hero-copy {
+        font-size: 19px;
+      }
+
+      .summary {
+        grid-template-columns: 1fr;
+        margin-top: -28px;
+      }
+
+      .summary-item {
+        min-height: 0;
+      }
+
+      .policy-card {
+        padding: 27px 22px;
+      }
+
+      .policy-card h2 {
+        font-size: 25px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      body {
+        color: #18171b;
+        background: #ffffff;
+      }
+
+      .hero {
+        min-height: 0;
+        padding: 24px 0;
+      }
+
+      h1,
+      .policy-card h2,
+      a,
+      strong {
+        color: #18171b;
+      }
+
+      .hero-copy,
+      .updated,
+      .summary-item p,
+      .toc a,
+      footer {
+        color: #4d4a52;
+      }
+
+      .summary-item,
+      .policy-card,
+      .notice,
+      .toc {
+        background: #ffffff;
+        border-color: #d8d6dc;
+        box-shadow: none;
+      }
+
+      .toc {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="shell hero-inner">
+      <div class="app-icon" aria-hidden="true"><span>B</span></div>
+      <p class="eyebrow">You Become</p>
+      <div class="brand-divider" aria-hidden="true"></div>
+      <h1>Privacy Policy and Terms of Use</h1>
+      <p class="hero-copy">Everything you need to know about how the app handles your data, subscriptions, reminders, widgets, and daily growth experience.</p>
+      <p class="updated">Effective and last updated: August 6, 2026</p>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="summary" aria-label="Privacy summary">
+      <div class="summary-item">
+        <span class="summary-label">No account required</span>
+        <p>You can use You Become without creating a profile or providing your name or email address.</p>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Local-first experience</span>
+        <p>Your focus areas, favorites, progress, settings, and app activity are stored on your device.</p>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">No ads or tracking</span>
+        <p>We do not sell personal data or use advertising identifiers for cross-app tracking.</p>
+      </div>
+    </section>
+
+    <nav class="toc" aria-label="Policy contents">
+      <strong>Contents</strong>
+      <div class="toc-links">
+        <a href="#scope">Scope</a>
+        <a href="#data">Data handling</a>
+        <a href="#services">Third parties</a>
+        <a href="#payments">Subscriptions</a>
+        <a href="#retention">Retention</a>
+        <a href="#rights">Your rights</a>
+        <a href="#terms">Terms of Use</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="policy-card" id="scope">
+      <h2>1. Scope and Who We Are</h2>
+      <p>This Privacy Policy and Terms of Use (the "Policy") applies to the <strong>You Become</strong> iOS application (the "App"), its widgets, and related support communications. The App is developed and operated by the <strong>You Become development team</strong> ("we," "us," or "our"). For applicable privacy laws, the development team acts as the controller of personal data that it determines how and why to process.</p>
+      <p>You Become provides daily self-growth thoughts, selectable focus areas, favorites, progress features, reminders, widgets, sharing tools, and optional Premium subscriptions.</p>
+
+      <div class="notice mint">
+        <p><strong>Local-first by design.</strong> The App does not require an account. Personal preferences and activity are kept on your device and are not uploaded to our content database.</p>
+      </div>
+
+      <div class="notice">
+        <p><strong>Wellness notice.</strong> You Become offers general inspirational and educational self-development content. It is not medical, psychological, psychiatric, therapeutic, or other professional advice; it does not diagnose or treat any condition; and it is not an emergency or crisis service. Seek a qualified professional or local emergency service when appropriate.</p>
+      </div>
+    </section>
+
+    <section class="policy-card" id="data">
+      <h2>2. Information the App Handles</h2>
+
+      <h3>Information stored locally</h3>
+      <p>To provide and personalize the experience, the App may store the following information in its private app storage, iOS preferences, and the shared App Group used by You Become widgets:</p>
+      <ul>
+        <li>Selected focus areas and content preferences.</li>
+        <li>Favorite thoughts and identifiers for thoughts you have viewed.</li>
+        <li>Last-seen dates, activity days, streak and milestone information, and other journey progress.</li>
+        <li>Onboarding status, selected app icon, haptic preferences, reminder settings, widget options, and interface state.</li>
+        <li>Daily free-use allowance, paywall display state, review-prompt eligibility, and local feature-event counters.</li>
+        <li>A locally cached indication of Premium entitlement and its expiration, obtained from verified App Store transactions.</li>
+      </ul>
+      <p>This information is not used to create a server-side user profile and is not sent to our remote content database.</p>
+
+      <h3>Content synchronization</h3>
+      <p>The App periodically contacts our cloud-hosted content database to check for new or updated focus areas and thoughts. It downloads the editorial content and stores a copy on your device so the App can continue working offline. These requests do not include your favorites, selected focus areas, journey progress, or other personal settings.</p>
+      <p>As with most internet services, our database and infrastructure providers may process ordinary technical request data such as an IP address, timestamp, network or device headers, request path, and security logs to deliver, secure, and maintain the service. We do not use this information for advertising or to build behavioral profiles.</p>
+
+      <h3>Notifications</h3>
+      <p>If you opt in, the App uses Apple's local notification system to schedule daily thoughts and, if separately enabled, a reminder before a free trial ends. Notification choices, times, and thought selection are handled on your device. We do not use a remote push-notification profile or upload your notification schedule. You can change or revoke notification permission at any time in iOS Settings.</p>
+
+      <h3>Widgets</h3>
+      <p>If you add a You Become widget, the App shares selected content and widget preferences through its private App Group so WidgetKit can display them. Widget content may be visible on your Home Screen or Lock Screen, and iOS may retain widget snapshots as part of normal system operation. You control where widgets appear and can remove them at any time.</p>
+
+      <h3>Sharing</h3>
+      <p>When you share a thought, the App creates an image locally and presents Apple's system share sheet. The temporary image is removed after sharing completes when the system callback is available, or may later be cleared by iOS. Once you choose a destination, that app or service handles the shared content under its own privacy practices. We do not receive the recipient or destination you select.</p>
+
+      <h3>Diagnostics and local analytics</h3>
+      <p>The App does not include a third-party advertising or behavioral analytics SDK. It may write limited feature and monetization events to Apple's unified device log and keep aggregate counters locally to operate app flows. If you choose to share diagnostics with Apple, Apple may provide developers with crash, performance, and diagnostic information under your Apple privacy and analytics settings.</p>
+
+      <h3>Support communications</h3>
+      <p>If you email us, we receive the email address, message, and any information you voluntarily include. We use it to respond, provide support, prevent abuse, and meet legal obligations. Please do not send health information or other sensitive personal information.</p>
+    </section>
+
+    <section class="policy-card" id="uses">
+      <h2>3. How We Use Information</h2>
+      <p>We use the limited information described above only as reasonably necessary to:</p>
+      <ul>
+        <li>Provide, personalize, and maintain the App, its feed, favorites, journey, reminders, and widgets.</li>
+        <li>Download editorial updates and make content available offline.</li>
+        <li>Verify purchases, determine Premium access, restore entitlements, and present eligible offers.</li>
+        <li>Remember your choices and prevent repetitive or inappropriate app prompts.</li>
+        <li>Diagnose failures, protect the App and content service, and improve reliability.</li>
+        <li>Respond to support requests and comply with legal or regulatory duties.</li>
+      </ul>
+
+      <h3>What we do not do</h3>
+      <p>We do not require or intentionally collect your name, postal address, telephone number, contacts, precise location, photos, camera or microphone data, health data, or advertising identifier through the App. We do not run ads, track you across other companies' apps or websites, sell personal information, or share personal information for cross-context behavioral advertising.</p>
+
+      <h3>Legal bases in the EEA and United Kingdom</h3>
+      <p>Where the GDPR or UK GDPR applies, processing is based, as appropriate, on performance of the service you request; your consent, including for notifications; our legitimate interests in delivering content, securing the service, preventing abuse, and maintaining reliability; and compliance with legal obligations. You may withdraw consent at any time without affecting earlier lawful processing.</p>
+    </section>
+
+    <section class="policy-card" id="services">
+      <h2>4. Service Providers and Third Parties</h2>
+      <p>We use a limited set of third-party platforms to operate the App. They may process information under their own terms and privacy policies:</p>
+      <ul>
+        <li><strong>Apple:</strong> iOS, App Store, StoreKit, WidgetKit, UserNotifications, the share sheet, subscription management, ratings, and optional diagnostics. Apple independently handles your Apple Account and payment information. See <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple's Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/data/en/appstore/" rel="noopener noreferrer">App Store privacy information</a>.</li>
+        <li><strong>Cloud database and hosting providers:</strong> hosting, securing, and delivering the App's editorial content database and related technical infrastructure.</li>
+        <li><strong>Services you choose for sharing:</strong> a destination selected from Apple's share sheet receives only the material you decide to share.</li>
+      </ul>
+      <p>We select providers expected to maintain safeguards appropriate to their role and applicable law. Information may be processed in countries other than your own. Where required, providers rely on recognized transfer mechanisms and contractual or organizational safeguards.</p>
+      <p>We may disclose information if reasonably necessary to comply with law, respond to valid legal process, protect users or the public, investigate fraud or security issues, or establish and defend legal claims. If the App or its business is transferred, relevant information may be transferred subject to this Policy and applicable law.</p>
+    </section>
+
+    <section class="policy-card" id="payments">
+      <h2>5. Purchases, Trials, and Subscriptions</h2>
+      <p>You Become may offer auto-renewable Premium subscriptions, including standard and promotional introductory offers. All purchases are offered and processed by Apple through StoreKit and the App Store. <strong>We do not receive or store your full payment card number, bank details, Apple Account password, or billing address.</strong></p>
+      <ul>
+        <li>The exact localized price, currency, billing period, trial or introductory terms, renewal price, and eligibility shown in Apple's purchase sheet control your purchase.</li>
+        <li>Payment is charged to your Apple Account when you confirm the purchase or when a free trial ends, as disclosed by Apple.</li>
+        <li>Subscriptions renew automatically unless canceled in your Apple Account subscription settings within the period specified by Apple. Deleting the App does not cancel a subscription.</li>
+        <li>You can manage or cancel a subscription in iOS Settings or the App Store. Access generally continues through the paid period, subject to Apple's rules.</li>
+        <li>Free trials and introductory prices may be limited by Apple eligibility rules and may not be available to every user.</li>
+        <li>Restoration, refunds, billing disputes, taxes, currency conversion, and payment failures are handled by Apple under App Store policies.</li>
+      </ul>
+      <p>The App receives product information and cryptographically verified transaction and entitlement status from Apple, such as product identifier, access status, eligibility, and expiration or renewal information. This is used only to provide Premium access and related purchase flows.</p>
+      <p>If you enable a trial reminder, it is scheduled locally as a convenience. Delivery is not guaranteed because it depends on notification permission, device settings, Focus modes, system scheduling, and device availability. You remain responsible for managing or canceling your subscription before renewal.</p>
+    </section>
+
+    <section class="policy-card" id="security">
+      <h2>6. Storage and Security</h2>
+      <p>Local information is stored inside the App's iOS sandbox or its private App Group. Network requests to the content service use encrypted HTTPS connections, and subscription access is based on StoreKit transaction verification. We use reasonable technical and organizational measures suited to the limited information we handle.</p>
+      <p>No storage or transmission method is completely secure. We cannot guarantee absolute security, uninterrupted availability, or that data retained by Apple, device backups, a sharing destination, or a service provider will never be accessed improperly.</p>
+    </section>
+
+    <section class="policy-card" id="retention">
+      <h2>7. Retention and Deletion</h2>
+      <ul>
+        <li><strong>On-device data:</strong> retained until you remove individual items, change settings, reset relevant app data where available, or delete the App. Apple-managed backups or system snapshots may persist according to your Apple settings.</li>
+        <li><strong>Cached editorial content:</strong> retained locally for offline use and replaced when a newer content release is downloaded.</li>
+        <li><strong>Temporary shared images:</strong> retained only as needed for the sharing operation and then removed by the App or normal iOS cleanup.</li>
+        <li><strong>Support email:</strong> retained only as long as reasonably needed to answer your request, maintain support records, prevent abuse, or satisfy legal obligations.</li>
+        <li><strong>Provider records:</strong> Apple and our database or hosting providers retain transaction, technical, security, or diagnostic records according to their own policies and legal requirements.</li>
+      </ul>
+      <p>Because there is no You Become account and we do not upload your personal preferences or activity, we normally cannot view or remotely delete data stored only on your device. Deleting the App removes its local container, subject to Apple backups and system behavior. Remove widgets separately if necessary, and cancel any subscription separately through Apple.</p>
+    </section>
+
+    <section class="policy-card" id="rights">
+      <h2>8. Your Privacy Choices and Rights</h2>
+      <p>Depending on where you live, you may have rights to request access, correction, deletion, restriction, portability, or objection; withdraw consent; and receive information about processing. You may also have the right to complain to your local data protection authority. These rights can be subject to legal exceptions and may not apply where we do not possess or cannot identify the requested data.</p>
+      <p>You can exercise many choices directly:</p>
+      <ul>
+        <li>Change focus areas, favorites, haptics, reminder times, widget options, and app icon in the App.</li>
+        <li>Disable notifications in iOS Settings and remove widgets from your Home or Lock Screen.</li>
+        <li>Delete the App to remove its locally stored data, subject to Apple backup behavior.</li>
+        <li>Manage or cancel Premium through your Apple Account subscription settings.</li>
+        <li>Control optional analytics and diagnostic sharing in Apple's privacy settings.</li>
+      </ul>
+      <p>We do not sell or share personal information for targeted advertising and therefore do not offer a sale or cross-context advertising opt-out. We will not discriminate against you for exercising applicable privacy rights. To make a request about information we may hold through support communications or service records, contact us using the details below. We may need sufficient information to locate the record and verify the request without collecting unnecessary data.</p>
+    </section>
+
+    <section class="policy-card" id="children">
+      <h2>9. Children</h2>
+      <p>The App is a general-audience self-development product and is not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information to us through a support communication, contact us so we can review and delete it where required. Parents and guardians should supervise a child's device, purchases, notifications, and use of wellness content.</p>
+    </section>
+
+    <section class="policy-card" id="changes">
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this Policy to reflect changes to the App, service providers, laws, or business practices. The effective date at the top identifies the latest version. Material changes may also be communicated in the App or through another appropriate channel when required. Continued use after an updated Policy takes effect constitutes acceptance to the extent permitted by law.</p>
+    </section>
+
+    <section class="policy-card" id="terms">
+      <h2>11. Terms of Use</h2>
+
+      <h3>Acceptance and license</h3>
+      <p>By downloading, accessing, or using the App, you agree to these Terms of Use and Apple's applicable App Store terms. If you do not agree, do not use the App. We grant you a personal, limited, revocable, non-exclusive, non-transferable license to use the App on Apple devices you own or control, as permitted by App Store rules.</p>
+
+      <h3>Permitted use</h3>
+      <p>You may use the App only for lawful, personal, non-commercial purposes. You must not copy, resell, sublicense, reverse engineer, bypass access controls or usage limits, interfere with the App or content service, use automated methods to extract substantial content, introduce malicious code, infringe rights, or use the App in a way that violates law or harms others, except where a restriction is prohibited by applicable law.</p>
+
+      <h3>Content and intellectual property</h3>
+      <p>The App, branding, visual design, software, curated thoughts, and other content are owned by us or our licensors and are protected by intellectual property laws. The share feature permits reasonable personal sharing of individual generated quote images. It does not grant permission to reproduce, publish, scrape, compile, sell, or commercially exploit the content library.</p>
+
+      <h3>Wellness content and user decisions</h3>
+      <p>Thoughts are general prompts for reflection and may not be suitable for every person or circumstance. They are not a substitute for professional judgment or care. You are responsible for evaluating content and for decisions or actions you take. If you may be in danger, experiencing a crisis, or need medical or mental health assistance, contact qualified local services immediately rather than relying on the App.</p>
+
+      <h3>Availability and changes</h3>
+      <p>We may add, modify, suspend, limit, or discontinue features, content, offers, or support at any time. Content sync, widgets, notifications, StoreKit, and other features may be delayed or unavailable because of internet access, device settings, third-party services, maintenance, or technical failure. We do not promise that any particular thought, category, feature, price, or offer will remain available.</p>
+
+      <h3>Subscriptions</h3>
+      <p>Premium subscriptions are governed by the disclosures in Section 5 and by the terms shown by Apple before purchase. Subscription access may be suspended or end when a transaction expires, is revoked, is refunded, or cannot be verified. Promotional offers are subject to eligibility and availability.</p>
+
+      <h3>Third-party services</h3>
+      <p>The App relies on Apple and cloud database or hosting providers and may let you open or share to third-party services. We do not control those services and are not responsible for their content, availability, security, or conduct. Their terms apply to your use of them.</p>
+
+      <h3>Disclaimer of warranties</h3>
+      <p>To the maximum extent permitted by law, the App and its content are provided "as is" and "as available," without warranties of any kind, whether express, implied, or statutory, including merchantability, fitness for a particular purpose, accuracy, non-infringement, uninterrupted operation, or achievement of a particular personal outcome. Nothing in these Terms excludes warranties or consumer rights that cannot legally be excluded.</p>
+
+      <h3>Limitation of liability</h3>
+      <p>To the maximum extent permitted by law, we will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages; loss of data, revenue, profits, goodwill, or opportunity; decisions made using App content; missed notifications; or harm arising from inability to use the App. Where liability cannot be excluded, it is limited to the greater of the amount you paid for the App during the 12 months before the claim or the minimum amount required by law. These limits do not apply where prohibited, including liability that cannot be limited for fraud, willful misconduct, death, or personal injury.</p>
+
+      <h3>Suspension and termination</h3>
+      <p>You may stop using the App at any time. We may suspend or terminate access if you materially violate these Terms, misuse the App, threaten its security, or where required by law. Provisions that by their nature should survive termination will remain in effect.</p>
+
+      <h3>Governing law</h3>
+      <p>These Terms are governed by applicable law, without regard to conflict-of-law rules, except that mandatory consumer protections and jurisdiction rights in your country of residence remain unaffected. Nothing here limits rights you cannot waive under applicable law.</p>
+
+      <h3>Apple terms</h3>
+      <p>Apple is not responsible for maintaining or supporting the App except as required by law, and Apple is a third-party beneficiary of the applicable end-user terms. To the extent these Terms do not provide otherwise, Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer">Standard Licensed Application End User License Agreement</a> applies.</p>
+    </section>
+
+    <section class="policy-card" id="contact">
+      <div class="contact-box">
+        <h2>12. Contact</h2>
+        <p>For information about the developer and other available apps, visit:</p>
+        <a class="website-link" href="https://paulcrp.com">paulcrp.com</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 You Become. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
