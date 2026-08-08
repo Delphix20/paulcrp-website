@@ -411,7 +411,7 @@
       <div class="brand-divider" aria-hidden="true"></div>
       <h1>Privacy Policy and Terms of Use</h1>
       <p class="hero-copy">Everything you need to know about how the app handles your data, subscriptions, reminders, widgets, and daily growth experience.</p>
-      <p class="updated">Effective and last updated: August 6, 2026</p>
+      <p class="updated">Effective and last updated: August 8, 2026</p>
     </div>
   </header>
 
@@ -423,7 +423,7 @@
       </div>
       <div class="summary-item">
         <span class="summary-label">Local-first experience</span>
-        <p>Your focus areas, favorites, progress, settings, and app activity are stored on your device.</p>
+        <p>Your focus areas, favorites, progress, and settings stay on your device. Limited anonymous product events help us improve the App.</p>
       </div>
       <div class="summary-item">
         <span class="summary-label">No ads or tracking</span>
@@ -451,7 +451,7 @@
       <p>You Become provides daily self-growth thoughts, selectable focus areas, favorites, progress features, reminders, widgets, sharing tools, and optional Premium subscriptions.</p>
 
       <div class="notice mint">
-        <p><strong>Local-first by design.</strong> The App does not require an account. Personal preferences and activity are kept on your device and are not uploaded to our content database.</p>
+        <p><strong>Local-first by design.</strong> The App does not require an account. Personal choices such as selected focus areas, favorites, viewed-thought identifiers, and journey progress stay on your device. We collect only limited anonymous product events described below.</p>
       </div>
 
       <div class="notice">
@@ -472,7 +472,7 @@
         <li>Daily free-use allowance, paywall display state, review-prompt eligibility, and local feature-event counters.</li>
         <li>A locally cached indication of Premium entitlement and its expiration, obtained from verified App Store transactions.</li>
       </ul>
-      <p>This information is not used to create a server-side user profile and is not sent to our remote content database.</p>
+      <p>These personal choices and identifiers are not used to create a server-side profile and are not sent to our remote databases. Anonymous analytics may include aggregate counts, such as how many different thoughts were viewed during a session, but not which thoughts or focus areas were involved.</p>
 
       <h3>Content synchronization</h3>
       <p>The App periodically contacts our cloud-hosted content database to check for new or updated focus areas and thoughts. It downloads the editorial content and stores a copy on your device so the App can continue working offline. These requests do not include your favorites, selected focus areas, journey progress, or other personal settings.</p>
@@ -487,8 +487,11 @@
       <h3>Sharing</h3>
       <p>When you share a thought, the App creates an image locally and presents Apple's system share sheet. The temporary image is removed after sharing completes when the system callback is available, or may later be cleared by iOS. Once you choose a destination, that app or service handles the shared content under its own privacy practices. We do not receive the recipient or destination you select.</p>
 
-      <h3>Diagnostics and local analytics</h3>
-      <p>The App does not include a third-party advertising or behavioral analytics SDK. It may write limited feature and monetization events to Apple's unified device log and keep aggregate counters locally to operate app flows. If you choose to share diagnostics with Apple, Apple may provide developers with crash, performance, and diagnostic information under your Apple privacy and analytics settings.</p>
+      <h3>First-party product analytics and diagnostics</h3>
+      <p>The App sends a limited set of anonymous first-party product events to our cloud-hosted analytics database so we can understand whether important flows work and improve the App. These events may include app sessions; onboarding steps and completion; paywall views, dismissals, and source; purchase-button taps and verified purchase outcomes; daily-limit completion; widget invitations and entries; notification opens; rating-request attempts; installed content version; and aggregate session counts for viewed thoughts, favorites added or removed, shares started, and session duration.</p>
+      <p>Analytics records may include a random installation identifier, random session identifier, event time, App version and build, iOS version, general language or locale, content version, Premium status, relevant subscription product or offer identifier, and whether a verified purchase began an introductory trial. The random installation identifier is not an advertising identifier, is not linked to your Apple Account, name, or email address, and is recreated if the App's local data is removed.</p>
+      <p>We do not upload selected focus areas, thought text, viewed-thought identifiers, favorite identifiers, reminder time, notification content, sharing destination, contacts, precise location, advertising identifier, or health information for analytics. We do not use analytics for advertising, cross-app tracking, or sale of personal information.</p>
+      <p>The App also may write limited feature and monetization events to Apple's unified device log and keep local counters to operate app flows. If you choose to share diagnostics with Apple, Apple may provide developers with crash, performance, and diagnostic information under your Apple privacy and analytics settings.</p>
 
       <h3>Support communications</h3>
       <p>If you email us, we receive the email address, message, and any information you voluntarily include. We use it to respond, provide support, prevent abuse, and meet legal obligations. Please do not send health information or other sensitive personal information.</p>
@@ -502,6 +505,7 @@
         <li>Download editorial updates and make content available offline.</li>
         <li>Verify purchases, determine Premium access, restore entitlements, and present eligible offers.</li>
         <li>Remember your choices and prevent repetitive or inappropriate app prompts.</li>
+        <li>Measure onboarding completion, paywall performance, feature adoption, and aggregate engagement so we can improve the App.</li>
         <li>Diagnose failures, protect the App and content service, and improve reliability.</li>
         <li>Respond to support requests and comply with legal or regulatory duties.</li>
       </ul>
@@ -518,7 +522,7 @@
       <p>We use a limited set of third-party platforms to operate the App. They may process information under their own terms and privacy policies:</p>
       <ul>
         <li><strong>Apple:</strong> iOS, App Store, StoreKit, WidgetKit, UserNotifications, the share sheet, subscription management, ratings, and optional diagnostics. Apple independently handles your Apple Account and payment information. See <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple's Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/data/en/appstore/" rel="noopener noreferrer">App Store privacy information</a>.</li>
-        <li><strong>Cloud database and hosting providers:</strong> hosting, securing, and delivering the App's editorial content database and related technical infrastructure.</li>
+        <li><strong>Cloud database and hosting providers:</strong> hosting, securing, and delivering the App's editorial content and anonymous first-party product analytics infrastructure.</li>
         <li><strong>Services you choose for sharing:</strong> a destination selected from Apple's share sheet receives only the material you decide to share.</li>
       </ul>
       <p>We select providers expected to maintain safeguards appropriate to their role and applicable law. Information may be processed in countries other than your own. Where required, providers rely on recognized transfer mechanisms and contractual or organizational safeguards.</p>
@@ -542,7 +546,7 @@
 
     <section class="policy-card" id="security">
       <h2>6. Storage and Security</h2>
-      <p>Local information is stored inside the App's iOS sandbox or its private App Group. Network requests to the content service use encrypted HTTPS connections, and subscription access is based on StoreKit transaction verification. We use reasonable technical and organizational measures suited to the limited information we handle.</p>
+      <p>Local information is stored inside the App's iOS sandbox or its private App Group. Network requests to content and analytics services use encrypted HTTPS connections, analytics ingestion is restricted and validated, and subscription access is based on StoreKit transaction verification. We use reasonable technical and organizational measures suited to the limited information we handle.</p>
       <p>No storage or transmission method is completely secure. We cannot guarantee absolute security, uninterrupted availability, or that data retained by Apple, device backups, a sharing destination, or a service provider will never be accessed improperly.</p>
     </section>
 
@@ -552,10 +556,11 @@
         <li><strong>On-device data:</strong> retained until you remove individual items, change settings, reset relevant app data where available, or delete the App. Apple-managed backups or system snapshots may persist according to your Apple settings.</li>
         <li><strong>Cached editorial content:</strong> retained locally for offline use and replaced when a newer content release is downloaded.</li>
         <li><strong>Temporary shared images:</strong> retained only as needed for the sharing operation and then removed by the App or normal iOS cleanup.</li>
+        <li><strong>Anonymous analytics events:</strong> raw event records are normally retained for up to 90 days. Older information may be retained as compact daily aggregates that no longer contain installation or session identifiers.</li>
         <li><strong>Support email:</strong> retained only as long as reasonably needed to answer your request, maintain support records, prevent abuse, or satisfy legal obligations.</li>
         <li><strong>Provider records:</strong> Apple and our database or hosting providers retain transaction, technical, security, or diagnostic records according to their own policies and legal requirements.</li>
       </ul>
-      <p>Because there is no You Become account and we do not upload your personal preferences or activity, we normally cannot view or remotely delete data stored only on your device. Deleting the App removes its local container, subject to Apple backups and system behavior. Remove widgets separately if necessary, and cancel any subscription separately through Apple.</p>
+      <p>Because there is no You Become account and anonymous analytics are not linked to your identity, we normally cannot identify a particular analytics record as yours. We also cannot view or remotely delete personal choices stored only on your device. Deleting the App removes its local container, subject to Apple backups and system behavior, and creates a new random analytics identifier if the App is installed again. Remove widgets separately if necessary, and cancel any subscription separately through Apple.</p>
     </section>
 
     <section class="policy-card" id="rights">
