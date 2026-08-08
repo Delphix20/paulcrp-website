@@ -379,6 +379,7 @@
       .button.secondary { display: none; }
       .page-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
       .page-meta { text-align: left; }
+      .notice { align-items: flex-start; flex-direction: column; gap: 4px; }
       .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .kpi-card { min-height: 112px; padding: 14px; }
       .kpi-value { font-size: 27px; }
@@ -631,7 +632,7 @@
         for (let index = 0; index <= 4; index += 1) {
           const y = pad.top + innerHeight * (index / 4);
           svg.appendChild(svgElement("line", { x1: pad.left, y1: y, x2: width - pad.right, y2: y, stroke: "rgba(241,254,200,0.08)", "stroke-width": 1 }));
-          addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
+          if (maximum > 0) addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
         }
 
         const labelIndexes = [0, 7, 14, 21, 29];
@@ -676,7 +677,7 @@
         for (let index = 0; index <= 4; index += 1) {
           const y = pad.top + innerHeight * (index / 4);
           svg.appendChild(svgElement("line", { x1: pad.left, y1: y, x2: width - pad.right, y2: y, stroke: "rgba(241,254,200,0.08)", "stroke-width": 1 }));
-          addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
+          if (maximum > 0) addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
         }
 
         const slotWidth = innerWidth / rows.length;
