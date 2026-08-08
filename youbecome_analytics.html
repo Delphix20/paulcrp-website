@@ -617,6 +617,11 @@
         svg.appendChild(node);
       }
 
+      function formatAxisLabel(value, maximum) {
+        if (maximum <= 4) return value.toFixed(2).replace(/\.?0+$/, "");
+        return String(Math.round(value));
+      }
+
       function renderLineChart(containerID, rows, series) {
         const container = element(containerID);
         container.replaceChildren();
@@ -632,7 +637,7 @@
         for (let index = 0; index <= 4; index += 1) {
           const y = pad.top + innerHeight * (index / 4);
           svg.appendChild(svgElement("line", { x1: pad.left, y1: y, x2: width - pad.right, y2: y, stroke: "rgba(241,254,200,0.08)", "stroke-width": 1 }));
-          if (maximum > 0) addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
+          if (maximum > 0) addSvgText(svg, formatAxisLabel(yMaximum * (1 - index / 4), yMaximum), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
         }
 
         const labelIndexes = [0, 7, 14, 21, 29];
@@ -677,7 +682,7 @@
         for (let index = 0; index <= 4; index += 1) {
           const y = pad.top + innerHeight * (index / 4);
           svg.appendChild(svgElement("line", { x1: pad.left, y1: y, x2: width - pad.right, y2: y, stroke: "rgba(241,254,200,0.08)", "stroke-width": 1 }));
-          if (maximum > 0) addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
+          if (maximum > 0) addSvgText(svg, formatAxisLabel(yMaximum * (1 - index / 4), yMaximum), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
         }
 
         const slotWidth = innerWidth / rows.length;
