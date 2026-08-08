@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; connect-src https://ecjntltvvwyctxplvwrt.supabase.co; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <title>You Become Analytics</title>
+  <style>
+    @font-face {
+      font-family: "Godber";
+      src: url("assets/webfonts/godber-regular.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: dark;
+      --cosmic-950: #17161d;
+      --cosmic-900: #1d1b24;
+      --cosmic-800: #23212c;
+      --cosmic-700: #34313f;
+      --vanilla: #f1fec8;
+      --paper: #f5f2ea;
+      --muted: #aaa6b1;
+      --muted-strong: #cbc7d0;
+      --border: rgba(241, 254, 200, 0.13);
+      --border-strong: rgba(241, 254, 200, 0.25);
+      --coral: #f6c4bd;
+      --coral-deep: #b25950;
+      --periwinkle: #9caaf6;
+      --green: #81ad90;
+      --gold: #dba365;
+      --plum: #af8d9f;
+      --danger: #e1968f;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { min-width: 320px; background: var(--cosmic-950); }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        linear-gradient(180deg, var(--cosmic-900) 0, var(--cosmic-950) 420px),
+        var(--cosmic-950);
+      color: var(--paper);
+      font-family: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input { font: inherit; letter-spacing: 0; }
+    button { cursor: pointer; }
+
+    button:focus-visible, input:focus-visible {
+      outline: 3px solid rgba(156, 170, 246, 0.75);
+      outline-offset: 2px;
+    }
+
+    .shell {
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: 24px clamp(16px, 3vw, 46px) 48px;
+    }
+
+    .topbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+
+    .monogram {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      background: var(--cosmic-800);
+      color: var(--vanilla);
+      font-family: "Godber", "Avenir Next", Avenir, sans-serif;
+      font-size: 38px;
+      font-weight: 400;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    }
+
+    .brand-copy { min-width: 0; }
+
+    .brand-name {
+      margin: 0;
+      color: var(--vanilla);
+      font-family: "Godber", "Avenir Next", Avenir, sans-serif;
+      font-size: 27px;
+      line-height: 1.08;
+      font-weight: 400;
+    }
+
+    .brand-subtitle {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .top-actions { display: flex; align-items: center; gap: 10px; }
+
+    .status {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted-strong);
+      background: rgba(35, 33, 44, 0.8);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(129, 173, 144, 0.12);
+    }
+
+    .button {
+      min-height: 36px;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      padding: 0 14px;
+      background: var(--cosmic-800);
+      color: var(--paper);
+      font-size: 12px;
+      font-weight: 700;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .button:hover { border-color: rgba(241, 254, 200, 0.42); background: var(--cosmic-700); }
+    .button:active { transform: scale(0.97); }
+
+    .button.secondary { color: var(--muted-strong); border-color: var(--border); }
+
+    .page-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      color: var(--paper);
+      font-family: "Godber", "Avenir Next", Avenir, sans-serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.04;
+      font-weight: 700;
+    }
+
+    .page-meta { text-align: right; flex: 0 0 auto; }
+    .period { margin: 0; color: var(--vanilla); font-size: 13px; font-weight: 700; }
+    .refreshed { margin: 5px 0 0; color: var(--muted); font-size: 11px; }
+
+    .notice {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 52px;
+      margin: 0 0 18px;
+      padding: 10px 14px;
+      border: 1px solid rgba(219, 163, 101, 0.28);
+      border-radius: 8px;
+      background: rgba(219, 163, 101, 0.08);
+      color: #e8d2b4;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .notice.visible { display: flex; }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .kpi-card {
+      min-height: 128px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(35, 33, 44, 0.88);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    }
+
+    .kpi-label { color: var(--muted); font-size: 11px; line-height: 1.35; font-weight: 700; }
+    .kpi-value { color: var(--paper); font-size: 32px; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .kpi-note { color: var(--muted); font-size: 10px; line-height: 1.3; }
+    .kpi-card:nth-child(1) .kpi-value { color: var(--vanilla); }
+    .kpi-card:nth-child(2) .kpi-value { color: var(--coral); }
+    .kpi-card:nth-child(3) .kpi-value { color: var(--periwinkle); }
+    .kpi-card:nth-child(4) .kpi-value { color: var(--green); }
+    .kpi-card:nth-child(5) .kpi-value { color: var(--gold); }
+    .kpi-card:nth-child(6) .kpi-value { color: var(--plum); }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.85fr);
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .panel {
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(35, 33, 44, 0.78);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-title { margin: 0; color: var(--paper); font-size: 15px; line-height: 1.25; font-weight: 700; }
+    .panel-subtitle { margin: 4px 0 0; color: var(--muted); font-size: 10px; line-height: 1.3; }
+    .panel-tag { color: var(--muted); font-size: 10px; font-weight: 700; white-space: nowrap; }
+    .panel-body { min-height: 300px; padding: 16px 18px 18px; }
+
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 12px; }
+    .legend-item { display: inline-flex; align-items: center; gap: 6px; color: var(--muted-strong); font-size: 10px; font-weight: 600; }
+    .legend-swatch { width: 16px; height: 3px; border-radius: 2px; }
+
+    .chart-wrap { position: relative; width: 100%; height: 250px; }
+    .chart-wrap svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .chart-empty {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      pointer-events: none;
+    }
+
+    .funnel { display: grid; gap: 17px; padding-top: 2px; }
+    .funnel-row { display: grid; gap: 7px; }
+    .funnel-label { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .funnel-name { color: var(--muted-strong); font-size: 11px; font-weight: 700; }
+    .funnel-value { color: var(--paper); font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .funnel-track { height: 9px; border-radius: 5px; background: rgba(255, 255, 255, 0.055); overflow: hidden; }
+    .funnel-fill { height: 100%; min-width: 0; border-radius: inherit; transition: width 500ms cubic-bezier(.2,.7,.2,1); }
+    .funnel-detail { color: var(--muted); font-size: 9px; }
+
+    .engagement-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin: -16px -18px 16px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .engagement-stat { min-height: 72px; padding: 13px 14px; background: var(--cosmic-800); }
+    .engagement-stat strong { display: block; color: var(--paper); font-size: 18px; font-variant-numeric: tabular-nums; }
+    .engagement-stat span { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; font-weight: 700; }
+
+    .paywall-panel { margin-bottom: 12px; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 760px; }
+    th, td { padding: 13px 16px; border-bottom: 1px solid var(--border); text-align: right; font-variant-numeric: tabular-nums; }
+    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+    th { color: var(--muted); font-size: 9px; font-weight: 700; text-transform: uppercase; }
+    td { color: var(--muted-strong); font-size: 11px; font-weight: 600; }
+    tr:last-child td { border-bottom: 0; }
+    .source-name { color: var(--paper); font-weight: 700; }
+    .conversion-cell { min-width: 170px; }
+    .conversion-line { display: flex; align-items: center; justify-content: flex-end; gap: 9px; }
+    .conversion-track { width: 84px; height: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.06); overflow: hidden; }
+    .conversion-fill { height: 100%; background: var(--green); border-radius: inherit; }
+    .empty-table { padding: 44px 18px; color: var(--muted); text-align: center; font-size: 12px; font-weight: 600; }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 10px 2px 0;
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    .loading {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      background: var(--cosmic-950);
+      transition: opacity 180ms ease, visibility 180ms ease;
+    }
+
+    .loading.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loading-mark { display: grid; gap: 14px; justify-items: center; color: var(--vanilla); font-family: "Godber", "Avenir Next", Avenir, sans-serif; font-size: 46px; font-weight: 400; }
+    .loading-line { width: 68px; height: 2px; background: rgba(241, 254, 200, 0.16); overflow: hidden; }
+    .loading-line::after { content: ""; display: block; width: 32px; height: 100%; background: var(--vanilla); animation: loading 900ms ease-in-out infinite alternate; }
+
+    @keyframes loading { from { transform: translateX(-8px); } to { transform: translateX(44px); } }
+
+    .access {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: var(--cosmic-950);
+    }
+
+    .access.visible { display: grid; }
+
+    .access-panel {
+      width: min(420px, 100%);
+      padding: 24px;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      background: var(--cosmic-800);
+      box-shadow: var(--shadow);
+    }
+
+    .access-panel .monogram { margin-bottom: 26px; }
+    .access-panel h2 { margin: 0; color: var(--paper); font-family: "Godber", "Avenir Next", Avenir, sans-serif; font-size: 32px; font-weight: 400; }
+    .access-panel p { margin: 9px 0 20px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+    .access-panel input { width: 100%; height: 46px; padding: 0 13px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--cosmic-950); color: var(--paper); }
+    .access-panel .button { width: 100%; height: 44px; margin-top: 10px; background: var(--vanilla); border-color: var(--vanilla); color: var(--cosmic-950); }
+    .access-error { min-height: 18px; margin-top: 8px; color: var(--danger); font-size: 10px; font-weight: 700; }
+
+    @media (max-width: 1180px) {
+      .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 880px) {
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .panel-body { min-height: 280px; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { padding-top: 14px; }
+      .topbar { align-items: flex-start; margin-bottom: 24px; }
+      .status { display: none; }
+      .button.secondary { display: none; }
+      .page-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .page-meta { text-align: left; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .kpi-card { min-height: 112px; padding: 14px; }
+      .kpi-value { font-size: 27px; }
+      .panel-header { padding-inline: 14px; }
+      .panel-body { padding-inline: 14px; }
+      .engagement-strip { margin-inline: -14px; }
+      .footer { flex-direction: column; gap: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading" aria-live="polite">
+    <div class="loading-mark">B<div class="loading-line"></div></div>
+  </div>
+
+  <div class="access" id="access">
+    <form class="access-panel" id="accessForm">
+      <div class="monogram" aria-hidden="true">B</div>
+      <h2>Private analytics</h2>
+      <p>Enter the private dashboard token to load production aggregates.</p>
+      <input id="tokenInput" type="password" autocomplete="current-password" placeholder="Access token" aria-label="Access token">
+      <button class="button" type="submit">Open dashboard</button>
+      <div class="access-error" id="accessError" role="alert"></div>
+    </form>
+  </div>
+
+  <main class="shell" id="dashboard">
+    <header class="topbar">
+      <div class="brand">
+        <div class="monogram" aria-hidden="true">B</div>
+        <div class="brand-copy">
+          <p class="brand-name">You Become</p>
+          <p class="brand-subtitle">Product analytics</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="status"><span class="status-dot"></span><span id="statusText">Connected</span></div>
+        <button class="button" id="refreshButton" type="button">Refresh</button>
+        <button class="button secondary" id="signOutButton" type="button">Lock</button>
+      </div>
+    </header>
+
+    <section class="page-heading">
+      <h1>See what moves users forward.</h1>
+      <div class="page-meta">
+        <p class="period">Last 30 days</p>
+        <p class="refreshed" id="refreshedText">Loading current data</p>
+      </div>
+    </section>
+
+    <div class="notice" id="emptyNotice">
+      <span>No production events yet. The dashboard is connected and waiting for the first opted-in user.</span>
+      <span id="latestEventText">No events received</span>
+    </div>
+
+    <section class="kpi-grid" aria-label="Key performance indicators">
+      <article class="kpi-card"><span class="kpi-label">Active installations</span><strong class="kpi-value" id="activeInstallations">0</strong><span class="kpi-note">Opened the app</span></article>
+      <article class="kpi-card"><span class="kpi-label">Completed onboarding</span><strong class="kpi-value" id="completedOnboarding">0</strong><span class="kpi-note" id="onboardingRate">No starts yet</span></article>
+      <article class="kpi-card"><span class="kpi-label">Verified trials</span><strong class="kpi-value" id="trialStarts">0</strong><span class="kpi-note">StoreKit verified</span></article>
+      <article class="kpi-card"><span class="kpi-label">Paid starts</span><strong class="kpi-value" id="paidStarts">0</strong><span class="kpi-note">Non-trial purchases</span></article>
+      <article class="kpi-card"><span class="kpi-label">Paywall conversion</span><strong class="kpi-value" id="paywallConversion">--</strong><span class="kpi-note">View to verified purchase</span></article>
+      <article class="kpi-card"><span class="kpi-label">Thoughts viewed</span><strong class="kpi-value" id="thoughtsViewed">0</strong><span class="kpi-note">From completed sessions</span></article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel">
+        <div class="panel-header">
+          <div><h2 class="panel-title">Daily activation</h2><p class="panel-subtitle">Unique anonymous installations by day</p></div>
+          <span class="panel-tag">30 DAYS</span>
+        </div>
+        <div class="panel-body">
+          <div class="chart-legend" id="activationLegend"></div>
+          <div class="chart-wrap" id="activationChart"></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div><h2 class="panel-title">Conversion funnel</h2><p class="panel-subtitle">Users who started onboarding in this period</p></div>
+          <span class="panel-tag">COHORT</span>
+        </div>
+        <div class="panel-body"><div class="funnel" id="funnel"></div></div>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel">
+        <div class="panel-header">
+          <div><h2 class="panel-title">Daily engagement</h2><p class="panel-subtitle">Thoughts explored from completed sessions</p></div>
+          <span class="panel-tag">30 DAYS</span>
+        </div>
+        <div class="panel-body">
+          <div class="engagement-strip">
+            <div class="engagement-stat"><strong id="avgThoughts">--</strong><span>AVG THOUGHTS / SESSION</span></div>
+            <div class="engagement-stat"><strong id="avgDuration">--</strong><span>AVG SESSION DURATION</span></div>
+            <div class="engagement-stat"><strong id="shareCount">0</strong><span>SHARES STARTED</span></div>
+          </div>
+          <div class="chart-legend"><span class="legend-item"><span class="legend-swatch" style="background:#81ad90"></span>Thoughts viewed</span></div>
+          <div class="chart-wrap" id="engagementChart"></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <div><h2 class="panel-title">Product signals</h2><p class="panel-subtitle">Actions that indicate deeper intent</p></div>
+          <span class="panel-tag">30 DAYS</span>
+        </div>
+        <div class="panel-body">
+          <div class="funnel" id="signals"></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel paywall-panel">
+      <div class="panel-header">
+        <div><h2 class="panel-title">Paywall performance</h2><p class="panel-subtitle">Unique users and verified conversion by source and offer</p></div>
+        <span class="panel-tag">30 DAYS</span>
+      </div>
+      <div class="table-wrap" id="paywallTable"></div>
+    </section>
+
+    <footer class="footer">
+      <span>Counts represent anonymous installations, not accounts. Analytics collection is optional.</span>
+      <span>Raw events are retained for 90 days; historical daily totals remain aggregated.</span>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const TOKEN_KEY = "you_become_analytics_token";
+      const colors = ["#f1fec8", "#f6c4bd", "#9caaf6", "#81ad90", "#dba365"];
+      const state = { token: "", data: null, loading: false };
+      const element = (id) => document.getElementById(id);
+      const numberFormatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 });
+
+      function readInitialToken() {
+        const fragment = new URLSearchParams(window.location.hash.slice(1));
+        const fragmentToken = fragment.get("token");
+        if (fragmentToken) {
+          localStorage.setItem(TOKEN_KEY, fragmentToken);
+          history.replaceState(null, "", window.location.pathname + window.location.search);
+          return fragmentToken;
+        }
+        return localStorage.getItem(TOKEN_KEY) || "";
+      }
+
+      function dataURL() {
+        return "https://ecjntltvvwyctxplvwrt.supabase.co/functions/v1/analytics-dashboard?data=overview";
+      }
+
+      function showAccess(message) {
+        element("accessError").textContent = message || "";
+        element("access").classList.add("visible");
+        element("loading").classList.add("hidden");
+        requestAnimationFrame(() => element("tokenInput").focus());
+      }
+
+      function hideAccess() {
+        element("access").classList.remove("visible");
+        element("accessError").textContent = "";
+      }
+
+      function setLoading(isLoading) {
+        state.loading = isLoading;
+        element("refreshButton").disabled = isLoading;
+        element("statusText").textContent = isLoading ? "Refreshing" : "Connected";
+        if (isLoading && !state.data) element("loading").classList.remove("hidden");
+      }
+
+      function formatNumber(value) {
+        const number = Number(value);
+        return Number.isFinite(number) ? numberFormatter.format(number) : "0";
+      }
+
+      function numericValue(value) {
+        if (value === null || value === undefined || value === "") return null;
+        const number = Number(value);
+        return Number.isFinite(number) ? number : null;
+      }
+
+      function formatPercent(value) {
+        const number = numericValue(value);
+        return number !== null ? number.toFixed(number % 1 === 0 ? 0 : 1) + "%" : "--";
+      }
+
+      function formatDuration(value) {
+        const seconds = numericValue(value);
+        if (seconds === null) return "--";
+        if (seconds < 60) return Math.round(seconds) + "s";
+        const minutes = Math.floor(seconds / 60);
+        const remainder = Math.round(seconds % 60);
+        return minutes + "m " + remainder + "s";
+      }
+
+      function formatName(value) {
+        const text = String(value || "Unknown").replace(/[_-]+/g, " ").trim();
+        return text ? text.replace(/\b\w/g, (character) => character.toUpperCase()) : "Unknown";
+      }
+
+      function text(id, value) { element(id).textContent = value; }
+
+      function utcDateKey(date) { return date.toISOString().slice(0, 10); }
+
+      function lastThirtyDays(rows, fields) {
+        const byDate = new Map((rows || []).map((row) => [row.day, row]));
+        const result = [];
+        const today = new Date();
+        for (let offset = 29; offset >= 0; offset -= 1) {
+          const date = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+          date.setUTCDate(date.getUTCDate() - offset);
+          const key = utcDateKey(date);
+          const source = byDate.get(key) || {};
+          const row = { day: key };
+          fields.forEach((field) => { row[field] = Number(source[field]) || 0; });
+          result.push(row);
+        }
+        return result;
+      }
+
+      function svgElement(name, attributes) {
+        const node = document.createElementNS("http://www.w3.org/2000/svg", name);
+        Object.entries(attributes || {}).forEach(([key, value]) => node.setAttribute(key, String(value)));
+        return node;
+      }
+
+      function addSvgText(svg, content, x, y, attributes) {
+        const node = svgElement("text", { x, y, ...attributes });
+        node.textContent = content;
+        svg.appendChild(node);
+      }
+
+      function renderLineChart(containerID, rows, series) {
+        const container = element(containerID);
+        container.replaceChildren();
+        const width = 900;
+        const height = 250;
+        const pad = { left: 42, right: 12, top: 12, bottom: 28 };
+        const innerWidth = width - pad.left - pad.right;
+        const innerHeight = height - pad.top - pad.bottom;
+        const maximum = Math.max(0, ...rows.flatMap((row) => series.map((item) => Number(row[item.key]) || 0)));
+        const yMaximum = maximum > 0 ? maximum : 1;
+        const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "Daily activation chart" });
+
+        for (let index = 0; index <= 4; index += 1) {
+          const y = pad.top + innerHeight * (index / 4);
+          svg.appendChild(svgElement("line", { x1: pad.left, y1: y, x2: width - pad.right, y2: y, stroke: "rgba(241,254,200,0.08)", "stroke-width": 1 }));
+          addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
+        }
+
+        const labelIndexes = [0, 7, 14, 21, 29];
+        labelIndexes.forEach((index) => {
+          const row = rows[index];
+          if (!row) return;
+          const x = pad.left + innerWidth * (index / Math.max(rows.length - 1, 1));
+          const date = new Date(row.day + "T00:00:00Z");
+          addSvgText(svg, date.toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }), x, height - 7, { fill: "#817d89", "font-size": 9, "text-anchor": index === 0 ? "start" : index === 29 ? "end" : "middle" });
+        });
+
+        series.forEach((item) => {
+          const points = rows.map((row, index) => {
+            const x = pad.left + innerWidth * (index / Math.max(rows.length - 1, 1));
+            const y = pad.top + innerHeight * (1 - (Number(row[item.key]) || 0) / yMaximum);
+            return `${x},${y}`;
+          }).join(" ");
+          svg.appendChild(svgElement("polyline", { points, fill: "none", stroke: item.color, "stroke-width": 2.4, "stroke-linecap": "round", "stroke-linejoin": "round" }));
+        });
+
+        container.appendChild(svg);
+        if (maximum === 0) {
+          const empty = document.createElement("div");
+          empty.className = "chart-empty";
+          empty.textContent = "No activity in this period";
+          container.appendChild(empty);
+        }
+      }
+
+      function renderBarChart(containerID, rows, key, color) {
+        const container = element(containerID);
+        container.replaceChildren();
+        const width = 900;
+        const height = 250;
+        const pad = { left: 42, right: 12, top: 12, bottom: 28 };
+        const innerWidth = width - pad.left - pad.right;
+        const innerHeight = height - pad.top - pad.bottom;
+        const maximum = Math.max(0, ...rows.map((row) => Number(row[key]) || 0));
+        const yMaximum = maximum > 0 ? maximum : 1;
+        const svg = svgElement("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "Daily engagement chart" });
+
+        for (let index = 0; index <= 4; index += 1) {
+          const y = pad.top + innerHeight * (index / 4);
+          svg.appendChild(svgElement("line", { x1: pad.left, y1: y, x2: width - pad.right, y2: y, stroke: "rgba(241,254,200,0.08)", "stroke-width": 1 }));
+          addSvgText(svg, String(Math.round(yMaximum * (1 - index / 4))), pad.left - 9, y + 3, { fill: "#817d89", "font-size": 9, "text-anchor": "end" });
+        }
+
+        const slotWidth = innerWidth / rows.length;
+        rows.forEach((row, index) => {
+          const value = Number(row[key]) || 0;
+          const barHeight = innerHeight * value / yMaximum;
+          const barWidth = Math.max(3, slotWidth * 0.56);
+          const x = pad.left + index * slotWidth + (slotWidth - barWidth) / 2;
+          const y = pad.top + innerHeight - barHeight;
+          const bar = svgElement("rect", { x, y, width: barWidth, height: barHeight, rx: 2, fill: color, opacity: 0.82 });
+          const title = svgElement("title");
+          title.textContent = row.day + ": " + formatNumber(value);
+          bar.appendChild(title);
+          svg.appendChild(bar);
+        });
+
+        [0, 7, 14, 21, 29].forEach((index) => {
+          const row = rows[index];
+          if (!row) return;
+          const x = pad.left + innerWidth * (index / Math.max(rows.length - 1, 1));
+          const date = new Date(row.day + "T00:00:00Z");
+          addSvgText(svg, date.toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }), x, height - 7, { fill: "#817d89", "font-size": 9, "text-anchor": index === 0 ? "start" : index === 29 ? "end" : "middle" });
+        });
+
+        container.appendChild(svg);
+        if (maximum === 0) {
+          const empty = document.createElement("div");
+          empty.className = "chart-empty";
+          empty.textContent = "No completed sessions in this period";
+          container.appendChild(empty);
+        }
+      }
+
+      function renderLegend(containerID, series) {
+        const container = element(containerID);
+        container.replaceChildren();
+        series.forEach((item) => {
+          const legend = document.createElement("span");
+          legend.className = "legend-item";
+          const swatch = document.createElement("span");
+          swatch.className = "legend-swatch";
+          swatch.style.background = item.color;
+          legend.append(swatch, document.createTextNode(item.label));
+          container.appendChild(legend);
+        });
+      }
+
+      function renderRows(containerID, rows, options) {
+        const container = element(containerID);
+        container.replaceChildren();
+        const palette = options && options.palette ? options.palette : colors;
+        rows.forEach((row, index) => {
+          const count = Number(row.count) || 0;
+          const percent = numericValue(row.percent);
+          const width = Number.isFinite(percent) ? Math.max(0, Math.min(100, percent)) : 0;
+          const wrapper = document.createElement("div");
+          wrapper.className = "funnel-row";
+
+          const label = document.createElement("div");
+          label.className = "funnel-label";
+          const name = document.createElement("span");
+          name.className = "funnel-name";
+          name.textContent = row.label;
+          const value = document.createElement("span");
+          value.className = "funnel-value";
+          value.textContent = formatNumber(count) + (Number.isFinite(percent) ? "  |  " + formatPercent(percent) : "");
+          label.append(name, value);
+
+          const track = document.createElement("div");
+          track.className = "funnel-track";
+          const fill = document.createElement("div");
+          fill.className = "funnel-fill";
+          fill.style.width = width + "%";
+          fill.style.background = palette[index % palette.length];
+          track.appendChild(fill);
+
+          const detail = document.createElement("div");
+          detail.className = "funnel-detail";
+          detail.textContent = row.detail || "";
+          wrapper.append(label, track, detail);
+          container.appendChild(wrapper);
+        });
+      }
+
+      function renderPaywall(rows) {
+        const container = element("paywallTable");
+        container.replaceChildren();
+        if (!rows || rows.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "empty-table";
+          empty.textContent = "Paywall results will appear after production views.";
+          container.appendChild(empty);
+          return;
+        }
+
+        const table = document.createElement("table");
+        const head = document.createElement("thead");
+        const headingRow = document.createElement("tr");
+        ["Source", "Offer", "Views", "Unique viewers", "Purchase taps", "Trials", "Paid starts", "Verified conversion"].forEach((heading) => {
+          const cell = document.createElement("th");
+          cell.textContent = heading;
+          headingRow.appendChild(cell);
+        });
+        head.appendChild(headingRow);
+        table.appendChild(head);
+
+        const body = document.createElement("tbody");
+        rows.forEach((row) => {
+          const tr = document.createElement("tr");
+          const values = [
+            formatName(row.source),
+            formatName(row.offer),
+            formatNumber(row.paywall_views),
+            formatNumber(row.unique_viewers),
+            formatNumber(row.purchase_intent_installations),
+            formatNumber(row.verified_trial_starts),
+            formatNumber(row.verified_paid_starts),
+          ];
+          values.forEach((value, index) => {
+            const td = document.createElement("td");
+            td.textContent = value;
+            if (index === 0) td.className = "source-name";
+            tr.appendChild(td);
+          });
+
+          const conversion = numericValue(row.view_to_verified_purchase_percent);
+          const conversionCell = document.createElement("td");
+          conversionCell.className = "conversion-cell";
+          const line = document.createElement("div");
+          line.className = "conversion-line";
+          const track = document.createElement("div");
+          track.className = "conversion-track";
+          const fill = document.createElement("div");
+          fill.className = "conversion-fill";
+          fill.style.width = (Number.isFinite(conversion) ? Math.max(0, Math.min(100, conversion)) : 0) + "%";
+          track.appendChild(fill);
+          const value = document.createElement("span");
+          value.textContent = formatPercent(conversion);
+          line.append(track, value);
+          conversionCell.appendChild(line);
+          tr.appendChild(conversionCell);
+          body.appendChild(tr);
+        });
+        table.appendChild(body);
+        container.appendChild(table);
+      }
+
+      function render(data) {
+        state.data = data;
+        const kpi = data.kpi || {};
+        text("activeInstallations", formatNumber(kpi.active_installations));
+        text("completedOnboarding", formatNumber(kpi.onboarding_completed));
+        text("trialStarts", formatNumber(kpi.verified_trial_starts));
+        text("paidStarts", formatNumber(kpi.verified_paid_starts));
+        text("paywallConversion", formatPercent(kpi.paywall_to_verified_purchase_percent));
+        text("thoughtsViewed", formatNumber(kpi.thoughts_viewed));
+        text("onboardingRate", numericValue(kpi.onboarding_completion_percent) !== null ? formatPercent(kpi.onboarding_completion_percent) + " completion" : "No starts yet");
+        text("avgThoughts", numericValue(kpi.average_thoughts_per_session) !== null ? numericValue(kpi.average_thoughts_per_session).toFixed(1) : "--");
+        text("avgDuration", formatDuration(kpi.average_session_seconds));
+        text("shareCount", formatNumber(kpi.shares_started));
+
+        const activationSeries = [
+          { key: "active_installations", label: "Active", color: colors[0] },
+          { key: "onboarding_completed", label: "Onboarding", color: colors[1] },
+          { key: "paywall_viewers", label: "Paywall viewers", color: colors[2] },
+          { key: "verified_purchases", label: "Purchases", color: colors[3] },
+        ];
+        const daily = lastThirtyDays(data.daily, activationSeries.map((item) => item.key));
+        renderLegend("activationLegend", activationSeries);
+        renderLineChart("activationChart", daily, activationSeries);
+
+        const sessions = lastThirtyDays(data.sessions, ["thoughts_viewed"]);
+        renderBarChart("engagementChart", sessions, "thoughts_viewed", colors[3]);
+
+        renderRows("funnel", (data.funnel || []).map((row) => ({
+          label: row.stage,
+          count: row.installations,
+          percent: row.conversion_from_start_percent,
+          detail: row.stage_order === 1 ? "Starting cohort" : formatPercent(row.conversion_from_previous_percent) + " from previous step",
+        })));
+
+        const signals = [
+          { label: "Reached daily limit", count: kpi.daily_limit_installations, percent: Number(kpi.active_installations) > 0 ? 100 * Number(kpi.daily_limit_installations) / Number(kpi.active_installations) : null, detail: "Users who reached the free daily limit" },
+          { label: "Widget invitation viewed", count: kpi.widget_invitation_viewers, percent: Number(kpi.active_installations) > 0 ? 100 * Number(kpi.widget_invitation_viewers) / Number(kpi.active_installations) : null, detail: "Users who saw the widget invitation" },
+          { label: "Widget setup tapped", count: kpi.widget_setup_installations, percent: kpi.widget_setup_percent, detail: "Conversion from widget invitation" },
+          { label: "Rating request attempted", count: kpi.rating_request_installations, percent: Number(kpi.active_installations) > 0 ? 100 * Number(kpi.rating_request_installations) / Number(kpi.active_installations) : null, detail: "Eligible positive moments" },
+        ];
+        renderRows("signals", signals, { palette: [colors[4], colors[2], colors[3], colors[1]] });
+        renderPaywall(data.paywall || []);
+
+        const hasData = Object.values(kpi).some((value) => Number(value) > 0);
+        element("emptyNotice").classList.toggle("visible", !hasData);
+        text("latestEventText", data.latest_event_at ? "Latest event " + new Date(data.latest_event_at).toLocaleString() : "No events received");
+        text("refreshedText", "Refreshed " + new Date(data.generated_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
+        element("loading").classList.add("hidden");
+      }
+
+      async function load() {
+        if (!state.token || state.loading) {
+          if (!state.token) showAccess();
+          return;
+        }
+        setLoading(true);
+        try {
+          const response = await fetch(dataURL(), { headers: { authorization: "Bearer " + state.token }, cache: "no-store" });
+          if (response.status === 401) {
+            localStorage.removeItem(TOKEN_KEY);
+            state.token = "";
+            state.data = null;
+            showAccess("That token is not valid.");
+            return;
+          }
+          if (!response.ok) throw new Error("Dashboard request failed");
+          hideAccess();
+          render(await response.json());
+        } catch (error) {
+          element("statusText").textContent = "Unavailable";
+          if (!state.data) showAccess("The dashboard could not load. Try again.");
+        } finally {
+          setLoading(false);
+        }
+      }
+
+      element("accessForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const token = element("tokenInput").value.trim();
+        if (token.length < 32) {
+          element("accessError").textContent = "Enter the full private token.";
+          return;
+        }
+        state.token = token;
+        localStorage.setItem(TOKEN_KEY, token);
+        element("tokenInput").value = "";
+        hideAccess();
+        load();
+      });
+
+      element("refreshButton").addEventListener("click", load);
+      element("signOutButton").addEventListener("click", () => {
+        localStorage.removeItem(TOKEN_KEY);
+        state.token = "";
+        state.data = null;
+        showAccess();
+      });
+
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden && state.data && Date.now() - new Date(state.data.generated_at).getTime() > 300000) load();
+      });
+
+      state.token = readInitialToken();
+      load();
+      window.setInterval(() => { if (!document.hidden && state.token) load(); }, 300000);
+    })();
+  </script>
+</body>
+</html>
