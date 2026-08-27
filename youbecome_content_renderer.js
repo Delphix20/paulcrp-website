@@ -8,31 +8,48 @@
   const JPEG_QUALITY = 0.94;
 
   const categoryPhrases = {
-    assertiveness: "assertive",
-    authenticity: "authentic",
-    balance: "balanced",
-    calm: "calmer",
-    compassion: "compassionate",
-    confidence: "confident",
-    connection: "connected",
-    courage: "courageous",
-    creativity: "creative",
-    decisiveness: "decisive",
-    discipline: "disciplined",
-    focus: "focused",
-    gratitude: "grateful",
-    growth: "intentional",
-    joy: "joyful",
-    motivation: "motivated",
-    optimism: "optimistic",
-    organization: "organized",
-    patience: "patient",
-    presence: "present",
-    purpose: "purposeful",
-    resilience: "resilient",
-    "self-awareness": "self-aware",
-    "self-kindness": "kind to yourself",
-    "social-ease": "at ease with others"
+    assertiveness: "more assertive.",
+    assertive: "more assertive.",
+    authenticity: "more authentic.",
+    balance: "more balanced.",
+    balanced: "more balanced.",
+    calm: "calmer.",
+    calmer: "calmer.",
+    compassion: "more compassionate.",
+    confidence: "more confident.",
+    confident: "more confident.",
+    connection: "more connected.",
+    courage: "more courageous.",
+    creativity: "more creative.",
+    decisiveness: "more decisive.",
+    discipline: "more disciplined.",
+    disciplined: "more disciplined.",
+    focus: "more focused.",
+    focused: "more focused.",
+    gratitude: "more grateful.",
+    grateful: "more grateful.",
+    growth: "open to growth.",
+    intentional: "open to growth.",
+    "open-to-growth": "open to growth.",
+    open_to_growth: "open to growth.",
+    joy: "more joyful.",
+    motivation: "more motivated.",
+    motivated: "more motivated.",
+    optimism: "more optimistic.",
+    optimistic: "more optimistic.",
+    organization: "more organized.",
+    patience: "more patient.",
+    patient: "more patient.",
+    presence: "more present.",
+    present: "more present.",
+    purpose: "more purposeful.",
+    resilience: "more resilient.",
+    resilient: "more resilient.",
+    "self-awareness": "more self-aware.",
+    "self-kindness": "kinder to myself.",
+    "kinder-to-myself": "kinder to myself.",
+    kinder_to_myself: "kinder to myself.",
+    "social-ease": "more at ease with others."
   };
 
   function hexRGB(value) {
@@ -188,13 +205,13 @@
 
   function focusPhrase(item) {
     const id = String(item.category_id || "").toLowerCase();
-    const fallback = String(item.category_name || "intentional").toLowerCase();
-    return `more ${categoryPhrases[id] || fallback}.`;
+    const fallback = String(item.category_name || "balanced").trim().toLowerCase();
+    return categoryPhrases[id] || `more ${fallback}.`;
   }
 
   function drawChrome(ctx, item, width, height, foreground, background) {
-    ctx.font = font(height > 1500 ? 43 : 37, "Avenir Next", 650);
-    ctx.fillStyle = rgba(contrastText(background), 0.72);
+    ctx.font = font(height > 1500 ? 43 : 37, "Avenir Next", 500);
+    ctx.fillStyle = rgba(contrastText(background), 0.64);
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(focusPhrase(item), width / 2, height > 1500 ? 145 : 105);
@@ -293,7 +310,7 @@
     await document.fonts.ready;
     await Promise.all([
       document.fonts.load('128px "Godber"'),
-      document.fonts.load('600 48px "Avenir Next"')
+      document.fonts.load('500 48px "Avenir Next"')
     ]);
     const type = item.content_type === "reel" ? "static" : item.content_type;
     let frames = Array.isArray(item.frames) ? item.frames.filter((frame) => frame && frame.text) : [];
