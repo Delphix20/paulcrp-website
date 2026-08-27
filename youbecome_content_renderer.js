@@ -6,7 +6,7 @@
   const STORY_WIDTH = 1080;
   const STORY_HEIGHT = 1920;
   const JPEG_QUALITY = 0.94;
-  const RENDERER_VERSION = "20260827-5";
+  const RENDERER_VERSION = "20260827-6";
 
   const categoryPhrases = {
     assertiveness: "more assertive.",
@@ -217,7 +217,7 @@
     const mainText = isLegacyOpening ? frame.detail : (frame.text || item.hook || item.quote_text);
     drawCenteredText(ctx, mainText, {
       centerX: STORY_WIDTH / 2,
-      centerY: 890,
+      centerY: 940,
       preferredSize: 128,
       minimumSize: 72,
       maxWidth: 850,
