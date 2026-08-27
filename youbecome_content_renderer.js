@@ -6,7 +6,7 @@
   const STORY_WIDTH = 1080;
   const STORY_HEIGHT = 1920;
   const JPEG_QUALITY = 0.94;
-  const RENDERER_VERSION = "20260827-3";
+  const RENDERER_VERSION = "20260827-4";
 
   const categoryPhrases = {
     assertiveness: "more assertive.",
@@ -176,16 +176,19 @@
     return categoryPhrases[id] || `more ${fallback}.`;
   }
 
-  function drawChrome(ctx, item, width, height, foreground, background) {
-    ctx.font = font(height > 1500 ? 43 : 37, "Avenir Next", 500);
-    ctx.fillStyle = rgba(contrastText(background), 0.64);
+  function drawChrome(ctx, item, width, height, background) {
+    const isStory = height > 1500;
+    const headerColor = contrastText(background);
+
+    ctx.font = font(isStory ? 58 : 50, "Godber", 400);
+    ctx.fillStyle = headerColor;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText(focusPhrase(item), width / 2, height > 1500 ? 145 : 105);
+    ctx.fillText("You Become", width / 2, isStory ? 220 : 70);
 
-    ctx.font = font(height > 1500 ? 50 : 43, "Godber", 400);
-    ctx.fillStyle = mix(background, foreground, 0.72);
-    ctx.fillText("You Become", width / 2, height - (height > 1500 ? 120 : 86));
+    ctx.font = font(isStory ? 34 : 30, "Avenir Next", 500);
+    ctx.fillStyle = rgba(headerColor, 0.64);
+    ctx.fillText(focusPhrase(item), width / 2, isStory ? 275 : 116);
   }
 
   function renderFeedFrame(item, frame, colors) {
@@ -195,7 +198,7 @@
     const ctx = canvas.getContext("2d", { alpha: false });
     drawBackground(ctx, FEED_WIDTH, FEED_HEIGHT, colors);
     const foreground = colors[2] ? "#f7f4ec" : "#23212c";
-    drawChrome(ctx, item, FEED_WIDTH, FEED_HEIGHT, foreground, colors[0]);
+    drawChrome(ctx, item, FEED_WIDTH, FEED_HEIGHT, colors[0]);
     drawCenteredText(ctx, frame.text || item.hook || item.quote_text, {
       centerX: FEED_WIDTH / 2,
       centerY: FEED_HEIGHT / 2 + 10,
@@ -216,7 +219,7 @@
     const ctx = canvas.getContext("2d", { alpha: false });
     drawBackground(ctx, STORY_WIDTH, STORY_HEIGHT, colors);
     const foreground = colors[2] ? "#f7f4ec" : "#23212c";
-    drawChrome(ctx, item, STORY_WIDTH, STORY_HEIGHT, foreground, colors[0]);
+    drawChrome(ctx, item, STORY_WIDTH, STORY_HEIGHT, colors[0]);
 
     const isLegacyOpening = frame.role === "opening"
       && String(frame.text || "").trim().toLowerCase() === "a thought for today"
@@ -250,7 +253,7 @@
     await document.fonts.ready;
     await Promise.all([
       document.fonts.load('128px "Godber"'),
-      document.fonts.load('500 48px "Avenir Next"')
+      document.fonts.load('500 34px "Avenir Next"')
     ]);
     const type = item.content_type === "reel" ? "static" : item.content_type;
     let frames = Array.isArray(item.frames) ? item.frames.filter((frame) => frame && frame.text) : [];
