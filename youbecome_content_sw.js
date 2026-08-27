@@ -7,7 +7,7 @@ self.addEventListener("push", (event) => {
   const title = notification.title || "You Become Content Studio";
   const navigate = notification.navigate || notification.url || "/youbecome_content.html";
   event.waitUntil(self.registration.showNotification(title, {
-    body: notification.body || "A post is ready for its final Instagram step.",
+    body: notification.body || "Automatic Instagram publishing has an update.",
     tag: notification.tag || "you-become-publishing-reminder",
     icon: "/assets/youbecome-studio-icon-192.png",
     badge: "/assets/youbecome-studio-icon-192.png",

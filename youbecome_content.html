@@ -370,6 +370,12 @@
     .reminder-state strong { color: var(--vanilla); font-size: 13px; }
     .reminder-state p { margin: 0; color: var(--muted-strong); font-size: 11px; line-height: 1.55; }
     .install-steps { margin: 0; padding-left: 18px; color: var(--muted-strong); font-size: 11px; line-height: 1.7; }
+    .production-status { position: fixed; left: 50%; bottom: 18px; z-index: 105; width: min(520px, calc(100% - 28px)); padding: 13px 14px; border: 1px solid var(--border-strong); border-radius: 8px; background: rgba(28, 26, 35, 0.97); box-shadow: var(--shadow); transform: translate(-50%, 18px); opacity: 0; pointer-events: none; transition: transform 160ms ease, opacity 160ms ease; }
+    .production-status.visible { transform: translate(-50%, 0); opacity: 1; }
+    .production-copy { display: flex; justify-content: space-between; gap: 14px; color: var(--muted-strong); font-size: 10px; font-weight: 750; }
+    .production-copy strong { color: var(--vanilla); }
+    .production-track { height: 3px; margin-top: 9px; overflow: hidden; border-radius: 3px; background: rgba(241, 254, 200, 0.1); }
+    .production-fill { width: 0; height: 100%; border-radius: inherit; background: var(--vanilla); transition: width 180ms ease; }
 
     .toast { position: fixed; right: 18px; bottom: 18px; z-index: 100; min-width: 260px; max-width: calc(100% - 36px); border: 1px solid var(--border-strong); border-radius: 8px; padding: 12px 14px; background: var(--cosmic-800); color: var(--paper); box-shadow: var(--shadow); font-size: 11px; font-weight: 700; transform: translateY(18px); opacity: 0; pointer-events: none; transition: transform 160ms ease, opacity 160ms ease; }
     .toast.visible { transform: translateY(0); opacity: 1; }
@@ -433,7 +439,7 @@
       </div>
       <div class="top-actions">
         <div class="publisher-state" id="publisherState"><span class="state-dot"></span><span id="publisherStateText">Publishing disabled</span></div>
-        <button class="button" id="reminderButton" type="button">Reminders</button>
+        <button class="button" id="reminderButton" type="button">Alerts</button>
         <a class="link-button" href="youbecome_analytics.html">Analytics</a>
         <button class="button" id="refreshButton" type="button">Refresh</button>
         <button class="button" id="lockButton" type="button">Lock</button>
@@ -443,7 +449,7 @@
     <section class="hero">
       <div>
         <h1>Build attention with something worth keeping.</h1>
-        <p class="hero-copy">Review the complete launch month before production. Approval confirms the direction only; an item still cannot publish until its creative is finished, queued, and the publisher is enabled.</p>
+        <p class="hero-copy">Approve a week or the complete month once. The studio creates every static post, carousel, and Story frame, then queues it for automatic publishing to @you.become.app.</p>
       </div>
       <div class="hero-meta"><strong>30-day launch plan</strong><span id="refreshedText">Loading current plan</span></div>
     </section>
@@ -456,7 +462,7 @@
     <section class="view active" id="reviewView">
       <div class="kpi-grid" aria-label="Content plan summary">
         <article class="kpi"><span class="kpi-label">Total concepts</span><strong class="kpi-value" id="totalCount">0</strong><span class="kpi-note">Feed and Story sets</span></article>
-        <article class="kpi"><span class="kpi-label">Reels</span><strong class="kpi-value" id="reelCount">0</strong><span class="kpi-note">Discovery-led</span></article>
+        <article class="kpi"><span class="kpi-label">Static posts</span><strong class="kpi-value" id="staticCount">0</strong><span class="kpi-note">Automatic feed posts</span></article>
         <article class="kpi"><span class="kpi-label">Carousels</span><strong class="kpi-value" id="carouselCount">0</strong><span class="kpi-note">Designed for saves</span></article>
         <article class="kpi"><span class="kpi-label">Story sets</span><strong class="kpi-value" id="storyCount">0</strong><span class="kpi-note">Daily community prompts</span></article>
         <article class="kpi"><span class="kpi-label">Proposed</span><strong class="kpi-value" id="proposedCount">0</strong><span class="kpi-note">Waiting for review</span></article>
@@ -465,10 +471,12 @@
 
       <div class="toolbar" aria-label="Review filters and actions">
         <select id="weekFilter" aria-label="Filter by week"><option value="all">All weeks</option><option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option><option value="4">Week 4</option><option value="5">Week 5</option></select>
-        <select id="formatFilter" aria-label="Filter by format"><option value="all">All formats</option><option value="reel">Reels</option><option value="carousel">Carousels</option><option value="static">Static posts</option><option value="story">Stories</option></select>
+        <select id="formatFilter" aria-label="Filter by format"><option value="all">All formats</option><option value="carousel">Carousels</option><option value="static">Static posts</option><option value="story">Stories</option></select>
         <select id="statusFilter" aria-label="Filter by review status"><option value="all">All statuses</option><option value="proposed">Proposed</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select>
         <button class="button" id="selectVisibleButton" type="button">Select visible</button>
         <button class="button" id="clearSelectionButton" type="button">Clear</button>
+        <button class="button approve" id="approveMonthButton" type="button">Approve month</button>
+        <button class="button reject" id="testFormatsButton" type="button">Test 3 formats</button>
         <span class="toolbar-spacer"></span>
         <span class="selection-count" id="selectionCount">0 selected</span>
         <button class="button approve" id="approveButton" type="button" disabled>Approve selected</button>
@@ -497,7 +505,7 @@
           <p class="strategy-copy">Every post should feel calm enough to pause on and specific enough to send. Keep Cosmic and Vanilla as the recognition system, use app backgrounds as supporting palettes, and avoid generic stock footage or anonymous quote-page styling.</p>
           <ul class="strategy-list">
             <li><strong>Voice:</strong> human, emotionally precise, short, and useful.</li>
-            <li><strong>Reels:</strong> a strong first frame, 7-12 seconds, subtle movement, clean loop.</li>
+            <li><strong>Static posts:</strong> one strong thought, generous spacing, and a recognizable app background.</li>
             <li><strong>Carousels:</strong> one thought per slide, practical enough to save.</li>
           </ul>
         </article>
@@ -506,12 +514,12 @@
           <p class="eyebrow">Publishing rhythm</p>
           <h2 class="strategy-title">Six feed posts a week. Stories every day.</h2>
           <div class="mix-grid">
-            <div class="mix-item"><span class="mix-value">3</span><span class="mix-label">Reels / week</span></div>
+            <div class="mix-item"><span class="mix-value">4</span><span class="mix-label">Static / week</span></div>
             <div class="mix-item"><span class="mix-value">2</span><span class="mix-label">Carousels / week</span></div>
-            <div class="mix-item"><span class="mix-value">1</span><span class="mix-label">Static / week</span></div>
             <div class="mix-item"><span class="mix-value">7</span><span class="mix-label">Story sets / week</span></div>
+            <div class="mix-item"><span class="mix-value">100%</span><span class="mix-label">Scheduled</span></div>
           </div>
-          <p class="strategy-copy">Four static quotes every day would make the account look automated and repetitive. This mix gives each format one job: Reels find new people, carousels earn saves, static cards strengthen the visual identity, and Stories create replies and research the audience.</p>
+          <p class="strategy-copy">A mix of static thoughts, saveable carousels, and daily Story sets keeps the account useful without requiring a manual Instagram finishing step. The visual system stays recognizable while the writing and format vary.</p>
         </article>
 
         <article class="strategy-band">
@@ -549,7 +557,7 @@
       </div>
     </section>
 
-    <footer class="footer"><span>Approving a concept does not publish it.</span><span>Reels and interactive Stories retain a manual final step for audio and native stickers.</span></footer>
+    <footer class="footer"><span>Approval prepares and queues the selected content automatically.</span><span>Publishing is limited to @you.become.app.</span></footer>
   </main>
 
   <dialog id="editDialog">
@@ -567,11 +575,11 @@
   </dialog>
 
   <dialog id="reminderDialog">
-    <div class="dialog-head"><h2>Publishing reminders</h2><button class="icon-button" id="closeReminderButton" type="button" aria-label="Close">x</button></div>
+    <div class="dialog-head"><h2>Publishing alerts</h2><button class="icon-button" id="closeReminderButton" type="button" aria-label="Close">x</button></div>
     <div class="dialog-body">
       <div class="reminder-state">
         <strong id="reminderStatusTitle">Checking this device</strong>
-        <p id="reminderStatusCopy">The Content Studio will notify you only for approved posts that need a final step in Instagram.</p>
+        <p id="reminderStatusCopy">The Content Studio will notify you after an automatic publication succeeds or needs attention.</p>
       </div>
       <ol class="install-steps" id="installSteps" hidden>
         <li>Open this page in Safari on your iPhone.</li>
@@ -587,8 +595,13 @@
     </div>
   </dialog>
 
+  <div class="production-status" id="productionStatus" role="status" aria-live="polite">
+    <div class="production-copy"><strong id="productionTitle">Preparing media</strong><span id="productionCount">0 / 0</span></div>
+    <div class="production-track"><div class="production-fill" id="productionFill"></div></div>
+  </div>
   <div class="toast" id="toast" role="status"></div>
 
+  <script src="youbecome_content_renderer.js"></script>
   <script>
     (() => {
       "use strict";
@@ -610,7 +623,9 @@
         loading: false,
         serviceWorker: null,
         pushSubscription: null,
-        pushStatus: null
+        pushStatus: null,
+        production: false,
+        productionHideTimer: null
       };
       const el = (id) => document.getElementById(id);
 
@@ -622,11 +637,11 @@
         };
         const items = [
           { ...base, id: "00000000-0000-0000-0000-000000000001", content_key: "preview-1", content_type: "carousel", hook: "Confidence is often quieter than you think", quote_text: "Confidence is often quieter than you think", caption: "Confidence is not always the loudest voice in the room.", cta: "Which sign are you building?", creative_brief: "Saveable carousel", frames: [{text:"Confidence is often quieter than you think"},{text:"It is saying what you mean clearly."},{text:"It is keeping a promise nobody sees."}], scheduled_for: "2026-08-31T15:30:00Z", week_number: 1, day_number: 4, position_in_day: 2 },
-          { ...base, id: "00000000-0000-0000-0000-000000000002", content_key: "preview-2", content_type: "reel", category_id: "motivation", category_name: "Motivation", palette_index: 1, hook: "Start before your mood agrees.", quote_text: "Start before your mood agrees.", caption: "Give it five minutes and let movement create the energy.", cta: "What can you begin?", creative_brief: "7-12 second Reel", frames: [{text:"Start before your mood agrees."},{text:"Give it five minutes."}], scheduled_for: "2026-09-01T15:30:00Z", publish_mode: "manual", production_status: "needs_manual", week_number: 1, day_number: 5, position_in_day: 2 },
+          { ...base, id: "00000000-0000-0000-0000-000000000002", content_key: "preview-2", content_type: "static", category_id: "motivation", category_name: "Motivation", palette_index: 1, hook: "Start before your mood agrees.", quote_text: "Start before your mood agrees.", caption: "Give it five minutes and let movement create the energy.", cta: "What can you begin?", creative_brief: "Premium static thought", frames: [{text:"Start before your mood agrees."}], scheduled_for: "2026-09-01T15:30:00Z", publish_mode: "automatic", production_status: "concept", week_number: 1, day_number: 5, position_in_day: 2 },
           { ...base, id: "00000000-0000-0000-0000-000000000003", content_key: "preview-3", content_type: "static", category_id: "courage", category_name: "Courage", palette_index: 5, hook: "Fear can come with you. It does not get to lead.", quote_text: "Fear can come with you. It does not get to lead.", caption: "Courage is deciding that fear will not make every choice for you.", cta: "Keep this close.", creative_brief: "Premium quote card", frames: [{text:"Fear can come with you. It does not get to lead."}], scheduled_for: "2026-09-02T15:30:00Z", week_number: 1, day_number: 6, position_in_day: 2 },
-          { ...base, id: "00000000-0000-0000-0000-000000000004", content_key: "preview-4", content_type: "story", placement: "stories", category_id: "focused", category_name: "Focused", palette_index: 6, hook: "What interrupts your focus most?", quote_text: "What interrupts your focus most?", caption: "What interrupts your focus most?", cta: "Reply to every response.", creative_brief: "Three-frame interactive Story", frames: [{role:"opening",text:"A thought for today"},{role:"interaction",text:"What interrupts your focus most?",sticker:"poll",options:["Notifications","Open tasks"]},{role:"closing",text:"Carry one useful thought into the day."}], scheduled_for: "2026-09-03T06:15:00Z", publish_mode: "manual", production_status: "needs_manual", week_number: 1, day_number: 7, position_in_day: 1 }
+          { ...base, id: "00000000-0000-0000-0000-000000000004", content_key: "preview-4", content_type: "story", placement: "stories", category_id: "calm", category_name: "Calm", palette_index: 18, hook: "What would make today feel lighter?", quote_text: "What would make today feel lighter?", caption: "What would make today feel lighter?", cta: "Reply to this Story with your answer.", creative_brief: "Three-frame static Story", frames: [{role:"opening",text:"A thought for today",detail:"Pause for ten seconds before the next scroll."},{role:"interaction",text:"What would make today feel lighter?",sticker:"poll",options:["Less pressure","More clarity"]},{role:"closing",text:"Carry one useful thought into the day.",detail:"You Become"}], scheduled_for: "2026-08-28T06:15:00Z", publish_mode: "automatic", production_status: "concept", week_number: 1, day_number: 1, position_in_day: 1 }
         ];
-        return { config: { enabled: false }, summary: { total: 4, reel: 1, carousel: 1, static: 1, story: 1, proposed: 4, approved: 0 }, items };
+        return { config: { enabled: false }, summary: { total: 4, carousel: 1, static: 2, story: 1, proposed: 4, approved: 0 }, items };
       }
 
       function readToken() {
@@ -706,7 +721,7 @@
         const supported = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
         const installedRequired = isIOS() && !isStandalone();
         const active = Boolean(state.pushStatus?.subscribed && state.pushSubscription);
-        el("reminderButton").textContent = active ? "Reminders on" : installedRequired ? "Install reminders" : "Reminders";
+        el("reminderButton").textContent = active ? "Alerts on" : installedRequired ? "Install alerts" : "Alerts";
         el("reminderButton").classList.toggle("reminders-on", active);
         el("enableReminderButton").hidden = active || !supported || installedRequired;
         el("testReminderButton").hidden = !active;
@@ -720,15 +735,15 @@
           el("reminderStatusTitle").textContent = "Add the studio to your Home Screen";
           el("reminderStatusCopy").textContent = "Apple allows website push notifications only from an installed Home Screen web app.";
         } else if (active) {
-          el("reminderStatusTitle").textContent = "Reminders are active on this device";
-          el("reminderStatusCopy").textContent = "You will be notified 15 minutes before and again at the scheduled time if the post is still unfinished.";
+          el("reminderStatusTitle").textContent = "Publishing alerts are active";
+          el("reminderStatusCopy").textContent = "You will be notified after automatic publishing succeeds or if a post needs attention.";
         } else if (Notification.permission === "denied") {
           el("reminderStatusTitle").textContent = "Notifications are blocked";
           el("reminderStatusCopy").textContent = "Allow notifications for You Become Studio in your device settings, then return here.";
           el("enableReminderButton").hidden = true;
         } else {
-          el("reminderStatusTitle").textContent = "Enable publishing reminders";
-          el("reminderStatusCopy").textContent = "Only approved posts that need Instagram music or native elements will create reminders.";
+          el("reminderStatusTitle").textContent = "Enable publishing alerts";
+          el("reminderStatusCopy").textContent = "Receive a concise result after the studio publishes to @you.become.app.";
         }
       }
 
@@ -766,7 +781,7 @@
           const result = await api("push-test", { endpoint: subscription.endpoint });
           if (result.sent) toast("Test notification sent.");
         } catch (error) {
-          toast(error.message || "Could not enable reminders.");
+          toast(error.message || "Could not enable alerts.");
         } finally {
           el("enableReminderButton").disabled = false;
           updateReminderControls();
@@ -781,8 +796,8 @@
           await state.pushSubscription.unsubscribe();
           state.pushSubscription = null;
           await refreshReminderStatus();
-          toast("Reminders disabled on this device.");
-        } catch (error) { toast(error.message || "Could not disable reminders."); }
+          toast("Publishing alerts disabled on this device.");
+        } catch (error) { toast(error.message || "Could not disable alerts."); }
         finally { el("disableReminderButton").disabled = false; }
       }
 
@@ -796,15 +811,6 @@
         finally { el("testReminderButton").disabled = false; }
       }
 
-      function manualGuide(item) {
-        if (item.content_type === "reel") return "Add the selected Instagram music, confirm the cover and caption, then publish.";
-        const interaction = (item.frames || []).find((frame) => frame.role === "interaction");
-        if (interaction?.sticker === "poll") return "Add the native poll with the prepared answers, add matching music, then publish.";
-        if (interaction?.sticker === "question") return "Add the native question box and matching music, then publish.";
-        if (interaction?.sticker === "slider") return "Add the native reaction slider and matching music, then publish.";
-        return "Add matching Instagram music and any prepared native element, then publish.";
-      }
-
       function filteredItems() {
         if (!state.data) return [];
         const week = el("weekFilter").value;
@@ -815,6 +821,129 @@
           (format === "all" || item.content_type === format) &&
           (status === "all" || item.approval_status === status)
         );
+      }
+
+      function outputType(item) { return item.content_type === "reel" ? "static" : item.content_type; }
+
+      function expectedAssetCount(item) {
+        const type = outputType(item);
+        const frames = Array.isArray(item.frames) ? item.frames.filter((frame) => frame?.text) : [];
+        if (type === "static") return 1;
+        if (type === "carousel") return Math.min(Math.max(frames.length, 2), 10);
+        if (type === "story") return Math.min(Math.max(frames.length, 1), 6);
+        return 0;
+      }
+
+      function isPrepared(item) {
+        return item.production_status === "ready" &&
+          Array.isArray(item.asset_urls) &&
+          item.asset_urls.length === expectedAssetCount(item);
+      }
+
+      function setProductionProgress(title, completed, total) {
+        window.clearTimeout(state.productionHideTimer);
+        el("productionTitle").textContent = title;
+        el("productionCount").textContent = `${completed} / ${total}`;
+        el("productionFill").style.width = `${total > 0 ? (completed / total) * 100 : 0}%`;
+        el("productionStatus").classList.add("visible");
+      }
+
+      function finishProductionProgress(message, completed, total) {
+        setProductionProgress(message, completed, total);
+        state.productionHideTimer = window.setTimeout(() => el("productionStatus").classList.remove("visible"), 2600);
+      }
+
+      function setProductionButtons(disabled) {
+        ["approveMonthButton", "testFormatsButton", "selectVisibleButton"].forEach((id) => {
+          el(id).disabled = disabled;
+        });
+        el("approveButton").disabled = disabled || state.selected.size === 0;
+        document.querySelectorAll(".week-approve").forEach((button) => { button.disabled = disabled; });
+      }
+
+      async function prepareAndApprove(items, options = {}) {
+        if (state.production) return null;
+        const unique = [...new Map(items.filter((item) => item && item.status !== "published").map((item) => [item.id, item])).values()];
+        if (unique.length === 0) { toast("There is no unpublished content in this selection."); return null; }
+        state.production = true;
+        setProductionButtons(true);
+        const label = options.label || "Preparing content";
+        const preparedIDs = [];
+        const failures = [];
+        let completed = 0;
+        setProductionProgress(label, completed, unique.length);
+        try {
+          for (const item of unique) {
+            try {
+              if (!isPrepared(item)) {
+                const rendered = await window.YouBecomeRenderer.render(item, palette(item.palette_index));
+                await api("creative-upload", { id: item.id, assets: rendered.assets });
+              }
+              preparedIDs.push(item.id);
+            } catch (error) {
+              failures.push({ id: item.id, error: error.message || "Media preparation failed" });
+            }
+            completed += 1;
+            setProductionProgress(label, completed, unique.length);
+          }
+          if (preparedIDs.length > 0) await api("review-batch", { ids: preparedIDs, decision: "approved" });
+          let publication = null;
+          if (options.publishNow && preparedIDs.length > 0) {
+            setProductionProgress("Publishing test to Instagram", 0, preparedIDs.length);
+            publication = await api("publish-now", { ids: preparedIDs.slice(0, 3) });
+          }
+          state.production = false;
+          await load();
+          const published = Number(publication?.published || 0);
+          const message = options.publishNow
+            ? `${published} test format${published === 1 ? "" : "s"} published.`
+            : failures.length === 0
+            ? `${preparedIDs.length} item${preparedIDs.length === 1 ? "" : "s"} prepared and approved.`
+            : `${preparedIDs.length} prepared; ${failures.length} need attention.`;
+          finishProductionProgress(message, unique.length - failures.length, unique.length);
+          toast(message);
+          return { preparedIDs, failures, publication };
+        } catch (error) {
+          finishProductionProgress("Preparation stopped", completed, unique.length);
+          toast(error.message || "Content preparation failed.");
+          return null;
+        } finally {
+          state.production = false;
+          setProductionButtons(false);
+        }
+      }
+
+      function prepareApprovedContent() {
+        if (state.production || !state.data) return;
+        const pending = state.data.items.filter((item) => item.approval_status === "approved" && item.status !== "published" && !isPrepared(item));
+        if (pending.length > 0) window.setTimeout(() => prepareAndApprove(pending, { label: "Preparing approved content" }), 0);
+      }
+
+      async function showLocalRenderPreview() {
+        const requested = new URLSearchParams(location.search).get("render");
+        if (!LOCAL_PREVIEW || !requested || document.getElementById("localRenderPreview")) return;
+        const item = state.data.items.find((candidate) => outputType(candidate) === requested);
+        if (!item) return;
+        const rendered = await window.YouBecomeRenderer.render(item, palette(item.palette_index));
+        const host = document.createElement("div");
+        host.id = "localRenderPreview";
+        host.style.cssText = "position:fixed;inset:0;z-index:120;display:grid;grid-template-columns:repeat(" + rendered.assets.length + ",minmax(0,1fr));gap:12px;padding:20px;background:#15141b;";
+        rendered.assets.forEach((asset) => {
+          const image = document.createElement("img");
+          image.src = "data:image/jpeg;base64," + asset.data_base64;
+          image.style.cssText = "width:100%;height:100%;min-width:0;object-fit:contain;";
+          host.appendChild(image);
+        });
+        document.body.appendChild(host);
+      }
+
+      async function testThreeFormats() {
+        const candidates = ["static", "carousel", "story"].map((type) =>
+          state.data.items.find((item) => outputType(item) === type && item.status !== "published")
+        ).filter(Boolean);
+        if (candidates.length !== 3) { toast("A static post, carousel, and Story are required for this test."); return; }
+        if (!window.confirm("This will immediately publish one static post, one carousel, and one Story set to @you.become.app. Continue?")) return;
+        await prepareAndApprove(candidates, { label: "Preparing 3-format test", publishNow: true });
       }
 
       function makePreview(item) {
@@ -904,7 +1033,8 @@
         caption.textContent = item.caption;
         const meta = document.createElement("div");
         meta.className = "item-meta";
-        meta.append(makeBadge("meta-chip", "Day " + item.day_number), makeBadge("meta-chip", formatName(item.content_pillar)), makeBadge("meta-chip", item.production_status === "needs_manual" ? "Manual finish" : "Production concept"));
+        const productionLabel = item.production_status === "ready" ? "Media ready" : "Created on approval";
+        meta.append(makeBadge("meta-chip", "Day " + item.day_number), makeBadge("meta-chip", formatName(item.content_pillar)), makeBadge("meta-chip", productionLabel));
         const itemReminders = (state.data.reminders || []).filter((reminder) => reminder.post_id === item.id);
         const scheduledReminders = itemReminders.filter((reminder) => reminder.status === "scheduled").length;
         if (scheduledReminders > 0) meta.append(makeBadge("meta-chip", scheduledReminders + " reminders scheduled"));
@@ -924,36 +1054,6 @@
         if (item.status !== "published") actions.append(edit, toggle);
         body.append(schedule, title, caption, meta);
         if (item.status !== "published") body.append(actions);
-
-        if (item.production_status === "needs_manual" && item.status !== "published") {
-          const guide = document.createElement("div");
-          guide.className = "manual-guide";
-          const guideTitle = document.createElement("p");
-          guideTitle.className = "manual-guide-title";
-          guideTitle.textContent = "Finish in Instagram";
-          const guideCopy = document.createElement("p");
-          guideCopy.className = "manual-guide-copy";
-          guideCopy.textContent = manualGuide(item);
-          const guideActions = document.createElement("div");
-          guideActions.className = "manual-guide-actions";
-          const instagram = document.createElement("a");
-          instagram.className = "link-button";
-          instagram.href = "https://www.instagram.com/";
-          instagram.target = "_blank";
-          instagram.rel = "noopener";
-          instagram.textContent = "Open Instagram";
-          guideActions.appendChild(instagram);
-          if (item.approval_status === "approved") {
-            const completed = document.createElement("button");
-            completed.className = "button approve";
-            completed.type = "button";
-            completed.textContent = "Mark published";
-            completed.addEventListener("click", () => markManualPublished(item.id));
-            guideActions.appendChild(completed);
-          }
-          guide.append(guideTitle, guideCopy, guideActions);
-          body.appendChild(guide);
-        }
 
         card.append(top, makePreview(item), body);
         return card;
@@ -1000,7 +1100,12 @@
             renderCalendar();
             updateSelection();
           });
-          actions.appendChild(select);
+          const approveWeek = document.createElement("button");
+          approveWeek.className = "button approve week-approve";
+          approveWeek.type = "button";
+          approveWeek.textContent = "Approve week";
+          approveWeek.addEventListener("click", () => prepareAndApprove(weekItems, { label: `Preparing Week ${week}` }));
+          actions.append(select, approveWeek);
           band.append(copy, actions);
           const grid = document.createElement("div");
           grid.className = "content-grid";
@@ -1019,7 +1124,7 @@
       function render() {
         const summary = state.data.summary || {};
         el("totalCount").textContent = summary.total || 0;
-        el("reelCount").textContent = summary.reel || 0;
+        el("staticCount").textContent = summary.static || 0;
         el("carouselCount").textContent = summary.carousel || 0;
         el("storyCount").textContent = summary.story || 0;
         el("approvedCount").textContent = summary.approved || 0;
@@ -1048,8 +1153,10 @@
           state.data = await api("review-list");
           hideAccess();
           render();
+          await showLocalRenderPreview();
           await refreshReminderStatus();
           el("loading").classList.add("hidden");
+          prepareApprovedContent();
         } catch (error) {
           if (error.message === "unauthorized") {
             localStorage.removeItem(TOKEN_KEY);
@@ -1066,6 +1173,12 @@
 
       async function reviewIDs(ids, decision) {
         if (ids.length === 0) return;
+        if (decision === "approved") {
+          const items = ids.map((id) => state.data.items.find((item) => item.id === id)).filter(Boolean);
+          await prepareAndApprove(items, { label: "Preparing selected content" });
+          state.selected.clear();
+          return;
+        }
         const verb = decision === "approved" ? "approve" : decision === "rejected" ? "reject" : "return to review";
         if (!window.confirm(`Confirm that you want to ${verb} ${ids.length} concept${ids.length === 1 ? "" : "s"}. This does not publish them.`)) return;
         try {
@@ -1074,15 +1187,6 @@
           await load();
           toast(`${result.updated} concept${result.updated === 1 ? "" : "s"} updated.`);
         } catch (error) { toast(error.message || "Review update failed."); }
-      }
-
-      async function markManualPublished(id) {
-        if (!window.confirm("Confirm that this was published manually in Instagram. This will cancel its remaining reminders.")) return;
-        try {
-          await api("manual-published", { id });
-          await load();
-          toast("Marked as published.");
-        } catch (error) { toast(error.message || "Could not mark this post as published."); }
       }
 
       function openEditor(id) {
@@ -1120,6 +1224,8 @@
       el("clearSelectionButton").addEventListener("click", () => { state.selected.clear(); renderCalendar(); updateSelection(); });
       el("approveButton").addEventListener("click", () => reviewIDs([...state.selected], "approved"));
       el("rejectButton").addEventListener("click", () => reviewIDs([...state.selected], "rejected"));
+      el("approveMonthButton").addEventListener("click", () => prepareAndApprove(state.data.items, { label: "Preparing launch month" }));
+      el("testFormatsButton").addEventListener("click", testThreeFormats);
       el("refreshButton").addEventListener("click", load);
       el("lockButton").addEventListener("click", () => { localStorage.removeItem(TOKEN_KEY); state.token = ""; state.data = null; state.selected.clear(); showAccess(); });
       el("reminderButton").addEventListener("click", () => { updateReminderControls(); el("reminderDialog").showModal(); });
