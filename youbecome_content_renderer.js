@@ -246,7 +246,11 @@
     drawChrome(ctx, item, STORY_WIDTH, STORY_HEIGHT, foreground, colors[0]);
 
     const interaction = frame.role === "interaction";
-    const result = drawCenteredText(ctx, frame.text || item.hook || item.quote_text, {
+    const isLegacyOpening = frame.role === "opening"
+      && String(frame.text || "").trim().toLowerCase() === "a thought for today"
+      && String(frame.detail || "").trim();
+    const mainText = isLegacyOpening ? frame.detail : (frame.text || item.hook || item.quote_text);
+    const result = drawCenteredText(ctx, mainText, {
       centerX: STORY_WIDTH / 2,
       centerY: interaction ? 705 : 890,
       preferredSize: interaction ? 116 : 128,
@@ -257,7 +261,7 @@
       color: foreground
     });
 
-    if (frame.detail && String(frame.detail).trim().toLowerCase() !== "you become") {
+    if (!isLegacyOpening && frame.detail && String(frame.detail).trim().toLowerCase() !== "you become") {
       drawSecondary(ctx, frame.detail, STORY_WIDTH / 2, Math.min(result.bottom + 150, 1260), 790, rgba(foreground, 0.78), 48);
     }
 
