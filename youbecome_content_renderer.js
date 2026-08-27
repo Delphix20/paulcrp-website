@@ -6,6 +6,7 @@
   const STORY_WIDTH = 1080;
   const STORY_HEIGHT = 1920;
   const JPEG_QUALITY = 0.94;
+  const RENDERER_VERSION = "20260827-3";
 
   const categoryPhrases = {
     assertiveness: "more assertive.",
@@ -76,21 +77,6 @@
     });
     const luminance = 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
     return luminance > 0.34 ? "#23212c" : "#f7f4ec";
-  }
-
-  function roundRect(ctx, x, y, width, height, radius) {
-    const r = Math.min(radius, width / 2, height / 2);
-    ctx.beginPath();
-    ctx.moveTo(x + r, y);
-    ctx.lineTo(x + width - r, y);
-    ctx.quadraticCurveTo(x + width, y, x + width, y + r);
-    ctx.lineTo(x + width, y + height - r);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - r, y + height);
-    ctx.lineTo(x + r, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, y + height - r);
-    ctx.lineTo(x, y + r);
-    ctx.quadraticCurveTo(x, y, x + r, y);
-    ctx.closePath();
   }
 
   function drawBackground(ctx, width, height, colors) {
@@ -184,25 +170,6 @@
     return { ...fitted, bottom: y - fitted.lineHeight + (fitted.size / 2) };
   }
 
-  function drawSecondary(ctx, text, x, y, width, color, size = 45) {
-    const fitted = fitText(ctx, text, {
-      family: "Avenir Next",
-      weight: 600,
-      preferredSize: size,
-      minimumSize: 32,
-      maxWidth: width,
-      maxHeight: 190,
-      lineHeight: 1.3,
-      maxLines: 3
-    });
-    ctx.font = font(fitted.size, "Avenir Next", 600);
-    ctx.fillStyle = color;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    const totalHeight = (fitted.lines.length - 1) * fitted.lineHeight;
-    fitted.lines.forEach((line, index) => ctx.fillText(line, x, y - totalHeight / 2 + index * fitted.lineHeight));
-  }
-
   function focusPhrase(item) {
     const id = String(item.category_id || "").toLowerCase();
     const fallback = String(item.category_name || "balanced").trim().toLowerCase();
@@ -219,17 +186,6 @@
     ctx.font = font(height > 1500 ? 50 : 43, "Godber", 400);
     ctx.fillStyle = mix(background, foreground, 0.72);
     ctx.fillText("You Become", width / 2, height - (height > 1500 ? 120 : 86));
-  }
-
-  function drawChoice(ctx, text, centerX, centerY, width, foreground, lightText) {
-    const height = 112;
-    roundRect(ctx, centerX - width / 2, centerY - height / 2, width, height, 34);
-    ctx.fillStyle = lightText ? "rgba(255,255,255,0.09)" : "rgba(255,255,255,0.2)";
-    ctx.fill();
-    ctx.strokeStyle = rgba(foreground, 0.36);
-    ctx.lineWidth = 2;
-    ctx.stroke();
-    drawSecondary(ctx, text, centerX, centerY, width - 70, foreground, 41);
   }
 
   function renderFeedFrame(item, frame, colors) {
@@ -262,36 +218,20 @@
     const foreground = colors[2] ? "#f7f4ec" : "#23212c";
     drawChrome(ctx, item, STORY_WIDTH, STORY_HEIGHT, foreground, colors[0]);
 
-    const interaction = frame.role === "interaction";
     const isLegacyOpening = frame.role === "opening"
       && String(frame.text || "").trim().toLowerCase() === "a thought for today"
       && String(frame.detail || "").trim();
     const mainText = isLegacyOpening ? frame.detail : (frame.text || item.hook || item.quote_text);
-    const result = drawCenteredText(ctx, mainText, {
+    drawCenteredText(ctx, mainText, {
       centerX: STORY_WIDTH / 2,
-      centerY: interaction ? 705 : 890,
-      preferredSize: interaction ? 116 : 128,
+      centerY: 890,
+      preferredSize: 128,
       minimumSize: 72,
       maxWidth: 850,
-      maxHeight: interaction ? 520 : 760,
+      maxHeight: 760,
       maxLines: 7,
       color: foreground
     });
-
-    if (!isLegacyOpening && frame.detail && String(frame.detail).trim().toLowerCase() !== "you become") {
-      drawSecondary(ctx, frame.detail, STORY_WIDTH / 2, Math.min(result.bottom + 150, 1260), 790, rgba(foreground, 0.78), 48);
-    }
-
-    if (interaction) {
-      const options = Array.isArray(frame.options) ? frame.options.filter(Boolean).slice(0, 2) : [];
-      if (options.length > 0) {
-        const firstY = 1125;
-        options.forEach((option, index) => drawChoice(ctx, option, STORY_WIDTH / 2, firstY + index * 145, 720, foreground, colors[2]));
-        drawSecondary(ctx, "Reply with your answer.", STORY_WIDTH / 2, 1515, 720, rgba(foreground, 0.68), 40);
-      } else {
-        drawSecondary(ctx, "Reply to this story.", STORY_WIDTH / 2, 1240, 720, rgba(foreground, 0.72), 44);
-      }
-    }
     return canvas;
   }
 
@@ -326,5 +266,6 @@
     return { content_type: type, assets };
   }
 
-  window.YouBecomeRenderer = { render };
+  document.documentElement.dataset.rendererVersion = RENDERER_VERSION;
+  window.YouBecomeRenderer = { render, version: RENDERER_VERSION };
 })();

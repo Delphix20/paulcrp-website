@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; worker-src 'self'; manifest-src 'self'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://ecjntltvvwyctxplvwrt.supabase.co; media-src https://ecjntltvvwyctxplvwrt.supabase.co; connect-src https://ecjntltvvwyctxplvwrt.supabase.co https://*.push.apple.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; worker-src 'self'; manifest-src 'self'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://ecjntltvvwyctxplvwrt.supabase.co; media-src https://ecjntltvvwyctxplvwrt.supabase.co; connect-src 'self' https://ecjntltvvwyctxplvwrt.supabase.co https://*.push.apple.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
   <meta name="theme-color" content="#23212c">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -601,7 +601,7 @@
   </div>
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="youbecome_content_renderer.js?v=20260827-2"></script>
+  <script src="youbecome_content_renderer.js?v=20260827-3"></script>
   <script>
     (() => {
       "use strict";
@@ -639,7 +639,7 @@
           { ...base, id: "00000000-0000-0000-0000-000000000001", content_key: "preview-1", content_type: "carousel", hook: "Confidence is often quieter than you think", quote_text: "Confidence is often quieter than you think", caption: "Confidence is not always the loudest voice in the room.", cta: "Which sign are you building?", creative_brief: "Saveable carousel", frames: [{text:"Confidence is often quieter than you think"},{text:"It is saying what you mean clearly."},{text:"It is keeping a promise nobody sees."}], scheduled_for: "2026-08-31T15:30:00Z", week_number: 1, day_number: 4, position_in_day: 2 },
           { ...base, id: "00000000-0000-0000-0000-000000000002", content_key: "preview-2", content_type: "static", category_id: "motivation", category_name: "Motivation", palette_index: 1, hook: "Start before your mood agrees.", quote_text: "Start before your mood agrees.", caption: "Give it five minutes and let movement create the energy.", cta: "What can you begin?", creative_brief: "Premium static thought", frames: [{text:"Start before your mood agrees."}], scheduled_for: "2026-09-01T15:30:00Z", publish_mode: "automatic", production_status: "concept", week_number: 1, day_number: 5, position_in_day: 2 },
           { ...base, id: "00000000-0000-0000-0000-000000000003", content_key: "preview-3", content_type: "static", category_id: "courage", category_name: "Courage", palette_index: 5, hook: "Fear can come with you. It does not get to lead.", quote_text: "Fear can come with you. It does not get to lead.", caption: "Courage is deciding that fear will not make every choice for you.", cta: "Keep this close.", creative_brief: "Premium quote card", frames: [{text:"Fear can come with you. It does not get to lead."}], scheduled_for: "2026-09-02T15:30:00Z", week_number: 1, day_number: 6, position_in_day: 2 },
-          { ...base, id: "00000000-0000-0000-0000-000000000004", content_key: "preview-4", content_type: "story", placement: "stories", category_id: "calm", category_name: "Calm", palette_index: 18, hook: "What would make today feel lighter?", quote_text: "What would make today feel lighter?", caption: "What would make today feel lighter?", cta: "Reply to this Story with your answer.", creative_brief: "Three-frame static Story", frames: [{role:"opening",text:"Pause for ten seconds before the next scroll."},{role:"interaction",text:"What would make today feel lighter?",sticker:"poll",options:["Less pressure","More clarity"]},{role:"closing",text:"Carry one useful thought into the day.",detail:"You Become"}], scheduled_for: "2026-08-28T06:15:00Z", publish_mode: "automatic", production_status: "concept", week_number: 1, day_number: 1, position_in_day: 1 }
+          { ...base, id: "00000000-0000-0000-0000-000000000004", content_key: "preview-4", content_type: "story", placement: "stories", category_id: "calm", category_name: "Calm", palette_index: 18, hook: "What would make today feel lighter?", quote_text: "What would make today feel lighter?", caption: "What would make today feel lighter?", cta: "Keep this thought close.", creative_brief: "Three-frame static Story", frames: [{role:"opening",text:"Pause for ten seconds before the next scroll."},{role:"prompt",text:"What would make today feel lighter?"},{role:"closing",text:"Carry one useful thought into the day.",detail:"You Become"}], scheduled_for: "2026-08-28T06:15:00Z", publish_mode: "automatic", production_status: "concept", week_number: 1, day_number: 1, position_in_day: 1 }
         ];
         return { config: { enabled: false }, summary: { total: 4, carousel: 1, static: 2, story: 1, proposed: 4, approved: 0 }, items };
       }
@@ -861,8 +861,27 @@
         document.querySelectorAll(".week-approve").forEach((button) => { button.disabled = disabled; });
       }
 
+      async function ensureCurrentRenderer() {
+        const response = await fetch(`youbecome_content_version.json?t=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error("Could not verify the current media renderer.");
+        const latest = await response.json();
+        const loadedVersion = document.documentElement.dataset.rendererVersion
+          || window.YouBecomeRenderer?.version;
+        if (loadedVersion === latest.renderer_version) return;
+
+        toast("Content Studio was updated. Reloading...");
+        window.setTimeout(() => location.reload(), 500);
+        throw new Error("Content Studio updated. Press the button again after it reloads.");
+      }
+
       async function prepareAndApprove(items, options = {}) {
         if (state.production) return null;
+        try {
+          await ensureCurrentRenderer();
+        } catch (error) {
+          toast(error.message || "Could not verify the media renderer.");
+          return null;
+        }
         const unique = [...new Map(items.filter((item) => item && item.status !== "published").map((item) => [item.id, item])).values()];
         if (unique.length === 0) { toast("There is no unpublished content in this selection."); return null; }
         state.production = true;
