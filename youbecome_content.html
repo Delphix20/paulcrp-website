@@ -579,7 +579,7 @@
     <div class="dialog-body">
       <div class="reminder-state">
         <strong id="reminderStatusTitle">Checking this device</strong>
-        <p id="reminderStatusCopy">The Content Studio will notify you after an automatic publication succeeds or needs attention.</p>
+        <p id="reminderStatusCopy">The Content Studio will remind you before feed posts and report each automatic publication.</p>
       </div>
       <ol class="install-steps" id="installSteps" hidden>
         <li>Open this page in Safari on your iPhone.</li>
@@ -736,14 +736,14 @@
           el("reminderStatusCopy").textContent = "Apple allows website push notifications only from an installed Home Screen web app.";
         } else if (active) {
           el("reminderStatusTitle").textContent = "Publishing alerts are active";
-          el("reminderStatusCopy").textContent = "You will be notified after automatic publishing succeeds or if a post needs attention.";
+          el("reminderStatusCopy").textContent = "You will be reminded about 15 minutes before feed posts, then notified after publishing or if something needs attention.";
         } else if (Notification.permission === "denied") {
           el("reminderStatusTitle").textContent = "Notifications are blocked";
           el("reminderStatusCopy").textContent = "Allow notifications for You Become Studio in your device settings, then return here.";
           el("enableReminderButton").hidden = true;
         } else {
           el("reminderStatusTitle").textContent = "Enable publishing alerts";
-          el("reminderStatusCopy").textContent = "Receive a concise result after the studio publishes to @you.become.app.";
+          el("reminderStatusCopy").textContent = "Receive a pre-post engagement reminder and a concise publication result for @you.become.app.";
         }
       }
 
