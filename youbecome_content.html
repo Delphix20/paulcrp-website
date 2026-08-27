@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://ecjntltvvwyctxplvwrt.supabase.co; media-src https://ecjntltvvwyctxplvwrt.supabase.co; connect-src https://ecjntltvvwyctxplvwrt.supabase.co; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; worker-src 'self'; manifest-src 'self'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://ecjntltvvwyctxplvwrt.supabase.co; media-src https://ecjntltvvwyctxplvwrt.supabase.co; connect-src https://ecjntltvvwyctxplvwrt.supabase.co https://*.push.apple.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <meta name="theme-color" content="#23212c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="You Become Studio">
+  <link rel="manifest" href="youbecome_content_manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/youbecome-studio-icon-192.png">
   <title>You Become Content Studio</title>
   <style>
     @font-face {
@@ -39,6 +45,7 @@
     }
 
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
     html { min-width: 320px; background: var(--cosmic-950); }
     body {
       min-height: 100vh;
@@ -117,6 +124,7 @@
     .button.primary { border-color: var(--vanilla); background: var(--vanilla); color: var(--cosmic-950); }
     .button.approve { border-color: rgba(129, 173, 144, 0.5); color: #cde6d4; background: rgba(129, 173, 144, 0.11); }
     .button.reject { border-color: rgba(225, 150, 143, 0.38); color: #efbab5; background: rgba(225, 150, 143, 0.08); }
+    .button.reminders-on { border-color: rgba(129, 173, 144, 0.5); color: #cde6d4; background: rgba(129, 173, 144, 0.11); }
 
     .publisher-state {
       min-height: 38px;
@@ -239,6 +247,8 @@
     .content-card.selected { border-color: var(--periwinkle); box-shadow: 0 0 0 1px rgba(156, 170, 246, 0.28); }
     .content-card.approved { border-color: rgba(129, 173, 144, 0.35); }
     .content-card.rejected { opacity: 0.62; }
+    .content-card.targeted { border-color: var(--vanilla); box-shadow: 0 0 0 2px rgba(241, 254, 200, 0.18), 0 18px 50px rgba(0, 0, 0, 0.28); animation: target-card 900ms ease both; }
+    @keyframes target-card { from { transform: translateY(8px); opacity: 0.7; } to { transform: translateY(0); opacity: 1; } }
 
     .card-top { min-height: 46px; display: flex; align-items: center; gap: 9px; padding: 10px 12px; border-bottom: 1px solid var(--border); }
     .item-check { width: 18px; height: 18px; accent-color: var(--periwinkle); }
@@ -293,6 +303,11 @@
     .meta-chip { min-height: 23px; display: inline-flex; align-items: center; border-radius: 6px; padding: 0 7px; background: rgba(255, 255, 255, 0.045); color: var(--muted); font-size: 9px; font-weight: 700; }
     .card-actions { display: flex; gap: 7px; margin-top: 13px; }
     .card-actions .button { flex: 1; min-height: 34px; padding-inline: 10px; }
+    .manual-guide { margin-top: 13px; border: 1px solid rgba(241, 254, 200, 0.18); border-radius: 7px; padding: 11px; background: rgba(241, 254, 200, 0.045); }
+    .manual-guide-title { margin: 0; color: var(--vanilla); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+    .manual-guide-copy { margin: 6px 0 0; color: var(--muted-strong); font-size: 10px; line-height: 1.45; }
+    .manual-guide-actions { display: flex; gap: 7px; margin-top: 10px; }
+    .manual-guide-actions .button, .manual-guide-actions .link-button { min-height: 34px; flex: 1; padding-inline: 9px; }
 
     .empty { min-height: 220px; display: grid; place-items: center; border: 1px dashed var(--border-strong); border-radius: 8px; color: var(--muted); text-align: center; }
 
@@ -351,6 +366,10 @@
     .field input, .field textarea { width: 100%; border: 1px solid var(--border); border-radius: 7px; padding: 10px 11px; background: var(--cosmic-950); color: var(--paper); font-size: 12px; line-height: 1.5; }
     .field textarea { min-height: 88px; resize: vertical; }
     .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; padding: 0 20px 20px; }
+    .reminder-state { display: grid; gap: 10px; padding: 14px; border: 1px solid var(--border); border-radius: 7px; background: var(--cosmic-950); }
+    .reminder-state strong { color: var(--vanilla); font-size: 13px; }
+    .reminder-state p { margin: 0; color: var(--muted-strong); font-size: 11px; line-height: 1.55; }
+    .install-steps { margin: 0; padding-left: 18px; color: var(--muted-strong); font-size: 11px; line-height: 1.7; }
 
     .toast { position: fixed; right: 18px; bottom: 18px; z-index: 100; min-width: 260px; max-width: calc(100% - 36px); border: 1px solid var(--border-strong); border-radius: 8px; padding: 12px 14px; background: var(--cosmic-800); color: var(--paper); box-shadow: var(--shadow); font-size: 11px; font-weight: 700; transform: translateY(18px); opacity: 0; pointer-events: none; transition: transform 160ms ease, opacity 160ms ease; }
     .toast.visible { transform: translateY(0); opacity: 1; }
@@ -371,7 +390,9 @@
     }
     @media (max-width: 620px) {
       .shell { padding-top: 14px; }
-      .topbar { align-items: flex-start; }
+      .topbar { align-items: stretch; flex-direction: column; gap: 12px; }
+      .top-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
+      .top-actions .button { padding-inline: 8px; }
       .brand-name { font-size: 23px; }
       .publisher-state { display: none; }
       .hero { margin-top: 6px; }
@@ -412,6 +433,7 @@
       </div>
       <div class="top-actions">
         <div class="publisher-state" id="publisherState"><span class="state-dot"></span><span id="publisherStateText">Publishing disabled</span></div>
+        <button class="button" id="reminderButton" type="button">Reminders</button>
         <a class="link-button" href="youbecome_analytics.html">Analytics</a>
         <button class="button" id="refreshButton" type="button">Refresh</button>
         <button class="button" id="lockButton" type="button">Lock</button>
@@ -544,6 +566,27 @@
     </form>
   </dialog>
 
+  <dialog id="reminderDialog">
+    <div class="dialog-head"><h2>Publishing reminders</h2><button class="icon-button" id="closeReminderButton" type="button" aria-label="Close">x</button></div>
+    <div class="dialog-body">
+      <div class="reminder-state">
+        <strong id="reminderStatusTitle">Checking this device</strong>
+        <p id="reminderStatusCopy">The Content Studio will notify you only for approved posts that need a final step in Instagram.</p>
+      </div>
+      <ol class="install-steps" id="installSteps" hidden>
+        <li>Open this page in Safari on your iPhone.</li>
+        <li>Tap Share, then Add to Home Screen.</li>
+        <li>Open You Become Studio from your Home Screen.</li>
+        <li>Return here and enable reminders.</li>
+      </ol>
+    </div>
+    <div class="dialog-actions">
+      <button class="button reject" id="disableReminderButton" type="button" hidden>Disable</button>
+      <button class="button" id="testReminderButton" type="button" hidden>Send test</button>
+      <button class="button primary" id="enableReminderButton" type="button">Enable reminders</button>
+    </div>
+  </dialog>
+
   <div class="toast" id="toast" role="status"></div>
 
   <script>
@@ -559,7 +602,16 @@
         ["#a5adb2", "#356f79", true], ["#cab9da", "#725b91", true], ["#f2d0a9", "#ba7458", false],
         ["#c9d8c7", "#557969", true]
       ];
-      const state = { token: "", data: null, selected: new Set(), editingID: null, loading: false };
+      const state = {
+        token: "",
+        data: null,
+        selected: new Set(),
+        editingID: null,
+        loading: false,
+        serviceWorker: null,
+        pushSubscription: null,
+        pushStatus: null
+      };
       const el = (id) => document.getElementById(id);
 
       function localPreviewData() {
@@ -629,6 +681,129 @@
       }
 
       function palette(index) { return palettes[Math.abs(Number(index) || 0) % palettes.length]; }
+
+      function isStandalone() {
+        return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+      }
+
+      function isIOS() { return /iPad|iPhone|iPod/.test(navigator.userAgent); }
+
+      function base64URLBytes(value) {
+        const padding = "=".repeat((4 - value.length % 4) % 4);
+        const binary = atob((value + padding).replace(/-/g, "+").replace(/_/g, "/"));
+        return Uint8Array.from(binary, (character) => character.charCodeAt(0));
+      }
+
+      async function prepareServiceWorker() {
+        if (LOCAL_PREVIEW || !("serviceWorker" in navigator) || !("PushManager" in window)) return null;
+        if (!state.serviceWorker) {
+          state.serviceWorker = await navigator.serviceWorker.register("/youbecome_content_sw.js");
+        }
+        return state.serviceWorker;
+      }
+
+      function updateReminderControls() {
+        const supported = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
+        const installedRequired = isIOS() && !isStandalone();
+        const active = Boolean(state.pushStatus?.subscribed && state.pushSubscription);
+        el("reminderButton").textContent = active ? "Reminders on" : installedRequired ? "Install reminders" : "Reminders";
+        el("reminderButton").classList.toggle("reminders-on", active);
+        el("enableReminderButton").hidden = active || !supported || installedRequired;
+        el("testReminderButton").hidden = !active;
+        el("disableReminderButton").hidden = !active;
+        el("installSteps").hidden = !installedRequired;
+
+        if (!supported) {
+          el("reminderStatusTitle").textContent = "Notifications are not supported here";
+          el("reminderStatusCopy").textContent = "Open the studio in Safari on your iPhone and add it to your Home Screen.";
+        } else if (installedRequired) {
+          el("reminderStatusTitle").textContent = "Add the studio to your Home Screen";
+          el("reminderStatusCopy").textContent = "Apple allows website push notifications only from an installed Home Screen web app.";
+        } else if (active) {
+          el("reminderStatusTitle").textContent = "Reminders are active on this device";
+          el("reminderStatusCopy").textContent = "You will be notified 15 minutes before and again at the scheduled time if the post is still unfinished.";
+        } else if (Notification.permission === "denied") {
+          el("reminderStatusTitle").textContent = "Notifications are blocked";
+          el("reminderStatusCopy").textContent = "Allow notifications for You Become Studio in your device settings, then return here.";
+          el("enableReminderButton").hidden = true;
+        } else {
+          el("reminderStatusTitle").textContent = "Enable publishing reminders";
+          el("reminderStatusCopy").textContent = "Only approved posts that need Instagram music or native elements will create reminders.";
+        }
+      }
+
+      async function refreshReminderStatus() {
+        try {
+          const registration = await prepareServiceWorker();
+          state.pushSubscription = registration ? await registration.pushManager.getSubscription() : null;
+          state.pushStatus = await api("push-status", { endpoint: state.pushSubscription?.endpoint || "" });
+        } catch (error) {
+          state.pushStatus = null;
+        }
+        updateReminderControls();
+      }
+
+      async function enableReminders() {
+        if (isIOS() && !isStandalone()) { updateReminderControls(); return; }
+        const publicKey = state.pushStatus?.public_key;
+        if (!publicKey) { toast("Push notifications are not configured."); return; }
+        el("enableReminderButton").disabled = true;
+        try {
+          const permission = await Notification.requestPermission();
+          if (permission !== "granted") { updateReminderControls(); return; }
+          const registration = await prepareServiceWorker();
+          if (!registration) throw new Error("Notifications are not supported on this device");
+          let subscription = await registration.pushManager.getSubscription();
+          if (!subscription) {
+            subscription = await registration.pushManager.subscribe({
+              userVisibleOnly: true,
+              applicationServerKey: base64URLBytes(publicKey)
+            });
+          }
+          await api("push-subscribe", { subscription: subscription.toJSON() });
+          state.pushSubscription = subscription;
+          await refreshReminderStatus();
+          const result = await api("push-test", { endpoint: subscription.endpoint });
+          if (result.sent) toast("Test notification sent.");
+        } catch (error) {
+          toast(error.message || "Could not enable reminders.");
+        } finally {
+          el("enableReminderButton").disabled = false;
+          updateReminderControls();
+        }
+      }
+
+      async function disableReminders() {
+        if (!state.pushSubscription) return;
+        el("disableReminderButton").disabled = true;
+        try {
+          await api("push-unsubscribe", { endpoint: state.pushSubscription.endpoint });
+          await state.pushSubscription.unsubscribe();
+          state.pushSubscription = null;
+          await refreshReminderStatus();
+          toast("Reminders disabled on this device.");
+        } catch (error) { toast(error.message || "Could not disable reminders."); }
+        finally { el("disableReminderButton").disabled = false; }
+      }
+
+      async function testReminder() {
+        if (!state.pushSubscription) return;
+        el("testReminderButton").disabled = true;
+        try {
+          await api("push-test", { endpoint: state.pushSubscription.endpoint });
+          toast("Test notification sent.");
+        } catch (error) { toast(error.message || "Test notification failed."); }
+        finally { el("testReminderButton").disabled = false; }
+      }
+
+      function manualGuide(item) {
+        if (item.content_type === "reel") return "Add the selected Instagram music, confirm the cover and caption, then publish.";
+        const interaction = (item.frames || []).find((frame) => frame.role === "interaction");
+        if (interaction?.sticker === "poll") return "Add the native poll with the prepared answers, add matching music, then publish.";
+        if (interaction?.sticker === "question") return "Add the native question box and matching music, then publish.";
+        if (interaction?.sticker === "slider") return "Add the native reaction slider and matching music, then publish.";
+        return "Add matching Instagram music and any prepared native element, then publish.";
+      }
 
       function filteredItems() {
         if (!state.data) return [];
@@ -730,6 +905,10 @@
         const meta = document.createElement("div");
         meta.className = "item-meta";
         meta.append(makeBadge("meta-chip", "Day " + item.day_number), makeBadge("meta-chip", formatName(item.content_pillar)), makeBadge("meta-chip", item.production_status === "needs_manual" ? "Manual finish" : "Production concept"));
+        const itemReminders = (state.data.reminders || []).filter((reminder) => reminder.post_id === item.id);
+        const scheduledReminders = itemReminders.filter((reminder) => reminder.status === "scheduled").length;
+        if (scheduledReminders > 0) meta.append(makeBadge("meta-chip", scheduledReminders + " reminders scheduled"));
+        if (item.status === "published") meta.append(makeBadge("meta-chip", "Published"));
         const actions = document.createElement("div");
         actions.className = "card-actions";
         const edit = document.createElement("button");
@@ -742,8 +921,39 @@
         toggle.type = "button";
         toggle.textContent = item.approval_status === "approved" ? "Return to review" : "Approve";
         toggle.addEventListener("click", () => reviewIDs([item.id], item.approval_status === "approved" ? "proposed" : "approved"));
-        actions.append(edit, toggle);
-        body.append(schedule, title, caption, meta, actions);
+        if (item.status !== "published") actions.append(edit, toggle);
+        body.append(schedule, title, caption, meta);
+        if (item.status !== "published") body.append(actions);
+
+        if (item.production_status === "needs_manual" && item.status !== "published") {
+          const guide = document.createElement("div");
+          guide.className = "manual-guide";
+          const guideTitle = document.createElement("p");
+          guideTitle.className = "manual-guide-title";
+          guideTitle.textContent = "Finish in Instagram";
+          const guideCopy = document.createElement("p");
+          guideCopy.className = "manual-guide-copy";
+          guideCopy.textContent = manualGuide(item);
+          const guideActions = document.createElement("div");
+          guideActions.className = "manual-guide-actions";
+          const instagram = document.createElement("a");
+          instagram.className = "link-button";
+          instagram.href = "https://www.instagram.com/";
+          instagram.target = "_blank";
+          instagram.rel = "noopener";
+          instagram.textContent = "Open Instagram";
+          guideActions.appendChild(instagram);
+          if (item.approval_status === "approved") {
+            const completed = document.createElement("button");
+            completed.className = "button approve";
+            completed.type = "button";
+            completed.textContent = "Mark published";
+            completed.addEventListener("click", () => markManualPublished(item.id));
+            guideActions.appendChild(completed);
+          }
+          guide.append(guideTitle, guideCopy, guideActions);
+          body.appendChild(guide);
+        }
 
         card.append(top, makePreview(item), body);
         return card;
@@ -797,6 +1007,13 @@
           weekItems.forEach((item) => grid.appendChild(makeCard(item)));
           container.append(band, grid);
         });
+        const targetID = new URLSearchParams(location.search).get("post");
+        if (targetID) requestAnimationFrame(() => {
+          const target = container.querySelector(`[data-id="${CSS.escape(targetID)}"]`);
+          if (!target) return;
+          target.classList.add("targeted");
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
       }
 
       function render() {
@@ -831,6 +1048,7 @@
           state.data = await api("review-list");
           hideAccess();
           render();
+          await refreshReminderStatus();
           el("loading").classList.add("hidden");
         } catch (error) {
           if (error.message === "unauthorized") {
@@ -856,6 +1074,15 @@
           await load();
           toast(`${result.updated} concept${result.updated === 1 ? "" : "s"} updated.`);
         } catch (error) { toast(error.message || "Review update failed."); }
+      }
+
+      async function markManualPublished(id) {
+        if (!window.confirm("Confirm that this was published manually in Instagram. This will cancel its remaining reminders.")) return;
+        try {
+          await api("manual-published", { id });
+          await load();
+          toast("Marked as published.");
+        } catch (error) { toast(error.message || "Could not mark this post as published."); }
       }
 
       function openEditor(id) {
@@ -895,6 +1122,11 @@
       el("rejectButton").addEventListener("click", () => reviewIDs([...state.selected], "rejected"));
       el("refreshButton").addEventListener("click", load);
       el("lockButton").addEventListener("click", () => { localStorage.removeItem(TOKEN_KEY); state.token = ""; state.data = null; state.selected.clear(); showAccess(); });
+      el("reminderButton").addEventListener("click", () => { updateReminderControls(); el("reminderDialog").showModal(); });
+      el("closeReminderButton").addEventListener("click", () => el("reminderDialog").close());
+      el("enableReminderButton").addEventListener("click", enableReminders);
+      el("disableReminderButton").addEventListener("click", disableReminders);
+      el("testReminderButton").addEventListener("click", testReminder);
       el("closeDialogButton").addEventListener("click", closeEditor);
       el("cancelDialogButton").addEventListener("click", closeEditor);
       el("editForm").addEventListener("submit", async (event) => {

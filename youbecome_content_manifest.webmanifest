@@ -1,0 +1,25 @@
+{
+  "id": "/youbecome_content.html",
+  "name": "You Become Content Studio",
+  "short_name": "You Become Studio",
+  "description": "Private review and publishing workspace for You Become.",
+  "start_url": "/youbecome_content.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#15141b",
+  "theme_color": "#23212c",
+  "icons": [
+    {
+      "src": "/assets/youbecome-studio-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/youbecome-studio-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
