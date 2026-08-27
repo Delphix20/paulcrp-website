@@ -592,7 +592,7 @@
         }
         const response = await fetch(ENDPOINT, {
           method: "POST",
-          headers: { "content-type": "application/json", "x-social-admin-key": state.token },
+          headers: { "content-type": "application/json", "authorization": "Bearer " + state.token },
           body: JSON.stringify({ action, ...payload }),
           cache: "no-store"
         });
