@@ -255,6 +255,9 @@
       font-weight: 800;
       text-transform: uppercase;
     }
+    .format-badge.story { border-color: rgba(246, 196, 189, 0.46); color: #f6c4bd; }
+    .format-badge.carousel { border-color: rgba(165, 173, 178, 0.46); color: #dbe3f6; }
+    .format-badge.reel { border-color: rgba(241, 254, 200, 0.42); color: var(--vanilla); }
     .status-badge.approved { border-color: rgba(129, 173, 144, 0.38); color: #bde0c7; }
     .status-badge.rejected { border-color: rgba(225, 150, 143, 0.32); color: #edb4af; }
     .mode-badge { margin-left: auto; color: var(--muted); }
@@ -434,8 +437,8 @@
         <article class="kpi"><span class="kpi-label">Reels</span><strong class="kpi-value" id="reelCount">0</strong><span class="kpi-note">Discovery-led</span></article>
         <article class="kpi"><span class="kpi-label">Carousels</span><strong class="kpi-value" id="carouselCount">0</strong><span class="kpi-note">Designed for saves</span></article>
         <article class="kpi"><span class="kpi-label">Story sets</span><strong class="kpi-value" id="storyCount">0</strong><span class="kpi-note">Daily community prompts</span></article>
-        <article class="kpi"><span class="kpi-label">Approved</span><strong class="kpi-value" id="approvedCount">0</strong><span class="kpi-note">Direction validated</span></article>
         <article class="kpi"><span class="kpi-label">Proposed</span><strong class="kpi-value" id="proposedCount">0</strong><span class="kpi-note">Waiting for review</span></article>
+        <article class="kpi"><span class="kpi-label">Approved</span><strong class="kpi-value" id="approvedCount">0</strong><span class="kpi-note">Direction validated</span></article>
       </div>
 
       <div class="toolbar" aria-label="Review filters and actions">
@@ -711,7 +714,7 @@
           updateSelection();
           card.classList.toggle("selected", check.checked);
         });
-        top.append(check, makeBadge("format-badge", item.content_type), makeBadge("status-badge " + item.approval_status, item.approval_status), makeBadge("mode-badge", item.publish_mode));
+        top.append(check, makeBadge("format-badge " + item.content_type, item.content_type), makeBadge("status-badge " + item.approval_status, item.approval_status), makeBadge("mode-badge", item.publish_mode));
 
         const body = document.createElement("div");
         body.className = "card-body";
@@ -778,8 +781,15 @@
           const select = document.createElement("button");
           select.className = "button";
           select.type = "button";
-          select.textContent = "Select week";
-          select.addEventListener("click", () => { weekItems.forEach((item) => state.selected.add(item.id)); renderCalendar(); updateSelection(); });
+          const weekSelected = weekItems.every((item) => state.selected.has(item.id));
+          select.textContent = weekSelected ? "Unselect week" : "Select week";
+          select.addEventListener("click", () => {
+            weekItems.forEach((item) => {
+              if (weekSelected) state.selected.delete(item.id); else state.selected.add(item.id);
+            });
+            renderCalendar();
+            updateSelection();
+          });
           actions.appendChild(select);
           band.append(copy, actions);
           const grid = document.createElement("div");
