@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://ecjntltvvwyctxplvwrt.supabase.co; media-src https://ecjntltvvwyctxplvwrt.supabase.co; connect-src https://ecjntltvvwyctxplvwrt.supabase.co; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <title>You Become Content Studio</title>
+  <style>
+    @font-face {
+      font-family: "Godber";
+      src: url("assets/webfonts/godber-regular.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    :root {
+      color-scheme: dark;
+      --cosmic-950: #15141b;
+      --cosmic-900: #1c1a23;
+      --cosmic-800: #23212c;
+      --cosmic-700: #34313f;
+      --paper: #f6f3eb;
+      --vanilla: #f1fec8;
+      --muted: #aaa6b1;
+      --muted-strong: #d0ccd5;
+      --border: rgba(241, 254, 200, 0.13);
+      --border-strong: rgba(241, 254, 200, 0.28);
+      --green: #81ad90;
+      --green-soft: rgba(129, 173, 144, 0.14);
+      --coral: #f6c4bd;
+      --coral-deep: #b25950;
+      --periwinkle: #9caaf6;
+      --gold: #dba365;
+      --plum: #af8d9f;
+      --danger: #e1968f;
+      --shadow: 0 20px 56px rgba(0, 0, 0, 0.28);
+    }
+
+    * { box-sizing: border-box; }
+    html { min-width: 320px; background: var(--cosmic-950); }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 50% -180px, rgba(156, 170, 246, 0.13), transparent 470px),
+        linear-gradient(180deg, var(--cosmic-900) 0, var(--cosmic-950) 560px),
+        var(--cosmic-950);
+      color: var(--paper);
+      font-family: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select, textarea { font: inherit; letter-spacing: 0; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible {
+      outline: 3px solid rgba(156, 170, 246, 0.72);
+      outline-offset: 2px;
+    }
+
+    .shell {
+      width: min(1540px, 100%);
+      margin: 0 auto;
+      padding: 22px clamp(16px, 3vw, 46px) 56px;
+    }
+
+    .topbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+    .monogram {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      background: linear-gradient(180deg, #4d506f, #23212c);
+      color: var(--vanilla);
+      font-family: "Godber", sans-serif;
+      font-size: 38px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+    }
+
+    .brand-name { margin: 0; color: var(--vanilla); font-family: "Godber", sans-serif; font-size: 27px; line-height: 1; white-space: nowrap; }
+    .brand-subtitle { margin: 5px 0 0; color: var(--muted); font-size: 12px; font-weight: 650; }
+    .top-actions { display: flex; align-items: center; gap: 9px; }
+
+    .button, .link-button {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      padding: 0 14px;
+      background: var(--cosmic-800);
+      color: var(--paper);
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+    .button:hover, .link-button:hover { border-color: rgba(241, 254, 200, 0.48); background: var(--cosmic-700); }
+    .button:active, .link-button:active { transform: scale(0.97); }
+    .button:disabled { cursor: default; opacity: 0.45; transform: none; }
+    .button.primary { border-color: var(--vanilla); background: var(--vanilla); color: var(--cosmic-950); }
+    .button.approve { border-color: rgba(129, 173, 144, 0.5); color: #cde6d4; background: rgba(129, 173, 144, 0.11); }
+    .button.reject { border-color: rgba(225, 150, 143, 0.38); color: #efbab5; background: rgba(225, 150, 143, 0.08); }
+
+    .publisher-state {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(35, 33, 44, 0.82);
+      color: var(--muted-strong);
+      font-size: 11px;
+      font-weight: 750;
+    }
+    .state-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(219, 163, 101, 0.12); }
+    .publisher-state.enabled .state-dot { background: var(--green); box-shadow: 0 0 0 4px rgba(129, 173, 144, 0.12); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+    h1 { max-width: 850px; margin: 0; font-family: "Godber", sans-serif; font-size: clamp(34px, 5vw, 56px); line-height: 1.02; font-weight: 400; }
+    .hero-copy { max-width: 760px; margin: 12px 0 0; color: var(--muted-strong); font-size: 14px; line-height: 1.55; }
+    .hero-meta { text-align: right; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .hero-meta strong { display: block; color: var(--vanilla); font-size: 13px; }
+
+    .tabs {
+      display: inline-flex;
+      gap: 4px;
+      margin-bottom: 18px;
+      padding: 4px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(35, 33, 44, 0.72);
+    }
+    .tab {
+      height: 34px;
+      border: 0;
+      border-radius: 6px;
+      padding: 0 15px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .tab.active { background: var(--vanilla); color: var(--cosmic-950); }
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .kpi {
+      min-height: 106px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(35, 33, 44, 0.82);
+    }
+    .kpi-label { color: var(--muted); font-size: 10px; font-weight: 750; text-transform: uppercase; }
+    .kpi-value { font-size: 29px; line-height: 1; font-weight: 750; }
+    .kpi:nth-child(1) .kpi-value { color: var(--vanilla); }
+    .kpi:nth-child(2) .kpi-value { color: var(--periwinkle); }
+    .kpi:nth-child(3) .kpi-value { color: var(--coral); }
+    .kpi:nth-child(4) .kpi-value { color: var(--green); }
+    .kpi:nth-child(5) .kpi-value { color: var(--gold); }
+    .kpi:nth-child(6) .kpi-value { color: var(--plum); }
+    .kpi-note { color: var(--muted); font-size: 10px; }
+
+    .toolbar {
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      padding: 10px;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      background: rgba(28, 26, 35, 0.94);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(18px);
+    }
+    .toolbar select {
+      height: 38px;
+      min-width: 135px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 0 34px 0 11px;
+      background: var(--cosmic-800);
+      color: var(--paper);
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .toolbar-spacer { flex: 1 1 20px; }
+    .selection-count { min-width: 78px; color: var(--muted); font-size: 11px; font-weight: 700; text-align: right; }
+
+    .week-band { margin: 26px 0 12px; display: flex; justify-content: space-between; align-items: end; gap: 16px; }
+    .week-title { margin: 0; font-family: "Godber", sans-serif; font-size: 27px; font-weight: 400; }
+    .week-dates { margin: 4px 0 0; color: var(--muted); font-size: 11px; }
+    .week-actions { display: flex; gap: 8px; }
+
+    .content-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .content-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(35, 33, 44, 0.88);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+      transition: border-color 140ms ease, transform 140ms ease;
+    }
+    .content-card:hover { border-color: rgba(241, 254, 200, 0.3); transform: translateY(-1px); }
+    .content-card.selected { border-color: var(--periwinkle); box-shadow: 0 0 0 1px rgba(156, 170, 246, 0.28); }
+    .content-card.approved { border-color: rgba(129, 173, 144, 0.35); }
+    .content-card.rejected { opacity: 0.62; }
+
+    .card-top { min-height: 46px; display: flex; align-items: center; gap: 9px; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+    .item-check { width: 18px; height: 18px; accent-color: var(--periwinkle); }
+    .format-badge, .status-badge, .mode-badge {
+      min-height: 22px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0 7px;
+      color: var(--muted-strong);
+      background: rgba(21, 20, 27, 0.55);
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .status-badge.approved { border-color: rgba(129, 173, 144, 0.38); color: #bde0c7; }
+    .status-badge.rejected { border-color: rgba(225, 150, 143, 0.32); color: #edb4af; }
+    .mode-badge { margin-left: auto; color: var(--muted); }
+
+    .preview {
+      position: relative;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      color: #23212c;
+      overflow: hidden;
+    }
+    .preview::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(255, 255, 255, 0.16); pointer-events: none; }
+    .preview-light { color: #f8f4ed; }
+    .preview-label { position: relative; z-index: 1; font-size: 10px; font-weight: 750; opacity: 0.72; }
+    .preview-quote { position: relative; z-index: 1; margin: auto 0; font-family: "Godber", sans-serif; font-size: clamp(25px, 2.3vw, 37px); line-height: 1.08; text-align: center; }
+    .preview-brand { position: relative; z-index: 1; font-family: "Godber", sans-serif; font-size: 16px; text-align: center; opacity: 0.68; }
+    .preview-format { position: absolute; top: 16px; right: 16px; z-index: 2; width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 10px; font-weight: 800; opacity: 0.55; }
+    .story-preview { min-height: 310px; margin-inline: 52px; padding: 25px 18px; }
+    .story-preview .preview-quote { font-size: 28px; }
+    .story-sticker { position: relative; z-index: 1; min-height: 45px; display: grid; place-items: center; margin-top: 16px; border: 1px solid currentColor; border-radius: 8px; padding: 8px; font-size: 11px; font-weight: 800; }
+    .carousel-stack { position: relative; z-index: 1; display: grid; gap: 7px; margin: auto 0; }
+    .carousel-frame { min-height: 46px; display: flex; align-items: center; border: 1px solid currentColor; border-radius: 7px; padding: 8px 10px; background: rgba(255, 255, 255, 0.12); font-size: 11px; font-weight: 700; }
+    .carousel-frame:nth-child(n+4) { display: none; }
+
+    .card-body { padding: 14px; }
+    .schedule { color: var(--vanilla); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    .item-title { margin: 8px 0 0; font-size: 17px; line-height: 1.25; font-weight: 760; }
+    .item-caption { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 8px 0 0; color: var(--muted-strong); font-size: 11px; line-height: 1.5; }
+    .item-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .meta-chip { min-height: 23px; display: inline-flex; align-items: center; border-radius: 6px; padding: 0 7px; background: rgba(255, 255, 255, 0.045); color: var(--muted); font-size: 9px; font-weight: 700; }
+    .card-actions { display: flex; gap: 7px; margin-top: 13px; }
+    .card-actions .button { flex: 1; min-height: 34px; padding-inline: 10px; }
+
+    .empty { min-height: 220px; display: grid; place-items: center; border: 1px dashed var(--border-strong); border-radius: 8px; color: var(--muted); text-align: center; }
+
+    .strategy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .strategy-band {
+      min-height: 230px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(35, 33, 44, 0.8);
+    }
+    .strategy-band.wide { grid-column: 1 / -1; min-height: 0; }
+    .eyebrow { margin: 0 0 10px; color: var(--vanilla); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    .strategy-title { margin: 0; font-family: "Godber", sans-serif; font-size: 30px; line-height: 1.05; font-weight: 400; }
+    .strategy-copy { margin: 13px 0 0; color: var(--muted-strong); font-size: 13px; line-height: 1.65; }
+    .strategy-list { display: grid; gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .strategy-list li { padding-top: 10px; border-top: 1px solid var(--border); color: var(--muted-strong); font-size: 12px; line-height: 1.5; }
+    .strategy-list strong { color: var(--paper); }
+    .mix-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-top: 18px; }
+    .mix-item { padding: 13px; border: 1px solid var(--border); border-radius: 7px; background: rgba(21, 20, 27, 0.42); }
+    .mix-value { display: block; color: var(--vanilla); font-size: 24px; font-weight: 780; }
+    .mix-label { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-weight: 750; text-transform: uppercase; }
+    .phases { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-top: 18px; }
+    .phase { padding: 14px; border-left: 2px solid var(--periwinkle); background: rgba(156, 170, 246, 0.055); }
+    .phase:nth-child(2) { border-color: var(--coral); }
+    .phase:nth-child(3) { border-color: var(--green); }
+    .phase:nth-child(4) { border-color: var(--gold); }
+    .phase strong { display: block; font-size: 12px; }
+    .phase span { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; line-height: 1.45; }
+
+    .loading { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; background: var(--cosmic-950); transition: opacity 180ms ease, visibility 180ms ease; }
+    .loading.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loading-mark { display: grid; gap: 14px; justify-items: center; color: var(--vanilla); font-family: "Godber", sans-serif; font-size: 46px; }
+    .loading-line { width: 68px; height: 2px; background: rgba(241, 254, 200, 0.16); overflow: hidden; }
+    .loading-line::after { content: ""; display: block; width: 32px; height: 100%; background: var(--vanilla); animation: loading 900ms ease-in-out infinite alternate; }
+    @keyframes loading { from { transform: translateX(-8px); } to { transform: translateX(44px); } }
+
+    .access { position: fixed; inset: 0; z-index: 90; display: none; place-items: center; padding: 20px; background: var(--cosmic-950); }
+    .access.visible { display: grid; }
+    .access-panel { width: min(430px, 100%); padding: 25px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--cosmic-800); box-shadow: var(--shadow); }
+    .access-panel .monogram { margin-bottom: 25px; }
+    .access-panel h2 { margin: 0; font-family: "Godber", sans-serif; font-size: 33px; font-weight: 400; }
+    .access-panel p { margin: 9px 0 20px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .access-panel input { width: 100%; height: 46px; border: 1px solid var(--border-strong); border-radius: 7px; padding: 0 13px; background: var(--cosmic-950); color: var(--paper); }
+    .access-panel .button { width: 100%; height: 44px; margin-top: 10px; }
+    .access-error { min-height: 18px; margin-top: 8px; color: var(--danger); font-size: 10px; font-weight: 750; }
+
+    dialog { width: min(660px, calc(100% - 28px)); max-height: calc(100vh - 40px); overflow: auto; border: 1px solid var(--border-strong); border-radius: 8px; padding: 0; background: var(--cosmic-800); color: var(--paper); box-shadow: var(--shadow); }
+    dialog::backdrop { background: rgba(10, 9, 14, 0.78); backdrop-filter: blur(5px); }
+    .dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; border-bottom: 1px solid var(--border); }
+    .dialog-head h2 { margin: 0; font-family: "Godber", sans-serif; font-size: 28px; font-weight: 400; }
+    .icon-button { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; background: transparent; color: var(--paper); font-size: 20px; }
+    .dialog-body { display: grid; gap: 14px; padding: 19px 20px; }
+    .field { display: grid; gap: 6px; }
+    .field label { color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+    .field input, .field textarea { width: 100%; border: 1px solid var(--border); border-radius: 7px; padding: 10px 11px; background: var(--cosmic-950); color: var(--paper); font-size: 12px; line-height: 1.5; }
+    .field textarea { min-height: 88px; resize: vertical; }
+    .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; padding: 0 20px 20px; }
+
+    .toast { position: fixed; right: 18px; bottom: 18px; z-index: 100; min-width: 260px; max-width: calc(100% - 36px); border: 1px solid var(--border-strong); border-radius: 8px; padding: 12px 14px; background: var(--cosmic-800); color: var(--paper); box-shadow: var(--shadow); font-size: 11px; font-weight: 700; transform: translateY(18px); opacity: 0; pointer-events: none; transition: transform 160ms ease, opacity 160ms ease; }
+    .toast.visible { transform: translateY(0); opacity: 1; }
+
+    .footer { display: flex; justify-content: space-between; gap: 20px; margin-top: 28px; color: var(--muted); font-size: 10px; }
+
+    @media (max-width: 1180px) {
+      .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-meta { text-align: left; }
+      .strategy-grid { grid-template-columns: 1fr; }
+      .strategy-band.wide { grid-column: auto; }
+      .mix-grid, .phases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .top-actions .link-button { display: none; }
+    }
+    @media (max-width: 620px) {
+      .shell { padding-top: 14px; }
+      .topbar { align-items: flex-start; }
+      .brand-name { font-size: 23px; }
+      .publisher-state { display: none; }
+      .hero { margin-top: 6px; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .content-grid { grid-template-columns: 1fr; }
+      .toolbar { top: 5px; }
+      .toolbar select { flex: 1; min-width: 125px; }
+      .toolbar-spacer { display: none; }
+      .selection-count { width: 100%; text-align: left; }
+      .week-band { align-items: flex-start; flex-direction: column; }
+      .story-preview { margin-inline: 32px; }
+      .footer { flex-direction: column; gap: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading" aria-live="polite"><div class="loading-mark">B<div class="loading-line"></div></div></div>
+
+  <div class="access" id="access">
+    <form class="access-panel" id="accessForm">
+      <div class="monogram" aria-hidden="true">B</div>
+      <h2>Private content studio</h2>
+      <p>Enter the private publisher token. The token is stored only in this browser and is never included in the page source.</p>
+      <input id="tokenInput" type="password" autocomplete="current-password" placeholder="Access token" aria-label="Access token">
+      <button class="button primary" type="submit">Open content studio</button>
+      <div class="access-error" id="accessError" role="alert"></div>
+    </form>
+  </div>
+
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="monogram" aria-hidden="true">B</div>
+        <div><p class="brand-name">You Become</p><p class="brand-subtitle">Instagram content studio</p></div>
+      </div>
+      <div class="top-actions">
+        <div class="publisher-state" id="publisherState"><span class="state-dot"></span><span id="publisherStateText">Publishing disabled</span></div>
+        <a class="link-button" href="youbecome_analytics.html">Analytics</a>
+        <button class="button" id="refreshButton" type="button">Refresh</button>
+        <button class="button" id="lockButton" type="button">Lock</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Build attention with something worth keeping.</h1>
+        <p class="hero-copy">Review the complete launch month before production. Approval confirms the direction only; an item still cannot publish until its creative is finished, queued, and the publisher is enabled.</p>
+      </div>
+      <div class="hero-meta"><strong>30-day launch plan</strong><span id="refreshedText">Loading current plan</span></div>
+    </section>
+
+    <nav class="tabs" aria-label="Content studio views">
+      <button class="tab active" type="button" data-view="review">Review plan</button>
+      <button class="tab" type="button" data-view="strategy">Growth strategy</button>
+    </nav>
+
+    <section class="view active" id="reviewView">
+      <div class="kpi-grid" aria-label="Content plan summary">
+        <article class="kpi"><span class="kpi-label">Total concepts</span><strong class="kpi-value" id="totalCount">0</strong><span class="kpi-note">Feed and Story sets</span></article>
+        <article class="kpi"><span class="kpi-label">Reels</span><strong class="kpi-value" id="reelCount">0</strong><span class="kpi-note">Discovery-led</span></article>
+        <article class="kpi"><span class="kpi-label">Carousels</span><strong class="kpi-value" id="carouselCount">0</strong><span class="kpi-note">Designed for saves</span></article>
+        <article class="kpi"><span class="kpi-label">Story sets</span><strong class="kpi-value" id="storyCount">0</strong><span class="kpi-note">Daily community prompts</span></article>
+        <article class="kpi"><span class="kpi-label">Approved</span><strong class="kpi-value" id="approvedCount">0</strong><span class="kpi-note">Direction validated</span></article>
+        <article class="kpi"><span class="kpi-label">Proposed</span><strong class="kpi-value" id="proposedCount">0</strong><span class="kpi-note">Waiting for review</span></article>
+      </div>
+
+      <div class="toolbar" aria-label="Review filters and actions">
+        <select id="weekFilter" aria-label="Filter by week"><option value="all">All weeks</option><option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option><option value="4">Week 4</option><option value="5">Week 5</option></select>
+        <select id="formatFilter" aria-label="Filter by format"><option value="all">All formats</option><option value="reel">Reels</option><option value="carousel">Carousels</option><option value="static">Static posts</option><option value="story">Stories</option></select>
+        <select id="statusFilter" aria-label="Filter by review status"><option value="all">All statuses</option><option value="proposed">Proposed</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select>
+        <button class="button" id="selectVisibleButton" type="button">Select visible</button>
+        <button class="button" id="clearSelectionButton" type="button">Clear</button>
+        <span class="toolbar-spacer"></span>
+        <span class="selection-count" id="selectionCount">0 selected</span>
+        <button class="button approve" id="approveButton" type="button" disabled>Approve selected</button>
+        <button class="button reject" id="rejectButton" type="button" disabled>Reject selected</button>
+      </div>
+
+      <div id="calendar"></div>
+    </section>
+
+    <section class="view" id="strategyView">
+      <div class="strategy-grid">
+        <article class="strategy-band">
+          <p class="eyebrow">Ideal audience</p>
+          <h2 class="strategy-title">The quiet improver.</h2>
+          <p class="strategy-copy">English-speaking adults, primarily 18-34, who want to become more confident, focused, calm, disciplined, or emotionally steady without harsh hustle language or empty positivity.</p>
+          <ul class="strategy-list">
+            <li><strong>Core need:</strong> one useful thought that changes the next choice.</li>
+            <li><strong>Emotional tension:</strong> ambitious, but tired of feeling behind.</li>
+            <li><strong>Conversion trigger:</strong> personalization, beautiful widgets, and language that feels unusually accurate.</li>
+          </ul>
+        </article>
+
+        <article class="strategy-band">
+          <p class="eyebrow">Creative position</p>
+          <h2 class="strategy-title">Gentle growth, stated clearly.</h2>
+          <p class="strategy-copy">Every post should feel calm enough to pause on and specific enough to send. Keep Cosmic and Vanilla as the recognition system, use app backgrounds as supporting palettes, and avoid generic stock footage or anonymous quote-page styling.</p>
+          <ul class="strategy-list">
+            <li><strong>Voice:</strong> human, emotionally precise, short, and useful.</li>
+            <li><strong>Reels:</strong> a strong first frame, 7-12 seconds, subtle movement, clean loop.</li>
+            <li><strong>Carousels:</strong> one thought per slide, practical enough to save.</li>
+          </ul>
+        </article>
+
+        <article class="strategy-band wide">
+          <p class="eyebrow">Publishing rhythm</p>
+          <h2 class="strategy-title">Six feed posts a week. Stories every day.</h2>
+          <div class="mix-grid">
+            <div class="mix-item"><span class="mix-value">3</span><span class="mix-label">Reels / week</span></div>
+            <div class="mix-item"><span class="mix-value">2</span><span class="mix-label">Carousels / week</span></div>
+            <div class="mix-item"><span class="mix-value">1</span><span class="mix-label">Static / week</span></div>
+            <div class="mix-item"><span class="mix-value">7</span><span class="mix-label">Story sets / week</span></div>
+          </div>
+          <p class="strategy-copy">Four static quotes every day would make the account look automated and repetitive. This mix gives each format one job: Reels find new people, carousels earn saves, static cards strengthen the visual identity, and Stories create replies and research the audience.</p>
+        </article>
+
+        <article class="strategy-band">
+          <p class="eyebrow">Daily engagement</p>
+          <h2 class="strategy-title">Treat comments as distribution.</h2>
+          <ul class="strategy-list">
+            <li><strong>Before posting:</strong> spend 10 minutes leaving specific comments on 5-8 relevant creator posts.</li>
+            <li><strong>After posting:</strong> stay available for 20 minutes and reply to every real comment with substance.</li>
+            <li><strong>Every day:</strong> answer Story replies and collect the exact phrases people use for future hooks.</li>
+            <li><strong>Each week:</strong> invite one small creator, therapist, coach, or study/productivity page to a collaborative post.</li>
+          </ul>
+        </article>
+
+        <article class="strategy-band">
+          <p class="eyebrow">What not to do</p>
+          <h2 class="strategy-title">Do not optimize for activity.</h2>
+          <ul class="strategy-list">
+            <li><strong>No</strong> follow-for-follow, mass liking, engagement groups, or copied viral quotes.</li>
+            <li><strong>No</strong> large hashtag blocks. Write searchable captions in natural language.</li>
+            <li><strong>No</strong> app promotion in every post. Earn attention before asking for a download.</li>
+            <li><strong>No</strong> automated replies that make the account feel unattended.</li>
+          </ul>
+        </article>
+
+        <article class="strategy-band wide">
+          <p class="eyebrow">30-day sequence</p>
+          <h2 class="strategy-title">Build recognition before conversion.</h2>
+          <div class="phases">
+            <div class="phase"><strong>Week 1: Recognition</strong><span>Establish the visual system and test confidence, calm, motivation, and focus hooks.</span></div>
+            <div class="phase"><strong>Week 2: Utility</strong><span>Publish saveable boundaries, overthinking, discipline, and patience frameworks.</span></div>
+            <div class="phase"><strong>Week 3: Relationship</strong><span>Use replies, questions, and share prompts to make the account feel conversational.</span></div>
+            <div class="phase"><strong>Week 4+: Conversion</strong><span>Show personalization, widgets, focus blending, and the product promise after trust exists.</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer"><span>Approving a concept does not publish it.</span><span>Reels and interactive Stories retain a manual final step for audio and native stickers.</span></footer>
+  </main>
+
+  <dialog id="editDialog">
+    <form id="editForm">
+      <div class="dialog-head"><h2>Edit proposal</h2><button class="icon-button" id="closeDialogButton" type="button" aria-label="Close">x</button></div>
+      <div class="dialog-body">
+        <div class="field"><label for="editSchedule">Schedule</label><input id="editSchedule" type="datetime-local"></div>
+        <div class="field"><label for="editHook">Hook</label><textarea id="editHook"></textarea></div>
+        <div class="field"><label for="editCaption">Caption</label><textarea id="editCaption"></textarea></div>
+        <div class="field"><label for="editCTA">Call to action</label><textarea id="editCTA"></textarea></div>
+        <div class="field"><label for="editNotes">Private review notes</label><textarea id="editNotes" placeholder="Add production or writing notes"></textarea></div>
+      </div>
+      <div class="dialog-actions"><button class="button" id="cancelDialogButton" type="button">Cancel</button><button class="button primary" type="submit">Save changes</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const ENDPOINT = "https://ecjntltvvwyctxplvwrt.supabase.co/functions/v1/social-publisher";
+      const TOKEN_KEY = "you_become_social_admin_token";
+      const LOCAL_PREVIEW = ["localhost", "127.0.0.1"].includes(location.hostname) && new URLSearchParams(location.search).has("preview");
+      const palettes = [
+        ["#4d506f", "#23212c", true], ["#af8d9f", "#70354f", true], ["#f6c4bd", "#b25950", false],
+        ["#dbe3f6", "#9caaf6", false], ["#ebdab5", "#dba365", false], ["#adc2b2", "#81ad90", false],
+        ["#a5adb2", "#356f79", true], ["#cab9da", "#725b91", true], ["#f2d0a9", "#ba7458", false],
+        ["#c9d8c7", "#557969", true]
+      ];
+      const state = { token: "", data: null, selected: new Set(), editingID: null, loading: false };
+      const el = (id) => document.getElementById(id);
+
+      function localPreviewData() {
+        const base = {
+          placement: "feed", content_pillar: "practical_growth", category_id: "confidence", category_name: "Confidence",
+          palette_index: 3, image_url: null, asset_urls: [], status: "draft", approval_status: "proposed", approved_at: null,
+          review_notes: null, publish_mode: "automatic", production_status: "concept", published_at: null, last_error: null
+        };
+        const items = [
+          { ...base, id: "00000000-0000-0000-0000-000000000001", content_key: "preview-1", content_type: "carousel", hook: "Confidence is often quieter than you think", quote_text: "Confidence is often quieter than you think", caption: "Confidence is not always the loudest voice in the room.", cta: "Which sign are you building?", creative_brief: "Saveable carousel", frames: [{text:"Confidence is often quieter than you think"},{text:"It is saying what you mean clearly."},{text:"It is keeping a promise nobody sees."}], scheduled_for: "2026-08-31T15:30:00Z", week_number: 1, day_number: 4, position_in_day: 2 },
+          { ...base, id: "00000000-0000-0000-0000-000000000002", content_key: "preview-2", content_type: "reel", category_id: "motivation", category_name: "Motivation", palette_index: 1, hook: "Start before your mood agrees.", quote_text: "Start before your mood agrees.", caption: "Give it five minutes and let movement create the energy.", cta: "What can you begin?", creative_brief: "7-12 second Reel", frames: [{text:"Start before your mood agrees."},{text:"Give it five minutes."}], scheduled_for: "2026-09-01T15:30:00Z", publish_mode: "manual", production_status: "needs_manual", week_number: 1, day_number: 5, position_in_day: 2 },
+          { ...base, id: "00000000-0000-0000-0000-000000000003", content_key: "preview-3", content_type: "static", category_id: "courage", category_name: "Courage", palette_index: 5, hook: "Fear can come with you. It does not get to lead.", quote_text: "Fear can come with you. It does not get to lead.", caption: "Courage is deciding that fear will not make every choice for you.", cta: "Keep this close.", creative_brief: "Premium quote card", frames: [{text:"Fear can come with you. It does not get to lead."}], scheduled_for: "2026-09-02T15:30:00Z", week_number: 1, day_number: 6, position_in_day: 2 },
+          { ...base, id: "00000000-0000-0000-0000-000000000004", content_key: "preview-4", content_type: "story", placement: "stories", category_id: "focused", category_name: "Focused", palette_index: 6, hook: "What interrupts your focus most?", quote_text: "What interrupts your focus most?", caption: "What interrupts your focus most?", cta: "Reply to every response.", creative_brief: "Three-frame interactive Story", frames: [{role:"opening",text:"A thought for today"},{role:"interaction",text:"What interrupts your focus most?",sticker:"poll",options:["Notifications","Open tasks"]},{role:"closing",text:"Carry one useful thought into the day."}], scheduled_for: "2026-09-03T06:15:00Z", publish_mode: "manual", production_status: "needs_manual", week_number: 1, day_number: 7, position_in_day: 1 }
+        ];
+        return { config: { enabled: false }, summary: { total: 4, reel: 1, carousel: 1, static: 1, story: 1, proposed: 4, approved: 0 }, items };
+      }
+
+      function readToken() {
+        const fragment = new URLSearchParams(location.hash.slice(1));
+        const token = fragment.get("token");
+        if (token) {
+          localStorage.setItem(TOKEN_KEY, token);
+          history.replaceState(null, "", location.pathname + location.search);
+          return token;
+        }
+        return localStorage.getItem(TOKEN_KEY) || "";
+      }
+
+      async function api(action, payload = {}) {
+        if (LOCAL_PREVIEW) {
+          if (action === "review-list") return localPreviewData();
+          throw new Error("Editing is disabled in local preview mode");
+        }
+        const response = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "content-type": "application/json", "x-social-admin-key": state.token },
+          body: JSON.stringify({ action, ...payload }),
+          cache: "no-store"
+        });
+        if (response.status === 401) throw new Error("unauthorized");
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || "Request failed");
+        return result;
+      }
+
+      function showAccess(message = "") {
+        el("accessError").textContent = message;
+        el("access").classList.add("visible");
+        el("loading").classList.add("hidden");
+        requestAnimationFrame(() => el("tokenInput").focus());
+      }
+
+      function hideAccess() { el("access").classList.remove("visible"); el("accessError").textContent = ""; }
+
+      function toast(message) {
+        el("toast").textContent = message;
+        el("toast").classList.add("visible");
+        window.setTimeout(() => el("toast").classList.remove("visible"), 2400);
+      }
+
+      function formatName(value) {
+        return String(value || "").replace(/[_-]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+      }
+
+      function formatSchedule(value) {
+        return new Date(value).toLocaleString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+      }
+
+      function palette(index) { return palettes[Math.abs(Number(index) || 0) % palettes.length]; }
+
+      function filteredItems() {
+        if (!state.data) return [];
+        const week = el("weekFilter").value;
+        const format = el("formatFilter").value;
+        const status = el("statusFilter").value;
+        return state.data.items.filter((item) =>
+          (week === "all" || String(item.week_number) === week) &&
+          (format === "all" || item.content_type === format) &&
+          (status === "all" || item.approval_status === status)
+        );
+      }
+
+      function makePreview(item) {
+        const colors = palette(item.palette_index);
+        const preview = document.createElement("div");
+        preview.className = "preview" + (colors[2] ? " preview-light" : "") + (item.content_type === "story" ? " story-preview" : "");
+        preview.style.background = `linear-gradient(180deg, ${colors[0]}, ${colors[1]})`;
+
+        const label = document.createElement("span");
+        label.className = "preview-label";
+        label.textContent = "more " + String(item.category_name || "intentional").toLowerCase() + ".";
+        const format = document.createElement("span");
+        format.className = "preview-format";
+        format.textContent = item.content_type === "reel" ? "PLAY" : item.content_type === "carousel" ? "1/" + Math.max(item.frames.length, 1) : item.content_type === "story" ? "9:16" : "4:5";
+        preview.append(label, format);
+
+        if (item.content_type === "carousel") {
+          const stack = document.createElement("div");
+          stack.className = "carousel-stack";
+          (item.frames || []).slice(0, 4).forEach((frame) => {
+            const row = document.createElement("div");
+            row.className = "carousel-frame";
+            row.textContent = frame.text || "";
+            stack.appendChild(row);
+          });
+          preview.appendChild(stack);
+        } else {
+          const quote = document.createElement("div");
+          quote.className = "preview-quote";
+          quote.textContent = item.hook || item.quote_text;
+          preview.appendChild(quote);
+        }
+
+        if (item.content_type === "story") {
+          const interaction = (item.frames || []).find((frame) => frame.role === "interaction");
+          if (interaction) {
+            const sticker = document.createElement("div");
+            sticker.className = "story-sticker";
+            sticker.textContent = interaction.sticker === "question" ? "QUESTION BOX" : interaction.sticker === "slider" ? "REACTION SLIDER" : interaction.sticker === "share" ? "SHARE PROMPT" : (interaction.options || []).join("  /  ");
+            preview.appendChild(sticker);
+          }
+        }
+
+        const brand = document.createElement("span");
+        brand.className = "preview-brand";
+        brand.textContent = "You Become";
+        preview.appendChild(brand);
+        return preview;
+      }
+
+      function makeBadge(className, text) {
+        const badge = document.createElement("span");
+        badge.className = className;
+        badge.textContent = text;
+        return badge;
+      }
+
+      function makeCard(item) {
+        const card = document.createElement("article");
+        card.className = `content-card ${item.approval_status}` + (state.selected.has(item.id) ? " selected" : "");
+        card.dataset.id = item.id;
+
+        const top = document.createElement("div");
+        top.className = "card-top";
+        const check = document.createElement("input");
+        check.type = "checkbox";
+        check.className = "item-check";
+        check.checked = state.selected.has(item.id);
+        check.setAttribute("aria-label", "Select " + (item.hook || item.content_type));
+        check.addEventListener("change", () => {
+          if (check.checked) state.selected.add(item.id); else state.selected.delete(item.id);
+          updateSelection();
+          card.classList.toggle("selected", check.checked);
+        });
+        top.append(check, makeBadge("format-badge", item.content_type), makeBadge("status-badge " + item.approval_status, item.approval_status), makeBadge("mode-badge", item.publish_mode));
+
+        const body = document.createElement("div");
+        body.className = "card-body";
+        const schedule = document.createElement("div");
+        schedule.className = "schedule";
+        schedule.textContent = formatSchedule(item.scheduled_for);
+        const title = document.createElement("h3");
+        title.className = "item-title";
+        title.textContent = item.hook || item.quote_text;
+        const caption = document.createElement("p");
+        caption.className = "item-caption";
+        caption.textContent = item.caption;
+        const meta = document.createElement("div");
+        meta.className = "item-meta";
+        meta.append(makeBadge("meta-chip", "Day " + item.day_number), makeBadge("meta-chip", formatName(item.content_pillar)), makeBadge("meta-chip", item.production_status === "needs_manual" ? "Manual finish" : "Production concept"));
+        const actions = document.createElement("div");
+        actions.className = "card-actions";
+        const edit = document.createElement("button");
+        edit.className = "button";
+        edit.type = "button";
+        edit.textContent = "Edit";
+        edit.addEventListener("click", () => openEditor(item.id));
+        const toggle = document.createElement("button");
+        toggle.className = "button " + (item.approval_status === "approved" ? "reject" : "approve");
+        toggle.type = "button";
+        toggle.textContent = item.approval_status === "approved" ? "Return to review" : "Approve";
+        toggle.addEventListener("click", () => reviewIDs([item.id], item.approval_status === "approved" ? "proposed" : "approved"));
+        actions.append(edit, toggle);
+        body.append(schedule, title, caption, meta, actions);
+
+        card.append(top, makePreview(item), body);
+        return card;
+      }
+
+      function renderCalendar() {
+        const items = filteredItems();
+        const container = el("calendar");
+        container.replaceChildren();
+        if (items.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "empty";
+          empty.textContent = "No concepts match these filters.";
+          container.appendChild(empty);
+          return;
+        }
+        const byWeek = new Map();
+        items.forEach((item) => {
+          if (!byWeek.has(item.week_number)) byWeek.set(item.week_number, []);
+          byWeek.get(item.week_number).push(item);
+        });
+        [...byWeek.entries()].forEach(([week, weekItems]) => {
+          const band = document.createElement("div");
+          band.className = "week-band";
+          const copy = document.createElement("div");
+          const title = document.createElement("h2");
+          title.className = "week-title";
+          title.textContent = "Week " + week;
+          const dates = document.createElement("p");
+          dates.className = "week-dates";
+          dates.textContent = `${formatSchedule(weekItems[0].scheduled_for).split(",").slice(0, 2).join(",")} to ${formatSchedule(weekItems[weekItems.length - 1].scheduled_for).split(",").slice(0, 2).join(",")}`;
+          copy.append(title, dates);
+          const actions = document.createElement("div");
+          actions.className = "week-actions";
+          const select = document.createElement("button");
+          select.className = "button";
+          select.type = "button";
+          select.textContent = "Select week";
+          select.addEventListener("click", () => { weekItems.forEach((item) => state.selected.add(item.id)); renderCalendar(); updateSelection(); });
+          actions.appendChild(select);
+          band.append(copy, actions);
+          const grid = document.createElement("div");
+          grid.className = "content-grid";
+          weekItems.forEach((item) => grid.appendChild(makeCard(item)));
+          container.append(band, grid);
+        });
+      }
+
+      function render() {
+        const summary = state.data.summary || {};
+        el("totalCount").textContent = summary.total || 0;
+        el("reelCount").textContent = summary.reel || 0;
+        el("carouselCount").textContent = summary.carousel || 0;
+        el("storyCount").textContent = summary.story || 0;
+        el("approvedCount").textContent = summary.approved || 0;
+        el("proposedCount").textContent = summary.proposed || 0;
+        const enabled = state.data.config.enabled === true;
+        el("publisherState").classList.toggle("enabled", enabled);
+        el("publisherStateText").textContent = enabled ? "Publishing enabled" : "Publishing disabled";
+        el("refreshedText").textContent = "Refreshed " + new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        renderCalendar();
+        updateSelection();
+      }
+
+      function updateSelection() {
+        const count = state.selected.size;
+        el("selectionCount").textContent = count + " selected";
+        el("approveButton").disabled = count === 0;
+        el("rejectButton").disabled = count === 0;
+      }
+
+      async function load() {
+        if (!state.token || state.loading) { if (!state.token) showAccess(); return; }
+        state.loading = true;
+        el("refreshButton").disabled = true;
+        if (!state.data) el("loading").classList.remove("hidden");
+        try {
+          state.data = await api("review-list");
+          hideAccess();
+          render();
+          el("loading").classList.add("hidden");
+        } catch (error) {
+          if (error.message === "unauthorized") {
+            localStorage.removeItem(TOKEN_KEY);
+            state.token = "";
+            state.data = null;
+            showAccess("That token is not valid.");
+          } else if (!state.data) showAccess("The content studio could not load. Try again.");
+          else toast("Refresh failed.");
+        } finally {
+          state.loading = false;
+          el("refreshButton").disabled = false;
+        }
+      }
+
+      async function reviewIDs(ids, decision) {
+        if (ids.length === 0) return;
+        const verb = decision === "approved" ? "approve" : decision === "rejected" ? "reject" : "return to review";
+        if (!window.confirm(`Confirm that you want to ${verb} ${ids.length} concept${ids.length === 1 ? "" : "s"}. This does not publish them.`)) return;
+        try {
+          const result = await api("review-batch", { ids, decision });
+          state.selected.clear();
+          await load();
+          toast(`${result.updated} concept${result.updated === 1 ? "" : "s"} updated.`);
+        } catch (error) { toast(error.message || "Review update failed."); }
+      }
+
+      function openEditor(id) {
+        const item = state.data.items.find((candidate) => candidate.id === id);
+        if (!item) return;
+        state.editingID = id;
+        const local = new Date(new Date(item.scheduled_for).getTime() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+        el("editSchedule").value = local;
+        el("editHook").value = item.hook || "";
+        el("editCaption").value = item.caption || "";
+        el("editCTA").value = item.cta || "";
+        el("editNotes").value = item.review_notes || "";
+        el("editDialog").showModal();
+      }
+
+      function closeEditor() { el("editDialog").close(); state.editingID = null; }
+
+      el("accessForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const token = el("tokenInput").value.trim();
+        if (token.length < 32) { el("accessError").textContent = "Enter the full private token."; return; }
+        state.token = token;
+        localStorage.setItem(TOKEN_KEY, token);
+        el("tokenInput").value = "";
+        hideAccess();
+        load();
+      });
+
+      document.querySelectorAll(".tab").forEach((tab) => tab.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach((candidate) => candidate.classList.toggle("active", candidate === tab));
+        document.querySelectorAll(".view").forEach((view) => view.classList.toggle("active", view.id === tab.dataset.view + "View"));
+      }));
+      ["weekFilter", "formatFilter", "statusFilter"].forEach((id) => el(id).addEventListener("change", renderCalendar));
+      el("selectVisibleButton").addEventListener("click", () => { filteredItems().forEach((item) => state.selected.add(item.id)); renderCalendar(); updateSelection(); });
+      el("clearSelectionButton").addEventListener("click", () => { state.selected.clear(); renderCalendar(); updateSelection(); });
+      el("approveButton").addEventListener("click", () => reviewIDs([...state.selected], "approved"));
+      el("rejectButton").addEventListener("click", () => reviewIDs([...state.selected], "rejected"));
+      el("refreshButton").addEventListener("click", load);
+      el("lockButton").addEventListener("click", () => { localStorage.removeItem(TOKEN_KEY); state.token = ""; state.data = null; state.selected.clear(); showAccess(); });
+      el("closeDialogButton").addEventListener("click", closeEditor);
+      el("cancelDialogButton").addEventListener("click", closeEditor);
+      el("editForm").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const id = state.editingID;
+        if (!id) return;
+        try {
+          await api("review-update", {
+            id,
+            changes: {
+              scheduled_for: new Date(el("editSchedule").value).toISOString(),
+              hook: el("editHook").value,
+              caption: el("editCaption").value,
+              cta: el("editCTA").value,
+              review_notes: el("editNotes").value
+            }
+          });
+          closeEditor();
+          await load();
+          toast("Proposal updated.");
+        } catch (error) { toast(error.message || "Update failed."); }
+      });
+
+      state.token = readToken();
+      if (LOCAL_PREVIEW) state.token = "local-preview";
+      load();
+    })();
+  </script>
+</body>
+</html>
