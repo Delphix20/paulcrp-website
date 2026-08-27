@@ -6,7 +6,7 @@
   const STORY_WIDTH = 1080;
   const STORY_HEIGHT = 1920;
   const JPEG_QUALITY = 0.94;
-  const RENDERER_VERSION = "20260827-4";
+  const RENDERER_VERSION = "20260827-5";
 
   const categoryPhrases = {
     assertiveness: "more assertive.",
@@ -68,15 +68,6 @@
     const b = hexRGB(right);
     const values = a.map((value, index) => Math.round(value + ((b[index] - value) * amount)));
     return `rgb(${values[0]}, ${values[1]}, ${values[2]})`;
-  }
-
-  function contrastText(background) {
-    const channels = hexRGB(background).map((value) => {
-      const normalized = value / 255;
-      return normalized <= 0.03928 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
-    });
-    const luminance = 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
-    return luminance > 0.34 ? "#23212c" : "#f7f4ec";
   }
 
   function drawBackground(ctx, width, height, colors) {
@@ -176,19 +167,18 @@
     return categoryPhrases[id] || `more ${fallback}.`;
   }
 
-  function drawChrome(ctx, item, width, height, background) {
+  function drawChrome(ctx, item, width, height, foreground) {
     const isStory = height > 1500;
-    const headerColor = contrastText(background);
 
     ctx.font = font(isStory ? 58 : 50, "Godber", 400);
-    ctx.fillStyle = headerColor;
+    ctx.fillStyle = foreground;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillText("You Become", width / 2, isStory ? 220 : 70);
+    ctx.fillText("You Become", width / 2, isStory ? 185 : 70);
 
     ctx.font = font(isStory ? 34 : 30, "Avenir Next", 500);
-    ctx.fillStyle = rgba(headerColor, 0.64);
-    ctx.fillText(focusPhrase(item), width / 2, isStory ? 275 : 116);
+    ctx.fillStyle = rgba(foreground, 0.64);
+    ctx.fillText(focusPhrase(item), width / 2, isStory ? 237 : 116);
   }
 
   function renderFeedFrame(item, frame, colors) {
@@ -198,7 +188,7 @@
     const ctx = canvas.getContext("2d", { alpha: false });
     drawBackground(ctx, FEED_WIDTH, FEED_HEIGHT, colors);
     const foreground = colors[2] ? "#f7f4ec" : "#23212c";
-    drawChrome(ctx, item, FEED_WIDTH, FEED_HEIGHT, colors[0]);
+    drawChrome(ctx, item, FEED_WIDTH, FEED_HEIGHT, foreground);
     drawCenteredText(ctx, frame.text || item.hook || item.quote_text, {
       centerX: FEED_WIDTH / 2,
       centerY: FEED_HEIGHT / 2 + 10,
@@ -219,7 +209,7 @@
     const ctx = canvas.getContext("2d", { alpha: false });
     drawBackground(ctx, STORY_WIDTH, STORY_HEIGHT, colors);
     const foreground = colors[2] ? "#f7f4ec" : "#23212c";
-    drawChrome(ctx, item, STORY_WIDTH, STORY_HEIGHT, colors[0]);
+    drawChrome(ctx, item, STORY_WIDTH, STORY_HEIGHT, foreground);
 
     const isLegacyOpening = frame.role === "opening"
       && String(frame.text || "").trim().toLowerCase() === "a thought for today"
