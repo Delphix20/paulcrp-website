@@ -182,14 +182,14 @@
 				<p class="hero-subtitle">Privacy Policy and Terms</p>
 			</div>
 
-			<p class="last-updated">Last updated: May 18, 2026</p>
+			<p class="last-updated">Last updated: August 31, 2026</p>
 
 			<p>This document explains how Viento handles information, how weather data is provided, and the terms that apply when you use the app.</p>
 
-			<p>Viento is a minimal weather app designed to show current weather, hourly forecasts, 10-day forecasts, wind, light, air, pressure, saved locations, app settings, and severe weather alerts where available. By using Viento, you agree to the practices described below.</p>
+			<p>Viento is a minimal weather app designed to show current weather, hourly forecasts, 10-day forecasts, wind, light, air, pressure, saved locations, widgets, app settings, and severe weather alerts where available. Viento also offers an optional Viento+ subscription with additional weather views, widgets, personalization, saved-place, comparison, and iCloud sync features. By using Viento, you agree to the practices described below.</p>
 
 			<div class="notice accent">
-				<strong>Local-first design:</strong> Viento stores your app settings and saved locations on your device using Apple system storage. Viento does not currently operate a custom backend server for your weather history, saved places, or settings.
+				<strong>Local-first design:</strong> Viento stores your app settings and saved locations on your device using Apple system storage. If you subscribe to Viento+ and enable iCloud Sync, supported settings and saved locations are also stored in your Apple iCloud account. Viento does not operate a custom backend server for your weather history, saved places, settings, or payments.
 			</div>
 
 			<div class="notice">
@@ -202,10 +202,10 @@
 			<p>For the purposes of this document:</p>
 			<p><strong>Application</strong> refers to Viento.</p>
 			<p><strong>Company</strong> refers to Viento.</p>
-			<p><strong>Country</strong> refers to: Romania.</p>
-			<p><strong>Device</strong> means any device that can access the Application, such as an iPhone.</p>
+			<p><strong>Device</strong> means any device that can access the Application, such as an iPhone or iPad.</p>
 			<p><strong>Personal Data</strong> means information that relates to an identified or identifiable individual.</p>
 			<p><strong>Service</strong> refers to the Application.</p>
+			<p><strong>Viento+</strong> means Viento's optional premium subscription, available as monthly and annual auto-renewable plans.</p>
 			<p><strong>Usage Data</strong> refers to data collected automatically from use of the Service or related technical systems.</p>
 			<p><strong>You</strong> means the individual using the Service.</p>
 
@@ -222,7 +222,8 @@
 			<h3>Saved locations</h3>
 			<p>Viento lets you search for, save, select, and remove weather locations. Saved location data may include a place name, subtitle or region text, latitude, longitude, and the selected location identifier.</p>
 			<ul>
-				<li>Saved locations are stored locally on your device</li>
+				<li>Saved locations are stored locally on your device by default</li>
+				<li>If you subscribe to Viento+ and enable iCloud Sync, supported saved-location data is also stored in your iCloud account and may sync across your devices signed in to that account</li>
 				<li>Current Location is treated separately from manually saved places</li>
 				<li>Removing the app from your device may delete locally stored saved locations, subject to iOS behavior</li>
 			</ul>
@@ -236,11 +237,14 @@
 				<li>Distance unit, such as kilometers or miles</li>
 				<li>Pressure unit, such as hPa, mb, or inHg</li>
 				<li>Severe weather notification preference</li>
-				<li>Whether the first-launch onboarding has been completed</li>
+				<li>App language, appearance, and alternate app icon preferences</li>
+				<li>Weather page order, visibility, and opening-page preferences</li>
+				<li>Whether iCloud Sync is enabled</li>
+				<li>Whether the first-launch Intro has been completed</li>
 			</ul>
 
 			<h3>Weather data</h3>
-			<p>Viento uses Apple WeatherKit to request weather data for the selected location. This may include current conditions, temperature, hourly forecast, daily forecast, wind, gusts, wind direction, sunrise, sunset, moon phase, precipitation chance, precipitation amount, humidity, visibility, pressure, pressure trend, and severe weather alerts where available.</p>
+			<p>Viento uses Apple WeatherKit to request weather data for the selected location. This may include current conditions, temperature, hourly forecast, daily forecast, wind, gusts, wind direction, sunrise, sunset, moon phase, precipitation chance, precipitation amount, humidity, visibility, feels-like temperature, dew point, UV index, cloud layers, pressure, pressure trend, minute-by-minute precipitation, and severe weather alerts where available.</p>
 
 			<p>Weather data is provided by Apple WeatherKit and related Apple services. Viento does not create the underlying weather forecast data and does not control whether severe weather alerts are available for every location.</p>
 
@@ -261,29 +265,34 @@
 				<li>Device type and operating system version</li>
 				<li>Crash logs and performance diagnostics if you have enabled sharing diagnostics with Apple</li>
 				<li>Notification authorization status managed by iOS</li>
-				<li>Purchase or entitlement status if Viento offers paid features, subscriptions, or in-app purchases in the future</li>
+				<li>StoreKit product information and verified purchase, transaction, and subscription entitlement status used to display Viento+ plans, complete or restore purchases, and unlock premium app and widget features</li>
 			</ul>
+			<p>Viento does not receive or store your full payment card number, bank account details, or Apple Account password. Apple processes payments and maintains the associated billing records under Apple's own terms and privacy practices.</p>
 
 			<h2>How Viento Uses Your Data</h2>
 			<p>Viento may use stored or permitted data to:</p>
 			<ul>
 				<li>Show current weather for your current or selected location</li>
-				<li>Display hourly, daily, wind, light, air, and pressure information</li>
+				<li>Display current, hourly, daily, wind, light, air, pressure, Conditions, Next 12, Next Hour, comparison, and widget information where available</li>
 				<li>Search for and save locations you choose</li>
 				<li>Apply your preferred units and notification settings</li>
+				<li>Display Viento+ plans, process purchases through StoreKit, verify or restore your entitlement, and unlock subscribed features</li>
+				<li>Sync supported saved locations and preferences through iCloud when you enable iCloud Sync</li>
 				<li>Show in-app severe weather indicators when alerts are available</li>
 				<li>Schedule local notifications if you enable severe weather notifications</li>
-				<li>Remember that onboarding has been completed</li>
+				<li>Remember that the Intro has been completed</li>
 				<li>Maintain app reliability, stability, and support diagnostics</li>
 			</ul>
 
 			<h2>Storage and Sync</h2>
-			<p>Viento stores core app preferences and saved locations locally on your device using Apple system storage. Viento does not currently provide custom account sync or a custom cloud backend for saved locations or settings.</p>
+			<p>Viento stores core app preferences and saved locations locally on your device using Apple system storage. Viento does not provide a custom Viento account system or a custom cloud backend for saved locations, settings, purchases, or weather history.</p>
 			<ul>
-				<li>Saved locations and settings are stored on your device</li>
+				<li>Saved locations and settings are stored on your device by default</li>
+				<li>Viento and its widgets may share selected settings, cached weather information, selected-location data, and a locally cached Viento+ entitlement indicator through an Apple App Group on your device</li>
+				<li>If you subscribe to Viento+ and enable iCloud Sync, supported saved locations and preferences are encoded and stored through Apple's iCloud key-value storage so they can sync across compatible devices signed in to your iCloud account</li>
+				<li>You can disable iCloud Sync in Viento Settings. Data already stored in iCloud remains subject to your Apple account settings and Apple's retention practices</li>
 				<li>Weather requests are made for the selected location when needed</li>
 				<li>Deleting the app may remove local app data from your device, subject to iOS behavior</li>
-				<li>If a future version adds iCloud sync, subscriptions, widgets, or other cloud-connected features, this policy may be updated</li>
 			</ul>
 
 			<h2>Third-Party and Apple Services</h2>
@@ -293,7 +302,8 @@
 				<li>MapKit or Apple location services for location search and geocoding features</li>
 				<li>WeatherKit for weather conditions, forecasts, and severe weather alerts</li>
 				<li>UserNotifications for local severe weather notifications if enabled</li>
-				<li>App Store and StoreKit if paid features, subscriptions, or in-app purchases are offered in the future</li>
+				<li>App Store and StoreKit for Viento+ product information, subscription purchases, verified transactions, entitlement status, and purchase restoration</li>
+				<li>iCloud key-value storage for optional Viento+ sync when you enable iCloud Sync</li>
 				<li>Apple diagnostics and crash-reporting systems if you have enabled sharing diagnostics with Apple</li>
 			</ul>
 
@@ -302,16 +312,29 @@
 
 			<p>Severe weather alerts may not be available in every country, region, or location. Alert timing, content, severity, and availability are provided by Apple WeatherKit and its sources. You remain responsible for checking official local weather services, emergency authorities, and safety instructions when weather conditions may be dangerous.</p>
 
-			<h2>Subscriptions, Purchases, and Payments</h2>
-			<p>Viento may be offered as a free app and may add paid features, subscriptions, widgets, or other premium features in the future. If Viento offers paid features, payments will be processed by Apple through your App Store account.</p>
+			<h2>Viento+ Subscriptions, Purchases, and Payments</h2>
+			<p>Viento offers optional monthly and annual Viento+ auto-renewable subscriptions. Viento+ unlocks premium weather pages, widgets, location comparison, unlimited saved places, appearance and app icon options, page personalization, and optional iCloud Sync. The current included features are shown in Viento before you purchase and may evolve as the app is updated.</p>
+
+			<h3>Payment processing</h3>
 			<ul>
-				<li>We do not collect or store your full payment card details</li>
-				<li>Apple may provide limited purchase or subscription status information needed to unlock, restore, or manage paid features</li>
-				<li>Subscriptions, if offered, renew and cancel according to Apple's App Store rules and your App Store account settings</li>
+				<li>Viento+ purchases are offered and processed by Apple through the App Store and StoreKit using your Apple Account</li>
+				<li>The applicable price, currency, billing period, taxes, and any eligible introductory offer are displayed by Apple before you confirm a purchase and may vary by country or region</li>
+				<li>Viento and the Company do not collect or store your full payment card details, bank account details, or Apple Account credentials</li>
+				<li>Apple provides Viento with StoreKit product information and verified transaction and entitlement status needed to display plans, complete or restore purchases, and unlock Viento+ features in the app and widgets</li>
 			</ul>
 
+			<h3>Renewal, cancellation, and restoration</h3>
+			<ul>
+				<li>Monthly and annual Viento+ subscriptions renew automatically unless you cancel them</li>
+				<li>Apple charges your Apple Account according to the terms shown in the purchase confirmation sheet and manages billing, renewal, cancellation, and refund requests under Apple's applicable policies</li>
+				<li>You can manage or cancel Viento+ in your <a href="https://apps.apple.com/account/subscriptions">App Store subscription settings</a>. Cancellation normally takes effect at the end of the current paid period, subject to Apple's terms</li>
+				<li>The Restore Purchases control asks StoreKit to synchronize purchases associated with your Apple Account. Restoring an existing entitlement does not itself create a new subscription charge</li>
+				<li>If a subscription expires, is refunded, revoked, or can no longer be verified, Viento+ features may become locked while Viento's free features remain available</li>
+			</ul>
+			<p>App Store purchases are also governed by the <a href="https://www.apple.com/legal/internet-services/itunes/">Apple Media Services Terms and Conditions</a>. Use of Viento is subject to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard Licensed Application End User License Agreement</a> unless another applicable agreement is provided.</p>
+
 			<h2>How Long Data Is Retained</h2>
-			<p>Viento may keep locally stored app data for as long as it is needed to provide the app experience, unless you delete saved locations, change settings, revoke permissions, remove the app, or remove data through Apple-managed systems where applicable. Apple may retain technical, diagnostic, purchase, or service-related data according to Apple's systems and policies.</p>
+			<p>Viento may keep locally stored app data, cached weather information, and locally cached entitlement status for as long as needed to provide the app experience, unless you delete saved locations, change settings, revoke permissions, remove the app, or remove data through Apple-managed systems where applicable. Information stored through optional iCloud Sync and App Store transaction or subscription records is retained and managed through Apple's systems and according to Apple's policies.</p>
 
 			<h2>Your Choices and Rights</h2>
 			<p>You may be able to:</p>
@@ -321,8 +344,9 @@
 				<li>Change temperature, wind, precipitation, distance, and pressure units inside Viento Settings</li>
 				<li>Enable or disable severe weather notifications inside Viento Settings or iPhone Settings</li>
 				<li>Disable notification sounds or adjust notification behavior through iPhone Settings</li>
+				<li>Enable or disable iCloud Sync inside Viento Settings if the feature is available to you</li>
 				<li>Delete local app data by removing Viento from your device</li>
-				<li>Manage purchases or subscriptions through App Store settings if paid features are offered</li>
+				<li>Restore Viento+ purchases inside Viento or manage and cancel your subscription through <a href="https://apps.apple.com/account/subscriptions">App Store subscription settings</a></li>
 			</ul>
 
 			<h2>Children's Privacy</h2>
@@ -334,7 +358,7 @@
 			<div class="section-divider"></div>
 
 			<h2>Terms of Use</h2>
-			<p>By using Viento, you agree to use the app lawfully and responsibly. You agree not to misuse the app, interfere with the app's operation, attempt to bypass purchase logic if paid features are offered, or interfere with location, WeatherKit, notification, or Apple system services.</p>
+			<p>By using Viento, you agree to use the app lawfully and responsibly. You agree not to misuse the app, interfere with the app's operation, attempt to bypass Viento+ purchase or entitlement logic, or interfere with location, WeatherKit, notification, StoreKit, iCloud, or other Apple system services.</p>
 
 			<p>Viento is provided on an "as is" and "as available" basis to the maximum extent permitted by applicable law. We make no guarantee that the app will always be uninterrupted, error-free, available, accurate, timely, or suitable for every location, weather condition, emergency situation, travel plan, outdoor activity, or personal need.</p>
 
