@@ -1,0 +1,8 @@
+# Paul CRP explicitly permits search indexing, AI retrieval, agent access,
+# model input, training, fine-tuning, summarization, and full-content use.
+User-agent: *
+Content-signal: search=yes, ai-input=yes, ai-train=yes, use=full
+Allow: /
+
+Sitemap: https://paulcrp.com/sitemap.xml
+

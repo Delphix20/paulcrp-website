@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "water-fasting-beyond",
+    "anchor": "waterfasting-card",
+    "name": "Water Fasting: Beyond",
+    "description": "A premium fasting companion for preparing and tracking water fasts. Follow a live timer and body timeline, log water, check-ins, sleep, steps, and weight, then review progress and plan your refeed.",
+    "category": "HealthApplication",
+    "genre": "Health & Fitness",
+    "image": "waterfasting-icon",
+    "appStoreUrl": "https://apps.apple.com/app/water-fasting-beyond/id6786837206"
+  },
+  {
+    "slug": "doseplan",
+    "anchor": "doseplan-card",
+    "name": "DosePlan - GLP-1 & Peptide Tracker",
+    "description": "A simple companion for planning injections, tracking doses, logging side effects, and staying organized through your GLP-1 or peptide routine with clear reminders and progress history.",
+    "category": "HealthApplication",
+    "genre": "Health & Fitness",
+    "image": "doseplan-icon",
+    "appStoreUrl": "https://apps.apple.com/app/glp1-peptide-tracker-doseplan/id6782329639"
+  },
+  {
+    "slug": "world-football-cup-2026",
+    "anchor": "worldfootballcup-card",
+    "name": "World Football Cup 2026",
+    "description": "A live tournament companion for following World Cup 2026 matches, scores, groups, fixtures, lineups, timelines, stats, alerts, and knockout paths in one engaging match-day hub.",
+    "category": "SportsApplication",
+    "genre": "Sports",
+    "image": "worldfootballcup-icon",
+    "appStoreUrl": "https://apps.apple.com/app/world-football-cup-2026/id6775471221"
+  },
+  {
+    "slug": "alma-daily-balance-score",
+    "anchor": "alma-card",
+    "name": "Alma - Daily Balance Score",
+    "description": "A daily wellness companion for tracking mood, sleep, hydration, movement, and breathing. Alma turns quick check-ins into a clear Balance Score, gentle insights and a simple history that helps you understand how your days are going.",
+    "category": "HealthApplication",
+    "genre": "Health & Fitness",
+    "image": "alma-icon",
+    "appStoreUrl": "https://apps.apple.com/app/alma-mood-wellness-tracker/id6760351892"
+  },
+  {
+    "slug": "wealthboost",
+    "anchor": "wealthboost-card",
+    "name": "WealthBoost",
+    "description": "An AI-powered money coach for building better financial habits through daily missions, progress tracking, and personalized insights.",
+    "category": "FinanceApplication",
+    "genre": "Productivity",
+    "image": "wealthboostappicon",
+    "appStoreUrl": "https://apps.apple.com/app/wealthboost-ai-money-coach/id6756603789",
+    "websiteUrl": "https://wealthboost.app/"
+  },
+  {
+    "slug": "viento",
+    "anchor": "viento-card",
+    "name": "Viento",
+    "description": "A beautiful minimal weather app that keeps forecasts clean, readable, and beautifully focused on what matters most each day.",
+    "category": "WeatherApplication",
+    "genre": "Weather",
+    "image": "viento-icon",
+    "appStoreUrl": "https://apps.apple.com/app/viento-minimal-weather/id6770246185"
+  },
+  {
+    "slug": "my-work-shift-planner",
+    "anchor": "myworkshiftplanner-card",
+    "name": "My Work Shift Planner",
+    "description": "A clear shift calendar and pay tracker for work schedules. Plan shifts, manage multiple work profiles, apply rotations, get reminders and export monthly and yearly reports.",
+    "category": "BusinessApplication",
+    "genre": "Productivity",
+    "image": "myworkshiftplanner-icon",
+    "appStoreUrl": "https://apps.apple.com/app/my-work-shift-planner/id6769349635",
+    "websiteUrl": "https://myshiftplanner.app/work/"
+  },
+  {
+    "slug": "my-nurse-shift-planner",
+    "anchor": "mynurseshiftplanner-card",
+    "name": "My Nurse Shift Planner",
+    "description": "A clear shift calendar and pay tracker for nurses. Plan upcoming shifts, manage work profiles, apply rotations, get reminders and export monthly CSV/PDF reports.",
+    "category": "BusinessApplication",
+    "genre": "Productivity",
+    "image": "mynurseshiftplanner-icon",
+    "appStoreUrl": "https://apps.apple.com/app/my-nurse-shift-planner/id6764406102",
+    "websiteUrl": "https://myshiftplanner.app/nurse/"
+  },
+  {
+    "slug": "proscan-pdf",
+    "anchor": "proscan-card",
+    "name": "ProScan PDF",
+    "description": "An AI-powered mobile camera scanning app for scanning, editing, signing, locking and OCR, with no advertisements or watermarks.",
+    "category": "ProductivityApplication",
+    "genre": "Productivity",
+    "image": "proscan-icon",
+    "appStoreUrl": "https://apps.apple.com/app/proscan-pdf-scan-sign-ocr/id6752308731",
+    "websiteUrl": "https://proscanpdf.com/"
+  },
+  {
+    "slug": "eye-color-cam",
+    "anchor": "eyecolorcam-card",
+    "name": "Eye Color Cam",
+    "description": "Transform your eye color instantly with AR. Choose from 30 shades and textures to create realistic color changes and explore your perfect look.",
+    "category": "MultimediaApplication",
+    "genre": "Photo & Video",
+    "image": "eyecolorcam-icon",
+    "appStoreUrl": "https://apps.apple.com/app/eye-color-cam-live-filters/id6752640752"
+  },
+  {
+    "slug": "dash-pal",
+    "anchor": "dashpal-card",
+    "name": "Dash Pal",
+    "description": "An all-in-one motion dashboard for driving, cycling, flying, sailing and walking that turns an iPhone into a live dashboard for every journey.",
+    "category": "NavigationApplication",
+    "genre": "Navigation",
+    "image": "dashpal-icon",
+    "appStoreUrl": "https://apps.apple.com/app/dash-pal-gps-speedometer/id6753625350"
+  },
+  {
+    "slug": "neurarush",
+    "anchor": "neurarush-card",
+    "name": "NeuraRush",
+    "description": "Brain-boosting mini games that challenge memory, reflexes and problem-solving abilities through quick, engaging sessions.",
+    "category": "GameApplication",
+    "genre": "Games",
+    "image": "neurarush-icon",
+    "appStoreUrl": "https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300"
+  },
+  {
+    "slug": "cyphre",
+    "anchor": "cyphre-card",
+    "name": "Cyphre",
+    "description": "An addictive symbol-decoding puzzle ring challenge that rewards careful thinking, alignment and pattern recognition.",
+    "category": "GameApplication",
+    "genre": "Games",
+    "image": "cyphre-icon",
+    "appStoreUrl": "https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455"
+  },
+  {
+    "slug": "pop-pop-aliens",
+    "anchor": "poppopaliens-card",
+    "name": "Pop Pop Aliens",
+    "description": "Fast-paced alien-blasting arcade action with increasing difficulty, clever decoys and endless entertainment.",
+    "category": "GameApplication",
+    "genre": "Games",
+    "image": "poppopaliens-icon",
+    "appStoreUrl": "https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031"
+  },
+  {
+    "slug": "pop-pop-piggies",
+    "anchor": "poppoppiggies-card",
+    "name": "Pop Pop Piggies",
+    "description": "Whack-a-piggie mayhem with tricky decoys and lightning-fast action that tests reflexes while avoiding sneaky impostors.",
+    "category": "GameApplication",
+    "genre": "Games",
+    "image": "poppoppiggies-icon",
+    "appStoreUrl": "https://apps.apple.com/app/pop-pop-piggies-arcade-hunter/id6748965914"
+  },
+  {
+    "slug": "bouncy-fruits",
+    "anchor": "bouncyfruits-card",
+    "name": "Bouncy Fruits",
+    "description": "Smash bouncing fruits while avoiding tricky decoys, mastering combos, using shields and progressing through immersive levels.",
+    "category": "GameApplication",
+    "genre": "Games",
+    "image": "bouncyfruits-icon",
+    "appStoreUrl": "https://apps.apple.com/app/bouncy-fruits-tap-smash-frenzy/id6751171271"
+  },
+  {
+    "slug": "pop-pop-fruits",
+    "anchor": "poppopfruits-card",
+    "name": "Pop Pop Fruits",
+    "description": "A fruit-popping frenzy that tests speed and precision while challenging players to avoid crafty decoys.",
+    "category": "GameApplication",
+    "genre": "Games",
+    "image": "poppopfruits-icon",
+    "appStoreUrl": "https://apps.apple.com/app/pop-pop-fruits-tap-frenzy/id6749312011"
+  }
+]

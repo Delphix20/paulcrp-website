@@ -1,6 +1,3 @@
-@import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
-
 /*
 	Spectral by HTML5 UP
 	html5up.net | @ajlkn
@@ -90,7 +87,7 @@ input, select, textarea {
 		background: #2e3842;
 	}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+		html.js body.is-preload *, html.js body.is-preload *:before, html.js body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
 			-ms-animation: none !important;
@@ -103,7 +100,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #fff;
-		font-family: "Open Sans", Helvetica, sans-serif;
+		font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 		font-size: 15pt;
 		font-weight: 400;
 		letter-spacing: normal;
@@ -3727,7 +3724,7 @@ input, select, textarea {
 
 		}
 
-	body.is-preload #banner h2 {
+	html.js body.is-preload #banner h2 {
 		-moz-transform: scale(0.95);
 		-webkit-transform: scale(0.95);
 		-ms-transform: scale(0.95);
@@ -3735,11 +3732,11 @@ input, select, textarea {
 		opacity: 0;
 	}
 
-		body.is-preload #banner h2:before, body.is-preload #banner h2:after {
+		html.js body.is-preload #banner h2:before, html.js body.is-preload #banner h2:after {
 			width: 0;
 		}
 
-	body.is-preload #banner .more {
+	html.js body.is-preload #banner .more {
 		-moz-transform: translateY(8.5em);
 		-webkit-transform: translateY(8.5em);
 		-ms-transform: translateY(8.5em);
@@ -3747,7 +3744,7 @@ input, select, textarea {
 		opacity: 0;
 	}
 
-	body.is-preload #banner:after {
+	html.js body.is-preload #banner:after {
 		opacity: 1;
 	}
 

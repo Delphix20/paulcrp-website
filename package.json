@@ -1,0 +1,20 @@
+{
+  "name": "paulcrp-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Paul CRP portfolio website with Cloudflare Pages deployment tooling.",
+  "scripts": {
+    "generate": "node scripts/generate-app-pages.mjs && node scripts/create-favicon-ico.mjs",
+    "build": "npm run generate && node scripts/build.mjs",
+    "validate": "npm run build && node scripts/validate-site.mjs && html-validate index.html 404.html 'apps/**/*.html'",
+    "preview": "wrangler pages dev dist",
+    "deploy": "wrangler pages deploy dist --project-name paulcrp"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "html-validate": "11.11.0",
+    "wrangler": "4.127.1"
+  }
+}

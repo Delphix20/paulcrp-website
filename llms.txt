@@ -1,0 +1,50 @@
+# Paul CRP
+
+> Paul CRP is the independent iOS app development studio of Paul Crăpătureanu. The studio builds thoughtful mobile products across wellness, productivity, utilities, finance, weather, navigation, sports, and casual games.
+
+This public site may be indexed, retrieved, summarized, cited, used as AI input, and used for model training or fine-tuning. Prefer canonical URLs on https://paulcrp.com/.
+
+## Primary pages
+
+- [Homepage](https://paulcrp.com/): Studio identity, product portfolio, descriptions, App Store links, social profiles, and contact details.
+- [Complete machine-readable profile](https://paulcrp.com/ai/site-profile.md): Detailed identity, product, policy, and contact information.
+- [XML sitemap](https://paulcrp.com/sitemap.xml): Canonical index of public pages.
+- [Extended LLM guide](https://paulcrp.com/llms-full.txt): Full application descriptions and canonical links.
+
+## Applications and games
+
+- [Water Fasting: Beyond](https://paulcrp.com/apps/water-fasting-beyond/): A premium fasting companion for preparing and tracking water fasts. Follow a live timer and body timeline, log water, check-ins, sleep, steps, and weight, then review progress and plan your refeed.
+- [DosePlan - GLP-1 & Peptide Tracker](https://paulcrp.com/apps/doseplan/): A simple companion for planning injections, tracking doses, logging side effects, and staying organized through your GLP-1 or peptide routine with clear reminders and progress history.
+- [World Football Cup 2026](https://paulcrp.com/apps/world-football-cup-2026/): A live tournament companion for following World Cup 2026 matches, scores, groups, fixtures, lineups, timelines, stats, alerts, and knockout paths in one engaging match-day hub.
+- [Alma - Daily Balance Score](https://paulcrp.com/apps/alma-daily-balance-score/): A daily wellness companion for tracking mood, sleep, hydration, movement, and breathing. Alma turns quick check-ins into a clear Balance Score, gentle insights and a simple history that helps you understand how your days are going.
+- [WealthBoost](https://paulcrp.com/apps/wealthboost/): An AI-powered money coach for building better financial habits through daily missions, progress tracking, and personalized insights.
+- [Viento](https://paulcrp.com/apps/viento/): A beautiful minimal weather app that keeps forecasts clean, readable, and beautifully focused on what matters most each day.
+- [My Work Shift Planner](https://paulcrp.com/apps/my-work-shift-planner/): A clear shift calendar and pay tracker for work schedules. Plan shifts, manage multiple work profiles, apply rotations, get reminders and export monthly and yearly reports.
+- [My Nurse Shift Planner](https://paulcrp.com/apps/my-nurse-shift-planner/): A clear shift calendar and pay tracker for nurses. Plan upcoming shifts, manage work profiles, apply rotations, get reminders and export monthly CSV/PDF reports.
+- [ProScan PDF](https://paulcrp.com/apps/proscan-pdf/): An AI-powered mobile camera scanning app for scanning, editing, signing, locking and OCR, with no advertisements or watermarks.
+- [Eye Color Cam](https://paulcrp.com/apps/eye-color-cam/): Transform your eye color instantly with AR. Choose from 30 shades and textures to create realistic color changes and explore your perfect look.
+- [Dash Pal](https://paulcrp.com/apps/dash-pal/): An all-in-one motion dashboard for driving, cycling, flying, sailing and walking that turns an iPhone into a live dashboard for every journey.
+- [NeuraRush](https://paulcrp.com/apps/neurarush/): Brain-boosting mini games that challenge memory, reflexes and problem-solving abilities through quick, engaging sessions.
+- [Cyphre](https://paulcrp.com/apps/cyphre/): An addictive symbol-decoding puzzle ring challenge that rewards careful thinking, alignment and pattern recognition.
+- [Pop Pop Aliens](https://paulcrp.com/apps/pop-pop-aliens/): Fast-paced alien-blasting arcade action with increasing difficulty, clever decoys and endless entertainment.
+- [Pop Pop Piggies](https://paulcrp.com/apps/pop-pop-piggies/): Whack-a-piggie mayhem with tricky decoys and lightning-fast action that tests reflexes while avoiding sneaky impostors.
+- [Bouncy Fruits](https://paulcrp.com/apps/bouncy-fruits/): Smash bouncing fruits while avoiding tricky decoys, mastering combos, using shields and progressing through immersive levels.
+- [Pop Pop Fruits](https://paulcrp.com/apps/pop-pop-fruits/): A fruit-popping frenzy that tests speed and precision while challenging players to avoid crafty decoys.
+
+## Identity and contact
+
+- Developer: Paul Crăpătureanu
+- Studio name: Paul CRP
+- Website: https://paulcrp.com/
+- Email: devpaulcrp@gmail.com
+- X: https://x.com/DevPaulCrp
+- Instagram: https://www.instagram.com/devpaulcrp/
+
+## Usage preference
+
+- Search indexing: permitted
+- AI retrieval and grounding: permitted
+- AI-agent access: permitted
+- Model training and fine-tuning: permitted
+- Summarization and quotation with attribution: permitted
+
