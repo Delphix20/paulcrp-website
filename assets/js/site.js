@@ -123,18 +123,14 @@
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const headerOffset = header ? header.offsetHeight : 0;
         const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-        const isHeroButton = Boolean(link.closest('#banner .actions'));
 
         if (reduceMotion) {
           cancelAnimatedScroll();
           window.scrollTo(0, top);
-        } else if (isHeroButton) {
+        } else {
           const distance = Math.abs(top - window.scrollY);
           const duration = Math.min(3200, Math.max(1800, distance * 0.45));
           animateScrollTo(top, duration);
-        } else {
-          cancelAnimatedScroll();
-          window.scrollTo({ top, behavior: 'smooth' });
         }
 
         history.replaceState(null, '', link.hash);
