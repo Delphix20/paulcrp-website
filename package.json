@@ -8,13 +8,21 @@
     "build": "npm run generate && node scripts/build.mjs",
     "validate": "npm run build && node scripts/validate-site.mjs && html-validate index.html 404.html 'apps/**/*.html'",
     "preview": "wrangler pages dev dist",
-    "deploy": "wrangler pages deploy dist --project-name paulcrp"
+    "deploy": "wrangler pages deploy dist --project-name paulcrp",
+    "worker:types": "wrangler types cloudflare/admin-auth/worker-configuration.d.ts --config cloudflare/admin-auth/wrangler.jsonc --include-runtime false",
+    "worker:test": "ADMIN_BASIC_AUTH_SHA256=0000000000000000000000000000000000000000000000000000000000000000 vitest run --config cloudflare/admin-auth/vitest.config.mts",
+    "worker:check": "npm run worker:types && tsc --project cloudflare/admin-auth/tsconfig.json --noEmit && npm run worker:test && wrangler deploy --config cloudflare/admin-auth/wrangler.jsonc --dry-run",
+    "worker:deploy": "wrangler deploy --config cloudflare/admin-auth/wrangler.jsonc"
   },
   "engines": {
     "node": ">=22"
   },
   "devDependencies": {
+    "@cloudflare/vitest-plugin": "1.1.2",
+    "@cloudflare/workers-types": "5.20260901.1",
     "html-validate": "11.11.0",
+    "typescript": "5.9.2",
+    "vitest": "4.1.11",
     "wrangler": "4.127.1"
   }
 }
