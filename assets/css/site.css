@@ -260,7 +260,7 @@ body:before {
 .handwritten-quote-line {
   display: block;
   max-width: 100%;
-  padding: 0 0.6em 0 0.14em;
+  padding: 0 0.6em;
   white-space: nowrap;
   font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive !important;
   font-weight: 400 !important;
@@ -270,17 +270,11 @@ body:before {
   will-change: clip-path, opacity;
 }
 
+.quote-opening-mark,
 .quote-closing-mark {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.04em;
-  margin-left: 0.04em;
-  padding-right: 0.12em;
+  display: inline-block;
   font-family: inherit !important;
-  font-size: 0.78em;
   font-weight: inherit !important;
-  line-height: 1;
-  vertical-align: 0.18em;
 }
 
 body:not(.is-preload) .handwritten-quote-line-1 {
