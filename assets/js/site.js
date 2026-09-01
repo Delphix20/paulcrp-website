@@ -25,6 +25,16 @@
     const header = document.querySelector('#header');
     const mobileQuery = window.matchMedia('(max-width: 980px)');
 
+    const startHeroSequence = () => {
+      window.setTimeout(() => body.classList.remove('is-preload'), 100);
+    };
+
+    if (document.readyState === 'complete') {
+      startHeroSequence();
+    } else {
+      window.addEventListener('load', startHeroSequence, { once: true });
+    }
+
     const syncMobileClass = () => body.classList.toggle('is-mobile', mobileQuery.matches);
     syncMobileClass();
     mobileQuery.addEventListener('change', syncMobileClass);

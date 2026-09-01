@@ -271,7 +271,7 @@ body:before {
 }
 
 body:not(.is-preload) .handwritten-quote-line-1 {
-  animation: writeQuote 2.6s linear 0.9s forwards;
+  animation: writeQuote 3.2s linear 2.82s forwards;
 }
 
 @keyframes writeQuote {
@@ -727,20 +727,20 @@ body:not(.is-preload) .hero-mark-bottom {
 
 body:not(.is-preload) .hero-mark-top {
   animation-name: heroTopIn;
-  animation-duration: 0.28s;
-  animation-delay: 0s;
+  animation-duration: 0.72s;
+  animation-delay: 0.08s;
 }
 
 body:not(.is-preload) .hero-mark-line {
   animation-name: heroLineIn;
-  animation-duration: 0.24s;
-  animation-delay: 0.12s;
+  animation-duration: 0.56s;
+  animation-delay: 0.46s;
 }
 
 body:not(.is-preload) .hero-mark-bottom {
   animation-name: heroBottomIn;
-  animation-duration: 0.28s;
-  animation-delay: 0.24s;
+  animation-duration: 0.72s;
+  animation-delay: 0.82s;
 }
 
 @keyframes heroTopIn {
@@ -903,18 +903,12 @@ body:not(.is-preload) .hero-mark-bottom {
 }
 
 body:not(.is-preload) .banner-sequence {
-  animation: bannerFadeIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: bannerFadeIn 0.46s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-body:not(.is-preload) .banner-sequence-1,
-body:not(.is-preload) .banner-sequence-2 {
-  animation: none;
-  filter: none;
-  opacity: 1;
-  transform: none;
-}
-
-body:not(.is-preload) .banner-sequence-3 { animation-delay: 0.12s; }
+body:not(.is-preload) .banner-sequence-1 { animation-delay: 1.50s; }
+body:not(.is-preload) .banner-sequence-2 { animation-delay: 1.84s; }
+body:not(.is-preload) .banner-sequence-3 { animation-delay: 2.18s; }
 
 html:not(.js) .hero-mark-top,
 html:not(.js) .hero-mark-line,
@@ -927,6 +921,23 @@ html:not(.js) .handwritten-quote-line {
   opacity: 1 !important;
   transform: none !important;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mark-top,
+  .hero-mark-line,
+  .hero-mark-bottom,
+  .banner-sequence,
+  .handwritten-quote-line,
+  #banner .more {
+    animation: none !important;
+    clip-path: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 @keyframes bannerFadeIn {
   from {
     opacity: 0;
