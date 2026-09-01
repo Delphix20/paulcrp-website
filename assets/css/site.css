@@ -586,25 +586,27 @@ html.js body:not(.is-preload) #banner .more {
 
 @media (max-width: 768px) {
   .handwritten-quote {
-    width: min(98%, 34rem);
+    width: min(calc(100vw - 1rem), 34rem);
     min-height: 3.25rem;
     margin-top: 1.2rem;
     margin-bottom: 1.6rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
   }
 
   .handwritten-quote-text {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+  }
+
+  .quote-closing-mark {
+    margin-left: 0.08em;
   }
 
   #banner .inner p { line-height: 2.2 !important; }
   .banner-description { margin-top: 2rem !important; }
   #banner .actions.special { margin-top: 2.5rem !important; }
-}
-
-@media (max-width: 360px) {
-  .handwritten-quote-text {
-    font-size: 0.84rem;
-  }
 }
 
 /* Ensure all major icons are equally visible (prevent any theme opacity differences) */
