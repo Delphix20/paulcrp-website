@@ -1,4 +1,38 @@
 (function () {
+  let activeScrollFrame = null;
+
+  function cancelAnimatedScroll() {
+    if (activeScrollFrame === null) return;
+    window.cancelAnimationFrame(activeScrollFrame);
+    activeScrollFrame = null;
+  }
+
+  function animateScrollTo(top, duration) {
+    cancelAnimatedScroll();
+
+    const start = window.scrollY;
+    const distance = top - start;
+    if (Math.abs(distance) < 1) return;
+
+    const startedAt = performance.now();
+    const easeInOutCubic = (progress) => progress < 0.5
+      ? 4 * progress * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+    const step = (now) => {
+      const progress = Math.min(1, (now - startedAt) / duration);
+      window.scrollTo(0, start + distance * easeInOutCubic(progress));
+
+      if (progress < 1) {
+        activeScrollFrame = window.requestAnimationFrame(step);
+      } else {
+        activeScrollFrame = null;
+      }
+    };
+
+    activeScrollFrame = window.requestAnimationFrame(step);
+  }
+
   function allSpotlightRows() {
     return Array.from(document.querySelectorAll('#apps .inner > section.spotlight, #games .inner > section.spotlight'));
   }
@@ -68,10 +102,17 @@
     });
 
     document.addEventListener('keydown', (event) => {
+      if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) {
+        cancelAnimatedScroll();
+      }
+
       if (event.key === 'Escape' && body.classList.contains('is-menu-visible')) {
         setMenuOpen(false, true);
       }
     });
+
+    window.addEventListener('wheel', cancelAnimatedScroll, { passive: true });
+    window.addEventListener('touchstart', cancelAnimatedScroll, { passive: true });
 
     document.querySelectorAll('a.scrolly, #menu a[href^="#"]:not(.close)').forEach((link) => {
       link.addEventListener('click', (event) => {
@@ -82,7 +123,20 @@
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const headerOffset = header ? header.offsetHeight : 0;
         const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-        window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+        const isHeroButton = Boolean(link.closest('#banner .actions'));
+
+        if (reduceMotion) {
+          cancelAnimatedScroll();
+          window.scrollTo(0, top);
+        } else if (isHeroButton) {
+          const distance = Math.abs(top - window.scrollY);
+          const duration = Math.min(3200, Math.max(1800, distance * 0.45));
+          animateScrollTo(top, duration);
+        } else {
+          cancelAnimatedScroll();
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+
         history.replaceState(null, '', link.hash);
       });
     });
