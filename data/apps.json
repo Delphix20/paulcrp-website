@@ -47,6 +47,7 @@
     "category": "FinanceApplication",
     "genre": "Productivity",
     "image": "wealthboostappicon",
+    "imageVersion": "20260901-2",
     "appStoreUrl": "https://apps.apple.com/app/wealthboost-ai-money-coach/id6756603789",
     "websiteUrl": "https://wealthboost.app/"
   },
@@ -58,6 +59,7 @@
     "category": "WeatherApplication",
     "genre": "Weather",
     "image": "viento-icon",
+    "imageVersion": "20260901-2",
     "appStoreUrl": "https://apps.apple.com/app/viento-minimal-weather/id6770246185"
   },
   {
@@ -68,6 +70,7 @@
     "category": "BusinessApplication",
     "genre": "Productivity",
     "image": "myworkshiftplanner-icon",
+    "imageVersion": "20260901-2",
     "appStoreUrl": "https://apps.apple.com/app/my-work-shift-planner/id6769349635",
     "websiteUrl": "https://myshiftplanner.app/work/"
   },
@@ -79,6 +82,7 @@
     "category": "BusinessApplication",
     "genre": "Productivity",
     "image": "mynurseshiftplanner-icon",
+    "imageVersion": "20260901-2",
     "appStoreUrl": "https://apps.apple.com/app/my-nurse-shift-planner/id6764406102",
     "websiteUrl": "https://myshiftplanner.app/nurse/"
   },
@@ -90,6 +94,7 @@
     "category": "ProductivityApplication",
     "genre": "Productivity",
     "image": "proscan-icon",
+    "imageVersion": "20260901-2",
     "appStoreUrl": "https://apps.apple.com/app/proscan-pdf-scan-sign-ocr/id6752308731",
     "websiteUrl": "https://proscanpdf.com/"
   },

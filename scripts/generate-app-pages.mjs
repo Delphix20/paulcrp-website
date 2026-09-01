@@ -20,7 +20,9 @@ function safeJson(value) {
 
 for (const app of apps) {
   const canonicalUrl = `https://paulcrp.com/apps/${app.slug}/`;
-  const imageUrl = `https://paulcrp.com/images/optimized/${app.image}-256.png`;
+  const imageVersion = app.imageVersion ? `?v=${encodeURIComponent(app.imageVersion)}` : '';
+  const imagePath = (size, format) => `/images/optimized/${app.image}-${size}.${format}${imageVersion}`;
+  const imageUrl = `https://paulcrp.com${imagePath(256, 'png')}`;
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -108,9 +110,9 @@ for (const app of apps) {
       <main class="app-detail-shell">
         <article class="game-card app-detail-card">
           <picture>
-            <source type="image/avif" srcset="/images/optimized/${app.image}-128.avif 128w, /images/optimized/${app.image}-256.avif 256w" sizes="160px" />
-            <source type="image/webp" srcset="/images/optimized/${app.image}-128.webp 128w, /images/optimized/${app.image}-256.webp 256w" sizes="160px" />
-            <img src="/images/optimized/${app.image}-256.png" class="app-icon" width="160" height="160" alt="${escapeHtml(app.name)} app icon" fetchpriority="high" decoding="async" />
+            <source type="image/avif" srcset="${imagePath(128, 'avif')} 128w, ${imagePath(256, 'avif')} 256w" sizes="160px" />
+            <source type="image/webp" srcset="${imagePath(128, 'webp')} 128w, ${imagePath(256, 'webp')} 256w" sizes="160px" />
+            <img src="${imagePath(256, 'png')}" class="app-icon" width="160" height="160" alt="${escapeHtml(app.name)} app icon" fetchpriority="high" decoding="async" />
           </picture>
           <h1>${escapeHtml(app.name)}</h1>
           <p class="app-detail-description">${escapeHtml(app.description)}</p>
