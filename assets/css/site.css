@@ -270,6 +270,11 @@ body:before {
   will-change: clip-path, opacity;
 }
 
+.quote-closing-mark {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+
 body:not(.is-preload) .handwritten-quote-line-1 {
   animation: writeQuote 3.2s linear 2.82s forwards;
 }
@@ -282,6 +287,27 @@ body:not(.is-preload) .handwritten-quote-line-1 {
   100% {
     opacity: 1;
     clip-path: inset(0 0 0 0);
+  }
+}
+
+html.js #banner .more {
+  opacity: 0;
+  transform: translateY(8.5em);
+  transition: none !important;
+}
+
+html.js body:not(.is-preload) #banner .more {
+  animation: revealLearnMore 0.75s ease 6.15s forwards;
+}
+
+@keyframes revealLearnMore {
+  from {
+    opacity: 0;
+    transform: translateY(8.5em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -566,6 +592,18 @@ body:not(.is-preload) .handwritten-quote-line-1 {
 
   .handwritten-quote-text {
     font-size: 0.95rem;
+  }
+
+  .quote-closing-mark {
+    display: inline-block;
+    min-width: 0.5em;
+    margin-left: 0.03em;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 0.86em;
+    font-weight: 600 !important;
+    line-height: 1;
+    text-align: center;
+    vertical-align: 0.12em;
   }
 
   #banner .inner p { line-height: 2.2 !important; }
