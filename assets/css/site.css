@@ -604,6 +604,10 @@ html.js body:not(.is-preload) #banner .more {
     margin-left: 0.08em;
   }
 
+  #banner .more {
+    display: block;
+  }
+
   #banner .inner p { line-height: 2.2 !important; }
   .banner-description { margin-top: 2rem !important; }
   #banner .actions.special { margin-top: 2.5rem !important; }
