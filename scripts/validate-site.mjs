@@ -43,7 +43,8 @@ function localTarget(documentPath, rawValue) {
 
 const requiredFiles = [
   'index.html', '404.html', 'robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt',
-  'ai/site-profile.md', '_headers', '_redirects', 'favicon.ico', 'site.webmanifest'
+  'ai/site-profile.md', '_headers', '_redirects', 'favicon.ico', 'site.webmanifest',
+  'viento/index.html'
 ];
 for (const file of requiredFiles) {
   if (!await exists(path.join(outputDirectory, file))) fail(`Missing required build output: ${file}`);
@@ -114,7 +115,8 @@ for (const signal of ['search=yes', 'ai-input=yes', 'ai-train=yes', 'use=full', 
 
 const sitemap = await readFile(path.join(outputDirectory, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-if (sitemapUrls.length !== apps.length + 1) fail(`Sitemap contains ${sitemapUrls.length} URLs; expected ${apps.length + 1}`);
+if (sitemapUrls.length !== apps.length + 2) fail(`Sitemap contains ${sitemapUrls.length} URLs; expected ${apps.length + 2}`);
+if (!sitemapUrls.includes('https://paulcrp.com/viento/')) fail('Sitemap missing Viento landing page');
 for (const app of apps) {
   if (!sitemapUrls.includes(`https://paulcrp.com/apps/${app.slug}/`)) fail(`Sitemap missing app: ${app.slug}`);
 }

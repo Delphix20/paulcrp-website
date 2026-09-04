@@ -6,7 +6,7 @@
   "scripts": {
     "generate": "node scripts/generate-app-pages.mjs && node scripts/create-favicon-ico.mjs",
     "build": "npm run generate && node scripts/build.mjs",
-    "validate": "npm run build && node scripts/validate-site.mjs && html-validate index.html 404.html 'apps/**/*.html'",
+    "validate": "npm run build && node scripts/validate-site.mjs && html-validate index.html 404.html 'apps/**/*.html' 'viento/**/*.html' && node --test tests/viento.test.mjs",
     "preview": "wrangler pages dev dist",
     "deploy": "wrangler pages deploy dist --project-name paulcrp",
     "worker:types": "wrangler types cloudflare/admin-auth/worker-configuration.d.ts --config cloudflare/admin-auth/wrangler.jsonc --include-runtime false",

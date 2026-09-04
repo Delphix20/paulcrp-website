@@ -1,5 +1,7 @@
 /index.html / 301
 /generic.html / 301
 /elements.html / 301
+/viento/index.html /viento/ 301
+/viento /viento/ 301
 /apps/:slug/index.html /apps/:slug/ 301
 /apps/:slug /apps/:slug/ 301

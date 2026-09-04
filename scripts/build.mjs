@@ -39,7 +39,7 @@ for (const file of rootFiles) {
   await cp(path.join(repositoryDirectory, file), path.join(outputDirectory, file));
 }
 
-for (const directory of ['ai', 'apps', 'assets', 'images']) {
+for (const directory of ['ai', 'apps', 'assets', 'images', 'viento']) {
   await cp(path.join(repositoryDirectory, directory), path.join(outputDirectory, directory), {
     recursive: true,
     filter: (source) => !source.includes(`${path.sep}assets${path.sep}sass`)
