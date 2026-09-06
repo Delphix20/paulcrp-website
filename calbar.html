@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="CalBar is an independent Mac app for Google Calendar, with a menu-bar calendar, meeting links, reminders, and an optional Pro planner.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>CalBar for Google Calendar</title>
+  <link rel="canonical" href="https://paulcrp.com/calbar.html">
+  <link rel="icon" type="image/png" href="images/calbar-icon.png">
+  <style>
+    :root { color-scheme: light dark; --background: #fff; --text: #202124; --secondary: #535860; --line: #dce1e6; --link: #085ac6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; overflow-wrap: anywhere; }
+    main { width: min(100% - 40px, 760px); margin-inline: auto; }
+    header { padding-block: 44px 28px; text-align: center; }
+    img { display: block; width: 96px; height: 96px; margin: 0 auto 16px; }
+    h1 { margin: 0; font-size: 36px; line-height: 1.2; font-weight: 600; }
+    .subtitle { margin: 8px 0 12px; font-size: 20px; color: var(--secondary); }
+    .availability { margin: 0; font-size: 13px; color: var(--secondary); }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 22px; font-size: 14px; }
+    section { padding-block: 26px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: 22px; line-height: 1.4; font-weight: 600; }
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0; padding-left: 22px; }
+    li { margin-block: 7px; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+    footer { padding-block: 22px 36px; border-top: 1px solid var(--line); font-size: 13px; color: var(--secondary); }
+    @media (prefers-color-scheme: dark) { :root { --background: #1c1d1f; --text: #f1f3f4; --secondary: #b6bcc5; --line: #41454b; --link: #8ab4f8; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="images/calbar-icon.png" width="96" height="96" alt="CalBar app icon">
+      <h1>CalBar</h1>
+      <p class="subtitle">for Google Calendar</p>
+      <p class="availability">In pre-release testing. Requires macOS 14 or later.</p>
+      <nav aria-label="CalBar information">
+        <a href="calbar_privacypolicy.html">Privacy Policy</a>
+        <a href="#support">Support</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">License Terms</a>
+      </nav>
+    </header>
+    <section aria-labelledby="calendar-title">
+      <h2 id="calendar-title">Your calendar, close at hand</h2>
+      <p>CalBar connects your Google Calendar to a compact calendar in your Mac's menu bar. See your day, check event details, open meeting links, and receive local reminders without leaving a full calendar window open.</p>
+      <p>Optional CalBar Pro adds full Agenda and Week views, event creation and editing, search and filters, custom reminder timing, and an always-visible mini window.</p>
+    </section>
+    <section aria-labelledby="google-title">
+      <h2 id="google-title">Connecting your Google Account</h2>
+      <ul>
+        <li>Google handles sign-in. CalBar does not receive your Google password.</li>
+        <li>Calendar-list access identifies your calendars, colors, and permissions. Event access loads your events and applies the changes you request, including Google Meet creation.</li>
+        <li>Your Mac communicates directly with Google. A calendar copy is stored locally for offline viewing; calendars are not uploaded to a CalBar server.</li>
+        <li>You can sign out in CalBar or revoke access in <a href="https://myaccount.google.com/connections">Google Account connections</a>. These are separate from managing an Apple subscription.</li>
+      </ul>
+      <p>Read the <a href="calbar_privacypolicy.html">Privacy Policy</a> for data handling, Google Limited Use, retention, and your choices.</p>
+    </section>
+    <section aria-labelledby="pro-title">
+      <h2 id="pro-title">Free calendar. Optional Pro.</h2>
+      <p>A complimentary seven-day Pro preview begins after your first successful calendar sync. It does not charge you or automatically start a subscription. Afterward, the compact daily calendar, event details, meeting links, and basic reminders remain free.</p>
+      <p>Pro offers a yearly auto-renewable subscription or a one-time lifetime purchase through Apple. The app shows Apple's current localized price before confirmation. Purchases can be restored using the associated Apple Account; subscriptions are managed through Apple.</p>
+    </section>
+    <section id="support" aria-labelledby="support-title">
+      <h2 id="support-title">Support</h2>
+      <p>For CalBar support or privacy requests, <a href="mailto:devpaulcrp@gmail.com">contact CalBar support</a>. Include the app version, macOS version, and a description of the issue. Do not send passwords, sign-in tokens, payment details, or unnecessary private calendar content.</p>
+      <p>Apple handles App Store billing and refund requests. You can <a href="https://apps.apple.com/account/subscriptions">manage a subscription</a> or <a href="https://reportaproblem.apple.com/">request a refund from Apple</a>.</p>
+    </section>
+    <footer>CalBar is an independent app. It is not made by, affiliated with, sponsored by, or endorsed by Google. Google Calendar and Google Meet are trademarks of their respective owner.</footer>
+  </main>
+</body>
+</html>

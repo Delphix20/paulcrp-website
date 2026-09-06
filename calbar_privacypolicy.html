@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow,noarchive">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="How CalBar for Google Calendar handles calendar data, Google permissions, local storage, notifications, purchases, subscriptions, and privacy choices.">
+  <title>CalBar - Privacy Policy and Purchase Information</title>
+  <link rel="icon" type="image/png" href="images/calbar-icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #ffffff;
+      --text: #202124;
+      --secondary: #535860;
+      --line: #dce1e6;
+      --link: #085ac6;
+      --blue: #1a73e8;
+      --green: #188038;
+      --yellow: #e5a400;
+      --red: #d93025;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .page { width: min(100% - 40px, 820px); margin-inline: auto; }
+    header { padding-block: 56px 30px; text-align: center; }
+    .app-icon { width: 76px; height: 76px; display: block; margin: 0 auto 14px; }
+    h1 { margin: 0; font-size: 36px; font-weight: 600; line-height: 1.25; }
+    .subtitle { font-size: 19px; margin: 8px 0 12px; color: var(--secondary); }
+    .updated { font-size: 13px; color: var(--secondary); margin: 0; }
+    .spectrum { display: flex; height: 3px; margin-top: 30px; }
+    .spectrum span { flex: 1; background: var(--blue); }
+    .spectrum span:nth-child(2) { background: var(--green); }
+    .spectrum span:nth-child(3) { background: var(--yellow); }
+    .spectrum span:nth-child(4) { background: var(--red); }
+    a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; border-radius: 2px; }
+    .skip-link { position: absolute; left: 20px; top: -100px; padding: 8px; background: var(--background); }
+    .skip-link:focus { top: 12px; }
+    nav { padding-block: 4px 28px; border-bottom: 1px solid var(--line); }
+    nav h2 { font-size: 15px; margin: 0 0 10px; border: 0; padding: 0; }
+    nav ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 28px; margin: 0; padding-left: 22px; font-size: 14px; }
+    section { padding-block: 28px; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 16px; font-size: 23px; line-height: 1.4; font-weight: 600; }
+    h3 { margin: 24px 0 8px; font-size: 17px; line-height: 1.5; font-weight: 600; }
+    p { margin: 0 0 14px; }
+    p:last-child, ul:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 24px; margin-block: 10px 16px; }
+    li { padding-left: 3px; margin-block: 5px; }
+    strong { font-weight: 600; }
+    .summary { border-left: 3px solid var(--blue); padding-left: 18px; margin-block: 22px; }
+    code { font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    footer { padding-block: 26px 44px; color: var(--secondary); font-size: 13px; }
+    @media (max-width: 540px) {
+      header { padding-top: 32px; }
+      nav ol { grid-template-columns: 1fr; }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #1c1d1f; --text: #f1f3f4; --secondary: #b6bcc5; --line: #41454b; --link: #8ab4f8; --blue: #8ab4f8; --green: #81c995; --yellow: #fdd663; --red: #f28b82; }
+    }
+    @media print {
+      :root { --background: #ffffff; --text: #000000; --secondary: #333333; --line: #bbbbbb; --link: #000000; }
+      .page { width: 100%; }
+      header { padding-top: 0; }
+      nav, .skip-link, .spectrum, .back-top { display: none; }
+      h2, h3 { break-after: avoid; }
+      a { text-decoration: underline; }
+      section { padding-block: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to policy</a>
+  <div class="page">
+    <header id="top">
+      <img class="app-icon" src="images/calbar-icon.png" width="76" height="76" alt="CalBar app icon">
+      <h1>CalBar</h1>
+      <p class="subtitle">Privacy Policy &amp; Purchase Information</p>
+      <p class="updated">Last updated: <time datetime="2026-09-06">September 6, 2026</time></p>
+      <div class="spectrum" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    </header>
+
+    <nav aria-label="Policy contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#scope">About this policy</a></li>
+        <li><a href="#information">Information and purposes</a></li>
+        <li><a href="#google">Google access and Limited Use</a></li>
+        <li><a href="#sharing">Services and disclosures</a></li>
+        <li><a href="#payments">Purchases and payments</a></li>
+        <li><a href="#retention">Storage, retention and deletion</a></li>
+        <li><a href="#security">Security and visibility</a></li>
+        <li><a href="#rights">Your choices and rights</a></li>
+        <li><a href="#children">Children's privacy</a></li>
+        <li><a href="#website">This website</a></li>
+        <li><a href="#service">Service and licensing information</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact and privacy requests</a></li>
+      </ol>
+    </nav>
+
+    <main id="main-content">
+      <section id="scope" aria-labelledby="scope-title">
+        <h2 id="scope-title">1. About this policy</h2>
+        <p>This policy explains how CalBar for Google Calendar ("CalBar" or the "app") handles information when you connect a Google Account, view or manage calendars, enable reminders, purchase CalBar Pro, or request support. "We" and "our" refer to CalBar's developer. Google and Apple operate their own services under their own policies.</p>
+        <p>CalBar is an independent macOS app. It is not made by, affiliated with, sponsored by, or endorsed by Google. Google Calendar, Google Meet, macOS, and other third-party names belong to their respective owners.</p>
+        <div class="summary">
+          <p><strong>In brief:</strong> your Mac connects directly to Google for calendar functions and to Apple for purchases. CalBar stores a working calendar copy locally; it does not upload your calendars to a CalBar server. The app has no advertising or third-party advertising SDK, and we do not sell calendar data.</p>
+        </div>
+        <p>This is a privacy notice, not a request for blanket consent. Google authorization, macOS permissions, and Apple purchase confirmation are separate choices. The purchase information below does not replace Apple's applicable terms or your statutory rights.</p>
+      </section>
+
+      <section id="information" aria-labelledby="information-title">
+        <h2 id="information-title">2. Information and purposes</h2>
+        <h3>Google sign-in and account details</h3>
+        <p>Google's sign-in service provides the account name, email address, identifiers, and authorization tokens needed to identify your connected account and access authorized calendars. CalBar displays the account name and email, derives initials for the account badge, and uses account-related identifiers to separate local data and preferences. Google handles your password; CalBar does not receive or store it. Its sign-in library manages authorization credentials using Apple system storage, including the Keychain.</p>
+        <p>Google's sign-in SDK also declares provider-side processing of name, email address, phone number, approximate location, user and device identifiers, usage information, and other technical data. Its declared purposes include sign-in functionality and, for some identifiers and technical/usage data, analytics. These SDK disclosures do not mean CalBar displays or stores every listed field: CalBar does not request a phone-number or device-location permission. Google's processing is separate from CalBar's local calendar copy and is governed by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The bundled SDK declares no advertising tracking.</p>
+        <h3>Calendars and events</h3>
+        <p>CalBar receives calendar names, identifiers, colors, visibility information, access permissions, and supported conferencing capabilities. Event data includes titles, start and end dates, time zones, all-day and recurrence details, locations, descriptions or notes, meeting links, Google Calendar links, attendee-related metadata, and technical identifiers used to synchronize changes.</p>
+        <p>Google API responses may also contain organizer or participant information. CalBar's event model retains an attendee count, rather than a separate guest contact directory. Personal or sensitive details can still appear in titles, descriptions, locations, or other content supplied by you or other calendar users.</p>
+        <p>This information enables the agenda, week view, menu bar, pinned window, countdowns, local search, reminders, and the event changes you request. Search is performed against events loaded on your Mac; browsing other dates can fetch another range from Google. <strong>Hiding a calendar is a display filter, not a withdrawal of Google permission:</strong> accessible calendars may still be synchronized and cached.</p>
+        <h3>Event changes and meeting links</h3>
+        <p>When you save or delete an event, CalBar sends the necessary instructions and content directly to Google. Changes affect your actual Google Calendar, not just a local preview, and may be visible to people with access to the event or shared calendar. Google controls sharing and any resulting attendee notifications. Creating a Google Meet link sends a conferencing request to Google. Joining a meeting opens its link in your browser or meeting app; that service handles the call, permissions, and any recording.</p>
+        <h3>Preferences, reminders and technical state</h3>
+        <p>Local settings include appearance, calendar filters, menu-bar and pinned-window preferences, window placement, launch-at-login choices, notification settings, and reminder timing. Local notification requests include an event title, event identifier, and reminder timing so macOS can display an alert and open the matching event.</p>
+        <p>CalBar also uses synchronization timestamps, cached date ranges, error information, and purchase status to keep the app working. The app does not include a separate behavioral analytics or crash-reporting SDK. Apple may make platform diagnostics and aggregate app or sales reports available under its settings and policies. Information you voluntarily include in a support request, such as a reply address, device/app version, screenshots, or logs, is used to respond, troubleshoot, and maintain necessary support records.</p>
+        <h3>Information not requested for calendar functionality</h3>
+        <p>CalBar does not request access to Gmail messages, Google Drive files, your device address book, precise device location, microphone, or camera. An event's location field is calendar content, not GPS tracking. External meeting apps may request their own permissions. CalBar does not analyze calendar content to infer sensitive traits or train AI models.</p>
+      </section>
+
+      <section id="google" aria-labelledby="google-title">
+        <h2 id="google-title">3. Google access and Limited Use</h2>
+        <p>In addition to basic Google sign-in information, CalBar requests <code>calendar.calendarlist.readonly</code> to read the calendars available to your account and <code>calendar.events</code> to read and, when you choose, create, change, or delete events. Actual operations remain subject to your Google account and calendar permissions. Calendar functionality is unavailable without the required authorization; a Pro purchase does not grant Google permissions.</p>
+        <p>CalBar's use and transfer of Google API data adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including Limited Use requirements, and the applicable <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data and developer policy</a>.</p>
+        <p>Google data is used for CalBar's visible calendar features. It is not sold, used for advertising, supplied to data brokers, used for credit or lending decisions, or used to develop or train generalized AI models. We do not routinely read your calendar content. If you choose to provide specific content for support, access is limited to that purpose; any exceptional security or legal access must comply with Google's rules. Any transfer of Google data in a business sale requires the prior explicit consent required by those rules.</p>
+        <p>You can remove CalBar's authorization through <a href="https://myaccount.google.com/connections">Google Account connections</a>. Revocation stops future authorized access but does not itself erase a calendar copy already stored on your Mac. Sign out in CalBar as described below to remove the app's active local calendar copy.</p>
+      </section>
+
+      <section id="sharing" aria-labelledby="sharing-title">
+        <h2 id="sharing-title">4. Services and disclosures</h2>
+        <ul>
+          <li><strong>Google:</strong> authenticates your account and receives calendar requests, event changes, and conference-creation requests. Network requests expose ordinary connection information such as IP address and technical client information to Google. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+          <li><strong>Apple:</strong> provides macOS storage and notification services, app distribution, StoreKit purchase verification, billing, restoration, and platform diagnostics where applicable. See <a href="https://www.apple.com/legal/privacy/data/en/app-store/">App Store &amp; Privacy</a>.</li>
+          <li><strong>Meeting and linked services:</strong> receive the link and normal connection information when you open them. Their own account, privacy, and payment terms apply.</li>
+          <li><strong>Support and website providers:</strong> process the communications you send or the web requests needed to deliver and secure this page. They are not given routine access to your Google calendars by CalBar.</li>
+        </ul>
+        <p>We may disclose information actually held by us where reasonably necessary to respond to a valid legal obligation, protect users or security, or establish or defend legal claims, subject to applicable law and the Google restrictions above. This does not give us access to data we do not hold.</p>
+        <p>These providers may process information outside your location. Their applicable privacy notices explain their own processing, retention, and international-transfer arrangements. This policy does not promise that all information stays on your Mac: Google stores your calendars, Apple maintains purchase records, and providers handle the requests you send them.</p>
+      </section>
+
+      <section id="payments" aria-labelledby="payments-title">
+        <h2 id="payments-title">5. Purchases and payments</h2>
+        <h3>Apple handles payment</h3>
+        <p>CalBar Pro is optional and uses Apple in-app purchases. Apple processes payment through your Apple Account. CalBar does not receive your full payment-card number, security code, bank-account credentials, or Apple Account password. StoreKit supplies product identifiers, localized prices, signed transaction identifiers, purchase and expiration information, renewal-related status, and refund or revocation status needed to grant and restore access.</p>
+        <p>The plan, currency, total price, billing period, and any applicable offer are shown before confirmation. Prices and availability may vary by storefront and can change for future purchases. The Apple confirmation and applicable terms govern the amount charged. A promotional lifetime price does not turn an existing lifetime purchase into a subscription or require the purchaser to pay a later price difference.</p>
+        <h3>Complimentary Pro preview</h3>
+        <p>A seven-day Pro preview begins after the first successful calendar synchronization on this Mac. <strong>The preview does not authorize a payment, require a subscription, or automatically convert into a paid plan.</strong> You must separately confirm a purchase to pay. Buying a plan during the preview may start payment immediately; the unused preview is not an Apple subscription trial or a credit against the purchase price.</p>
+        <p>At the end of the preview, the daily calendar, meeting links, basic reminders, and other designated free features remain available. Pro-only features, including the full planner, pinned window, event editing, search/filter controls, and custom reminder timing, require an active entitlement. Preview dates are stored locally in the Keychain to administer eligibility. Signing out or changing Google accounts does not restart the preview; it is not synchronized as a per-person trial across all Macs.</p>
+        <h3>Yearly subscription</h3>
+        <p>The yearly plan is an auto-renewable subscription. Apple charges on purchase confirmation and for subsequent renewals under the terms shown at checkout. To avoid renewal, cancel before the renewal deadline shown by Apple; allow at least 24 hours before renewal. You can manage the plan in <a href="https://apps.apple.com/account/subscriptions">Apple subscription settings</a>; see <a href="https://support.apple.com/en-us/118428">Apple's cancellation instructions</a>. Cancellation normally preserves access until the paid period ends, subject to Apple's status and any refund or revocation.</p>
+        <p>Deleting CalBar, signing out of Google, revoking calendar permission, or requesting deletion of support data <strong>does not cancel an Apple subscription</strong>. Future subscription price changes are handled through Apple's applicable notification and consent processes.</p>
+        <h3>Lifetime purchase</h3>
+        <p>The lifetime plan is a non-consumable, one-time purchase of the CalBar Pro entitlement, with no scheduled expiration or recurring subscription charge. It can be restored on supported Macs using the Apple Account associated with the purchase, subject to Apple's rules. It does not include a Google Workspace subscription, third-party meeting-service fees, or separately sold products.</p>
+        <p>Lifetime does not promise that Google, Apple, every operating-system version, or every integration will remain available forever. We will not arbitrarily expire a valid lifetime entitlement or demand a renewal payment for it. Any discontinuation or material change remains subject to the purchase terms and applicable consumer remedies.</p>
+        <h3>Restoration, pending purchases and refunds</h3>
+        <p>Use Restore Purchases in CalBar to check an existing Apple purchase. Restoration is not a new purchase. Pending approval or an unverified transaction does not itself unlock Pro. Expiration, refunds, or revocation can end the affected paid entitlement. Store access, connectivity, and Apple's transaction status can affect when a change is reflected.</p>
+        <p>For refund requests, use <a href="https://reportaproblem.apple.com/">Apple's Report a Problem service</a> or <a href="https://support.apple.com/en-us/118223">Apple's refund guidance</a>. Apple administers App Store refunds under its applicable rules; eligibility varies. We do not declare all purchases non-refundable, exclude remedies required by law, or promise that Apple will approve every request. Removing Pro access does not delete the events in your Google Account.</p>
+      </section>
+
+      <section id="retention" aria-labelledby="retention-title">
+        <h2 id="retention-title">6. Storage, retention and deletion</h2>
+        <ul>
+          <li><strong>Calendar cache:</strong> a working snapshot, account details, loaded date range, and sync timestamp are stored in CalBar's local application storage. New synchronization replaces the working snapshot; it is not a permanent archive of all past events. Signing out removes the connected account's active cache and clears its events from the app.</li>
+          <li><strong>Preferences:</strong> appearance and other app preferences, including account-specific calendar visibility identifiers, can remain after sign-out. Removing the app alone may leave preferences or sandbox data under macOS behavior.</li>
+          <li><strong>Sign-in credentials:</strong> Google's sign-in library manages its credentials and sign-out behavior. Signing out is distinct from revoking CalBar's access in Google Account connections and does not delete your Google Account.</li>
+          <li><strong>Preview record:</strong> the start date and latest observed time remain in this Mac's Keychain after sign-out and may survive uninstalling the app. They are retained to administer the single device-local preview, not for advertising. Contact support for help with a deletion request; restoring the record or reinstalling is not promised to create new eligibility.</li>
+          <li><strong>Notifications:</strong> macOS stores pending requests and delivered alerts. CalBar requests removal of obsolete alerts when events are removed or reminders are disabled or the account signs out. You can also clear delivered alerts in Notification Center.</li>
+          <li><strong>Purchases:</strong> CalBar reads signed transactions and maintains working entitlement state. Apple retains its own transaction and financial records independently of the app, including records needed for restoration and its legal obligations.</li>
+          <li><strong>Support records:</strong> information you submit is kept while needed to resolve the request and relevant follow-up, security, accounting, or legal matters. Retention depends on the issue, applicable recordkeeping requirements, and any dispute. It is not kept indefinitely merely because you contacted support.</li>
+        </ul>
+        <p>Signing out or removing local app data does not delete source calendars or events at Google. Delete or export those through Google Calendar or your Google Account, subject to shared-calendar permissions. We cannot remotely erase files held only on your Mac or delete another provider's records on your behalf.</p>
+        <p>The calendar-cache directory is marked as excluded from ordinary system backups, but manual copies, older backups, device-management tools, and operating-system behavior may preserve data independently. We cannot guarantee erasure from copies outside CalBar's control.</p>
+      </section>
+
+      <section id="security" aria-labelledby="security-title">
+        <h2 id="security-title">7. Security and visibility</h2>
+        <p>CalBar uses HTTPS for Google API requests, macOS sandboxing and restrictive file permissions for its calendar cache, Keychain-backed credential handling, and verified StoreKit transactions for paid access. The calendar cache is not separately encrypted by CalBar; disk encryption and access protection also depend on your Mac's configuration. No app, storage method, or internet service can guarantee absolute security.</p>
+        <p>Event titles can appear in the menu bar, pinned window, notification banners, or Notification Center, including on a locked screen depending on your settings. Consider notification-preview controls, an icon-only menu bar, closing the pinned window, and screen-sharing visibility when working with confidential calendars. Secure your Mac and review which people and applications can access it.</p>
+        <p>If an incident affecting information for which we are responsible requires notification, we will provide the notifications required by applicable law. Do not send passwords, authorization tokens, payment details, or unnecessary private event content to support.</p>
+      </section>
+
+      <section id="rights" aria-labelledby="rights-title">
+        <h2 id="rights-title">8. Your choices and rights</h2>
+        <p>You can sign out, revoke Google access, change notification and display settings, manage purchases through Apple, and control your source calendar through Google. Choosing not to authorize a necessary service may prevent the associated feature from working.</p>
+        <p>Where applicable data-protection law requires a legal basis, we rely on providing the functionality or support you request, your consent for optional processing, legitimate interests in proportionate security, preview administration and troubleshooting, and compliance with legal obligations. Legitimate interests do not override your rights or Google's Limited Use restrictions. Permission to access a Google Account is not consent to unrelated marketing.</p>
+        <p>Depending on applicable law, you may request access, correction, deletion, portability, or restriction of personal information, object to qualifying processing, withdraw consent without affecting earlier lawful processing, and complain to a relevant privacy regulator. We do not sell personal information or share it for cross-context behavioral advertising. CalBar does not make decisions about you with legal or similarly significant effects through profiling.</p>
+        <p>Use the contact route below to exercise rights relating to information held by us. We may request only the information reasonably needed to verify and fulfill the request and will respond within applicable legal time limits. Some information may need to be retained for a lawful reason. Local-only information can usually be managed on your device; Apple and Google handle requests concerning their own services.</p>
+      </section>
+
+      <section id="children" aria-labelledby="children-title">
+        <h2 id="children-title">9. Children's privacy</h2>
+        <p>CalBar is a general productivity tool and is not directed to children under 13. Users must also meet the applicable requirements for their Google and Apple accounts and any required parental authorization. We do not knowingly collect children's information through support or use it for marketing. If you believe a child has supplied information to us, contact support so we can assess and address it. Other people's calendar content may incidentally mention children; CalBar uses that content only for the calendar functions described here.</p>
+      </section>
+
+      <section id="website" aria-labelledby="website-title">
+        <h2 id="website-title">10. This website</h2>
+        <p>This policy page contains no advertising, analytics script, remote font, embedded video, or sign-in form. Reading it does not authorize Google Calendar access. The website host and security infrastructure necessarily process connection and request information, such as IP address, requested URL, browser information, timestamps, and security events, to deliver and protect the page. Browser caches and necessary hosting/security technologies may operate independently of the app.</p>
+        <p>Following an external link takes you to a service governed by its own privacy notice. Other pages on the same website may have different features or analytics; the description above is limited to this policy page. Contact support for questions about website-related information.</p>
+      </section>
+
+      <section id="service" aria-labelledby="service-title">
+        <h2 id="service-title">11. Service and licensing information</h2>
+        <p>CalBar is licensed, not sold as ownership of its software. The <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard End User License Agreement</a> applies to the app unless a different applicable license is expressly presented through the App Store. This policy does not impose a separate arbitration clause, liability cap, or waiver of legal rights.</p>
+        <p>Calendar synchronization, event changes, meeting access, and alerts depend on factors including Google and Apple availability, permissions, network connectivity, your time-zone and device settings, supported macOS versions, sleep, and Focus settings. Cached information can become out of date and alerts can be delayed or suppressed. CalBar is not an emergency-alert service or a substitute for independently checking a critical appointment or deadline.</p>
+        <p>Review the event, target calendar, attendees, and time zone before saving a change, and verify important changes in Google Calendar. You remain responsible for having authority to access or change shared calendars and for respecting other people's information. These practical limitations do not exclude obligations, warranties, refunds, or other remedies that applicable law makes mandatory.</p>
+      </section>
+
+      <section id="changes" aria-labelledby="changes-title">
+        <h2 id="changes-title">12. Changes to this policy</h2>
+        <p>We may update this notice to reflect changes in CalBar, its providers, or applicable requirements. The date above identifies the current version. Material changes will be communicated through an appropriate in-app or other notice where required. If a new use of Google data requires authorization or consent, it will be requested before that use begins. Publishing an update is not, by itself, your consent to a new purpose.</p>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">13. Contact and privacy requests</h2>
+        <p>For questions or privacy requests, use the <a href="https://paulcrp.com/calbar.html#support">CalBar support page</a> or <strong>Support</strong> in CalBar. Contacting support does not require a purchase. You can also use the support contact supplied with CalBar's App Store listing when available.</p>
+        <p>For a privacy request, identify CalBar and describe the information or action involved. Include a way to reply, but do not send a password, full payment-card details, or an entire calendar export unless specifically necessary and agreed. Requests about Apple billing can be made directly to Apple through the refund and subscription links above.</p>
+      </section>
+    </main>
+    <footer>
+      <p>CalBar for Google Calendar &middot; Privacy Policy &amp; Purchase Information</p>
+      <p class="back-top"><a href="#top">Back to top</a></p>
+    </footer>
+  </div>
+</body>
+</html>
