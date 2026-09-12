@@ -89,7 +89,7 @@
       <img class="app-icon" src="images/calbar-icon.png" width="76" height="76" alt="CalBar app icon">
       <h1>CalBar</h1>
       <p class="subtitle">Privacy Policy &amp; Purchase Information</p>
-      <p class="updated">Last updated: <time datetime="2026-09-06">September 6, 2026</time></p>
+      <p class="updated">Last updated: <time datetime="2026-09-12">September 12, 2026</time></p>
       <div class="spectrum" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     </header>
 
@@ -144,6 +144,7 @@
       <section id="google" aria-labelledby="google-title">
         <h2 id="google-title">3. Google access and Limited Use</h2>
         <p>In addition to basic Google sign-in information, CalBar requests <code>calendar.calendarlist.readonly</code> to read the calendars available to your account and <code>calendar.events</code> to read and, when you choose, create, change, or delete events. Actual operations remain subject to your Google account and calendar permissions. Calendar functionality is unavailable without the required authorization; a Pro purchase does not grant Google permissions.</p>
+        <p>CalBar also requests <code>calendar.calendars.readonly</code> to read calendar metadata, specifically the event-label definitions that associate Google's event labels with their colors. This lets CalBar display an event's Google color and otherwise use its calendar's default color. CalBar does not use this permission to change calendar settings, sharing permissions, or label definitions. Label definitions are processed on your Mac, and resolved event colors are included in the local calendar cache; they are not sent to a CalBar server.</p>
         <p>CalBar's use and transfer of Google API data adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including Limited Use requirements, and the applicable <a href="https://developers.google.com/workspace/workspace-api-user-data-developer-policy">Google Workspace user data and developer policy</a>.</p>
         <p>Google data is used for CalBar's visible calendar features. It is not sold, used for advertising, supplied to data brokers, used for credit or lending decisions, or used to develop or train generalized AI models. We do not routinely read your calendar content. If you choose to provide specific content for support, access is limited to that purpose; any exceptional security or legal access must comply with Google's rules. Any transfer of Google data in a business sale requires the prior explicit consent required by those rules.</p>
         <p>You can remove CalBar's authorization through <a href="https://myaccount.google.com/connections">Google Account connections</a>. Revocation stops future authorized access but does not itself erase a calendar copy already stored on your Mac. Sign out in CalBar as described below to remove the app's active local calendar copy.</p>
