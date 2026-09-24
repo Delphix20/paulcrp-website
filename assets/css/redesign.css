@@ -207,7 +207,8 @@ html.is-scrolling { scroll-behavior: auto !important; }
   .platform-label { font-size: 11px; gap: 7px; }
   .platform-label .apple-mark { width: 14px; height: 18px; }
   .hero h1 { font-size: clamp(40px,9vw,58px); line-height: 1.08; margin-top: 20px; letter-spacing: -.052em; }
-  .hero-description { font-size: 14px; line-height: 1.65; margin: 19px auto 0; max-width: 340px; }
+  .hero-description { font-size: clamp(12px,3.6vw,14px); line-height: 1.65; margin: 19px auto 0; max-width: 340px; }
+  .hero-description-line { display: block; }
   .desktop-break { display: none; }
   .hero-actions { gap: 19px; margin-top: 23px; }
   .hero-actions .button { font-size: 11px; padding: 0 15px; min-height: 44px; gap: 8px; border-radius: 12px; }
