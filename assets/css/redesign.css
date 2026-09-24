@@ -125,7 +125,11 @@ html.is-scrolling { scroll-behavior: auto !important; }
 .about-section { padding-block: 100px; }
 .about-copy h2 { font-size: 43px; line-height: 1.08; margin-top: 19px; }
 .about-copy>p:not(.eyebrow) { font-size: 14px; max-width: 450px; margin-top: 23px; color: #717c8c; line-height: 1.8; }
-.about-copy .text-link { margin-top: 24px; color: #253f60; }
+.studio-websites { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 30px; max-width: 600px; margin-top: 28px; }
+.studio-websites a { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 56px; padding-block: 16px; border-bottom: 1px solid var(--line); color: var(--navy); font-size: 14px; font-weight: 500; }
+.studio-websites .arrow { width: 16px; height: 16px; transform: rotate(-45deg); opacity: .65; }
+.studio-websites a:hover span { text-decoration: underline; text-underline-offset: 4px; }
+.studio-websites a:hover .arrow { opacity: 1; }
 .contact-section { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding: 35px 40px; background: #e8edf4; border: 1px solid #dce3ed; border-radius: 23px; }
 .contact-section h2 { font-size: 24px; letter-spacing: -.035em; }
 .contact-section p { font-size: 13px; color: #68788c; margin-top: 8px; }
@@ -242,6 +246,7 @@ html.is-scrolling { scroll-behavior: auto !important; }
   .about-copy { padding-inline: 6px; }
   .about-copy h2 { font-size: 36px; margin-top: 16px; }
   .about-copy>p:not(.eyebrow) { font-size: 14px; margin-top: 19px; }
+  .studio-websites { grid-template-columns: 1fr; margin-top: 22px; }
   .contact-section { padding: 26px; display: block; border-radius: 20px; }
   .contact-section h2 { font-size: 25px; max-width: 230px; }
   .contact-section p { font-size: 12px; }
