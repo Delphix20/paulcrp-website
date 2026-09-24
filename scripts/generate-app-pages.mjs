@@ -60,7 +60,7 @@ function head(title, description, canonical, graph, social = '/images/social-car
 function card(app) {
   return '<article class="app-row" id="' + app.anchor + '"><a class="row-icon" href="/apps/' + app.slug + '/" aria-label="Explore ' + e(display(app)) + '">' + icon(app, 64) + '</a><div class="row-copy"><p class="category">' + e(app.genre) + '</p><h3><a href="/apps/' + app.slug + '/">' + e(display(app)) + arrow + '</a></h3><p class="row-description">' + e(short[app.slug]) + '</p></div><a class="store-link" href="' + app.appStoreUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Get ' + e(display(app)) + ' on the App Store">' + apple + '<span>Get</span></a></article>';
 }
-const galleryLabels = { 'water-fasting-beyond': 'Water Fasting', 'world-football-cup-2026': 'Football Cup', 'my-work-shift-planner': 'Work Shifts', 'my-nurse-shift-planner': 'Nurse Shifts' };
+const galleryLabels = { 'water-fasting-beyond': 'Water Fasting', 'world-football-cup-2026': 'Football Cup', 'my-work-shift-planner': 'My Work Shift', 'my-nurse-shift-planner': 'My Nurse Shift' };
 const galleryApps = apps.filter(app => app.slug !== 'world-football-cup-2026');
 const footballApp = apps.find(app => app.slug === 'world-football-cup-2026');
 if (footballApp) galleryApps.splice(galleryApps.findIndex(app => app.slug === 'dash-pal') + 1, 0, footballApp);
