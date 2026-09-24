@@ -212,7 +212,7 @@ html.is-scrolling { scroll-behavior: auto !important; }
   .gallery-top { justify-content: center; }
   .gallery-top .eyebrow { font-size: 9px; letter-spacing: .14em; }
   .gallery-top>span { display: none; }
-  .gallery-bottom { padding-top: 17px; flex-direction: column; gap: 10px; }
+  .gallery-bottom { padding-top: 17px; flex-direction: column; gap: 10px; text-align: center; }
   .gallery-bottom p { font-size: 11px; }
   .gallery-bottom .text-link { font-size: 11px; min-height: 30px; }
   .catalog-section { padding-top: 62px; padding-bottom: 46px; }
@@ -244,7 +244,7 @@ html.is-scrolling { scroll-behavior: auto !important; }
   .footer-brand { gap: 14px; }
   .footer-brand p { font-size: 10px; }
   .footer-links { gap: 4px; margin-left: auto; }
-  .copyright { font-size: 10px; flex-basis: 100%; border-top: 1px solid var(--line); padding-top: 18px; }
+  .copyright { font-size: 10px; flex-basis: 100%; border-top: 1px solid var(--line); padding-top: 18px; text-align: center; }
   .back-link { margin-top: 93px; font-size: 11px; }
   .detail-hero { padding-top: 26px; }
   .detail-hero.has-preview { grid-template-columns: 1fr; gap: 35px; }
@@ -281,10 +281,10 @@ html.is-scrolling { scroll-behavior: auto !important; }
   .gallery-link .app-icon { width: 68px; border-radius: 18px; }
 }
 @media (max-width:640px) {
-  .collection-carousel { padding-inline: 36px; }
-  .shelf-scroll { --edge-fade: 20px; }
+  .collection-carousel { margin-inline: -12px; padding-inline: 24px; }
+  .shelf-scroll { --edge-fade: 10px; }
   .icon-shelf { padding-block: 30px 23px; }
-  .gallery-link { flex-basis: 40%; gap: 12px; }
+  .gallery-link { flex-basis: 88px; gap: 12px; }
   .gallery-link .app-icon { width: 58px; border-radius: 16px; }
   .gallery-link span { font-size: 10px; min-height: 28px; }
   .carousel-arrow { width: 44px; height: 56px; }
