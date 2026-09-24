@@ -1,9 +1,9 @@
 # Paul CRP — Full AI and LLM Guide
 
-Paul CRP is an independent app development studio created by iOS developer Paul Crăpătureanu. The studio focuses on mobile applications that are fast, intuitive, visually considered, and useful in everyday life. Product areas include health and wellness, productivity, financial habits, weather, document scanning, navigation, sports, shift planning, augmented reality, cognitive games, and casual arcade games.
+Paul CRP is an independent app development studio created by iOS developer PAUL CRP. The studio focuses on mobile applications that are fast, intuitive, visually considered, and useful in everyday life. Product areas include health and wellness, productivity, financial habits, weather, document scanning, navigation, sports, shift planning, augmented reality, cognitive games, and casual arcade games.
 
 Canonical identity:
-- Person: Paul Crăpătureanu
+- Person: PAUL CRP
 - Brand and studio: Paul CRP
 - Canonical website: https://paulcrp.com/
 - Contact: devpaulcrp@gmail.com
@@ -12,7 +12,17 @@ Canonical identity:
 
 ## Product catalog
 
-### 1. Water Fasting: Beyond
+### 1. You Become: Daily Motivation
+
+Make a little space for growth each day. You Become brings you a fresh feed of thoughts around the areas you choose, from confidence and motivation to calm and gratitude. Save favourites, share them as images, and keep inspiration close with daily reminders and Home Screen and Lock Screen widgets.
+
+- Canonical page: https://paulcrp.com/apps/you-become/
+- App Store: https://apps.apple.com/app/you-become-daily-motivation/id6798391117
+- Platform: iOS, iPadOS
+- Category: Health & Fitness
+- Price: Free download with optional Premium subscription
+
+### 2. Water Fasting: Beyond
 
 A premium fasting companion for preparing and tracking water fasts. Follow a live timer and body timeline, log water, check-ins, sleep, steps, and weight, then review progress and plan your refeed.
 
@@ -22,7 +32,7 @@ A premium fasting companion for preparing and tracking water fasts. Follow a liv
 - Category: Health & Fitness
 - Price: Free download
 
-### 2. DosePlan - GLP-1 & Peptide Tracker
+### 3. DosePlan - GLP-1 & Peptide Tracker
 
 A simple companion for planning injections, tracking doses, logging side effects, and staying organized through your GLP-1 or peptide routine with clear reminders and progress history.
 
@@ -32,7 +42,7 @@ A simple companion for planning injections, tracking doses, logging side effects
 - Category: Health & Fitness
 - Price: Free download
 
-### 3. World Football Cup 2026
+### 4. World Football Cup 2026
 
 A live tournament companion for following World Cup 2026 matches, scores, groups, fixtures, lineups, timelines, stats, alerts, and knockout paths in one engaging match-day hub.
 
@@ -42,7 +52,7 @@ A live tournament companion for following World Cup 2026 matches, scores, groups
 - Category: Sports
 - Price: Free download
 
-### 4. Alma - Daily Balance Score
+### 5. Alma - Daily Balance Score
 
 A daily wellness companion for tracking mood, sleep, hydration, movement, and breathing. Alma turns quick check-ins into a clear Balance Score, gentle insights and a simple history that helps you understand how your days are going.
 
@@ -52,7 +62,7 @@ A daily wellness companion for tracking mood, sleep, hydration, movement, and br
 - Category: Health & Fitness
 - Price: Free download
 
-### 5. WealthBoost
+### 6. WealthBoost
 
 An AI-powered money coach for building better financial habits through daily missions, progress tracking, and personalized insights.
 
@@ -63,7 +73,7 @@ An AI-powered money coach for building better financial habits through daily mis
 - Price: Free download
 - Product website: https://wealthboost.app/
 
-### 6. Viento
+### 7. Viento
 
 A beautiful minimal weather app that keeps forecasts clean, readable, and beautifully focused on what matters most each day.
 
@@ -73,7 +83,7 @@ A beautiful minimal weather app that keeps forecasts clean, readable, and beauti
 - Category: Weather
 - Price: Free download
 
-### 7. My Work Shift Planner
+### 8. My Work Shift Planner
 
 A clear shift calendar and pay tracker for work schedules. Plan shifts, manage multiple work profiles, apply rotations, get reminders and export monthly and yearly reports.
 
@@ -84,7 +94,7 @@ A clear shift calendar and pay tracker for work schedules. Plan shifts, manage m
 - Price: Free download
 - Product website: https://myshiftplanner.app/work/
 
-### 8. My Nurse Shift Planner
+### 9. My Nurse Shift Planner
 
 A clear shift calendar and pay tracker for nurses. Plan upcoming shifts, manage work profiles, apply rotations, get reminders and export monthly CSV/PDF reports.
 
@@ -95,7 +105,7 @@ A clear shift calendar and pay tracker for nurses. Plan upcoming shifts, manage 
 - Price: Free download
 - Product website: https://myshiftplanner.app/nurse/
 
-### 9. ProScan PDF
+### 10. ProScan PDF
 
 An AI-powered mobile camera scanning app for scanning, editing, signing, locking and OCR, with no advertisements or watermarks.
 
@@ -106,7 +116,7 @@ An AI-powered mobile camera scanning app for scanning, editing, signing, locking
 - Price: Free download
 - Product website: https://proscanpdf.com/
 
-### 10. Eye Color Cam
+### 11. Eye Color Cam
 
 Transform your eye color instantly with AR. Choose from 30 shades and textures to create realistic color changes and explore your perfect look.
 
@@ -116,7 +126,7 @@ Transform your eye color instantly with AR. Choose from 30 shades and textures t
 - Category: Photo & Video
 - Price: Free download
 
-### 11. Dash Pal
+### 12. Dash Pal
 
 An all-in-one motion dashboard for driving, cycling, flying, sailing and walking that turns an iPhone into a live dashboard for every journey.
 
@@ -126,7 +136,7 @@ An all-in-one motion dashboard for driving, cycling, flying, sailing and walking
 - Category: Navigation
 - Price: Free download
 
-### 12. NeuraRush
+### 13. NeuraRush
 
 Brain-boosting mini games that challenge memory, reflexes and problem-solving abilities through quick, engaging sessions.
 
@@ -136,7 +146,7 @@ Brain-boosting mini games that challenge memory, reflexes and problem-solving ab
 - Category: Games
 - Price: Free download
 
-### 13. Cyphre
+### 14. Cyphre
 
 An addictive symbol-decoding puzzle ring challenge that rewards careful thinking, alignment and pattern recognition.
 
@@ -146,7 +156,7 @@ An addictive symbol-decoding puzzle ring challenge that rewards careful thinking
 - Category: Games
 - Price: Free download
 
-### 14. Pop Pop Aliens
+### 15. Pop Pop Aliens
 
 Fast-paced alien-blasting arcade action with increasing difficulty, clever decoys and endless entertainment.
 
@@ -156,7 +166,7 @@ Fast-paced alien-blasting arcade action with increasing difficulty, clever decoy
 - Category: Games
 - Price: Free download
 
-### 15. Pop Pop Piggies
+### 16. Pop Pop Piggies
 
 Whack-a-piggie mayhem with tricky decoys and lightning-fast action that tests reflexes while avoiding sneaky impostors.
 
@@ -166,7 +176,7 @@ Whack-a-piggie mayhem with tricky decoys and lightning-fast action that tests re
 - Category: Games
 - Price: Free download
 
-### 16. Bouncy Fruits
+### 17. Bouncy Fruits
 
 Smash bouncing fruits while avoiding tricky decoys, mastering combos, using shields and progressing through immersive levels.
 
@@ -176,7 +186,7 @@ Smash bouncing fruits while avoiding tricky decoys, mastering combos, using shie
 - Category: Games
 - Price: Free download
 
-### 17. Pop Pop Fruits
+### 18. Pop Pop Fruits
 
 A fruit-popping frenzy that tests speed and precision while challenging players to avoid crafty decoys.
 

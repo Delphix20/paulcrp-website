@@ -77,7 +77,7 @@ test('isolated styles, six page tabs, and accessible controls below both mockups
   assert.match(html, /id="places-image" src="\.\.\/images\/viento\/places-dark-800.webp"/);
   assert.match(html, /id="hero-daily-image" src="\.\.\/images\/viento\/daily-dark-480.webp"/);
   assert.doesNotMatch(html, /id="tab-hourly"[^>]*disabled/);
-  assert.match(html, /href="https:\/\/paulcrp.com\/viento\/"/);
+  assert.match(html, /rel="canonical" href="https:\/\/vientoweather.com\/"/);
   assert.equal((html.match(/role="tab"/g) || []).length, 6);
   for (const section of ['forecast', 'places']) {
     assert.match(html, new RegExp(`id="${section}-appearance" role="group" aria-label=`));

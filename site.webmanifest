@@ -1,12 +1,12 @@
 {
-  "name": "Paul CRP App Development Studio",
-  "short_name": "Paul CRP",
-  "description": "Thoughtful iOS applications, smart tools and engaging games by Paul Crăpătureanu.",
+  "name": "PAUL CRP",
+  "short_name": "PAUL CRP",
+  "description": "Thoughtful iOS applications, smart tools and engaging games by PAUL CRP.",
   "start_url": "/",
   "scope": "/",
   "display": "browser",
-  "background_color": "#c7d8ff",
-  "theme_color": "#c7d8ff",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
   "icons": [
     {
       "src": "/images/favicon-192.png",

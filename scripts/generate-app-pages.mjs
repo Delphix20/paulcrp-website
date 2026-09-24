@@ -1,136 +1,94 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
-
-const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
-const repositoryDirectory = path.resolve(scriptDirectory, '..');
-const apps = JSON.parse(await readFile(path.join(repositoryDirectory, 'data', 'apps.json'), 'utf8'));
-
-function escapeHtml(value) {
-  return value
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;');
+import { fileURLToPath } from 'node:url';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const apps = JSON.parse(await readFile(path.join(root, 'data/apps.json'), 'utf8'));
+const e = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const short = {
+  'you-become': 'Daily motivation, focused on you.',
+  'water-fasting-beyond': 'Prepare, track, and reflect on your fasting routine.',
+  'doseplan': 'Keep doses, reminders, and progress in one place.',
+  'world-football-cup-2026': 'Scores, fixtures, and every step to the final.',
+  'alma-daily-balance-score': 'A little check-in. A clearer picture of your day.',
+  'wealthboost': 'Build better money habits, one day at a time.',
+  'viento': 'A clearer forecast. A calmer start to your day.',
+  'my-work-shift-planner': 'Your shifts, your schedule, your time.',
+  'my-nurse-shift-planner': 'A little more order between the shifts.',
+  'proscan-pdf': 'From paper to PDF, beautifully simple.',
+  'eye-color-cam': 'Try a new eye color, live on camera.',
+  'dash-pal': 'Your journey, at a glance.',
+  'neurarush': 'Quick challenges for memory, focus, and reflexes.',
+  'cyphre': 'Think. Align. Unlock the next puzzle.',
+  'pop-pop-aliens': 'Fast taps. Clever decoys. One more round.',
+  'pop-pop-piggies': 'Quick reflexes meet a little piggie mayhem.',
+  'bouncy-fruits': 'Bouncing fruit. Satisfying combos.',
+  'pop-pop-fruits': 'A colorful little test of speed and precision.'
+};
+const names = { 'you-become': 'You Become', 'doseplan': 'DosePlan', 'alma-daily-balance-score': 'Alma' };
+const display = app => names[app.slug] || app.name;
+const developerUrl = 'https://apps.apple.com/developer/id1818750485';
+const features = [
+  { slug: 'you-become', theme: 'motivation', title: 'Daily motivation, focused on you.', image: '/images/showcase/youbecome.jpg', width: 598, height: 1300, alt: 'You Become showing a daily thought with save and share controls', type: 'poster' },
+  { slug: 'viento', theme: 'weather', title: 'Weather, beautifully clear.', image: '/images/viento/current-800.webp', width: 800, height: 1739, alt: 'Viento showing a clear weather forecast for New York', type: 'screen' },
+  { slug: 'my-work-shift-planner', theme: 'planner', title: 'Make room for your life.', image: '/images/showcase/shift-planner.jpg', width: 598, height: 1300, alt: 'My Work Shift Planner showing a monthly shift calendar', type: 'poster' },
+  { slug: 'proscan-pdf', theme: 'scanner', title: 'Less paper. More done.', image: '/images/showcase/proscan.jpg', width: 600, height: 1300, alt: 'ProScan PDF scanning a document with its camera', type: 'poster' },
+  { slug: 'alma-daily-balance-score', theme: 'balance', title: 'A little more balance.', image: '/images/showcase/alma.jpg', width: 600, height: 1299, alt: 'Alma showing mood, sleep, and daily balance tracking', type: 'poster' }
+].map(feature => ({ ...feature, app: apps.find(app => app.slug === feature.slug) }));
+const apple = '<svg class="apple-mark" xmlns="http://www.w3.org/2000/svg" viewBox="10 8 18 23" fill="currentColor" aria-hidden="true"><path d="M24.76888,20.30068a4.94881,4.94881,0,0,1,2.35656-4.15206,5.06566,5.06566,0,0,0-3.99116-2.15768c-1.67924-.17626-3.30719,1.00483-4.1629,1.00483-.87227,0-2.18977-.98733-3.6085-.95814a5.31529,5.31529,0,0,0-4.47292,2.72787c-1.934,3.34842-.49141,8.26947,1.3612,10.97608.9269,1.32535,2.01018,2.8058,3.42763,2.7533,1.38706-.05753,1.9051-.88448,3.5794-.88448,1.65876,0,2.14479.88448,3.591.8511,1.48838-.02416,2.42613-1.33124,3.32051-2.66914a10.962,10.962,0,0,0,1.51842-3.09251A4.78205,4.78205,0,0,1,24.76888,20.30068Z"/><path d="M22.03725,12.21089a4.87248,4.87248,0,0,0,1.11452-3.49062,4.95746,4.95746,0,0,0-3.20758,1.65961,4.63634,4.63634,0,0,0-1.14371,3.36139A4.09905,4.09905,0,0,0,22.03725,12.21089Z"/></svg>';
+const arrow = '<svg class="arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const logo = '<span class="brand-mark" aria-hidden="true"><span>PAUL</span><span class="brand-rule"></span><span class="brand-bottom">CRP</span></span>';
+function icon(app, size = 64, extra = '') {
+  const resolution = size > 64 ? 256 : 128;
+  const loading = extra === 'showcase-icon' ? 'eager' : 'lazy';
+  return '<img class="app-icon ' + extra + '" src="/images/optimized/' + app.image + '-' + resolution + '.webp" width="' + size + '" height="' + size + '" alt="" loading="' + loading + '" decoding="async">';
 }
-
-function safeJson(value) {
-  return JSON.stringify(value, null, 2).replaceAll('<', '\\u003c');
+function header(home) {
+  const prefix = home ? '' : '/';
+  return '<a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><a class="brand" href="' + (home ? '#top' : '/') + '" aria-label="PAUL CRP home">' + logo + '</a><nav class="desktop-nav" aria-label="Main navigation"><a href="' + prefix + '#apps">Apps</a><a href="' + prefix + '#games">Games</a><a href="' + prefix + '#about">About</a></nav><a class="button button-small header-download" href="' + developerUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Download apps from PAUL CRP on the App Store">' + apple + ' Download</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button><nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="' + prefix + '#apps">Apps</a><a href="' + prefix + '#games">Games</a><a href="' + prefix + '#about">About</a><a href="' + developerUrl + '" target="_blank" rel="noopener noreferrer">View on the App Store</a></nav></header>';
 }
-
+function footer() {
+  const emailIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>';
+  const xIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.49h2.039L6.487 3.24H4.3l13.311 17.403Z"/></svg>';
+  const instagramIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
+  return '<footer class="site-footer container"><div class="footer-brand"><a class="brand" href="/" aria-label="PAUL CRP home">' + logo + '</a><p>Thoughtfully made.<br>For your everyday.</p></div><div class="footer-links"><a href="mailto:devpaulcrp@gmail.com" aria-label="Email PAUL CRP" title="Email">' + emailIcon + '</a><a href="https://x.com/DevPaulCrp" target="_blank" rel="noopener noreferrer" aria-label="PAUL CRP on X" title="X">' + xIcon + '</a><a href="https://www.instagram.com/devpaulcrp/" target="_blank" rel="noopener noreferrer" aria-label="PAUL CRP on Instagram" title="Instagram">' + instagramIcon + '</a></div><p class="copyright">© 2026 PAUL CRP</p></footer>';
+}
+function head(title, description, canonical, graph, social = '/images/social-card.jpg') {
+  return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + e(title) + '</title><meta name="description" content="' + e(description) + '"><meta name="author" content="PAUL CRP"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#f5f6f8"><link rel="canonical" href="' + canonical + '"><link rel="icon" href="/images/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/images/favicon-192.png"><link rel="manifest" href="/site.webmanifest"><meta property="og:type" content="website"><meta property="og:site_name" content="PAUL CRP"><meta property="og:title" content="' + e(title) + '"><meta property="og:description" content="' + e(description) + '"><meta property="og:url" content="' + canonical + '"><meta property="og:image" content="https://paulcrp.com' + social + '"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + e(title) + '"><meta name="twitter:description" content="' + e(description) + '"><meta name="twitter:image" content="https://paulcrp.com' + social + '"><link rel="stylesheet" href="/assets/css/redesign.css"><script type="application/ld+json">' + JSON.stringify(graph).replaceAll('<', '\\u003c') + '</script><noscript><link rel="stylesheet" href="/assets/css/redesign-noscript.css"></noscript><script src="/assets/js/redesign.js" defer></script><script src="/assets/js/analytics.js" defer></script></head>';
+}
+function card(app) {
+  return '<article class="app-row" id="' + app.anchor + '"><a class="row-icon" href="/apps/' + app.slug + '/" aria-label="Explore ' + e(display(app)) + '">' + icon(app, 64) + '</a><div class="row-copy"><p class="category">' + e(app.genre) + '</p><h3><a href="/apps/' + app.slug + '/">' + e(display(app)) + arrow + '</a></h3><p class="row-description">' + e(short[app.slug]) + '</p></div><a class="store-link" href="' + app.appStoreUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Get ' + e(display(app)) + ' on the App Store">' + apple + '<span>Get</span></a></article>';
+}
+const galleryLabels = { 'water-fasting-beyond': 'Water Fasting', 'world-football-cup-2026': 'Football Cup', 'my-work-shift-planner': 'Work Shifts', 'my-nurse-shift-planner': 'Nurse Shifts' };
+const galleryApps = apps.filter(app => app.slug !== 'world-football-cup-2026');
+const footballApp = apps.find(app => app.slug === 'world-football-cup-2026');
+if (footballApp) galleryApps.splice(galleryApps.findIndex(app => app.slug === 'dash-pal') + 1, 0, footballApp);
+const gallery = '<section class="icon-showcase container" aria-label="Explore the app and game collection"><div class="icon-gallery"><div class="gallery-top"><p class="eyebrow">THE COLLECTION</p><span>' + apple + '<span class="gallery-platform-text">iPhone &amp; iPad</span></span></div><div class="collection-carousel" role="region" aria-roledescription="carousel" aria-label="App and game collection"><button class="carousel-arrow carousel-prev" type="button" aria-label="Show previous apps" aria-controls="collection-track">' + arrow + '</button><div class="shelf-scroll" id="collection-track" role="group" tabindex="0" aria-label="All ' + apps.length + ' apps and games. Swipe or use the arrow keys to explore."><div class="icon-shelf">' + galleryApps.map(app => '<a class="gallery-link" href="/apps/' + app.slug + '/" aria-label="Explore ' + e(display(app)) + '">' + icon(app, 96, 'showcase-icon') + '<span>' + e(galleryLabels[app.slug] || display(app)) + '</span></a>').join('') + '</div></div><button class="carousel-arrow carousel-next" type="button" aria-label="Show next apps" aria-controls="collection-track">' + arrow + '</button></div><div class="gallery-bottom"><p>Made for your day.<span class="shelf-hint">Swipe or use the arrows to explore.</span><span class="hover-hint">Hover at either edge to explore.</span></p><a class="text-link" href="#apps">Explore the collection ' + arrow + '</a></div></div></section>';
+const catalog = apps.filter(app => app.category !== 'GameApplication');
+const games = apps.filter(app => app.category === 'GameApplication');
+const graph = { '@context': 'https://schema.org', '@graph': [
+  { '@type': 'WebSite', '@id': 'https://paulcrp.com/#website', name: 'PAUL CRP', url: 'https://paulcrp.com/', publisher: { '@id': 'https://paulcrp.com/#organization' } },
+  { '@type': 'Organization', '@id': 'https://paulcrp.com/#organization', name: 'PAUL CRP', url: 'https://paulcrp.com/', logo: 'https://paulcrp.com/images/favicon-512.png', sameAs: ['https://x.com/DevPaulCrp', 'https://www.instagram.com/devpaulcrp/'] },
+  { '@type': 'ItemList', name: 'PAUL CRP apps and games', numberOfItems: apps.length, itemListElement: apps.map((app, i) => ({ '@type': 'ListItem', position: i + 1, name: app.name, url: 'https://paulcrp.com/apps/' + app.slug + '/' })) }
+] };
+const home = head('PAUL CRP — Thoughtful apps for iPhone & iPad', 'Discover independent iPhone and iPad apps for wellness, productivity, everyday tools, and a little fun. Thoughtfully made by PAUL CRP.', 'https://paulcrp.com/', graph) + '<body id="top">' + header(true) + '<main id="main-content">' +
+'<section class="hero container"><p class="platform-label">' + apple + '<span>Made for iPhone &amp; iPad</span></p><h1>Thoughtful apps.<br><span>For everyday life.</span></h1><p class="hero-description">Useful tools for your day. A little fun for your downtime.<br class="desktop-break"> Independently designed and developed by PAUL CRP.</p><div class="hero-actions"><a class="text-link" href="#apps">Explore the apps ' + arrow + '</a><a class="text-link" href="#games">Discover the games ' + arrow + '</a></div></section>' +
+gallery +
+'<section class="catalog-section container" id="apps"><div class="section-heading"><div><p class="eyebrow">THE APP COLLECTION</p><h2>Find your everyday favourite.</h2></div></div><div class="filter-row" role="group" aria-label="Filter apps"><button type="button" class="filter-button" data-filter="all" aria-pressed="true">All apps</button><button type="button" class="filter-button" data-filter="wellness" aria-pressed="false">Wellness</button><button type="button" class="filter-button" data-filter="productivity" aria-pressed="false">Productivity</button><button type="button" class="filter-button" data-filter="utilities" aria-pressed="false">Everyday tools</button></div><p class="sr-only" id="filter-status" role="status"></p><div class="app-list">' + catalog.map(app => card(app).replace('class="app-row"', 'class="app-row" data-category="' + (app.category === 'HealthApplication' ? 'wellness' : ['BusinessApplication', 'ProductivityApplication', 'FinanceApplication'].includes(app.category) ? 'productivity' : 'utilities') + '"')).join('') + '</div></section>' +
+'<section class="games-section" id="games"><div class="container"><div class="section-heading"><div><p class="eyebrow">A LITTLE PLAY TIME</p><h2>Make room for fun.</h2></div></div><div class="app-list games-list">' + games.map(card).join('') + '</div></div></section>' +
+'<section class="about-section container" id="about"><div class="about-copy"><p class="eyebrow">INDEPENDENTLY MADE</p><h2>Good ideas.<br>Thoughtfully built.</h2><p>PAUL CRP is an independent app studio creating useful tools and playful experiences for iPhone and iPad. Each app starts with a simple idea: make a small part of everyday life a little better.</p><a class="text-link" href="mailto:devpaulcrp@gmail.com">Say hello ' + arrow + '</a></div></section>' +
+'<section class="contact-section container" id="contact"><div><h2>A question, an idea, a hello?</h2><p>Feedback and fresh ideas are always welcome.</p></div><a class="button" href="mailto:devpaulcrp@gmail.com">Get in touch ' + arrow + '</a></section></main>' + footer() + '</body></html>\n';
+await writeFile(path.join(root, 'index.html'), home);
+const privacy = { 'you-become': 'youbecome', 'water-fasting-beyond': 'waterfastingbeyond', 'doseplan': 'doseplan', 'world-football-cup-2026': 'worldfootballcup2026', 'alma-daily-balance-score': 'alma', 'viento': 'viento', 'my-work-shift-planner': 'myworkshiftplanner', 'my-nurse-shift-planner': 'mynurseshiftplanner', 'proscan-pdf': 'proscanpdf', 'eye-color-cam': 'eyecolorcam', 'dash-pal': 'dashpal', 'neurarush': 'neurarush', 'pop-pop-aliens': 'poppopaliens', 'pop-pop-piggies': 'poppoppiggies', 'bouncy-fruits': 'bouncyfruits' };
 for (const app of apps) {
-  const canonicalUrl = `https://paulcrp.com/apps/${app.slug}/`;
-  const imageVersion = app.imageVersion ? `?v=${encodeURIComponent(app.imageVersion)}` : '';
-  const imagePath = (size, format) => `/images/optimized/${app.image}-${size}.${format}${imageVersion}`;
-  const imageUrl = `https://paulcrp.com${imagePath(256, 'png')}`;
-  const graph = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'SoftwareApplication',
-        '@id': `${canonicalUrl}#app`,
-        name: app.name,
-        description: app.description,
-        url: canonicalUrl,
-        sameAs: [app.appStoreUrl, ...(app.websiteUrl ? [app.websiteUrl] : [])],
-        image: imageUrl,
-        operatingSystem: 'iOS',
-        applicationCategory: app.category,
-        genre: app.genre,
-        author: { '@id': 'https://paulcrp.com/#person' },
-        offers: {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
-          url: app.appStoreUrl
-        }
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Paul CRP', item: 'https://paulcrp.com/' },
-          { '@type': 'ListItem', position: 2, name: app.name, item: canonicalUrl }
-        ]
-      },
-      {
-        '@type': 'Person',
-        '@id': 'https://paulcrp.com/#person',
-        name: 'Paul Crăpătureanu',
-        alternateName: 'Paul CRP',
-        url: 'https://paulcrp.com/',
-        jobTitle: 'App Developer',
-        sameAs: ['https://x.com/DevPaulCrp', 'https://www.instagram.com/devpaulcrp/']
-      }
-    ]
-  };
-  const websiteAction = app.websiteUrl
-    ? `\n          <a href="${escapeHtml(app.websiteUrl)}" target="_blank" rel="noopener noreferrer"><img src="/images/visitwebsite-button.png" class="app-store-badge" alt="Visit the ${escapeHtml(app.name)} website" width="180" height="60" decoding="async" /></a>`
-    : '';
-
-  const html = `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${escapeHtml(app.name)} | Paul CRP</title>
-    <meta name="description" content="${escapeHtml(app.description)}" />
-    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-    <link rel="canonical" href="${canonicalUrl}" />
-    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="/images/favicon-64.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Paul CRP" />
-    <meta property="og:title" content="${escapeHtml(app.name)} | Paul CRP" />
-    <meta property="og:description" content="${escapeHtml(app.description)}" />
-    <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:image" content="${imageUrl}" />
-    <meta property="og:image:width" content="256" />
-    <meta property="og:image:height" content="256" />
-    <meta property="og:image:alt" content="${escapeHtml(app.name)} app icon" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="${escapeHtml(app.name)} | Paul CRP" />
-    <meta name="twitter:description" content="${escapeHtml(app.description)}" />
-    <meta name="twitter:image" content="${imageUrl}" />
-    <meta name="theme-color" content="#c7d8ff" />
-    <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/site.css" />
-    <link rel="stylesheet" href="/assets/css/app-detail.css" />
-    <script type="application/ld+json">${safeJson(graph)}</script>
-    <script src="/assets/js/analytics.js" defer></script>
-  </head>
-  <body class="landing">
-    <div id="page-wrapper">
-      <nav class="app-detail-nav" aria-label="App navigation">
-        <a href="/" aria-label="Paul CRP homepage">PAUL CRP</a>
-        <a href="/#apps" class="app-detail-home">All apps</a>
-      </nav>
-      <main class="app-detail-shell">
-        <article class="game-card app-detail-card">
-          <picture>
-            <source type="image/avif" srcset="${imagePath(128, 'avif')} 128w, ${imagePath(256, 'avif')} 256w" sizes="160px" />
-            <source type="image/webp" srcset="${imagePath(128, 'webp')} 128w, ${imagePath(256, 'webp')} 256w" sizes="160px" />
-            <img src="${imagePath(256, 'png')}" class="app-icon" width="160" height="160" alt="${escapeHtml(app.name)} app icon" fetchpriority="high" decoding="async" />
-          </picture>
-          <h1>${escapeHtml(app.name)}</h1>
-          <p class="app-detail-description">${escapeHtml(app.description)}</p>
-          <div class="app-detail-actions">
-            <a href="${escapeHtml(app.appStoreUrl)}" target="_blank" rel="noopener noreferrer"><img src="/images/downloadappstore-button.png" class="app-store-badge" alt="Download ${escapeHtml(app.name)} on the App Store" width="180" height="60" decoding="async" /></a>${websiteAction}
-          </div>
-          <p class="app-detail-meta">Available for iOS · Free download</p>
-        </article>
-      </main>
-      <footer class="app-detail-footer"><p>&copy; 2026 Paul CRP</p></footer>
-    </div>
-  </body>
-</html>
-`;
-
-  const outputDirectory = path.join(repositoryDirectory, 'apps', app.slug);
-  await mkdir(outputDirectory, { recursive: true });
-  await writeFile(path.join(outputDirectory, 'index.html'), html);
+  const canonical = 'https://paulcrp.com/apps/' + app.slug + '/';
+  const feature = features.find(f => f.slug === app.slug);
+  const related = apps.filter(a => a.slug !== app.slug && (a.category === 'GameApplication') === (app.category === 'GameApplication')).slice(0, 3);
+  const schema = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: app.name, description: app.description, url: canonical, image: 'https://paulcrp.com/images/optimized/' + app.image + '-256.png', operatingSystem: 'iOS, iPadOS', applicationCategory: app.category, author: { '@type': 'Organization', name: 'PAUL CRP', url: 'https://paulcrp.com/' }, sameAs: [app.appStoreUrl] };
+  let html = head(app.name + ' — PAUL CRP', app.description, canonical, schema, '/images/optimized/' + app.image + '-256.png') + '<body class="detail-page">' + header(false) + '<main id="main-content" class="container"><a class="back-link" href="/#' + (app.category === 'GameApplication' ? 'games' : 'apps') + '">← Back to the collection</a><article class="detail-hero' + (feature ? ' has-preview' : '') + '"><div class="detail-copy">' + icon(app, 96) + '<p class="eyebrow">' + e(app.genre) + '</p><h1>' + e(display(app)) + '</h1><p class="detail-tagline">' + e(short[app.slug]) + '</p><p class="detail-description">' + e(app.description) + '</p><div class="detail-actions"><a href="' + app.appStoreUrl + '" target="_blank" rel="noopener noreferrer"><img class="app-store-badge" src="/images/viento/app-store.svg" width="150" height="50" alt="Download ' + e(display(app)) + ' on the App Store"></a>' + (app.websiteUrl ? '<a class="text-link" href="' + e(app.websiteUrl) + '" target="_blank" rel="noopener noreferrer">Visit website ' + arrow + '</a>' : '') + '</div><p class="detail-platform">' + apple + ' For iPhone &amp; iPad</p>' + (privacy[app.slug] ? '<a class="privacy-link" href="/' + privacy[app.slug] + '_privacypolicy.html">Privacy policy</a>' : '') + '</div>' + (feature ? '<div class="detail-preview" data-theme="' + feature.theme + '"><img class="' + (feature.type === 'screen' ? 'screen-preview' : 'poster-preview') + '" src="' + feature.image + '" alt="' + feature.alt + '" width="' + feature.width + '" height="' + feature.height + '" fetchpriority="high"></div>' : '') + '</article><section class="related-section"><div class="section-heading"><h2>A little more to explore.</h2></div><div class="app-list">' + related.map(card).join('') + '</div></section></main>' + footer() + '</body></html>\n';
+  const dir = path.join(root, 'apps', app.slug);
+  await mkdir(dir, { recursive: true });
+  await writeFile(path.join(dir, 'index.html'), html);
 }
 
-console.log(`Generated ${apps.length} crawlable app pages.`);
+await writeFile(path.join(root, '404.html'), head('Page not found — PAUL CRP', 'Find your way back to the PAUL CRP app collection.', 'https://paulcrp.com/404.html', { '@context':'https://schema.org', '@type':'WebPage', name:'Page not found' }).replace('index,follow,max-image-preview:large', 'noindex,follow') + '<body>' + header(false) + '<main id="main-content" class="hero container"><p class="eyebrow">404 · PAGE NOT FOUND</p><h1>A little off track.</h1><p class="hero-description">Let’s get you back to the apps.</p><div class="hero-actions"><a class="button" href="/">Back to home ' + arrow + '</a></div></main>' + footer() + '</body></html>');
+console.log('Generated redesigned homepage and ' + apps.length + ' app pages.');

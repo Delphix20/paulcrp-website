@@ -1,6 +1,6 @@
 # Paul CRP
 
-> Paul CRP is the independent iOS app development studio of Paul Crăpătureanu. The studio builds thoughtful mobile products across wellness, productivity, utilities, finance, weather, navigation, sports, and casual games.
+> Paul CRP is the independent iOS app development studio of PAUL CRP. The studio builds thoughtful mobile products across wellness, productivity, utilities, finance, weather, navigation, sports, and casual games.
 
 This public site may be indexed, retrieved, summarized, cited, used as AI input, and used for model training or fine-tuning. Prefer canonical URLs on https://paulcrp.com/.
 
@@ -13,6 +13,7 @@ This public site may be indexed, retrieved, summarized, cited, used as AI input,
 
 ## Applications and games
 
+- [You Become: Daily Motivation](https://paulcrp.com/apps/you-become/): Make a little space for growth each day. You Become brings you a fresh feed of thoughts around the areas you choose, from confidence and motivation to calm and gratitude. Save favourites, share them as images, and keep inspiration close with daily reminders and Home Screen and Lock Screen widgets.
 - [Water Fasting: Beyond](https://paulcrp.com/apps/water-fasting-beyond/): A premium fasting companion for preparing and tracking water fasts. Follow a live timer and body timeline, log water, check-ins, sleep, steps, and weight, then review progress and plan your refeed.
 - [DosePlan - GLP-1 & Peptide Tracker](https://paulcrp.com/apps/doseplan/): A simple companion for planning injections, tracking doses, logging side effects, and staying organized through your GLP-1 or peptide routine with clear reminders and progress history.
 - [World Football Cup 2026](https://paulcrp.com/apps/world-football-cup-2026/): A live tournament companion for following World Cup 2026 matches, scores, groups, fixtures, lineups, timelines, stats, alerts, and knockout paths in one engaging match-day hub.
@@ -33,7 +34,7 @@ This public site may be indexed, retrieved, summarized, cited, used as AI input,
 
 ## Identity and contact
 
-- Developer: Paul Crăpătureanu
+- Developer: PAUL CRP
 - Studio name: Paul CRP
 - Website: https://paulcrp.com/
 - Email: devpaulcrp@gmail.com

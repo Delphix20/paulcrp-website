@@ -11,6 +11,7 @@ await mkdir(outputDirectory, { recursive: true });
 
 const rootFiles = [
   '.nojekyll',
+  'CNAME',
   '404.html',
   '_headers',
   '_redirects',

@@ -1,5 +1,15 @@
 [
   {
+    "slug": "you-become",
+    "anchor": "youbecome-card",
+    "name": "You Become: Daily Motivation",
+    "description": "Make a little space for growth each day. You Become brings you a fresh feed of thoughts around the areas you choose, from confidence and motivation to calm and gratitude. Save favourites, share them as images, and keep inspiration close with daily reminders and Home Screen and Lock Screen widgets.",
+    "category": "HealthApplication",
+    "genre": "Health & Fitness",
+    "image": "youbecome-icon",
+    "appStoreUrl": "https://apps.apple.com/app/you-become-daily-motivation/id6798391117"
+  },
+  {
     "slug": "water-fasting-beyond",
     "anchor": "waterfasting-card",
     "name": "Water Fasting: Beyond",
@@ -60,7 +70,8 @@
     "genre": "Weather",
     "image": "viento-icon",
     "imageVersion": "20260901-2",
-    "appStoreUrl": "https://apps.apple.com/app/viento-minimal-weather/id6770246185"
+    "appStoreUrl": "https://apps.apple.com/app/viento-minimal-weather/id6770246185",
+    "websiteUrl": "https://vientoweather.com/"
   },
   {
     "slug": "my-work-shift-planner",

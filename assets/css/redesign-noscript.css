@@ -1,0 +1,4 @@
+.filter-row,.menu-toggle{display:none}.desktop-nav{display:flex}@media(max-width:640px){.desktop-nav{gap:15px;font-size:12px}.header-download{display:none}}
+
+.carousel-arrow,.hover-hint{display:none}.shelf-hint{display:block}.shelf-scroll{scrollbar-width:thin}
+

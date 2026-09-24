@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  if (!['paulcrp.com', 'www.paulcrp.com'].includes(window.location.hostname)) return;
+
   var measurementId = 'G-P6Y986ZLW2';
   var loaded = false;
 

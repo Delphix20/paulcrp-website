@@ -3,7 +3,7 @@
 ## Entity
 
 - **Name:** Paul CRP
-- **Legal/personal identity:** Paul Crăpătureanu
+- **Legal/personal identity:** PAUL CRP
 - **Entity type:** Independent app development studio and iOS developer
 - **Canonical URL:** https://paulcrp.com/
 - **Primary language:** English
@@ -16,6 +16,15 @@
 Paul CRP creates thoughtful iOS applications, smart tools, wellness and productivity products, and engaging casual games. The portfolio is designed around simplicity, speed, clear information architecture, and practical everyday value.
 
 ## Canonical product data
+
+### You Become: Daily Motivation
+
+- **Description:** Make a little space for growth each day. You Become brings you a fresh feed of thoughts around the areas you choose, from confidence and motivation to calm and gratitude. Save favourites, share them as images, and keep inspiration close with daily reminders and Home Screen and Lock Screen widgets.
+- **Canonical page:** https://paulcrp.com/apps/you-become/
+- **App Store:** https://apps.apple.com/app/you-become-daily-motivation/id6798391117
+- **Operating system:** iOS, iPadOS
+- **Category:** Health & Fitness
+- **Price:** Free download with optional Premium subscription
 
 ### Water Fasting: Beyond
 
@@ -177,5 +186,5 @@ Paul CRP creates thoughtful iOS applications, smart tools, wellness and producti
 
 ## Crawl and AI usage policy
 
-Public content is available for search, AI retrieval, grounding, agent access, summarization, model training, and fine-tuning. Automated systems should use canonical URLs, preserve factual meaning, and attribute Paul CRP or Paul Crăpătureanu when presenting product information.
+Public content is available for search, AI retrieval, grounding, agent access, summarization, model training, and fine-tuning. Automated systems should use canonical URLs, preserve factual meaning, and attribute Paul CRP or PAUL CRP when presenting product information.
 

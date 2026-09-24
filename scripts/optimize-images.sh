@@ -20,6 +20,7 @@ for command_name in sips cwebp avifenc; do
 done
 
 icons=(
+  youbecome-icon
   alma-icon
   bouncyfruits-icon
   cyphre-icon
