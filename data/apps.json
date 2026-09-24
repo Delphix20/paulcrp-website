@@ -8,7 +8,8 @@
     "category": "HealthApplication",
     "genre": "Health & Fitness",
     "image": "youbecome-icon",
-    "appStoreUrl": "https://apps.apple.com/app/you-become-daily-motivation/id6798391117"
+    "appStoreUrl": "https://apps.apple.com/app/you-become-daily-motivation/id6798391117",
+    "imageVersion": "c7e46a68c0a5"
   },
   {
     "slug": "water-fasting-beyond",
@@ -128,7 +129,8 @@
     "category": "MultimediaApplication",
     "genre": "Photo & Video",
     "image": "eyecolorcam-icon",
-    "appStoreUrl": "https://apps.apple.com/app/eye-color-cam-live-filters/id6752640752"
+    "appStoreUrl": "https://apps.apple.com/app/eye-color-cam-live-filters/id6752640752",
+    "imageVersion": "fb752bd96eee"
   },
   {
     "slug": "dash-pal",
