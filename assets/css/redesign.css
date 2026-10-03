@@ -166,6 +166,10 @@ html.is-scrolling { scroll-behavior: auto !important; }
 .detail-preview { display: flex; justify-content: center; align-items: center; min-width: 0; }
 .screen-preview { display: block; width: min(100%, 280px); height: auto; border-radius: 32px; }
 .poster-preview { display: block; width: min(100%, 300px); height: auto; border-radius: 28px; }
+.event-section { border-top: 1px solid var(--line); padding-block: 45px; text-align: center; }
+.event-section h2 { font-size: 29px; line-height: 1.12; margin-top: 12px; }
+.event-text { font-size: 15px; line-height: 1.8; color: #697486; max-width: 540px; margin: 16px auto 0; }
+.event-card { display: block; width: min(100%, 720px); height: auto; margin: 30px auto 0; border-radius: 24px; }
 .related-section { border-top: 1px solid var(--line); padding-block: 45px 25px; }
 .related-section .section-heading h2 { font-size: 29px; }
 .detail-page .site-footer { margin-top: 30px; }
