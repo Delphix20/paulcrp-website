@@ -175,15 +175,26 @@
     "genre": "Games",
     "image": "poppopaliens-icon",
     "appStoreUrl": "https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031",
-    "event": {
-      "eyebrow": "Seasonal event",
-      "title": "Halloween Night",
-      "text": "Every Halloween, ghosts and pumpkins take over the board in a limited-time spooky mode with its own leaderboard and Halloween rewards.",
-      "image": "/images/events/pop-pop-aliens-halloween-night.jpg",
-      "width": 1280,
-      "height": 720,
-      "alt": "A green alien in a witch hat peeking out of its hole under a big orange moon, with bats flying around"
-    }
+    "events": [
+      {
+        "eyebrow": "Seasonal event",
+        "title": "Halloween Night",
+        "text": "Every Halloween, ghosts and pumpkins take over the board in a limited-time spooky mode with its own leaderboard and Halloween rewards.",
+        "image": "/images/events/pop-pop-aliens-halloween-night.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "A green alien in a witch hat peeking out of its hole under a big orange moon, with bats flying around"
+      },
+      {
+        "eyebrow": "Seasonal event",
+        "title": "Christmas Night",
+        "text": "Every Christmas, snow falls over the board and gingerbread men race from crater to crater in a limited-time winter mode with its own leaderboard and Christmas rewards.",
+        "image": "/images/events/pop-pop-aliens-christmas-night.jpg",
+        "width": 1280,
+        "height": 720,
+        "alt": "A green alien in a Santa hat peeking out of its hole under a big moon, with snow falling and Christmas lights glowing"
+      }
+    ]
   },
   {
     "slug": "pop-pop-piggies",

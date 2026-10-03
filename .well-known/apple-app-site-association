@@ -2,12 +2,23 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["3PF2NGVXT5.paul.Pop-Pop-Aliens"],
+        "appIDs": [
+          "3PF2NGVXT5.paul.Pop-Pop-Aliens"
+        ],
         "components": [
           {
             "/": "/apps/pop-pop-aliens/",
-            "?": { "event": "halloween" },
+            "?": {
+              "event": "halloween"
+            },
             "comment": "Opens Pop Pop Aliens straight into Halloween Night (App Store event link)"
+          },
+          {
+            "/": "/apps/pop-pop-aliens/",
+            "?": {
+              "event": "christmas"
+            },
+            "comment": "Opens Pop Pop Aliens straight into Christmas Night (App Store event link)"
           }
         ]
       }
