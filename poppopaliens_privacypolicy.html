@@ -1,315 +1,407 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <meta name="robots" content="noindex,follow,noarchive" />
-	  <meta name="referrer" content="strict-origin-when-cross-origin" />
-		<title>Privacy Policy - Pop Pop Aliens: Arcade Hunter</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<style>
-			/* Simple, clean styling for privacy policy */
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-			
-			body {
-				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-				line-height: 1.6;
-				color: #333;
-				background-color: #f8f9fa;
-				padding: 2rem 1rem;
-			}
-			
-			.container {
-				max-width: 800px;
-				margin: 0 auto;
-				background: white;
-				padding: 3rem;
-				border-radius: 10px;
-				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-			}
-			
-			h1 {
-				color: #2c3e50;
-				font-size: 2.5rem;
-				margin-bottom: 0.5rem;
-				font-weight: 700;
-			}
-			
-			h2 {
-				color: #2c3e50;
-				font-size: 1.8rem;
-				margin-top: 2rem;
-				margin-bottom: 1rem;
-				font-weight: 600;
-			}
-			
-			h3 {
-				color: #34495e;
-				font-size: 1.3rem;
-				margin-top: 1.5rem;
-				margin-bottom: 0.8rem;
-				font-weight: 600;
-			}
-			
-			p {
-				margin-bottom: 1rem;
-				text-align: justify;
-			}
-			
-			.last-updated {
-				color: #7f8c8d;
-				font-style: italic;
-				margin-bottom: 2rem;
-			}
-			
-			ul {
-				margin-left: 1.5rem;
-				margin-bottom: 1rem;
-			}
-			
-			li {
-				margin-bottom: 0.5rem;
-			}
-			
-			.contact-info {
-				background: #ecf0f1;
-				padding: 1.5rem;
-				border-radius: 8px;
-				margin-top: 2rem;
-			}
-			
-			.contact-info h3 {
-				margin-top: 0;
-			}
-			
-			a {
-				color: #2c3e50;
-				text-decoration: none;
-			}
-			
-			a:hover {
-				text-decoration: underline;
-			}
-			
-			@media (max-width: 768px) {
-				.container {
-					padding: 1.5rem;
-					margin: 1rem;
-				}
-				
-				h1 {
-					font-size: 2rem;
-				}
-				
-				h2 {
-					font-size: 1.5rem;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<h1>Privacy Policy for Pop Pop Aliens: Arcade Hunter</h1>
-			<p class="last-updated">Last updated: July 20, 2025</p>
+<head>
+  <meta name="robots" content="noindex,follow,noarchive" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Privacy Policy - Pop Pop Aliens</title>
+  <style>
+    :root {
+      --space: #1d0b3f;
+      --space-deep: #140730;
+      --panel: #2b1560;
+      --panel-line: rgba(170, 130, 255, 0.38);
+      --ink: #f1eaff;
+      --ink-soft: #bcaee6;
+      --pink: #ff61b3;
+      --pink-soft: #ff9bd0;
+      --violet: #8c52ff;
+      --green: #6bf24d;
+      --green-deep: #36a827;
+      --gold: #ffc24a;
+      --orange: #ff9e33;
+      --ground: #5c2450;
+      --ground-deep: #3c173c;
+    }
 
-			<p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-			<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the Free Privacy Policy Generator.</p>
+    body {
+      font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background-color: var(--space);
+      background-image:
+        radial-gradient(circle at 23px 41px, rgba(255, 255, 255, 0.75) 0 1.2px, transparent 1.8px),
+        radial-gradient(circle at 131px 97px, rgba(255, 255, 255, 0.5) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 187px 23px, rgba(255, 214, 240, 0.6) 0 1.4px, transparent 2px),
+        radial-gradient(circle at 71px 163px, rgba(200, 220, 255, 0.55) 0 1px, transparent 1.6px),
+        linear-gradient(180deg, var(--space) 0%, var(--space-deep) 100%);
+      background-size: 233px 211px, 197px 173px, 263px 239px, 151px 181px, 100% 100%;
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-text-size-adjust: 100%;
+    }
 
-			<h2>Interpretation and Definitions</h2>
+    a { color: var(--gold); font-weight: 700; }
+    a:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; border-radius: 4px; }
 
-			<h3>Interpretation</h3>
-			<p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+    /* space at dusk: stars, a ringed planet, and aliens popping out of their craters */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 46px 16px 0;
+      background-image:
+        radial-gradient(circle at 37px 29px, #fff 0 1.3px, transparent 2px),
+        radial-gradient(circle at 151px 83px, rgba(255, 255, 255, 0.7) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 97px 139px, rgba(255, 220, 245, 0.8) 0 1.5px, transparent 2.2px),
+        linear-gradient(180deg, #24095a 0%, #5a1c8a 46%, #b63f8d 78%, #f0719a 100%);
+      background-size: 211px 173px, 181px 197px, 257px 229px, 100% 100%;
+    }
+    .planet {
+      position: absolute;
+      right: 7%;
+      top: 34px;
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 30%, #efc88f 0%, #c99560 55%, #8d5f3f 100%);
+      box-shadow: 0 0 40px rgba(255, 190, 120, 0.25);
+    }
+    .planet::after {
+      content: "";
+      position: absolute;
+      left: -34%;
+      right: -34%;
+      top: 36%;
+      height: 30%;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 226, 180, 0.55);
+      transform: rotate(-14deg);
+    }
 
-			<h3>Definitions</h3>
-			<p>For the purposes of this Privacy Policy:</p>
+    .eyebrow {
+      position: relative;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: var(--orange);
+      color: #3a1500;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 0 #b86414;
+    }
+    h1 {
+      position: relative;
+      margin: 16px auto 6px;
+      max-width: 15em;
+      font-size: clamp(34px, 8vw, 58px);
+      line-height: 1.05;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 0 4px 0 #6a2bd0, 0 0 26px rgba(255, 97, 179, 0.55);
+    }
+    h1 span { color: var(--gold); }
+    .updated {
+      position: relative;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 15px;
+    }
 
-			<p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
+    .crew {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 4%;
+      max-width: 640px;
+      margin: 26px auto 0;
+      padding-bottom: min(34px, 5.5vw);
+    }
+    .pop { position: relative; width: 16%; }
+    .pop.big { width: 21%; }
+    /* the crater: a dark hole with a raised rim */
+    .pop::before {
+      content: "";
+      position: absolute;
+      left: -11%;
+      right: -11%;
+      bottom: -8%;
+      aspect-ratio: 3;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at 50% 46%, #170a1f 0 60%, #3d1a3c 61% 68%, #8a4f73 69% 100%);
+      box-shadow: 0 5px 0 var(--ground-deep);
+    }
+    /* the alien is cut along the front edge of the hole, so it looks half way out */
+    .pop .clip {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 0.93;
+      border-radius: 0 0 50% 50% / 0 0 17% 17%;
+    }
+    .pop img { display: block; width: 100%; height: auto; }
+    .pop.small img { transform: scale(1.45); transform-origin: 50% 78%; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      bottom: 0;
+      height: min(104px, 16.5vw);
+      border-radius: 50% 50% 0 0 / 34% 34% 0 0;
+      background: linear-gradient(180deg, #7d3566 0%, var(--ground) 40%, var(--ground-deep) 100%);
+    }
 
-			<p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
+    main { max-width: 820px; margin: 0 auto; padding: 30px 14px 40px; }
 
-			<p><strong>Application</strong> refers to Pop Pop Aliens: Arcade Hunter, the software program provided by the Company.</p>
+    /* a glowing panel, like the game's menus */
+    .card {
+      position: relative;
+      background: var(--panel);
+      border: 2px solid var(--panel-line);
+      border-radius: 26px;
+      padding: 26px 24px 24px;
+      margin: 0 0 22px;
+      box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 0 28px rgba(140, 82, 255, 0.16);
+    }
+    .card.glance { border-color: rgba(107, 242, 77, 0.55); box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 0 28px rgba(107, 242, 77, 0.14); }
 
-			<p><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Pop Pop Aliens: Arcade Hunter.</p>
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    h2 .n {
+      flex: none;
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #10380a;
+      font-size: 17px;
+      box-shadow: 0 3px 0 var(--green-deep);
+    }
+    h3 { font-size: 17px; font-weight: 800; margin: 16px 0 6px; color: var(--pink-soft); }
+    p { margin: 0 0 12px; }
+    p:last-child, ul:last-child { margin-bottom: 0; }
+    ul { margin: 0 0 12px 1.2em; }
+    li { margin: 0 0 6px; }
+    li::marker { color: var(--pink); }
+    strong { color: #fff; }
+    .peek { float: right; width: 84px; height: 84px; margin: -8px -4px 6px 12px; }
 
-			<p><strong>Country</strong> refers to: Romania</p>
+    .checks { list-style: none; margin-left: 0; }
+    .checks li { position: relative; padding-left: 34px; margin-bottom: 10px; }
+    .checks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #10380a;
+      font-size: 14px;
+      font-weight: 900;
+    }
 
-			<p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
+    .note {
+      background: rgba(255, 194, 74, 0.12);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin: 14px 0 0;
+      border: 2px dashed rgba(255, 194, 74, 0.7);
+    }
 
-			<p><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</p>
+    .table { overflow-x: auto; margin: 6px 0 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    caption { text-align: left; font-weight: 800; padding-bottom: 8px; color: #fff; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 2px dashed rgba(255, 255, 255, 0.13); }
+    th { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+    tr:last-child td { border-bottom: 0; }
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 800; white-space: nowrap; }
+    .tag.yes { background: rgba(255, 97, 179, 0.2); color: var(--pink-soft); }
+    .tag.no { background: rgba(107, 242, 77, 0.16); color: #9df588; }
 
-			<p><strong>Service</strong> refers to the Application.</p>
+    footer { text-align: center; color: var(--ink-soft); font-weight: 700; font-size: 15px; padding: 0 16px 44px; }
+    footer img { display: block; width: 72px; height: 72px; margin: 0 auto 10px; border-radius: 18px; box-shadow: 0 5px 0 rgba(0, 0, 0, 0.4), 0 0 24px rgba(140, 82, 255, 0.35); }
 
-			<p><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</p>
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .card { padding: 24px 18px 20px; border-radius: 22px; }
+      h2 { font-size: 20px; }
+      .peek { width: 64px; height: 64px; }
+      .planet { width: 74px; height: 74px; right: -14px; top: 18px; }
+      th, td { padding: 8px 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="planet" aria-hidden="true"></div>
+    <span class="eyebrow">Pop Pop Aliens</span>
+    <h1>Privacy <span>Policy</span></h1>
+    <p class="updated">Last updated: October 4, 2026 · applies to version 2.0 and later</p>
+    <div class="crew" aria-hidden="true">
+      <div class="pop"><div class="clip"><img src="images/poppopaliens/zippy.png" width="240" height="240" alt="" /></div></div>
+      <div class="pop"><div class="clip"><img src="images/poppopaliens/shield.png" width="240" height="240" alt="" /></div></div>
+      <div class="pop big"><div class="clip"><img src="images/poppopaliens/blob.png" width="240" height="240" alt="" /></div></div>
+      <div class="pop"><div class="clip"><img src="images/poppopaliens/tank.png" width="240" height="240" alt="" /></div></div>
+      <div class="pop small"><div class="clip"><img src="images/poppopaliens/mini.png" width="240" height="240" alt="" /></div></div>
+    </div>
+  </header>
 
-			<p><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
+  <main>
+    <section class="card glance" aria-labelledby="glance">
+      <h2 id="glance">The short version</h2>
+      <ul class="checks">
+        <li>You play without an account. We never ask for your name, email address, contacts or photos.</li>
+        <li>Your levels, stars, best scores and settings are saved on your device. We run no server and cannot see them.</li>
+        <li>The game is free because it shows ads from Google AdMob. Google and its partners receive some device and usage data to deliver and measure those ads.</li>
+        <li>You decide about tracking: the game asks first, and you can change your mind at any time.</li>
+        <li>Premium, a one-time purchase, removes the ads.</li>
+      </ul>
+    </section>
 
-			<p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
+    <section class="card" aria-labelledby="s1">
+      <h2 id="s1"><span class="n">1</span>Who we are</h2>
+      <p>Pop Pop Aliens (the “game”) is made and published by PAUL CRP - App Development Studio (“we”, “us”). For the limited data described below, we are the controller together with the service providers named in this policy.</p>
+      <p>Questions about privacy: <a href="mailto:devpaulcrp@gmail.com">devpaulcrp@gmail.com</a></p>
+    </section>
 
-			<h2>Collecting and Using Your Personal Data</h2>
+    <section class="card" aria-labelledby="s2">
+      <img class="peek" src="images/poppopaliens/astronaut.png" width="240" height="240" alt="" />
+      <h2 id="s2"><span class="n">2</span>What stays on your device</h2>
+      <p>The game keeps the following only in its own storage on your iPhone or iPad. It is not sent to us:</p>
+      <ul>
+        <li>cleared levels, stars and best scores in the levels, Endless, the Daily and Weekly Challenges and the seasonal events</li>
+        <li>counters used for achievements and the alien collection (aliens popped, combos and the like), and the skin you chose</li>
+        <li>settings such as sound, music and vibration, and which instruction cards you have read</li>
+        <li>whether you own Premium</li>
+      </ul>
+      <p>If you delete the game, this information is deleted with it. Progress cannot be brought back afterwards. Premium can be restored with “Restore purchase”. Apple may include the game’s storage in the device backups you have switched on.</p>
+    </section>
 
-			<h3>Types of Data Collected</h3>
+    <section class="card" aria-labelledby="s3">
+      <h2 id="s3"><span class="n">3</span>Advertising and the data it uses</h2>
+      <p>The game shows two kinds of ads through <strong>Google AdMob</strong>: a full-screen ad now and then after a finished game, and a short video that you can choose to watch to carry on after losing. To deliver, limit, measure and protect those ads, the Google Mobile Ads software inside the game collects the data below and sends it to Google and its advertising partners. We do not receive this data in a form that identifies you.</p>
+      <div class="table">
+        <table>
+          <caption>Data collected through advertising</caption>
+          <thead>
+            <tr><th scope="col">Data</th><th scope="col">Used for</th><th scope="col">Linked to you</th><th scope="col">Used to track you</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Device identifiers</strong> (such as the advertising identifier, if you allow it)</td><td>Third-party advertising, our own advertising, analytics</td><td><span class="tag yes">Yes</span></td><td><span class="tag yes">Yes, with permission</span></td></tr>
+            <tr><td><strong>Advertising data</strong> (which ads were shown and tapped)</td><td>Third-party advertising, our own advertising, analytics</td><td><span class="tag yes">Yes</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Product interaction</strong> (app launches and activity in the game)</td><td>Third-party advertising, our own advertising, analytics, making the game work</td><td><span class="tag yes">Yes</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Approximate location</strong> (derived from your internet address; never GPS)</td><td>Third-party advertising, our own advertising, analytics, making the game work</td><td><span class="tag yes">Yes</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Crash data</strong></td><td>Analytics</td><td><span class="tag no">No</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Performance data</strong> (loading times, energy use)</td><td>Third-party advertising, our own advertising, analytics, making the game work</td><td><span class="tag no">No</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Other diagnostic data</strong></td><td>Third-party advertising, our own advertising, analytics</td><td><span class="tag no">No</span></td><td><span class="tag no">No</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This is the same list you see under “App Privacy” on the game’s App Store page. The game itself contains no other advertising or analytics software.</p>
+      <p>How Google uses this information: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from apps that use its services</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
+    </section>
 
-			<h3>Personal Data</h3>
-			<p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
-			<ul>
-				<li>Usage Data</li>
-			</ul>
+    <section class="card" aria-labelledby="s4">
+      <img class="peek" src="images/poppopaliens/ninja.png" width="240" height="240" alt="" />
+      <h2 id="s4"><span class="n">4</span>Your choices</h2>
+      <h3>Tracking permission</h3>
+      <p>Before any ad is requested, iOS asks whether the game may track your activity across other companies’ apps and websites. If you choose “Ask App Not to Track”, the advertising identifier is not shared and ads are not based on tracking. You can change this at any time in the Settings app under Privacy &amp; Security › Tracking.</p>
+      <h3>Consent in Europe</h3>
+      <p>If you are in the European Economic Area, the United Kingdom or Switzerland, the game first shows a consent message from Google. You can consent, refuse, or manage each purpose and partner separately. You can reopen that message whenever you like in the game under Settings › “Privacy options”. If you refuse, you may still see ads, but they are not personalised.</p>
+      <h3>Other controls</h3>
+      <ul>
+        <li>iOS Settings › Privacy &amp; Security › Apple Advertising and › Tracking limit advertising across all your apps.</li>
+        <li>Google’s ad settings: <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">My Ad Center</a>.</li>
+        <li>Buying Premium removes the ads. From the next start of the game the advertising software is not started at all.</li>
+      </ul>
+    </section>
 
-			<h3>Usage Data</h3>
-			<p>Usage Data is collected automatically when using the Service.</p>
+    <section class="card" aria-labelledby="s5">
+      <img class="peek" src="images/poppopaliens/golden.png" width="240" height="240" alt="" />
+      <h2 id="s5"><span class="n">5</span>Purchases</h2>
+      <p>The game offers one purchase: Premium, bought once, which removes the ads, lets you carry on after losing without watching a video, and unlocks the Ghost skin. All payments are handled by Apple. We never see your card details or your Apple Account; the game only learns from Apple whether a purchase succeeded, so it can unlock what you bought.</p>
+      <ul>
+        <li>Premium can be restored on your devices with “Restore purchase”.</li>
+        <li>There is nothing else to buy: no coins, no subscriptions.</li>
+        <li>Refunds are handled by Apple under Apple’s terms.</li>
+      </ul>
+    </section>
 
-			<p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+    <section class="card" aria-labelledby="s6">
+      <h2 id="s6"><span class="n">6</span>Game Center</h2>
+      <p>If you are signed in to Apple’s Game Center, the game sends your scores and achievement progress to Apple so they can appear on the leaderboards and in your profile. This is optional: the game works without Game Center, and you can sign out in the Settings app. Apple processes that information under the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>.</p>
+    </section>
 
-			<p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
+    <section class="card" aria-labelledby="s7">
+      <h2 id="s7"><span class="n">7</span>What the game does not do</h2>
+      <ul>
+        <li>It does not ask for your name, email address, phone number, contacts, photos, camera, microphone or precise location.</li>
+        <li>It has no accounts, no chat and no way of posting content.</li>
+        <li>It does not send your progress to us or to anyone else.</li>
+        <li>We do not sell personal data for money.</li>
+      </ul>
+    </section>
 
-			<p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
+    <section class="card" aria-labelledby="s8">
+      <h2 id="s8"><span class="n">8</span>Children</h2>
+      <p>Pop Pop Aliens is a family game for a general audience. It is not directed specifically at children under 13 (or the higher age set by the law of your country), and we do not knowingly collect personal data from them. Parents can switch off tracking requests and in-app purchases for a child’s device with Screen Time in the Settings app. If you believe a child has given personal data through the game, write to us and we will help.</p>
+    </section>
 
-			<h2>Third-Party Services and Advertising</h2>
+    <section class="card" aria-labelledby="s9">
+      <h2 id="s9"><span class="n">9</span>Legal bases and your rights</h2>
+      <p>Where the GDPR or a similar law applies, the data described above is processed on these grounds:</p>
+      <ul>
+        <li><strong>Your consent</strong> for personalised advertising and tracking. You can withdraw it at any time, as explained in section 4.</li>
+        <li><strong>Legitimate interests</strong> in running a free game: showing non-personalised ads, limiting how often they appear, preventing fraud and fixing faults.</li>
+        <li><strong>Performance of a contract</strong> to deliver what you buy.</li>
+      </ul>
+      <p>Depending on where you live, you may have the right to access, correct, delete or move your data, to restrict or object to its use, and to complain to your data protection authority. Because we keep no personal data about you on any server, most requests are best made with the tools above or directly to Google and Apple, but you can always write to us and we will help.</p>
+      <p><strong>United States residents:</strong> sharing an advertising identifier for personalised ads can count as “sharing” or “selling” under some state laws. You can opt out by refusing the tracking permission described in section 4.</p>
+    </section>
 
-			<h3>Google AdMob</h3>
-			<p>Our Service uses Google AdMob, an advertising service provided by Google Inc. AdMob may use cookies and other tracking technologies to serve advertisements based on your interests and previous visits to our Service and other websites.</p>
+    <section class="card" aria-labelledby="s10">
+      <h2 id="s10"><span class="n">10</span>Keeping, transferring and protecting data</h2>
+      <p>Data on your device stays there until you delete the game. Google and Apple keep the data they receive for the periods set out in their own policies, and may process it in countries other than your own, including the United States, using the safeguards those policies describe.</p>
+      <p>The game uses the protections built into iOS and Apple’s and Google’s official software. No method of storing or sending data is perfectly secure, so we cannot promise absolute security.</p>
+    </section>
 
-			<p>Google AdMob may collect and use the following information:</p>
-			<ul>
-				<li>Device information (such as device model, operating system version, and unique device identifiers)</li>
-				<li>Location information (approximate location derived from IP address)</li>
-				<li>Usage data and interaction with advertisements</li>
-				<li>Advertising identifiers (such as Google Advertising ID on Android or IDFA on iOS)</li>
-				<li>Information about apps installed on your device</li>
-			</ul>
+    <section class="card" aria-labelledby="s11">
+      <h2 id="s11"><span class="n">11</span>Stars, skins and progress</h2>
+      <p>Stars, skins, scores and anything else you earn in the game are for play only. They have no cash value and cannot be exchanged for money. We may rebalance levels and rewards in later versions. Because progress is stored only on your device, we cannot recover it if the game is deleted or the device is lost.</p>
+    </section>
 
-			<p>You can opt out of personalized advertising by:</p>
-			<ul>
-				<li><strong>Android devices:</strong> Go to Settings > Google > Ads > Opt out of Ads Personalization</li>
-				<li><strong>iOS devices:</strong> Go to Settings > Privacy & Security > Apple Advertising > Personalized Ads (turn off)</li>
-				<li><strong>Web browsers:</strong> Visit <a href="https://www.google.com/settings/ads" target="_blank">Google Ads Settings</a></li>
-			</ul>
+    <section class="card" aria-labelledby="s12">
+      <h2 id="s12"><span class="n">12</span>Changes and contact</h2>
+      <p>If this policy changes, the new version will be published on this page with a new date. If a change is important, the game or its App Store page will say so.</p>
+      <p>Write to us at <a href="mailto:devpaulcrp@gmail.com">devpaulcrp@gmail.com</a>.</p>
+      <p class="note">By installing or playing Pop Pop Aliens you confirm that you have read this policy. Use of the game is also covered by Apple’s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">standard licence agreement</a>.</p>
+    </section>
+  </main>
 
-			<p>For more information about Google's privacy practices, please visit the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
-
-			<h3>Analytics and Crash Reporting</h3>
-			<p>We may use third-party services to analyze app usage and diagnose technical issues. These services may collect information such as:</p>
-			<ul>
-				<li>App usage statistics</li>
-				<li>Device performance data</li>
-				<li>Crash reports and error logs</li>
-				<li>Session duration and frequency of use</li>
-			</ul>
-
-			<p>This information is used solely to improve our Service and fix technical issues. No personally identifiable information is included in these reports.</p>
-
-			<h2>Use of Your Personal Data</h2>
-			<p>The Company may use Personal Data for the following purposes:</p>
-
-			<ul>
-				<li><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</li>
-				<li><strong>To manage Your Account</strong>: to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</li>
-				<li><strong>For the performance of a contract</strong>: the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</li>
-				<li><strong>To contact You</strong>: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</li>
-				<li><strong>To provide You</strong> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</li>
-				<li><strong>To manage Your requests</strong>: To attend and manage Your requests to Us.</li>
-				<li><strong>For business transfers</strong>: We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</li>
-				<li><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</li>
-			</ul>
-
-			<p>We may share Your personal information in the following situations:</p>
-
-			<ul>
-				<li><strong>With Service Providers</strong>: We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You, and to serve advertisements through our Service.</li>
-				<li><strong>With Advertising Partners</strong>: We may share certain non-personal information with advertising partners, including Google AdMob, to serve relevant advertisements. This may include device identifiers, usage patterns, and demographic information, but does not include personally identifiable information such as your name or email address.</li>
-				<li><strong>For business transfers</strong>: We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</li>
-				<li><strong>With Affiliates</strong>: We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</li>
-				<li><strong>With business partners</strong>: We may share Your information with Our business partners to offer You certain products, services or promotions.</li>
-				<li><strong>With other users</strong>: when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</li>
-				<li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</li>
-			</ul>
-
-			<h2>Your Privacy Rights and Choices</h2>
-			<p>You have certain rights regarding your personal data:</p>
-
-			<ul>
-				<li><strong>Access and Portability</strong>: You can request access to the personal data we have collected about you.</li>
-				<li><strong>Correction</strong>: You can request that we correct any inaccurate personal data.</li>
-				<li><strong>Deletion</strong>: You can request that we delete your personal data, subject to certain legal limitations.</li>
-				<li><strong>Advertising Preferences</strong>: You can opt out of personalized advertising as described in the Google AdMob section above.</li>
-				<li><strong>Data Processing Objection</strong>: You can object to certain types of data processing.</li>
-			</ul>
-
-			<p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section.</p>
-
-			<h2>Data Retention</h2>
-			<p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
-
-			<p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
-
-			<p><strong>Advertising Data:</strong> Data collected by Google AdMob and other advertising partners is retained according to their respective privacy policies and retention schedules. You can learn more about Google's data retention practices in their <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>.</p>
-
-			<h2>International Data Transfers</h2>
-			<p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
-
-			<p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
-
-			<p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
-
-			<p><strong>Google Services:</strong> When using Google AdMob and other Google services, your data may be transferred to and processed by Google in the United States and other countries where Google operates. Google adheres to applicable data protection frameworks and provides appropriate safeguards for international data transfers.</p>
-
-			<h2>Manage Your Personal Data</h2>
-			<p>You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.</p>
-
-			<p>Our Service may give You the ability to delete certain information about You from within the Service.</p>
-
-			<p>You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.</p>
-
-			<p>Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.</p>
-
-			<h2>Disclosure of Your Personal Data</h2>
-
-			<h3>Business Transactions</h3>
-			<p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
-
-			<h3>Law enforcement</h3>
-			<p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
-
-			<h3>Other legal requirements</h3>
-			<p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
-
-			<ul>
-				<li>Comply with a legal obligation</li>
-				<li>Protect and defend the rights or property of the Company</li>
-				<li>Prevent or investigate possible wrongdoing in connection with the Service</li>
-				<li>Protect the personal safety of Users of the Service or the public</li>
-				<li>Protect against legal liability</li>
-			</ul>
-
-			<h2>Security of Your Personal Data</h2>
-			<p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
-
-			<h2>Children's Privacy</h2>
-			<p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
-
-			<p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
-
-			<h2>Links to Other Websites</h2>
-			<p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
-
-			<p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
-
-			<h2>Changes to this Privacy Policy</h2>
-			<p>We may update Our Privacy Policy from time time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
-
-			<p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
-
-			<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
-
-			<div class="contact-info">
-				<h3>Contact Us</h3>
-				<p>If you have any questions about this Privacy Policy, You can contact us:</p>
-				<p>By email: <a href="mailto:pop.pop.aliens@gmail.com">pop.pop.aliens@gmail.com</a></p>
-			</div>
-		</div>
-	</body>
+  <footer>
+    <img src="images/poppopaliens/icon.png" width="240" height="240" alt="Pop Pop Aliens app icon" />
+    <p>Pop Pop Aliens · © 2026 PAUL CRP - App Development Studio · <a href="https://paulcrp.com">paulcrp.com</a></p>
+  </footer>
+</body>
 </html>
