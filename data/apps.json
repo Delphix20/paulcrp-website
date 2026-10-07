@@ -157,24 +157,28 @@
   {
     "slug": "cyphre",
     "anchor": "cyphre-card",
-    "name": "Cyphre: Puzzle Ring Challenge",
+    "name": "Cyphre: Brain Puzzle Rings",
+    "subtitle": "Relax, focus, crack the cipher",
     "shortName": "Cyphre",
-    "description": "An addictive symbol-decoding puzzle ring challenge that rewards careful thinking, alignment and pattern recognition.",
+    "description": "A glowing ring puzzle that is easy to learn and hard to put down. Spin the rings, line up colors and symbols, and crack the vault at the center. 300 levels across 12 worlds keep adding new twists, from linked rings and gears to fog, frozen rings and a boss level at the end of every world. A new daily puzzle, five neon themes with their own music and no timer on most levels make it a calm place to think.",
     "category": "GameApplication",
     "genre": "Games",
     "image": "cyphre-icon",
-    "appStoreUrl": "https://apps.apple.com/app/cyphre-puzzle-ring-challenge/id6748257455"
+    "imageVersion": "20261007",
+    "appStoreUrl": "https://apps.apple.com/app/cyphre-brain-puzzle-rings/id6748257455"
   },
   {
     "slug": "pop-pop-aliens",
     "anchor": "poppopaliens-card",
-    "name": "Pop Pop Aliens: Arcade Hunter",
+    "name": "Pop Pop Aliens: Reflex Arcade",
+    "subtitle": "Satisfying Tap Action Levels",
     "shortName": "Pop Pop Aliens",
-    "description": "Fast-paced alien-blasting arcade action with increasing difficulty, clever decoys and endless entertainment.",
+    "description": "Aliens are popping out of the craters, and only your quick taps can stop them. Build big combos across 10 colourful planets and 100 campaign levels, with a boss waiting at the end of every planet, and look before you tap: a friendly astronaut or a bomb costs you a heart. Endless mode, Daily and Weekly Challenges, game-changing power-ups and skins to collect keep every round fresh.",
     "category": "GameApplication",
     "genre": "Games",
     "image": "poppopaliens-icon",
-    "appStoreUrl": "https://apps.apple.com/app/pop-pop-aliens-arcade-hunter/id6748736031",
+    "imageVersion": "20261007",
+    "appStoreUrl": "https://apps.apple.com/app/pop-pop-aliens-reflex-arcade/id6748736031",
     "events": [
       {
         "eyebrow": "Seasonal event",
@@ -199,12 +203,14 @@
   {
     "slug": "pop-pop-piggies",
     "anchor": "poppoppiggies-card",
-    "name": "Pop Pop Piggies: Arcade Hunter",
+    "name": "Pop Pop Piggies: Animal Puzzle",
+    "subtitle": "Cute & cozy farm tap game",
     "shortName": "Pop Pop Piggies",
-    "description": "Whack-a-piggie mayhem with tricky decoys and lightning-fast action that tests reflexes while avoiding sneaky impostors.",
+    "description": "A cute, cozy animal puzzle in a hand-made paper look. Tap two or more matching animals to pop them, pop bigger groups to call in Speedy, Bomb and Royal Piggy helpers, and use your taps well to keep all three stars. 200 levels across 10 places and 17 animal friends, plus Rush, Precision, Zen and a Daily Challenge with a new twist every day. No timers in the levels and no lives to wait for.",
     "category": "GameApplication",
     "genre": "Games",
     "image": "poppoppiggies-icon",
+    "imageVersion": "20261007",
     "appStoreUrl": "https://apps.apple.com/app/pop-pop-piggies-arcade-hunter/id6748965914"
   },
   {
@@ -221,12 +227,14 @@
   {
     "slug": "pop-pop-fruits",
     "anchor": "poppopfruits-card",
-    "name": "Pop Pop Fruits: Tap Frenzy",
+    "name": "Pop Pop Fruits: Tap Tap Arcade",
+    "subtitle": "Cute, Easy & Satisfying Games",
     "shortName": "Pop Pop Fruits",
-    "description": "A fruit-popping frenzy that tests speed and precision while challenging players to avoid crafty decoys.",
+    "description": "Welcome to the cutest fruit stand in town. Customers line up with their orders, the fruits pop out of the crates, and you tap exactly what each one asked for before their patience runs out. Skip the vegetable decoys, grab golden apples and other helpers, and build a combo to start a Fruit Frenzy. Travel from the orchard to the beach, the jungle and a night market in a campaign with three stars on every level, an Endless mode and a new Daily Challenge every day.",
     "category": "GameApplication",
     "genre": "Games",
     "image": "poppopfruits-icon",
+    "imageVersion": "20261007",
     "appStoreUrl": "https://apps.apple.com/app/pop-pop-fruits-tap-frenzy/id6749312011"
   }
 ]
