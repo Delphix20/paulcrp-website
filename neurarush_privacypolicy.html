@@ -3,350 +3,353 @@
 <head>
   <meta name="robots" content="noindex,follow,noarchive" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NeuraRush – Brain Boost Games Privacy Policy" />
-  <title>NeuraRush Privacy Policy</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy - Neura Rush</title>
   <style>
-    :root{
-      --bg1:#0b0614;
-      --bg2:#12061f;
-      --card: rgba(255,255,255,0.06);
-      --card2: rgba(255,255,255,0.04);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --border: rgba(255,255,255,0.10);
-      --purple: #b07cff;
-      --link: #d2b7ff;
-      --shadow: 0 18px 60px rgba(0,0,0,0.55);
-      --radius: 18px;
-      --max: 920px;
+    :root {
+      --night-top: #2a1b6b;
+      --night-mid: #16123f;
+      --night: #090818;
+      --panel: #17143a;
+      --panel-edge: rgba(155, 107, 255, 0.55);
+      --ink: #f3f1ff;
+      --ink-soft: #b9b3dc;
+      --blue: #4fa8ff;
+      --violet: #9b6bff;
+      --pink: #ff5fc4;
+      --cyan: #4ff2f0;
+      --gold: #ffc94a;
+      --green: #3de8a0;
     }
 
-    *{ box-sizing: border-box; }
-    html, body { height: 100%; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body{
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-                   Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      line-height: 1.65;
-      background: linear-gradient(180deg, var(--bg1), var(--bg2));
+    body {
+      font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--night);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-text-size-adjust: 100%;
     }
 
-    a{ color: var(--link); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a { color: #8fd0ff; font-weight: 700; }
+    a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; border-radius: 4px; }
 
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px 18px 48px;
-    }
-
-    /* Top header (icon + app name only) */
-    header{
-      text-align: center;
-      padding: 26px 18px 22px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .appicon{
-      width: 96px;
-      height: 96px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 16px 34px rgba(176,124,255,0.25);
-      object-fit: cover;
-      background: rgba(255,255,255,0.06);
-      margin-bottom: 12px;
-    }
-
-    header h1{
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: 0.3px;
-    }
-
-    main{
-      margin-top: 14px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .card{
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--card), var(--card2));
-      box-shadow: var(--shadow);
+    /* the night the brain lives in: a glow from above, and neurons scattered like stars */
+    .hero {
+      position: relative;
       overflow: hidden;
-    }
-
-    .card .hd{
-      padding: 16px 18px 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    /* Default section titles */
-    .card h3{
-      margin: 0;
-      font-size: 16px;
-      color: var(--purple);
-      letter-spacing: 0.2px;
-    }
-
-    /* BIG policy title only */
-    .policy-title{
-      margin: 0;
-      font-size: 34px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      line-height: 1.15;
-      color: #ffffff;
-    }
-    .policy-title span{
-      color: var(--purple);
-    }
-
-    .effective{
-      font-size: 13px;
-      color: var(--muted);
-      white-space: nowrap;
-      padding-top: 6px; /* align better with larger title */
-    }
-
-    .card .bd{
-      padding: 14px 18px 18px;
-    }
-
-    .callout{
-      margin-top: 12px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(176,124,255,0.25);
-      background: rgba(176,124,255,0.10);
-      color: rgba(255,255,255,0.90);
-    }
-
-    ul{
-      margin: 10px 0 0 18px;
-      padding: 0;
-    }
-    li{ margin: 6px 0; }
-
-    .muted{ color: var(--muted); }
-
-    footer{
-      margin-top: 18px;
-      padding: 16px 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.03);
-      color: var(--muted);
-      font-size: 13px;
       text-align: center;
-      box-shadow: var(--shadow);
+      padding: 44px 16px 26px;
+      background:
+        radial-gradient(90% 70% at 50% -10%, rgba(155, 107, 255, 0.55), transparent 70%),
+        radial-gradient(60% 50% at 100% 100%, rgba(255, 95, 196, 0.18), transparent 70%),
+        linear-gradient(180deg, var(--night-top) 0%, var(--night-mid) 55%, var(--night) 100%);
+    }
+    .neurons {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle, #fff 1.6px, rgba(79, 242, 240, 0.35) 2.4px, transparent 5px) 14px 22px / 190px 140px,
+        radial-gradient(circle, rgba(255, 255, 255, 0.85) 1.3px, rgba(155, 107, 255, 0.4) 2.2px, transparent 4.5px) 104px 78px / 230px 170px,
+        radial-gradient(circle, rgba(255, 255, 255, 0.7) 1px, transparent 2px) 160px 30px / 140px 110px,
+        linear-gradient(115deg, transparent 49.7%, rgba(155, 107, 255, 0.16) 50%, transparent 50.3%) 0 0 / 230px 170px,
+        linear-gradient(62deg, transparent 49.7%, rgba(79, 168, 255, 0.13) 50%, transparent 50.3%) 0 0 / 190px 140px;
     }
 
-    /* Small-screen tweaks */
-    @media (max-width: 420px){
-      .policy-title{ font-size: 30px; }
-      .effective{ padding-top: 4px; }
+    .eyebrow {
+      position: relative;
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      position: relative;
+      margin: 16px auto 6px;
+      max-width: 15em;
+      font-size: clamp(34px, 8vw, 58px);
+      line-height: 1.05;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(90deg, #a9d6ff, #fff 45%, #ffb3e4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 18px rgba(155, 107, 255, 0.7));
+    }
+    .updated { position: relative; color: var(--ink-soft); font-weight: 700; font-size: 15px; }
+
+    /* Neura, with a glow under her */
+    .stage { position: relative; width: min(230px, 56vw); margin: 26px auto 0; }
+    .stage::before {
+      content: "";
+      position: absolute;
+      left: -30%;
+      right: -30%;
+      top: 8%;
+      bottom: -6%;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(155, 107, 255, 0.55), rgba(79, 168, 255, 0.18) 60%, transparent 100%);
+    }
+    .stage img { position: relative; display: block; width: 100%; height: auto; }
+
+    main { position: relative; max-width: 820px; margin: 0 auto; padding: 30px 14px 40px; }
+
+    /* a card as in the game: dark glass with a lit edge */
+    .card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(155, 107, 255, 0.16), rgba(155, 107, 255, 0.05)), var(--panel);
+      border-radius: 28px;
+      padding: 26px 24px 24px;
+      margin: 0 0 22px;
+      border: 1.5px solid var(--panel-edge);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    .card.glance { border-color: rgba(255, 95, 196, 0.6); background: linear-gradient(135deg, rgba(255, 95, 196, 0.18), rgba(79, 168, 255, 0.08)), var(--panel); }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    h2 .n {
+      flex: none;
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--violet) 55%, var(--pink));
+      color: #fff;
+      font-size: 17px;
+      box-shadow: 0 0 14px rgba(155, 107, 255, 0.7);
+    }
+    h3 { font-size: 17px; font-weight: 800; margin: 16px 0 6px; color: #9fd4ff; }
+    p { margin: 0 0 12px; }
+    p:last-child, ul:last-child { margin-bottom: 0; }
+    ul { margin: 0 0 12px 1.2em; }
+    li { margin: 0 0 6px; }
+    strong { color: #fff; }
+    .peek { float: right; width: 84px; height: auto; margin: -10px -4px 6px 12px; }
+
+    .checks { list-style: none; margin-left: 0; }
+    .checks li { position: relative; padding-left: 34px; margin-bottom: 10px; }
+    .checks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06241a;
+      font-size: 14px;
+      font-weight: 900;
     }
 
-    /* Print-friendly */
-    @media print{
-      body{ background: #fff; color: #000; }
-      header, .card, footer{ box-shadow: none; background: #fff; border-color: #ddd; }
-      .policy-title span, .card h3{ color: #6d28d9; }
-      a{ color: #6d28d9; text-decoration: underline; }
-      .callout{ border-color: #ddd; background: #f6f6f6; color: #000; }
+    .note {
+      background: rgba(255, 201, 74, 0.12);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin: 14px 0 0;
+      border: 1.5px dashed rgba(255, 201, 74, 0.7);
+    }
+
+    .table { overflow-x: auto; margin: 6px 0 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    caption { text-align: left; font-weight: 800; padding-bottom: 8px; color: #fff; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 1.5px dashed rgba(255, 255, 255, 0.16); }
+    th { font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+    tr:last-child td { border-bottom: 0; }
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 800; white-space: nowrap; }
+    .tag.yes { background: rgba(255, 95, 196, 0.2); color: #ffb3e4; }
+    .tag.no { background: rgba(61, 232, 160, 0.18); color: #8ff5cb; }
+
+    footer { text-align: center; color: var(--ink-soft); font-weight: 700; font-size: 15px; padding: 0 16px 44px; }
+    footer img { display: block; width: 72px; height: auto; margin: 0 auto 10px; }
+    footer a { color: #ffb3e4; }
+
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .hero { padding-top: 34px; }
+      .card { padding: 24px 18px 20px; border-radius: 24px; }
+      h2 { font-size: 20px; }
+      .peek { width: 64px; }
+      th, td { padding: 8px 6px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <img class="appicon" src="images/neurarush-icon.png" alt="NeuraRush app icon" />
-      <h1>NeuraRush – Brain Boost Games</h1>
-    </header>
+  <header class="hero">
+    <div class="neurons" aria-hidden="true"></div>
+    <span class="eyebrow">Neura Rush</span>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 7, 2026 · applies to version 3.0 and later</p>
+    <div class="stage" aria-hidden="true">
+      <img src="images/neurarush/neura-happy.png" width="240" height="269" alt="" />
+    </div>
+  </header>
 
-    <main>
-      <!-- Policy intro card (big title + effective date on right) -->
-      <section class="card">
-        <div class="hd">
-          <div class="policy-title"><span>NeuraRush</span> Privacy Policy</div>
-          <div class="effective">Effective: <strong>2025-06-07</strong></div>
-        </div>
-        <div class="bd">
-          <p>
-            This privacy policy applies to the NeuraRush app (hereby referred to as "Application") for mobile devices
-            that was created by (hereby referred to as "Service Provider") as a Freemium service.
-            This service is intended for use "AS IS".
-          </p>
-        </div>
-      </section>
+  <main>
+    <section class="card glance" aria-labelledby="glance">
+      <h2 id="glance">The short version</h2>
+      <ul class="checks">
+        <li>You play without an account. We never ask for your name, email address, contacts or photos.</li>
+        <li>Your workouts, ratings, NeuraScore, streak, coins and settings are saved on your device. We run no server and cannot see them.</li>
+        <li>The game is free because it shows ads from Google AdMob. Google and its partners receive some device and usage data to deliver and measure those ads.</li>
+        <li>You decide about tracking: the game asks first, and you can change your mind at any time.</li>
+        <li>Neura Rush Pro removes the ads. Coins can be bought, but you never have to: you earn them by playing.</li>
+      </ul>
+    </section>
 
-      <!-- FULL original content restored below -->
-      <section class="grid">
-        <article class="card">
-          <div class="hd"><h3>Information Collection and Use</h3></div>
-          <div class="bd">
-            <p>
-              The Application may collect information when you download and use it. This information may include information such as
-            </p>
-            <ul>
-              <li>Your device's Internet Protocol address (e.g. IP address)</li>
-              <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li>
-              <li>The time spent on the Application</li>
-              <li>The operating system you use on your mobile device</li>
-            </ul>
+    <section class="card" aria-labelledby="s1">
+      <h2 id="s1"><span class="n">1</span>Who we are</h2>
+      <p>Neura Rush (the “game”) is made and published by PAUL CRP - App Development Studio (“we”, “us”). For the limited data described below, we are the controller together with the service providers named in this policy.</p>
+      <p>Questions about privacy: <!--email_off--><a href="mailto:devpaulcrp@gmail.com">devpaulcrp@gmail.com</a><!--/email_off--></p>
+    </section>
 
-            <p style="margin-top:12px;">
-              The Application does not gather precise information about the location of your mobile device.
-            </p>
+    <section class="card" aria-labelledby="s2">
+      <img class="peek" src="images/neurarush/neura-think.png" width="240" height="269" alt="" />
+      <h2 id="s2"><span class="n">2</span>What stays on your device</h2>
+      <p>The game keeps the following only in its own storage on your iPhone or iPad. It is not sent to us:</p>
+      <ul>
+        <li>your rating in each game, your six skill scores and your NeuraScore, with their history over the last weeks</li>
+        <li>today’s workout, your streak and your streak freezes, your best scores and your result in the daily challenge</li>
+        <li>your coins, whether you earned or bought them, and the games you opened with them for the day</li>
+        <li>settings such as sound and vibration</li>
+        <li>whether you have Neura Rush Pro</li>
+      </ul>
+      <p>If you delete the game, this information is deleted with it. Progress and coins cannot be brought back afterwards. Neura Rush Pro can be restored with “Restore purchases”. Apple may include the game’s storage in the device backups you have switched on.</p>
+    </section>
 
-            <p style="margin-top:12px;">
-              The Service Provider may use the information you provided to contact you from time to time to provide you with important information,
-              required notices and marketing promotions.
-            </p>
+    <section class="card" aria-labelledby="s3">
+      <h2 id="s3"><span class="n">3</span>Advertising and the data it uses</h2>
+      <p>The game shows two kinds of ads through <strong>Google AdMob</strong>: a full-screen ad now and then when you leave the result of a game, and a short video that you can choose to watch for one more life, to open a locked game for the day, or for coins. There are no ads while you are playing, none before you have finished your first games, and none at all with Neura Rush Pro. To deliver, limit, measure and protect those ads, the Google Mobile Ads software inside the game collects the data below and sends it to Google and its advertising partners. We do not receive this data in a form that identifies you.</p>
+      <div class="table">
+        <table>
+          <caption>Data collected through advertising</caption>
+          <thead>
+            <tr><th scope="col">Data</th><th scope="col">Used for</th><th scope="col">Linked to you</th><th scope="col">Used to track you</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Device identifiers</strong> (such as the advertising identifier, if you allow it)</td><td>Third-party advertising, our own advertising, analytics</td><td><span class="tag yes">Yes</span></td><td><span class="tag yes">Yes, with permission</span></td></tr>
+            <tr><td><strong>Advertising data</strong> (which ads were shown and tapped)</td><td>Third-party advertising, our own advertising, analytics</td><td><span class="tag yes">Yes</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Product interaction</strong> (app launches and activity in the game)</td><td>Third-party advertising, our own advertising, analytics, making the game work</td><td><span class="tag yes">Yes</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Approximate location</strong> (derived from your internet address; never GPS)</td><td>Third-party advertising, our own advertising, analytics, making the game work</td><td><span class="tag yes">Yes</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Crash data</strong></td><td>Analytics</td><td><span class="tag no">No</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Performance data</strong> (loading times, energy use)</td><td>Third-party advertising, our own advertising, analytics, making the game work</td><td><span class="tag no">No</span></td><td><span class="tag no">No</span></td></tr>
+            <tr><td><strong>Other diagnostic data</strong></td><td>Third-party advertising, our own advertising, analytics</td><td><span class="tag no">No</span></td><td><span class="tag no">No</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This is the same list you see under “App Privacy” on the game’s App Store page. The game itself contains no other advertising or analytics software.</p>
+      <p>How Google uses this information: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from apps that use its services</a> and the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
+    </section>
 
-            <p style="margin-top:12px;">
-              For a better experience, while using the Application, the Service Provider may require you to provide us with certain personally identifiable information.
-              The information that the Service Provider request will be retained by them and used as described in this privacy policy.
-            </p>
-          </div>
-        </article>
+    <section class="card" aria-labelledby="s4">
+      <img class="peek" src="images/neurarush/neura-wink.png" width="240" height="269" alt="" />
+      <h2 id="s4"><span class="n">4</span>Your choices</h2>
+      <h3>Tracking permission</h3>
+      <p>Before any ad is requested, iOS asks whether the game may track your activity across other companies’ apps and websites. If you choose “Ask App Not to Track”, the advertising identifier is not shared and ads are not based on tracking. You can change this at any time in the Settings app under Privacy &amp; Security › Tracking.</p>
+      <h3>Consent in Europe</h3>
+      <p>If you are in the European Economic Area, the United Kingdom or Switzerland, the game first shows a consent message from Google. You can consent, refuse, or manage each purpose and partner separately. You can reopen that message whenever you like in the game under Settings › “Ad privacy choices”. If you refuse, you may still see ads, but they are not personalised.</p>
+      <h3>Other controls</h3>
+      <ul>
+        <li>iOS Settings › Privacy &amp; Security › Apple Advertising and › Tracking limit advertising across all your apps.</li>
+        <li>Google’s ad settings: <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">My Ad Center</a>.</li>
+        <li>Neura Rush Pro removes the ads. For Pro players the advertising software is not started at all.</li>
+      </ul>
+    </section>
 
-        <article class="card">
-          <div class="hd"><h3>Third Party Access</h3></div>
-          <div class="bd">
-            <p>
-              Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service.
-              The Service Provider may share your information with third parties in the ways that are described in this privacy statement.
-            </p>
+    <section class="card" aria-labelledby="s5">
+      <img class="peek" src="images/neurarush/neura-wow.png" width="240" height="269" alt="" />
+      <h2 id="s5"><span class="n">5</span>Purchases</h2>
+      <p>The game offers two kinds of purchase. All payments are handled by Apple. We never see your card details or your Apple Account; the game only learns from Apple whether a purchase succeeded, so it can give you what you bought.</p>
+      <ul>
+        <li><strong>Neura Rush Pro</strong> opens every game at any time and all five games of the daily workout, shows your progress over the weeks and removes the ads. You can have it as a subscription, by the month or by the year, or buy it once for good. A subscription renews by itself until you cancel it; you can cancel at any time in your App Store account settings, and it then runs to the end of the period you paid for. A free trial, where one is offered, turns into the paid subscription unless you cancel before it ends.</li>
+        <li>Neura Rush Pro can be restored on your devices with “Restore purchases”. If you bought “Unlock all games” in an earlier version, you have Neura Rush Pro for good.</li>
+        <li><strong>Coin packs</strong> in three sizes. Coins pay for one more life in a game, for opening a locked game for a day, and for streak freezes. Coins are used up as you spend them, are kept only on your device, and cannot be restored or moved to another device.</li>
+        <li>You never have to pay to play: coins are also earned in every game, and a part of the game is free every day.</li>
+        <li>Refunds are handled by Apple under Apple’s terms.</li>
+      </ul>
+    </section>
 
-            <p style="margin-top:12px;">
-              The Service Provider may disclose User Provided and Automatically Collected Information:
-            </p>
-            <ul>
-              <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
-              <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
-              <li>with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
-            </ul>
-          </div>
-        </article>
+    <section class="card" aria-labelledby="s6">
+      <h2 id="s6"><span class="n">6</span>Game Center</h2>
+      <p>If you are signed in to Apple’s Game Center, the game sends your scores (your best in the games, your NeuraScore, your result in the daily challenge) and your achievement progress to Apple, so they can appear on the leaderboards and in your profile. This is optional: the game works without Game Center, and you can sign out in the Settings app. Apple processes that information under the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>.</p>
+    </section>
 
-        <article class="card">
-          <div class="hd"><h3>Opt-Out Rights</h3></div>
-          <div class="bd">
-            <p>
-              You can stop all collection of information by the Application easily by uninstalling it.
-              You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.
-            </p>
-          </div>
-        </article>
+    <section class="card" aria-labelledby="s7">
+      <h2 id="s7"><span class="n">7</span>What the game does not do</h2>
+      <ul>
+        <li>It does not ask for your name, email address, phone number, contacts, photos, camera, microphone or precise location.</li>
+        <li>It has no accounts, no chat and no way of posting content.</li>
+        <li>It does not send your progress, your ratings or your coins to us or to anyone else.</li>
+        <li>The words you make in the word game are checked on your device, with the dictionary that is part of iOS.</li>
+        <li>We do not sell personal data for money.</li>
+      </ul>
+    </section>
 
-        <article class="card">
-          <div class="hd"><h3>Data Retention Policy</h3></div>
-          <div class="bd">
-            <p>
-              The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter.
-              If you'd like them to delete User Provided Data that you have provided via the Application, please contact them at
-              <a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a> and they will respond in a reasonable time.
-            </p>
-          </div>
-        </article>
+    <section class="card" aria-labelledby="s8">
+      <img class="peek" src="images/neurarush/neura-happy.png" width="240" height="269" alt="" />
+      <h2 id="s8"><span class="n">8</span>Children</h2>
+      <p>Neura Rush is a game for a general audience. It is not directed specifically at children under 13 (or the higher age set by the law of your country), and we do not knowingly collect personal data from them. Parents can switch off tracking requests and in-app purchases for a child’s device with Screen Time in the Settings app. If you believe a child has given personal data through the game, write to us and we will help.</p>
+    </section>
 
-        <article class="card">
-          <div class="hd"><h3>Children</h3></div>
-          <div class="bd">
-            <p>
-              The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.
-            </p>
+    <section class="card" aria-labelledby="s9">
+      <h2 id="s9"><span class="n">9</span>Legal bases and your rights</h2>
+      <p>Where the GDPR or a similar law applies, the data described above is processed on these grounds:</p>
+      <ul>
+        <li><strong>Your consent</strong> for personalised advertising and tracking. You can withdraw it at any time, as explained in section 4.</li>
+        <li><strong>Legitimate interests</strong> in running a free game: showing non-personalised ads, limiting how often they appear, preventing fraud and fixing faults.</li>
+        <li><strong>Performance of a contract</strong> to deliver what you buy.</li>
+      </ul>
+      <p>Depending on where you live, you may have the right to access, correct, delete or move your data, to restrict or object to its use, and to complain to your data protection authority. Because we keep no personal data about you on any server, most requests are best made with the tools above or directly to Google and Apple, but you can always write to us and we will help.</p>
+      <p><strong>United States residents:</strong> sharing an advertising identifier for personalised ads can count as “sharing” or “selling” under some state laws. You can opt out by refusing the tracking permission described in section 4.</p>
+    </section>
 
-            <p style="margin-top:12px;">
-              The Service Provider does not knowingly collect personally identifiable information from children.
-              The Service Provider encourages all children to never submit any personally identifiable information through the Application and/or Services.
-              The Service Provider encourage parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing
-              their children never to provide personally identifiable information through the Application and/or Services without their permission.
-            </p>
+    <section class="card" aria-labelledby="s10">
+      <h2 id="s10"><span class="n">10</span>Keeping, transferring and protecting data</h2>
+      <p>Data on your device stays there until you delete the game. Google and Apple keep the data they receive for the periods set out in their own policies, and may process it in countries other than your own, including the United States, using the safeguards those policies describe.</p>
+      <p>The game uses the protections built into iOS and Apple’s and Google’s official software. No method of storing or sending data is perfectly secure, so we cannot promise absolute security.</p>
+    </section>
 
-            <p style="margin-top:12px;">
-              If you have reason to believe that a child has provided personally identifiable information to the Service Provider through the Application and/or Services,
-              please contact the Service Provider (<a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a>) so that they will be able to take the necessary actions.
-              You must also be at least 16 years of age to consent to the processing of your personally identifiable information in your country
-              (in some countries we may allow your parent or guardian to do so on your behalf).
-            </p>
-          </div>
-        </article>
+    <section class="card" aria-labelledby="s11">
+      <img class="peek" src="images/neurarush/neura-cheer.png" width="240" height="269" alt="" />
+      <h2 id="s11"><span class="n">11</span>Scores, coins and progress</h2>
+      <p>Neura Rush is a game. The NeuraScore, the skill scores and the ranks show how you are doing in its games; they are not a medical, psychological or intelligence test, and the game does not diagnose, treat or prevent anything.</p>
+      <p>Coins, scores and anything else you earn or buy in the game are for play only. They have no cash value, cannot be exchanged for money and cannot be passed to another player. We may rebalance games, prices in coins and rewards in later versions. Because coins and progress are stored only on your device, we cannot recover them if the game is deleted or the device is lost.</p>
+    </section>
 
-        <article class="card">
-          <div class="hd"><h3>Security</h3></div>
-          <div class="bd">
-            <p>
-              The Service Provider is concerned about safeguarding the confidentiality of your information.
-              The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.
-            </p>
-          </div>
-        </article>
+    <section class="card" aria-labelledby="s12">
+      <h2 id="s12"><span class="n">12</span>Changes and contact</h2>
+      <p>This policy describes version 3.0 of the game and later. Earlier versions had no ads and no coins; they used Apple’s purchases and Game Center.</p>
+      <p>If this policy changes, the new version will be published on this page with a new date. If a change is important, the game or its App Store page will say so.</p>
+      <p>Write to us at <!--email_off--><a href="mailto:devpaulcrp@gmail.com">devpaulcrp@gmail.com</a><!--/email_off-->.</p>
+      <p class="note">By installing or playing Neura Rush you confirm that you have read this policy. Use of the game is also covered by Apple’s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">standard licence agreement</a>.</p>
+    </section>
+  </main>
 
-        <article class="card">
-          <div class="hd"><h3>Changes</h3></div>
-          <div class="bd">
-            <p>
-              This Privacy Policy may be updated from time to time for any reason.
-              The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy.
-              You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="hd"><h3>Your Consent</h3></div>
-          <div class="bd">
-            <p>
-              By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.
-            </p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="hd"><h3>Contact Us</h3></div>
-          <div class="bd">
-            <p>
-              If you have any questions regarding privacy while using the Application, or have questions about the practices,
-              please contact the Service Provider via email at
-              <a href="mailto:neurarushapp@gmail.com">neurarushapp@gmail.com</a>.
-            </p>
-          </div>
-        </article>
-      </section>
-
-      <footer>
-        © <span id="y"></span> NeuraRush. All rights reserved.
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <footer>
+    <img src="images/neurarush/neura-wink.png" width="240" height="269" alt="Neura, the mascot of Neura Rush" />
+    <p>Neura Rush · © 2026 PAUL CRP - App Development Studio · <a href="https://paulcrp.com">paulcrp.com</a></p>
+  </footer>
 </body>
 </html>
