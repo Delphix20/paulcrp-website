@@ -136,9 +136,9 @@ An all-in-one motion dashboard for driving, cycling, flying, sailing and walking
 - Category: Navigation
 - Price: Free download
 
-### 13. NeuraRush
+### 13. Neura Rush
 
-Brain-boosting mini games that challenge memory, reflexes and problem-solving abilities through quick, engaging sessions.
+A quick daily workout for your mind. Neura Rush brings together 24 fast mini games across six skills: memory, focus, speed, logic, math and words. Each day a new workout lines up games from different skills, and your NeuraScore and your streak grow as you play. Take on the Daily Challenge with the same questions for everyone, or pick any game in the Arcade and see how far three lives take you, with Neura, a cheerful little brain, cheering you on.
 
 - Canonical page: https://paulcrp.com/apps/neurarush/
 - App Store: https://apps.apple.com/app/neurarush-brain-boost-games/id6746837300
@@ -178,10 +178,10 @@ A cute, cozy animal puzzle in a hand-made paper look. Tap two or more matching a
 
 ### 17. Bouncy Fruits
 
-Smash bouncing fruits while avoiding tricky decoys, mastering combos, using shields and progressing through immersive levels.
+Drop the fruits, merge two of a kind and watch them grow, all the way up to the giant watermelon. The twist: the jar stands on a trampoline. When it gets crowded, hit BOUNCE to shake every fruit, bring twins together and set off a juicy chain of merges. Play an endless Classic jar, a Journey of 200 levels across ten orchards with frozen fruits, low gravity and rainbow fruits, or the Daily Jar, the same for every player with a new twist each day. Eleven cute fruits with expressive faces and cheerful music for every orchard make each drop feel good.
 
 - Canonical page: https://paulcrp.com/apps/bouncy-fruits/
-- App Store: https://apps.apple.com/app/bouncy-fruits-tap-smash-frenzy/id6751171271
+- App Store: https://apps.apple.com/app/bouncy-fruits-fruit-merge/id6751171271
 - Platform: iOS
 - Category: Games
 - Price: Free download

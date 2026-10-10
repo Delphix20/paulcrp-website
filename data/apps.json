@@ -146,9 +146,10 @@
   {
     "slug": "neurarush",
     "anchor": "neurarush-card",
-    "name": "NeuraRush - 20 Mini Games",
-    "shortName": "NeuraRush",
-    "description": "Brain-boosting mini games that challenge memory, reflexes and problem-solving abilities through quick, engaging sessions.",
+    "name": "Neura Rush: Brain Puzzle Games",
+    "subtitle": "Memory, Logic, Focus & Math",
+    "shortName": "Neura Rush",
+    "description": "A quick daily workout for your mind. Neura Rush brings together 24 fast mini games across six skills: memory, focus, speed, logic, math and words. Each day a new workout lines up games from different skills, and your NeuraScore and your streak grow as you play. Take on the Daily Challenge with the same questions for everyone, or pick any game in the Arcade and see how far three lives take you, with Neura, a cheerful little brain, cheering you on.",
     "category": "GameApplication",
     "genre": "Games",
     "image": "neurarush-icon",
@@ -217,13 +218,15 @@
   {
     "slug": "bouncy-fruits",
     "anchor": "bouncyfruits-card",
-    "name": "Bouncy Fruits Tap Smash Frenzy",
+    "name": "Bouncy Fruits: Fruit Merge",
+    "subtitle": "Watermelon Game: Drop & Bounce",
     "shortName": "Bouncy Fruits",
-    "description": "Smash bouncing fruits while avoiding tricky decoys, mastering combos, using shields and progressing through immersive levels.",
+    "description": "Drop the fruits, merge two of a kind and watch them grow, all the way up to the giant watermelon. The twist: the jar stands on a trampoline. When it gets crowded, hit BOUNCE to shake every fruit, bring twins together and set off a juicy chain of merges. Play an endless Classic jar, a Journey of 200 levels across ten orchards with frozen fruits, low gravity and rainbow fruits, or the Daily Jar, the same for every player with a new twist each day. Eleven cute fruits with expressive faces and cheerful music for every orchard make each drop feel good.",
     "category": "GameApplication",
     "genre": "Games",
     "image": "bouncyfruits-icon",
-    "appStoreUrl": "https://apps.apple.com/app/bouncy-fruits-tap-smash-frenzy/id6751171271"
+    "appStoreUrl": "https://apps.apple.com/app/bouncy-fruits-fruit-merge/id6751171271",
+    "imageVersion": "20261010"
   },
   {
     "slug": "pop-pop-fruits",
