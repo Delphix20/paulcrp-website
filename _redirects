@@ -3,5 +3,7 @@
 /elements.html / 301
 /viento/index.html /viento/ 301
 /viento /viento/ 301
+/apps/world-football-cup-2026/* /apps/matchflare/ 301
+/apps/world-football-cup-2026 /apps/matchflare/ 301
 /apps/:slug/index.html /apps/:slug/ 301
 /apps/:slug /apps/:slug/ 301

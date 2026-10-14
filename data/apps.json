@@ -34,10 +34,10 @@
     "appStoreUrl": "https://apps.apple.com/app/glp1-peptide-tracker-doseplan/id6782329639"
   },
   {
-    "slug": "world-football-cup-2026",
-    "anchor": "worldfootballcup-card",
+    "slug": "matchflare",
+    "anchor": "matchflare-card",
     "name": "MatchFlare: Live Football",
-    "subtitle": "Soccer Scores & Goal Alerts",
+    "subtitle": "Football Scores & Goal Alerts",
     "shortName": "MatchFlare",
     "description": "A fast, clean football app with live scores, goal alerts, line-ups, tables and news from 60+ leagues and cups. Follow your teams and players, get an alert the moment they score, keep a match on your Lock Screen and in the Dynamic Island, and add live-score widgets to your Home Screen. No ads, no account.",
     "category": "SportsApplication",

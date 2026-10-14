@@ -10,7 +10,7 @@ const short = {
   'you-become': 'Daily motivation, focused on you.',
   'water-fasting-beyond': 'Prepare, track, and reflect on your fasting routine.',
   'doseplan': 'Keep doses, reminders, and progress in one place.',
-  'world-football-cup-2026': 'Live scores and goal alerts from 60+ leagues.',
+  'matchflare': 'Live scores and goal alerts from 60+ leagues.',
   'alma-daily-balance-score': 'A little check-in. A clearer picture of your day.',
   'wealthboost': 'Build better money habits, one day at a time.',
   'viento': 'A clearer forecast. A calmer start to your day.',
@@ -64,12 +64,12 @@ function head(title, description, canonical, graph, social = '/images/social-car
 function card(app) {
   return '<article class="app-row" id="' + app.anchor + '"><a class="row-icon" href="/apps/' + app.slug + '/" aria-label="Explore ' + e(app.name) + '">' + icon(app, 64) + '</a><div class="row-copy"><p class="category">' + e(app.genre) + '</p><h3><a href="/apps/' + app.slug + '/">' + e(app.name) + arrow + '</a></h3><p class="row-description">' + e(tagline(app)) + '</p></div><a class="store-link" href="' + app.appStoreUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Get ' + e(app.name) + ' on the App Store">' + apple + '<span>Get</span></a></article>';
 }
-const galleryLabels = { 'water-fasting-beyond': 'Water Fasting', 'world-football-cup-2026': 'MatchFlare', 'my-work-shift-planner': 'My Work Shift', 'my-nurse-shift-planner': 'My Nurse Shift' };
-const galleryApps = apps.filter(app => app.slug !== 'world-football-cup-2026');
-const footballApp = apps.find(app => app.slug === 'world-football-cup-2026');
+const galleryLabels = { 'water-fasting-beyond': 'Water Fasting', 'matchflare': 'MatchFlare', 'my-work-shift-planner': 'My Work Shift', 'my-nurse-shift-planner': 'My Nurse Shift' };
+const galleryApps = apps.filter(app => app.slug !== 'matchflare');
+const footballApp = apps.find(app => app.slug === 'matchflare');
 if (footballApp) galleryApps.splice(galleryApps.findIndex(app => app.slug === 'dash-pal') + 1, 0, footballApp);
 const gallery = '<section class="icon-showcase container" aria-label="Explore the app and game collection"><div class="icon-gallery"><div class="gallery-top"><p class="eyebrow">THE COLLECTION</p><span>' + apple + '<span class="gallery-platform-text">iPhone &amp; iPad</span></span></div><div class="collection-carousel" role="region" aria-roledescription="carousel" aria-label="App and game collection"><button class="carousel-arrow carousel-prev" type="button" aria-label="Show previous apps" aria-controls="collection-track">' + arrow + '</button><div class="shelf-scroll" id="collection-track" role="group" tabindex="0" aria-label="All ' + apps.length + ' apps and games. Swipe or use the arrow keys to explore."><div class="icon-shelf">' + galleryApps.map(app => '<a class="gallery-link" href="/apps/' + app.slug + '/" aria-label="Explore ' + e(display(app)) + '">' + icon(app, 96, 'showcase-icon') + '<span>' + e(galleryLabels[app.slug] || display(app)) + '</span></a>').join('') + '</div></div><button class="carousel-arrow carousel-next" type="button" aria-label="Show next apps" aria-controls="collection-track">' + arrow + '</button></div><div class="gallery-bottom"><p>Made for your day.<span class="shelf-hint">Swipe or use the arrows to explore.</span><span class="hover-hint">Hover at either edge to explore.</span></p><a class="text-link" href="#apps">Explore the collection ' + arrow + '</a></div></div></section>';
-const catalog = apps.filter(app => app.category !== 'GameApplication' && app.slug !== 'world-football-cup-2026');
+const catalog = apps.filter(app => app.category !== 'GameApplication' && app.slug !== 'matchflare');
 if (footballApp) catalog.push(footballApp);
 const games = apps.filter(app => app.category === 'GameApplication');
 const graph = { '@context': 'https://schema.org', '@graph': [
@@ -85,7 +85,7 @@ gallery +
 '<section class="about-section container" id="about"><div class="about-copy"><p class="eyebrow">INDEPENDENTLY MADE</p><h2>Good ideas.<br>Thoughtfully built.</h2><p>PAUL CRP is an independent app studio creating useful tools and playful experiences for iPhone and iPad. Each app starts with a simple idea: make a small part of everyday life a little better.</p><div class="studio-websites-group"><p class="studio-websites-intro">Discover more on our dedicated app websites.</p><nav class="studio-websites" aria-label="App websites"><a class="website-viento" href="https://vientoweather.com/" target="_blank" rel="noopener noreferrer"><span>vientoweather.com</span>' + arrow + '</a><a class="website-shift" href="https://myshiftplanner.app/" target="_blank" rel="noopener noreferrer"><span>myshiftplanner.app</span>' + arrow + '</a><a class="website-wealthboost" href="https://wealthboost.app/" target="_blank" rel="noopener noreferrer"><span>wealthboost.app</span>' + arrow + '</a><a class="website-proscan" href="https://proscanpdf.com/" target="_blank" rel="noopener noreferrer"><span>proscanpdf.com</span>' + arrow + '</a></nav></div></div></section>' +
 '<section class="contact-section container" id="contact"><div><h2>A question, an idea, a hello?</h2><p>Feedback and fresh ideas are always welcome.</p></div><a class="button" href="mailto:devpaulcrp@gmail.com">Get in touch ' + arrow + '</a></section></main>' + footer() + '</body></html>\n';
 await writeFile(path.join(root, 'index.html'), home);
-const privacy = { 'you-become': 'youbecome', 'water-fasting-beyond': 'waterfastingbeyond', 'doseplan': 'doseplan', 'world-football-cup-2026': 'matchflare', 'alma-daily-balance-score': 'alma', 'viento': 'viento', 'my-work-shift-planner': 'myworkshiftplanner', 'my-nurse-shift-planner': 'mynurseshiftplanner', 'proscan-pdf': 'proscanpdf', 'eye-color-cam': 'eyecolorcam', 'dash-pal': 'dashpal', 'neurarush': 'neurarush', 'cyphre': 'cyphre', 'pop-pop-aliens': 'poppopaliens', 'pop-pop-fruits': 'poppopfruits', 'pop-pop-piggies': 'poppoppiggies', 'bouncy-fruits': 'bouncyfruits' };
+const privacy = { 'you-become': 'youbecome', 'water-fasting-beyond': 'waterfastingbeyond', 'doseplan': 'doseplan', 'matchflare': 'matchflare', 'alma-daily-balance-score': 'alma', 'viento': 'viento', 'my-work-shift-planner': 'myworkshiftplanner', 'my-nurse-shift-planner': 'mynurseshiftplanner', 'proscan-pdf': 'proscanpdf', 'eye-color-cam': 'eyecolorcam', 'dash-pal': 'dashpal', 'neurarush': 'neurarush', 'cyphre': 'cyphre', 'pop-pop-aliens': 'poppopaliens', 'pop-pop-fruits': 'poppopfruits', 'pop-pop-piggies': 'poppoppiggies', 'bouncy-fruits': 'bouncyfruits' };
 for (const app of apps) {
   const canonical = 'https://paulcrp.com/apps/' + app.slug + '/';
   const feature = features.find(f => f.slug === app.slug);
@@ -95,6 +95,22 @@ for (const app of apps) {
   const dir = path.join(root, 'apps', app.slug);
   await mkdir(dir, { recursive: true });
   await writeFile(path.join(dir, 'index.html'), html);
+}
+
+// Pages that moved. GitHub Pages cannot answer with a redirect, so the old address keeps a page
+// that sends visitors on at once and tells search engines where the page lives now.
+const moved = { 'world-football-cup-2026': 'matchflare' };
+for (const [from, to] of Object.entries(moved)) {
+  const target = apps.find(app => app.slug === to);
+  const url = '/apps/' + to + '/';
+  const page = '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+    + '<title>' + e(target ? target.name : to) + ' — PAUL CRP</title><meta name="robots" content="noindex">'
+    + '<link rel="canonical" href="https://paulcrp.com' + url + '"><meta http-equiv="refresh" content="0; url=' + url + '">'
+    + '<script>location.replace(' + JSON.stringify(url) + ' + location.search + location.hash);</script></head>'
+    + '<body><p>This page has moved to <a href="' + url + '">' + e(target ? target.name : to) + '</a>.</p></body></html>\n';
+  const dir = path.join(root, 'apps', from);
+  await mkdir(dir, { recursive: true });
+  await writeFile(path.join(dir, 'index.html'), page);
 }
 
 await writeFile(path.join(root, '404.html'), head('Page not found — PAUL CRP', 'Find your way back to the PAUL CRP app collection.', 'https://paulcrp.com/404.html', { '@context':'https://schema.org', '@type':'WebPage', name:'Page not found' }).replace('index,follow,max-image-preview:large', 'noindex,follow') + '<body>' + header(false) + '<main id="main-content" class="hero container"><p class="eyebrow">404 · PAGE NOT FOUND</p><h1>A little off track.</h1><p class="hero-description">Let’s get you back to the apps.</p><div class="hero-actions"><a class="button" href="/">Back to home ' + arrow + '</a></div></main>' + footer() + '</body></html>');

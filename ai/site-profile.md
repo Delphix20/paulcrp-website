@@ -47,7 +47,7 @@ Paul CRP creates thoughtful iOS applications, smart tools, wellness and producti
 ### MatchFlare: Live Football
 
 - **Description:** A fast, clean football app with live scores, goal alerts, line-ups, tables and news from 60+ leagues and cups. Follow your teams and players, get an alert the moment they score, keep a match on your Lock Screen and in the Dynamic Island, and add live-score widgets to your Home Screen. No ads, no account. Formerly World Football Cup 2026.
-- **Canonical page:** https://paulcrp.com/apps/world-football-cup-2026/
+- **Canonical page:** https://paulcrp.com/apps/matchflare/
 - **App Store:** https://apps.apple.com/app/matchflare-live-football/id6775471221
 - **Operating system:** iOS
 - **Category:** Sports
