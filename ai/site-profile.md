@@ -44,11 +44,11 @@ Paul CRP creates thoughtful iOS applications, smart tools, wellness and producti
 - **Category:** Health & Fitness
 - **Price:** 0 USD
 
-### World Football Cup 2026
+### MatchFlare: Live Football
 
-- **Description:** A live tournament companion for following World Cup 2026 matches, scores, groups, fixtures, lineups, timelines, stats, alerts, and knockout paths in one engaging match-day hub.
+- **Description:** A fast, clean football app with live scores, goal alerts, line-ups, tables and news from 60+ leagues and cups. Follow your teams and players, get an alert the moment they score, keep a match on your Lock Screen and in the Dynamic Island, and add live-score widgets to your Home Screen. No ads, no account. Formerly World Football Cup 2026.
 - **Canonical page:** https://paulcrp.com/apps/world-football-cup-2026/
-- **App Store:** https://apps.apple.com/app/world-football-cup-2026/id6775471221
+- **App Store:** https://apps.apple.com/app/matchflare-live-football/id6775471221
 - **Operating system:** iOS
 - **Category:** Sports
 - **Price:** 0 USD
