@@ -210,7 +210,7 @@
 					</div>
 				<p class="hero-subtitle">Privacy Policy and Terms</p>
 			</div>
-			<p class="last-updated">Last updated: August 22, 2026</p>
+			<p class="last-updated">Last updated: October 15, 2026</p>
 
 			<p>This document explains how My Nurse Shift Planner handles your information, how subscriptions and payments work, and the terms that apply when you use the app.</p>
 
@@ -265,6 +265,15 @@
 				<li>The app does not guarantee delivery of every notification or alarm because delivery can depend on iOS settings, Focus modes, permissions, device state, and Apple system behavior</li>
 			</ul>
 
+			<h3>Apple Calendar (optional)</h3>
+			<p>If you turn on adding shifts to Apple Calendar and allow calendar access, My Nurse Shift Planner creates a separate calendar on your device and adds your upcoming working shifts to it as events. Each event can include the shift type, workplace name, start and end times, unit, your shift notes, and a link that opens the shift in the app. The app updates or removes these events when you change or delete shifts.</p>
+			<ul>
+				<li>Calendar events are created on your device through Apple's EventKit framework and are not sent to us, RevenueCat, or Mixpanel</li>
+				<li>The app only reads and changes events in the calendar it created for your shifts</li>
+				<li>If your calendars sync through iCloud or another calendar account, those events are handled by that calendar service</li>
+				<li>You can turn the feature off at any time and choose whether to keep or remove the calendar, and calendar access can be changed in iPhone Settings</li>
+			</ul>
+
 			<h3>Biometric lock</h3>
 			<p>If you enable the app lock feature, My Nurse Shift Planner may use Apple's local Face ID, Touch ID, or device passcode authentication system to protect access to the app. The app does not receive or store your biometric data.</p>
 
@@ -276,6 +285,13 @@
 				<li>Limited event properties, such as onboarding step, generic shift type, number of profiles, rotation pattern length, export format and period, selected currency code, subscription status, selected plan, product identifier, purchase or restore result, and the part of the app where an action began</li>
 			</ul>
 			<p>We do not send your name, role, workplace name, shift dates or times, pay rates or calculated pay amounts, notes, tags, units, patient or clinical information, generated CSV or PDF contents, or iCloud data to Mixpanel. Automatic event collection and IP-based geolocation are disabled in the app's Mixpanel configuration. Mixpanel is not used by us for advertising or tracking you across apps or websites owned by other companies.</p>
+
+			<h3>Apple Ads attribution</h3>
+			<p>To understand whether an install came from an Apple Ads (Apple Search Ads) campaign, the app uses Apple's AdServices framework on production App Store installs. AdServices creates an attribution token on your device that does not require App Tracking Transparency permission and does not include your advertising identifier. The app sends this token to Apple's attribution service, and RevenueCat may also use it to retrieve the same attribution result.</p>
+			<p>If Apple reports that the install came from an Apple Ads campaign, the result can include campaign, ad group, keyword, and ad identifiers. These campaign-level values may be stored on your device and associated with the pseudonymous App User ID in Mixpanel and RevenueCat so we can measure which campaigns lead to app usage and subscriptions. We do not store the token itself, and attribution is not used to track you across apps or websites owned by other companies.</p>
+
+			<h3>App Store country</h3>
+			<p>The app reads the country or region of your App Store account (the App Store storefront) through Apple's StoreKit framework. This is used to apply regional access, for example free full access in countries where App Store subscriptions are unavailable or where we offer the app for free. The storefront country is stored on your device; analytics only record the resulting access level, such as subscribed, trial, or regional free access.</p>
 
 			<h3>Subscription and purchase data</h3>
 			<p>My Nurse Shift Planner uses RevenueCat to manage subscription access and purchase lifecycle information. RevenueCat may process:</p>
@@ -295,9 +311,11 @@
 				<li>Apply rotation presets and show rotation summaries</li>
 				<li>Calculate estimated hours, overtime, gross pay, and monthly summaries</li>
 				<li>Schedule local reminders before upcoming shifts</li>
+				<li>Add your shifts to a separate calendar in Apple Calendar, if you turn this on</li>
 				<li>Generate monthly CSV and PDF reports</li>
 				<li>Restore or sync your app experience through iCloud if enabled</li>
-				<li>Operate subscriptions, restore purchases, and enforce access</li>
+				<li>Operate subscriptions, restore purchases, and enforce access, including regional free access based on your App Store country</li>
+				<li>Measure which Apple Ads campaigns lead to installs, app usage, and subscriptions</li>
 				<li>Understand onboarding completion, feature usage, paywall performance, purchases, and app engagement so we can improve the app</li>
 				<li>Maintain app reliability, stability, and support diagnostics</li>
 			</ul>
@@ -346,6 +364,8 @@
 				<li>StoreKit and the App Store for purchases and subscriptions</li>
 				<li>iCloud or CloudKit for sync, if enabled</li>
 				<li>UserNotifications and AlarmKit for local shift alerts</li>
+				<li>EventKit for adding shifts to Apple Calendar, if enabled</li>
+				<li>AdServices for Apple Ads attribution</li>
 				<li>LocalAuthentication for Face ID, Touch ID, or passcode app lock, if enabled</li>
 				<li><a href="https://www.revenuecat.com/privacy-policy" target="_blank" rel="noopener noreferrer">RevenueCat</a> for anonymous customer identifiers, purchase validation, subscription status, entitlements, restoration, and subscription analytics</li>
 				<li><a href="https://mixpanel.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Mixpanel</a> for pseudonymous product-usage and conversion analytics; the app is configured to send analytics events to Mixpanel's EU endpoint</li>
