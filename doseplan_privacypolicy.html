@@ -1,11 +1,13 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-	  <meta name="robots" content="noindex,follow,noarchive" />
-	  <meta name="referrer" content="strict-origin-when-cross-origin" />
-		<title>Privacy Policy and Terms - DosePlan</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex,follow,noarchive" />
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#2e1245" />
+		<title>Privacy Policy and Terms - DosePlan</title>
 		<style>
 			* {
 				margin: 0;
@@ -15,102 +17,322 @@
 
 			:root {
 				--bg: #f8f4e9;
-				--panel: rgba(255, 255, 255, 0.88);
+				--card: rgba(255, 255, 255, 0.84);
+				--card-border: rgba(255, 255, 255, 0.9);
 				--text: #1a1b2f;
-				--muted: #5d6170;
-				--green: #269d92;
-				--purple: #58167b;
+				--muted: #5d5470;
+				--violet: #58167b;
+				--teal: #249389;
+				--coral: #f25a27;
 				--rose: #b85c7a;
-				--sand: #e4d4b2;
-				--amber: #b88280;
-				--orange: #fc794f;
-				--water: #24a3a6;
-				--green-soft: rgba(38, 157, 146, 0.13);
-				--purple-soft: rgba(88, 22, 123, 0.12);
-				--rose-soft: rgba(184, 92, 122, 0.14);
-				--sand-soft: rgba(228, 212, 178, 0.30);
-				--orange-soft: rgba(252, 121, 79, 0.14);
-				--border: rgba(88, 22, 123, 0.16);
-				--green-border: rgba(38, 157, 146, 0.24);
-				--orange-border: rgba(252, 121, 79, 0.26);
+				--violet-soft: rgba(88, 22, 123, 0.08);
+				--teal-soft: rgba(36, 147, 137, 0.11);
+				--coral-soft: rgba(242, 90, 39, 0.09);
+				--rose-soft: rgba(184, 92, 122, 0.11);
+				--line: rgba(88, 22, 123, 0.12);
+				--shadow: 0 18px 50px rgba(46, 18, 69, 0.10);
+				--glow-teal: rgba(0, 158, 170, 0.16);
+				--glow-violet: rgba(88, 22, 123, 0.13);
+				--rounded: ui-rounded, "SF Pro Rounded", "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+				--body: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--bg: #14101c;
+					--card: rgba(34, 27, 46, 0.86);
+					--card-border: rgba(255, 255, 255, 0.07);
+					--text: #f2eef8;
+					--muted: #c7aee6;
+					--violet: #c08cf0;
+					--teal: #5fdccb;
+					--coral: #ff8a63;
+					--rose: #d98aa6;
+					--violet-soft: rgba(167, 123, 219, 0.12);
+					--teal-soft: rgba(45, 179, 166, 0.13);
+					--coral-soft: rgba(255, 138, 99, 0.11);
+					--rose-soft: rgba(217, 138, 166, 0.12);
+					--line: rgba(255, 255, 255, 0.09);
+					--shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+					--glow-teal: rgba(14, 140, 143, 0.20);
+					--glow-violet: rgba(107, 42, 147, 0.26);
+				}
+			}
+
+			html {
+				scroll-behavior: smooth;
+				-webkit-text-size-adjust: 100%;
 			}
 
 			body {
-				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+				font-family: var(--body);
+				font-size: 1.02rem;
 				line-height: 1.65;
 				color: var(--text);
+				background-color: var(--bg);
+				background-image:
+					radial-gradient(circle at 92% 30%, var(--glow-teal), transparent 34%),
+					radial-gradient(circle at 6% 62%, var(--glow-violet), transparent 32%),
+					radial-gradient(circle at 80% 92%, var(--glow-teal), transparent 30%);
+				background-attachment: fixed;
+			}
+
+			/* Hero, in the style of the App Store header */
+			.hero {
+				position: relative;
+				overflow: hidden;
+				color: #ffffff;
+				text-align: center;
+				padding: 3.4rem 1.25rem 4.6rem;
 				background:
-					radial-gradient(circle at 14% 8%, rgba(252, 121, 79, 0.16), transparent 28%),
-					radial-gradient(circle at 88% 16%, rgba(38, 157, 146, 0.16), transparent 30%),
-					radial-gradient(circle at 52% 38%, rgba(88, 22, 123, 0.14), transparent 34%),
-					radial-gradient(circle at 22% 82%, rgba(184, 92, 122, 0.12), transparent 30%),
-					linear-gradient(180deg, #fffaf2 0%, #f8f4e9 48%, #f4ead9 100%);
-				padding: 2rem 1rem;
+					radial-gradient(ellipse at 50% 18%, rgba(122, 47, 173, 0.75), transparent 60%),
+					radial-gradient(ellipse at 88% 100%, rgba(30, 147, 132, 0.55), transparent 55%),
+					radial-gradient(ellipse at 8% 4%, rgba(242, 90, 39, 0.22), transparent 45%),
+					linear-gradient(180deg, #2e1245 0%, #1e1030 58%, #130d1d 100%);
 			}
 
-			.container {
-				max-width: 940px;
-				margin: 0 auto;
-				background: var(--panel);
-				padding: 3rem;
-				border-radius: 26px;
-				box-shadow: 0 18px 54px rgba(26, 27, 47, 0.12);
-				border: 1px solid rgba(255, 255, 255, 0.74);
-				backdrop-filter: blur(14px);
+			.hero-icon {
+				display: block;
+				width: 104px;
+				height: 104px;
+				margin: 0 auto 1.15rem;
+				border-radius: 24px;
+				box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.10);
 			}
 
-			h1 {
-				color: var(--text);
-				font-size: 2.25rem;
-				margin-bottom: 0.35rem;
-				font-weight: 800;
+			.wordmark {
+				font-family: var(--rounded);
+				font-size: clamp(2.5rem, 7vw, 3.4rem);
+				font-weight: 900;
 				letter-spacing: -0.02em;
+				line-height: 1.05;
 			}
 
-			h2 {
-				color: var(--purple);
-				font-size: 1.55rem;
-				margin-top: 2rem;
-				margin-bottom: 1rem;
+			.wordmark .plan {
+				color: #6fe6d4;
+			}
+
+			.hero-title {
+				margin-top: 0.55rem;
+				font-family: var(--rounded);
+				font-size: clamp(1.15rem, 3.4vw, 1.45rem);
 				font-weight: 800;
+				color: rgba(255, 255, 255, 0.92);
+			}
+
+			.hero-date {
+				margin-top: 0.35rem;
+				font-size: 0.95rem;
+				color: rgba(255, 255, 255, 0.66);
+			}
+
+			.chips {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 0.55rem;
+				margin-top: 1.5rem;
+			}
+
+			.chip {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.4rem;
+				padding: 0.45rem 0.85rem;
+				border-radius: 999px;
+				font-family: var(--rounded);
+				font-size: 0.9rem;
+				font-weight: 800;
+				color: #ffffff;
+				background: rgba(255, 255, 255, 0.10);
+				border: 1px solid rgba(255, 255, 255, 0.20);
+			}
+
+			.chip::before {
+				content: "";
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background: #6fe6d4;
+			}
+
+			/* Page */
+			main {
+				max-width: 880px;
+				margin: -2.6rem auto 0;
+				padding: 0 1rem 3rem;
+				position: relative;
+			}
+
+			.card {
+				background: var(--card);
+				border: 1px solid var(--card-border);
+				border-radius: 28px;
+				box-shadow: var(--shadow);
+				padding: 2rem 2.2rem;
+				margin-bottom: 1.1rem;
+				-webkit-backdrop-filter: blur(18px);
+				backdrop-filter: blur(18px);
+			}
+
+			.intro p:last-child,
+			.card p:last-child,
+			.card ul:last-child {
+				margin-bottom: 0;
+			}
+
+			.eyebrow {
+				font-family: var(--rounded);
+				font-size: 0.82rem;
+				font-weight: 800;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: var(--teal);
+				margin-bottom: 0.9rem;
+			}
+
+			/* At a glance */
+			.glance {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 0.75rem;
+				margin: 0.2rem 0 1.4rem;
+			}
+
+			.glance-item {
+				padding: 1rem 1rem 1.05rem;
+				border-radius: 20px;
+				background: var(--violet-soft);
+				border: 1px solid var(--line);
+			}
+
+			.glance-item:nth-child(3n + 2) {
+				background: var(--teal-soft);
+			}
+
+			.glance-item:nth-child(3n) {
+				background: var(--rose-soft);
+			}
+
+			.glance-item svg {
+				width: 26px;
+				height: 26px;
+				color: var(--violet);
+				margin-bottom: 0.45rem;
+			}
+
+			.glance-item:nth-child(3n + 2) svg {
+				color: var(--teal);
+			}
+
+			.glance-item:nth-child(3n) svg {
+				color: var(--rose);
+			}
+
+			.glance-item strong {
+				display: block;
+				font-family: var(--rounded);
+				font-size: 1.02rem;
+				font-weight: 800;
+				color: var(--text);
+				line-height: 1.3;
+				margin-bottom: 0.2rem;
+			}
+
+			.glance-item span {
+				display: block;
+				font-size: 0.9rem;
+				line-height: 1.45;
+				color: var(--muted);
+			}
+
+			/* Contents */
+			.toc {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+
+			.toc a {
+				display: inline-block;
+				padding: 0.42rem 0.8rem;
+				border-radius: 999px;
+				font-family: var(--rounded);
+				font-size: 0.9rem;
+				font-weight: 800;
+				color: var(--violet);
+				background: var(--violet-soft);
+				border: 1px solid var(--line);
+				text-decoration: none;
+			}
+
+			.toc a:hover {
+				background: var(--teal-soft);
+				color: var(--teal);
+				text-decoration: none;
+			}
+
+			/* Text */
+			h2 {
+				display: flex;
+				align-items: center;
+				gap: 0.7rem;
+				font-family: var(--rounded);
+				font-size: 1.55rem;
+				font-weight: 900;
 				letter-spacing: -0.01em;
+				line-height: 1.2;
+				color: var(--violet);
+				margin-bottom: 1rem;
+				scroll-margin-top: 1.2rem;
+			}
+
+			h2 .num {
+				flex: none;
+				display: inline-grid;
+				place-items: center;
+				width: 2rem;
+				height: 2rem;
+				border-radius: 11px;
+				font-size: 1rem;
+				color: #ffffff;
+				background: linear-gradient(160deg, #7a2fad, #4a0f6a);
 			}
 
 			h3 {
-				color: var(--text);
+				font-family: var(--rounded);
 				font-size: 1.12rem;
-				margin-top: 1.4rem;
-				margin-bottom: 0.75rem;
 				font-weight: 800;
+				color: var(--text);
+				margin: 1.5rem 0 0.5rem;
+			}
+
+			h2 + h3 {
+				margin-top: 0.4rem;
 			}
 
 			p {
-				margin-bottom: 1rem;
-				text-align: justify;
-				color: var(--text);
-			}
-
-			.last-updated {
-				color: var(--muted);
-				font-style: italic;
-				margin-bottom: 2rem;
-				text-align: center;
+				margin-bottom: 0.9rem;
 			}
 
 			ul {
-				margin-left: 1.5rem;
-				margin-bottom: 1rem;
+				margin: 0 0 1rem 1.25rem;
 			}
 
 			li {
-				margin-bottom: 0.55rem;
-				color: var(--text);
+				margin-bottom: 0.45rem;
+				padding-left: 0.2rem;
+			}
+
+			li::marker {
+				color: var(--teal);
 			}
 
 			a {
-				color: var(--purple);
+				color: var(--violet);
+				font-weight: 700;
 				text-decoration: none;
-				font-weight: 800;
+				overflow-wrap: anywhere;
 			}
 
 			a:hover {
@@ -118,364 +340,404 @@
 			}
 
 			strong {
-				color: var(--purple);
 				font-weight: 800;
 			}
 
-			.brand {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 0;
-				margin-bottom: 8px;
+			.notice {
+				padding: 1rem 1.15rem;
+				border-radius: 20px;
+				margin: 0 0 0.8rem;
+				border: 1px solid var(--line);
 			}
 
-			.brand-dose {
-				color: var(--purple);
+			.notice strong {
+				color: var(--violet);
 			}
 
-			.brand-plan {
-				color: var(--green);
+			.notice.safety {
+				background: var(--coral-soft);
+				border-color: rgba(242, 90, 39, 0.24);
 			}
 
-			.hero-subtitle {
-				margin: 0;
-				font-size: 1.25rem;
-				color: var(--purple);
-				font-weight: 800;
-				text-align: center;
+			.notice.safety strong {
+				color: var(--coral);
 			}
 
-			.important-notice,
-			.warning-notice,
-			.local-notice,
-			.health-notice {
-				padding: 1rem 1.1rem;
-				border-radius: 18px;
-				margin: 1rem 0;
-				color: var(--text);
+			.notice.local {
+				background: var(--teal-soft);
+				border-color: rgba(36, 147, 137, 0.24);
 			}
 
-			.important-notice {
-				background: var(--purple-soft);
-				border: 1px solid var(--border);
+			.notice.local strong {
+				color: var(--teal);
 			}
 
-			.warning-notice {
-				background: var(--orange-soft);
-				border: 1px solid var(--orange-border);
+			.notice.info {
+				background: var(--violet-soft);
 			}
 
-			.local-notice {
-				background: var(--green-soft);
-				border: 1px solid var(--green-border);
+			.contact {
+				background:
+					radial-gradient(ellipse at 100% 0%, rgba(36, 147, 137, 0.20), transparent 55%),
+					var(--card);
 			}
 
-			.health-notice {
-				background: var(--rose-soft);
-				border: 1px solid rgba(184, 92, 122, 0.28);
-			}
-
-			.contact-info {
-				background: var(--green-soft);
-				padding: 1.4rem;
-				border-radius: 18px;
-				margin-top: 2rem;
-				border: 1px solid var(--green-border);
-			}
-
-			.contact-info h3 {
-				margin-top: 0;
-			}
-
-			.section-divider {
-				height: 2px;
-				background: linear-gradient(90deg, transparent, rgba(88, 22, 123, 0.54), rgba(38, 157, 146, 0.54), transparent);
-				margin: 2.4rem 0;
-			}
-
-			.badge-row {
+			.contact-row {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 0.65rem;
-				justify-content: center;
-				margin: 1.4rem 0 0;
+				gap: 0.6rem;
+				margin: 0.4rem 0 1rem;
 			}
 
-			.badge {
-				display: inline-flex;
-				align-items: center;
+			.contact-row a {
+				display: inline-block;
+				padding: 0.65rem 1.1rem;
 				border-radius: 999px;
-				padding: 0.5rem 0.75rem;
-				background: rgba(255, 255, 255, 0.52);
-				border: 1px solid rgba(255, 255, 255, 0.68);
-				color: var(--purple);
+				font-family: var(--rounded);
 				font-weight: 800;
-				font-size: 0.92rem;
+				color: #ffffff;
+				background: linear-gradient(160deg, #7a2fad, #58167b);
+				text-decoration: none;
 			}
 
-			@media (max-width: 768px) {
-				body {
-					padding: 1rem 0.55rem;
+			.contact-row a.secondary {
+				color: var(--violet);
+				background: var(--violet-soft);
+				border: 1px solid var(--line);
+			}
+
+			footer {
+				text-align: center;
+				color: var(--muted);
+				font-size: 0.9rem;
+				padding: 0.6rem 1rem 0;
+			}
+
+			@media (max-width: 760px) {
+				.hero {
+					padding: 2.6rem 1rem 4.2rem;
 				}
 
-				.container {
-					padding: 1.45rem;
-					margin: 0.5rem;
-					border-radius: 22px;
+				.hero-icon {
+					width: 88px;
+					height: 88px;
+					border-radius: 20px;
 				}
 
-				h1 {
-					font-size: 1.72rem;
+				main {
+					padding: 0 0.75rem 2.4rem;
+				}
+
+				.card {
+					padding: 1.4rem 1.25rem;
+					border-radius: 24px;
+				}
+
+				.glance {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
 				}
 
 				h2 {
-					font-size: 1.35rem;
+					font-size: 1.32rem;
 				}
+			}
 
-				p {
-					text-align: left;
+			@media (max-width: 420px) {
+				.glance {
+					grid-template-columns: minmax(0, 1fr);
 				}
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<div style="text-align: center; margin-bottom: 2rem;">
-				<div class="brand">
-					<h1 style="margin: 0;"><span class="brand-dose">Dose</span><span class="brand-plan">Plan</span></h1>
+		<header class="hero">
+			<img class="hero-icon" src="data:image/png;base64,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" width="104" height="104" alt="DosePlan app icon" />
+			<h1 class="wordmark">Dose<span class="plan">Plan</span></h1>
+			<p class="hero-title">Privacy Policy and Terms</p>
+			<p class="hero-date">Last updated: October 20, 2026</p>
+			<div class="chips">
+				<span class="chip">No account</span>
+				<span class="chip">Your data stays on your device</span>
+				<span class="chip">No ads or tracking</span>
+				<span class="chip">Not medical advice</span>
+			</div>
+		</header>
+
+		<main>
+			<section class="card intro">
+				<p class="eyebrow">At a glance</p>
+				<div class="glance">
+					<div class="glance-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" /><path d="M10.5 18.5h3" /></svg>
+						<strong>Stored on your device</strong>
+						<span>Your treatments, logs, photos and reports are saved on your iPhone or iPad. We run no servers that receive them.</span>
+					</div>
+					<div class="glance-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4.5 21a7.5 7.5 0 0 1 15 0" /><path d="M3 3l18 18" /></svg>
+						<strong>No account, no tracking</strong>
+						<span>No sign-up, no analytics, no advertising and no third-party tracking tools.</span>
+					</div>
+					<div class="glance-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2Z" /></svg>
+						<strong>Apple Health is read-only</strong>
+						<span>If you connect it, DosePlan reads your steps and body weight. It never writes to Apple Health.</span>
+					</div>
+					<div class="glance-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7.5" /><rect x="2.5" y="2.5" width="19" height="19" rx="5" /></svg>
+						<strong>Your prescription, your entries</strong>
+						<span>DosePlan records the doses you enter. It does not calculate doses or suggest changes.</span>
+					</div>
+					<div class="glance-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2.5 7.5 2.5 7.5h-17S6 15 6 9Z" /><path d="M10 20a2.2 2.2 0 0 0 4 0" /></svg>
+						<strong>Reminders made on your device</strong>
+						<span>Dose, refill and trial reminders are local notifications scheduled by your iPhone.</span>
+					</div>
+					<div class="glance-item">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3" /><path d="M2.5 10h19" /><path d="M6.5 15h4" /></svg>
+						<strong>Payments through Apple</strong>
+						<span>Subscriptions are billed and managed by Apple. We never see your payment details.</span>
+					</div>
 				</div>
-				<p class="hero-subtitle">Privacy Policy and Terms</p>
-				<div class="badge-row">
-					<span class="badge">GLP-1 tracker</span>
-					<span class="badge">Personal medication logging</span>
-					<span class="badge">Not medical advice</span>
+
+				<p>This page explains what DosePlan stores, how it uses that information, how subscriptions work, and the terms that apply when you use the app. DosePlan helps you organize a GLP-1 or other medication routine that a clinician has already prescribed: dose reminders and logs, refill reminders, symptom check-ins, daily routine targets, weight and progress photos, widgets, and a PDF report for your appointments. By using DosePlan, you agree to the practices and terms described here.</p>
+			</section>
+
+			<section class="card">
+				<p class="eyebrow">Before you start</p>
+				<div class="notice safety">
+					<strong>Medical safety notice.</strong> DosePlan does not prescribe or recommend medication, does not calculate or recommend doses, dose changes, concentrations or injection volumes, does not diagnose symptoms, and does not tell you when to start, stop, increase, decrease, skip or combine any medication. Always follow your prescription label and the instructions from your doctor, pharmacist or other licensed clinician. Contact a clinician for medical questions and seek emergency help for urgent symptoms.
 				</div>
-			</div>
-
-			<p class="last-updated">Last updated: June 25, 2026</p>
-
-			<p>This document explains how DosePlan handles your information, how subscriptions and payments work, and the terms that apply when you use the app.</p>
-
-			<p>DosePlan is a personal tracking app designed to help you organize information about an already prescribed GLP-1 or other medication routine, including treatment schedules, dose logs, side-effect check-ins, daily routine targets, inventory and refill reminders, progress photos, weight entries, widgets, and doctor report exports. By using DosePlan, you agree to the practices and terms described below.</p>
-
-			<div class="important-notice">
-				<strong>Important:</strong> DosePlan is a personal tracking and organization tool. It is not a medical device, clinic, pharmacy, telehealth service, emergency service, diagnostic tool, treatment service, or substitute for a licensed clinician, pharmacist, medication label, medication guide, or official care plan.
-			</div>
-
-			<div class="warning-notice">
-				<strong>Medical safety notice:</strong> DosePlan does not prescribe medication, recommend medication, recommend doses, recommend dose changes, diagnose symptoms, determine whether a treatment is appropriate, determine whether a side effect is serious, or tell you when to start, stop, increase, decrease, skip, restart, or combine any medication. Always follow your prescription label and instructions from your doctor, pharmacist, or other licensed clinician. Contact a clinician promptly for medical questions and seek emergency help for urgent symptoms.
-			</div>
-
-			<div class="local-notice">
-				<strong>Local-first design:</strong> DosePlan is designed to load from data stored on your device first. If iCloud sync is available and enabled for your Apple account, selected app data may sync through Apple's private iCloud services associated with your Apple ID.
-			</div>
-
-			<div class="health-notice">
-				<strong>Health information:</strong> DosePlan may contain health-related information that you choose to enter, import from Apple Health, or include in reports. Treat exported reports, screenshots, and shared files as sensitive information.
-			</div>
-
-			<h2>Interpretation and Definitions</h2>
-
-			<h3>Definitions</h3>
-			<p>For the purposes of this document:</p>
-			<p><strong>Application</strong> or <strong>App</strong> refers to DosePlan, also described as GLP-1 Tracker - DosePlan or GLP-1 Tracker: DosePlan.</p>
-			<p><strong>Company</strong>, <strong>we</strong>, <strong>us</strong>, or <strong>our</strong> refers to DosePlan and its developer.</p>
-			<p><strong>Device</strong> means any device that can access the Application, such as an iPhone or iPad.</p>
-			<p><strong>Health Data</strong> means health, wellness, medication, routine, symptom, photo, weight, activity, or related information that you enter, import, store, or generate in DosePlan.</p>
-			<p><strong>Personal Data</strong> means information that relates to an identified or identifiable individual.</p>
-			<p><strong>Service</strong> refers to the Application.</p>
-			<p><strong>Subscription</strong> means an auto-renewable subscription purchased through Apple's in-app purchase system.</p>
-			<p><strong>You</strong> means the individual using the Service.</p>
-
-			<h2>What DosePlan Collects and Stores</h2>
-
-			<h3>Data you enter or create</h3>
-			<p>DosePlan may store information that you provide, generate, or save inside the app, including:</p>
-			<ul>
-				<li>Treatment entries, including medication or compound name, form such as pen, pill, or vial, dose amount, dose unit, frequency, scheduled time, treatment start date, next dose date, dose reminder settings, and related notes.</li>
-				<li>Dose logs, including date, time, medication, form, dose, injection or application site when applicable, missed or logged status, and optional notes.</li>
-				<li>Inventory information, including remaining supply, refill reminders, refill timing, vial details, BAC water values, concentration or draw-volume calculations, and refill history.</li>
-				<li>Clinician plan or treatment timeline information that you choose to enter for personal reference.</li>
-				<li>Routine targets and logs, such as protein, water, fiber, movement, daily care completion, and pinned support routine checklists.</li>
-				<li>Symptom check-ins, severity choices, no-symptom entries, dates, and notes.</li>
-				<li>Weight logs, goal weight, Health-imported weight entries, chart selections, and related progress information.</li>
-				<li>Progress photos, photo tags, photo dates, optional notes, and associated weight values when available.</li>
-				<li>Notification preferences, unit preferences, onboarding choices, widget snapshot data, and other app settings.</li>
-				<li>Generated PDF doctor reports before you save, share, or export them.</li>
-			</ul>
-
-			<h3>Apple Health data</h3>
-			<p>If you grant permission, DosePlan may read selected Apple Health data, such as step count and body weight, to display movement progress and import weight entries. DosePlan does not request Apple Health access unless you choose to connect it. You can change or revoke Apple Health permissions at any time in the Health app or iOS Settings.</p>
-
-			<p>DosePlan does not use Apple Health data for advertising, marketing, or sale to third parties. DosePlan does not write false or intentionally inaccurate data to Apple Health. DosePlan currently uses Apple Health data only to provide functionality directly to you inside the app.</p>
-
-			<h3>Photos and photo library access</h3>
-			<p>If you add progress photos, DosePlan may access the camera or photo picker only after you initiate that action and grant the relevant permission. Progress photos are used to help you compare your own progress over time. They are not reviewed by us, sold by us, or used for advertising.</p>
-
-			<h3>Notifications</h3>
-			<p>If you allow notifications, DosePlan may schedule local reminders for doses and refills based on the information you enter. Notifications are generated by your device. They are reminders only and may be delayed, silenced, missed, or unavailable depending on your device settings, Focus modes, battery state, network state, operating system behavior, or other factors. You remain responsible for following your medication label and clinician instructions.</p>
-
-			<h3>Subscriptions and purchase data</h3>
-			<p>DosePlan uses Apple's StoreKit and App Store systems to process subscriptions, purchases, trials, renewals, cancellations, refunds, and restore purchases. We do not receive your full payment card number. Apple may provide transaction status information needed to unlock paid features and manage access.</p>
-
-			<h3>Technical and usage data</h3>
-			<p>DosePlan may use technical information provided by Apple or your device to operate the app, process subscriptions, diagnose crashes, support widgets, store settings, and keep the app functioning. DosePlan does not currently include third-party advertising SDKs or third-party behavioral advertising.</p>
-
-			<h2>How Data Is Stored</h2>
-
-			<h3>On-device storage</h3>
-			<p>DosePlan is designed as a local-first app. Your app data is stored primarily on your device using Apple's app storage technologies. If the app is deleted, local app data may also be deleted from that device unless it exists in an Apple-managed backup or iCloud sync location.</p>
-
-			<h3>iCloud sync</h3>
-			<p>If iCloud is enabled for your Apple ID and available for DosePlan, certain app data may sync through Apple's iCloud and CloudKit infrastructure so that your DosePlan data can appear on your other devices signed in to the same Apple ID. iCloud availability, timing, conflict handling, backups, security, account access, and retention are controlled in part by Apple and your Apple ID settings.</p>
-
-			<p>DosePlan is designed to keep working from local device data without waiting for iCloud sync. If the same item is edited on multiple devices before sync completes, the app and Apple's sync systems may resolve the conflict based on the latest available saved state or the app's own update logic. Review important entries after editing on multiple devices.</p>
-
-			<h3>Widget data</h3>
-			<p>DosePlan widgets may use a small app-group snapshot of selected information, such as next dose, routine progress, and inventory status, so widgets can display useful information. Widget data is limited to what is needed for widget display and may be temporarily stale until iOS refreshes the widget.</p>
-
-			<h3>Generated files and sharing</h3>
-			<p>Doctor reports and other exports are created on your device. If you choose to share a PDF, save a file, send it to another app, email it, message it, print it, or upload it elsewhere, that copy is handled by the destination you choose. DosePlan cannot control privacy or security after you share or export information outside the app.</p>
-
-			<h2>How DosePlan Uses Information</h2>
-
-			<p>DosePlan uses information you enter, import, or create to:</p>
-			<ul>
-				<li>Show your next scheduled dose, last dose, dose interval progress, overdue status, and dose history.</li>
-				<li>Track multiple treatments, forms, schedules, and related inventory.</li>
-				<li>Estimate remaining supply and refill timing based on your entries.</li>
-				<li>Display routine progress, support routines, symptom patterns, weight trends, progress photos, and insights.</li>
-				<li>Create doctor report PDFs based on the period and sections you select.</li>
-				<li>Schedule local notifications for dose and refill reminders if you allow notifications.</li>
-				<li>Sync selected data across your own Apple devices through iCloud if available.</li>
-				<li>Show widgets and preserve settings across app launches.</li>
-				<li>Process and restore subscriptions through Apple.</li>
-				<li>Respond to support requests if you contact us.</li>
-			</ul>
-
-			<h2>What DosePlan Does Not Do</h2>
-
-			<p>DosePlan does not:</p>
-			<ul>
-				<li>Provide medical advice, diagnosis, treatment, emergency care, or medication prescribing.</li>
-				<li>Replace your doctor, pharmacist, clinician, prescription label, medication guide, or official care plan.</li>
-				<li>Confirm that your medication, compound, dose, concentration, schedule, vial preparation, or route of administration is safe or appropriate.</li>
-				<li>Automatically contact a clinician, pharmacy, emergency service, or caregiver.</li>
-				<li>Sell your Health Data.</li>
-				<li>Use Apple Health data for advertising, marketing, or third-party data mining.</li>
-				<li>Operate as an electronic health record, pharmacy system, clinical decision support system, or HIPAA-covered provider portal.</li>
-			</ul>
-
-			<h2>Medical and Medication Terms</h2>
-
-			<h3>Already prescribed treatment only</h3>
-			<p>DosePlan is intended only for personal organization of treatment information that you already have from a licensed clinician, prescription label, pharmacy label, medication guide, or other authorized medical source. Do not use DosePlan to decide whether to start a GLP-1 medication, compounded medication, peptide, vitamin injection, pill, or any other treatment.</p>
-
-			<h3>No dosing recommendations</h3>
-			<p>Any dose, schedule, frequency, unit, medication name, compound name, or vial value entered in DosePlan is entered by you. DosePlan may display, format, calculate, or organize the values you enter, but this does not mean DosePlan has verified that the values are correct, safe, approved, prescribed, or appropriate for you.</p>
-
-			<h3>Vial and reconstitution tools</h3>
-			<p>DosePlan may include vial, concentration, remaining amount, and draw-volume tools. These tools are arithmetic aids for values you enter. They are not medical, pharmacy, sterility, safety, compatibility, dosing, or preparation instructions. Vial preparation, storage, sterility, route of administration, dose units, concentration, and injection technique must come from your clinician, pharmacist, manufacturer instructions, prescription label, or medication guide.</p>
-
-			<h3>Symptoms and side effects</h3>
-			<p>Symptom check-ins and side-effect patterns are personal logs only. DosePlan does not determine whether symptoms are normal, dangerous, related to a medication, unrelated to a medication, or in need of urgent care. If you experience severe, worsening, unusual, or concerning symptoms, contact a licensed clinician or emergency service as appropriate.</p>
-
-			<h3>Weight, routine, nutrition, and movement</h3>
-			<p>Protein, water, fiber, movement, weight, photo, and support-routine features are personal tracking features. They do not create a nutrition plan, exercise prescription, medical treatment plan, or guarantee any result. Discuss nutrition, hydration, movement, constipation, appetite, weight-loss goals, and medication side effects with a clinician when appropriate.</p>
-
-			<h3>Reports for appointments</h3>
-			<p>Doctor reports are summaries of information stored in DosePlan. They may be incomplete, inaccurate, or outdated if your entries are incomplete, inaccurate, or not synced. Review reports before sharing them. A report is not a medical record unless your clinician chooses to treat it as part of your care documentation.</p>
-
-			<h2>Third-Party Services</h2>
-
-			<p>DosePlan may rely on Apple services and frameworks, including iOS, iCloud, CloudKit, Apple Health, HealthKit, Photos, Camera, UserNotifications, StoreKit, App Store subscriptions, App Store receipt or transaction systems, App Store review prompts, and Apple device backup or restore systems.</p>
-
-			<p>Your use of Apple services is also governed by Apple's terms, privacy policies, and settings. We do not control Apple's systems, Apple ID security, iCloud availability, App Store billing, subscription cancellation flow, refund decisions, or Health app permission interface.</p>
-
-			<h2>Subscriptions, Trials, Payments, and Cancellation</h2>
-
-			<h3>Auto-renewable subscriptions</h3>
-			<p>DosePlan may offer monthly and yearly auto-renewable subscriptions. Subscription prices, trial availability, billing periods, renewal terms, and currency may vary by country, App Store storefront, promotion, tax rules, and Apple account settings.</p>
-
-			<h3>Free trials and renewals</h3>
-			<p>If a free trial is offered and you start it, Apple may automatically renew the subscription at the end of the trial unless you cancel before the renewal deadline shown by Apple. Review the App Store purchase sheet before confirming any purchase.</p>
-
-			<h3>Managing and cancelling</h3>
-			<p>You can manage or cancel subscriptions in your Apple ID subscription settings. Deleting DosePlan does not automatically cancel an active subscription. Refunds, billing questions, and cancellation timing are handled by Apple under App Store rules.</p>
-
-			<h3>Restore purchases</h3>
-			<p>DosePlan may include a restore purchases option that asks Apple for current entitlement information. Restore availability depends on your Apple ID, App Store status, network connectivity, and Apple's systems.</p>
-
-			<h3>Apple standard EULA</h3>
-			<p>Unless DosePlan provides a separate custom end user license agreement for a specific distribution, your licensed use of the app is also governed by Apple's standard Licensed Application End User License Agreement, available at <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a>.</p>
-
-			<h2>Privacy Choices and Controls</h2>
-
-			<h3>Apple Health permissions</h3>
-			<p>You can grant, deny, or revoke Apple Health permissions in the Health app or iOS Settings. If you revoke access, DosePlan may stop importing new Health data, but previously imported entries may remain in DosePlan until you delete them inside the app or delete app data.</p>
-
-			<h3>Notifications</h3>
-			<p>You can turn notifications on or off in iOS Settings. If notifications are disabled, dose and refill reminders may not appear.</p>
-
-			<h3>Photos</h3>
-			<p>You can control camera and photo library permissions in iOS Settings. Photos already saved in DosePlan remain in app storage unless you delete them in DosePlan or delete app data.</p>
-
-			<h3>iCloud</h3>
-			<p>You can manage iCloud availability through Apple ID and iCloud settings. Disabling iCloud may stop syncing across devices. Depending on Apple settings and previous sync state, existing data may remain on one or more devices or in iCloud until removed through Apple-controlled tools or app deletion flows.</p>
-
-			<h3>Deleting data</h3>
-			<p>You can delete many entries directly inside DosePlan, including treatments, dose logs, weight entries, progress photos, and related records. You can also delete the app from your device. Some information may remain in Apple backups, iCloud, exported files, shared PDFs, emails, messages, or third-party destinations that you control or selected.</p>
-
-			<h2>Data Sharing</h2>
-
-			<p>DosePlan does not sell your Personal Data or Health Data. DosePlan does not share Apple Health data for advertising or marketing. DosePlan may share limited information only in these situations:</p>
-			<ul>
-				<li>With Apple services necessary to provide iCloud sync, App Store subscriptions, StoreKit purchase validation, Apple Health access, notifications, app distribution, crash diagnostics, and related platform functionality.</li>
-				<li>With people or services you choose when you export, share, send, print, or save a report, image, screenshot, PDF, or other file.</li>
-				<li>With support channels if you contact us and choose to include information in your message.</li>
-				<li>If required by law, legal process, or a valid request from a competent authority.</li>
-				<li>To protect rights, safety, security, or prevent fraud, abuse, or technical harm.</li>
-			</ul>
-
-			<h2>Data Security</h2>
-
-			<p>DosePlan uses Apple's platform security features, app sandboxing, local device storage, iCloud/CloudKit where enabled, and App Store purchase systems. No method of storage or transmission is perfectly secure. You are responsible for protecting your device, passcode, Apple ID, iCloud account, device backups, exported files, shared reports, and any devices where your data may appear.</p>
-
-			<h2>Data Accuracy</h2>
-
-			<p>DosePlan depends on the information you enter, import, or approve. Medication names, dose units, schedules, inventory values, vial calculations, weight entries, symptom logs, progress photos, and reports may be wrong if the underlying entries are wrong, incomplete, duplicated, stale, or not synced. Review information before relying on it for appointment preparation or personal organization.</p>
-
-			<h2>Children</h2>
-
-			<p>DosePlan is not intended for children. Do not use DosePlan if you are under the age required to manage health-related information and App Store purchases in your country without appropriate parent, guardian, or clinician involvement. We do not knowingly collect personal information from children through our own servers. If you believe a child has provided information through a support message, contact us so we can address it.</p>
-
-			<h2>International Use</h2>
-
-			<p>DosePlan may be used in different countries, but medication names, approved indications, compounding rules, prescription requirements, pharmacy rules, units, labeling, privacy rules, and medical standards vary by location. You are responsible for using DosePlan only in ways that comply with laws and medical guidance applicable to you.</p>
-
-			<h2>Availability and Changes</h2>
-
-			<p>DosePlan may change, add, remove, or modify features over time. We may update this Privacy Policy and Terms from time to time. The updated version will be identified by the "Last updated" date. Continued use of DosePlan after an update means you accept the updated document.</p>
-
-			<h2>Limitations of Liability</h2>
-
-			<p>To the maximum extent permitted by applicable law, DosePlan and its developer are not liable for medical decisions, medication errors, missed doses, incorrect dose entries, incorrect vial calculations, incorrect inventory estimates, delayed notifications, missed notifications, iCloud sync delays, deleted data, exported file handling, App Store billing decisions, clinician decisions, pharmacy decisions, or outcomes related to your medication, treatment, health, symptoms, weight, routine, or use of the app.</p>
-
-			<p>You agree that you are responsible for checking all medication and health-related information against your prescription label, medication guide, clinician instructions, pharmacy instructions, and your own records.</p>
-
-			<h2>Contact</h2>
-
-			<div class="contact-info">
-				<h3>Questions or support</h3>
-				<p>If you have questions about this Privacy Policy and Terms or need support for DosePlan, contact:</p>
-				<p><strong>Developer website:</strong> <a href="https://paulcrp.com">https://paulcrp.com</a></p>
-				<p>Please do not send urgent medical questions, emergency information, or time-sensitive treatment instructions to support. Contact a licensed clinician, pharmacist, emergency service, or local emergency number for medical issues.</p>
-			</div>
-
-			<div class="section-divider"></div>
-
-			<p style="text-align: center; color: var(--muted); margin-bottom: 0;">DosePlan is a personal tracking tool for information you choose to enter. It does not provide medical advice.</p>
-		</div>
+				<div class="notice info">
+					<strong>What DosePlan is.</strong> A personal tracking and organization tool. It is not a medical device, clinic, pharmacy, telehealth or emergency service, diagnostic tool, or a substitute for a licensed clinician, your medication label, medication guide or official care plan.
+				</div>
+				<div class="notice local">
+					<strong>Local by design.</strong> DosePlan keeps your data on your device. It does not sync your data to iCloud or to any server of ours, and we cannot see, access or recover it.
+				</div>
+			</section>
+
+			<nav class="card" aria-label="Contents">
+				<p class="eyebrow">Contents</p>
+				<div class="toc">
+					<a href="#definitions">Definitions</a>
+					<a href="#data">What DosePlan stores</a>
+					<a href="#storage">Where data is kept</a>
+					<a href="#use">How it is used</a>
+					<a href="#not">What DosePlan does not do</a>
+					<a href="#medical">Medical terms</a>
+					<a href="#apple">Apple services and links</a>
+					<a href="#subscriptions">Subscriptions</a>
+					<a href="#choices">Your choices</a>
+					<a href="#sharing">Sharing</a>
+					<a href="#security">Security and accuracy</a>
+					<a href="#other">Children, countries, changes</a>
+					<a href="#liability">Liability</a>
+					<a href="#contact">Contact</a>
+				</div>
+			</nav>
+
+			<section class="card">
+				<h2 id="definitions"><span class="num">1</span>Definitions</h2>
+				<ul>
+					<li><strong>App</strong> or <strong>DosePlan</strong> means the iOS app published on the App Store as GLP1 Peptide Tracker: DosePlan.</li>
+					<li><strong>We</strong>, <strong>us</strong> or <strong>our</strong> means the developer of DosePlan.</li>
+					<li><strong>Device</strong> means an iPhone or iPad on which you use DosePlan.</li>
+					<li><strong>Health Data</strong> means medication, dose, symptom, routine, weight, activity, photo or related information that you enter, import or create in DosePlan.</li>
+					<li><strong>Subscription</strong> means an auto-renewable subscription bought through Apple's in-app purchase system.</li>
+					<li><strong>You</strong> means the person using DosePlan.</li>
+				</ul>
+			</section>
+
+			<section class="card">
+				<h2 id="data"><span class="num">2</span>What DosePlan stores</h2>
+
+				<h3>Information you enter or create</h3>
+				<p>DosePlan stores only what you choose to enter, import or create in the app:</p>
+				<ul>
+					<li>Treatments: medication name (from a list of GLP-1 medications, or a name you type), form (pen, pill or vial), the dose from your prescription, how often you take it, dose time, start date, next dose and reminder settings.</li>
+					<li>Dose logs: date and time, medication, dose, form, injection site when applicable, whether the dose was late, and optional notes.</li>
+					<li>Supply: how many pens, pills or vials you have left, refill timing and refill reminders.</li>
+					<li>Daily routine: protein, water, fiber and movement targets and logs, and the support routines you pin.</li>
+					<li>Symptom check-ins: symptoms, severity, "no symptoms" entries, dates and notes.</li>
+					<li>Weight entries, your goal weight and weight entries imported from Apple Health.</li>
+					<li>Progress photos with their dates, tags, optional notes and the weight at the time, when available.</li>
+					<li>Notes you save for your doctor.</li>
+					<li>Settings: units, appearance, app language, notification choices, onboarding answers, and the data that widgets display.</li>
+					<li>Doctor report PDFs while you create, preview or share them.</li>
+				</ul>
+				<p>Earlier versions of DosePlan included dose-step plans and vial reconstitution fields. These features have been removed, and DosePlan deletes that stored information from your device when you open version 1.2 or later.</p>
+
+				<h3>Apple Health</h3>
+				<p>If you choose to connect Apple Health, DosePlan asks for permission to read your step count and body weight. Steps fill in your daily movement routine and weight entries appear in your weight trend. DosePlan does not write any data to Apple Health. Apple Health data is used only to show you features inside the app, never for advertising, marketing or data mining, and it is never sold or shared with third parties. You can change this permission at any time in the Health app or in iOS Settings.</p>
+
+				<h3>Camera and photos</h3>
+				<p>When you add a progress photo, DosePlan uses the camera or the photo picker only after you start that action and allow access. Photos are saved inside the app on your device so you can compare your own progress. We never receive, review or use them.</p>
+
+				<h3>Notifications</h3>
+				<p>If you allow notifications, your device schedules these local reminders from the information you enter:</p>
+				<ul>
+					<li>Dose reminders before or at your scheduled dose time, and a reminder if a dose has not been logged yet.</li>
+					<li>Refill reminders when your supply is running low.</li>
+					<li>If you start a free trial, a reminder two days before the trial ends, while it is set to renew.</li>
+				</ul>
+				<p>Reminders can be delayed, silenced or missed because of Focus modes, device settings, battery state or iOS behavior. They are a convenience only; you remain responsible for following your medication label and your clinician's instructions.</p>
+
+				<h3>Subscription status</h3>
+				<p>DosePlan uses Apple's StoreKit to find out whether you have an active subscription or free trial and when a trial ends, so it can unlock the app and show your plan in Settings. It also remembers on your device whether the one-time yearly offer has already been shown. We do not receive your name, Apple ID or payment details.</p>
+
+				<h3>No analytics, advertising or tracking</h3>
+				<p>DosePlan contains no analytics, advertising or tracking tools, no third-party SDKs that collect data, and no account system. The app does not track you across apps or websites. Apple may give developers aggregated, anonymous App Store statistics and crash reports from people who chose to share them with app developers in iOS Settings; these do not include your DosePlan entries.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="storage"><span class="num">3</span>Where your data is kept</h2>
+
+				<h3>On your device</h3>
+				<p>Everything you enter in DosePlan is stored on your device, inside the app's private storage. DosePlan does not sync your data to iCloud or to any server of ours. If you delete the app, its data is deleted from that device.</p>
+
+				<h3>Device backups</h3>
+				<p>If you back up your device with iCloud Backup or to a computer, iOS may include DosePlan's data in that backup, and restoring the backup can bring it back. Backups are created, encrypted and stored by Apple or by your computer, under your control and Apple's terms.</p>
+
+				<h3>Widgets</h3>
+				<p>DosePlan's widgets read a small summary, such as your next dose, routine progress and supply, that the app saves in a shared space on your device. It never leaves your device and may be briefly out of date until iOS refreshes the widget.</p>
+
+				<h3>Reports and shared files</h3>
+				<p>Doctor reports are created as PDFs on your device for the period and sections you choose. If you save, print, send or share a report, that copy is handled by the app, person or service you choose, and we cannot control what happens to it afterwards. Treat reports, screenshots and shared files as sensitive health information.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="use"><span class="num">4</span>How DosePlan uses information</h2>
+				<p>DosePlan uses the information on your device to:</p>
+				<ul>
+					<li>Show your next dose, your last dose, overdue doses and your dose history.</li>
+					<li>Keep track of one or more treatments and their supply, and estimate when you may need a refill based on your entries.</li>
+					<li>Show routine progress, symptom patterns, weight trends, progress photos and insights.</li>
+					<li>Create the doctor report PDF you ask for.</li>
+					<li>Schedule the local reminders you allow.</li>
+					<li>Show widgets and remember your settings and language.</li>
+					<li>Check, unlock and restore your subscription through Apple.</li>
+					<li>Ask Apple to show its standard rating prompt from time to time; Apple decides whether it appears.</li>
+				</ul>
+				<p>If you email us, we use what you send only to answer you.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="not"><span class="num">5</span>What DosePlan does not do</h2>
+				<ul>
+					<li>Give medical advice, diagnose, treat, prescribe or provide emergency care.</li>
+					<li>Calculate, check or recommend doses, dose changes, dose steps, concentrations, reconstitution or injection volumes.</li>
+					<li>Confirm that a medication, dose, schedule or route of administration is safe or right for you.</li>
+					<li>Contact a clinician, pharmacy, emergency service or caregiver for you.</li>
+					<li>Send your data to us or to anyone else unless you share it yourself.</li>
+					<li>Sell your data, or use Apple Health data for advertising or marketing.</li>
+					<li>Act as an electronic health record, pharmacy system, clinical decision support tool or provider portal.</li>
+				</ul>
+			</section>
+
+			<section class="card">
+				<h2 id="medical"><span class="num">6</span>Medical and medication terms</h2>
+
+				<h3>Already prescribed treatment only</h3>
+				<p>DosePlan is meant only for organizing treatment information you already have from a licensed clinician, your prescription or pharmacy label, or your medication guide. Do not use DosePlan to decide whether to start, change or stop any medication.</p>
+
+				<h3>Your entries</h3>
+				<p>Every medication name, dose, schedule and supply value in DosePlan is entered by you. DosePlan records and displays these values and counts your logged doses, but it does not verify that they are correct, prescribed or appropriate for you.</p>
+
+				<h3>Symptoms</h3>
+				<p>Symptom check-ins and patterns are personal notes only. DosePlan does not decide whether a symptom is normal, serious or related to a medication. If symptoms are severe, getting worse, unusual or worrying, contact a clinician or emergency services.</p>
+
+				<h3>Weight, routine, nutrition and movement</h3>
+				<p>Protein, water, fiber, movement, weight and photo features are personal tracking features. They are not a nutrition plan, exercise prescription or treatment plan and do not promise any result. The medical sources in the app are general references, not personal advice.</p>
+
+				<h3>Reports for appointments</h3>
+				<p>A doctor report summarizes what you have entered in DosePlan, so it can be incomplete or out of date. Review it before sharing. It is not a medical record unless your clinician chooses to treat it as one.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="apple"><span class="num">7</span>Apple services and outside links</h2>
+				<p>DosePlan relies on Apple's iOS frameworks and services, including HealthKit, the camera and photo picker, notifications, widgets, StoreKit and App Store subscriptions, and the App Store rating prompt. Your use of these is also governed by Apple's terms, privacy policy and your settings. We do not control Apple's systems, billing, refunds, subscription management or permission screens.</p>
+				<p>The app links to outside websites, such as official medication labels and public health guidance (for example, the FDA, medication manufacturers, the NIH, the CDC and the U.S. Office of Disease Prevention and Health Promotion), and to our website. These open in your browser and are governed by their own privacy policies.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="subscriptions"><span class="num">8</span>Subscriptions, trials and payments</h2>
+
+				<h3>DosePlan Pro</h3>
+				<p>DosePlan's tracking features require an active DosePlan Pro subscription or free trial. DosePlan Pro is offered as monthly and yearly auto-renewable subscriptions. Prices, currencies, taxes and trial availability are shown on the App Store purchase sheet and can vary by country and Apple account.</p>
+
+				<h3>Free trial</h3>
+				<p>Eligible new subscribers can start a 7-day free trial of the yearly plan. Unless you cancel at least 24 hours before the trial ends, it automatically becomes a paid subscription and you are charged the price shown when you started. Apple decides trial eligibility; a trial is generally available once per subscriber.</p>
+
+				<h3>One-time yearly offer</h3>
+				<p>If you close the App Store purchase sheet for the yearly plan without buying, DosePlan may show a one-time offer for the yearly plan at a reduced price, including the free trial if you are eligible. It is shown once per device and renews at the price shown in the offer.</p>
+
+				<h3>Renewal, cancellation and refunds</h3>
+				<p>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel your subscription in your Apple account settings, or from Settings in DosePlan. Deleting the app does not cancel a subscription. Billing, refunds and cancellation timing are handled by Apple.</p>
+
+				<h3>Restore purchases</h3>
+				<p>The Restore option asks Apple for your current subscription status, for example after you reinstall DosePlan or move to a new device signed in with the same Apple account.</p>
+
+				<h3>License</h3>
+				<p>Your use of DosePlan is governed by Apple's standard Licensed Application End User License Agreement: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="choices"><span class="num">9</span>Your choices and controls</h2>
+				<ul>
+					<li><strong>Apple Health:</strong> allow or revoke read access in the Health app or iOS Settings. Weight entries already imported stay in DosePlan until you delete them.</li>
+					<li><strong>Notifications:</strong> allow or turn off DosePlan's notifications in iOS Settings.</li>
+					<li><strong>Camera and photos:</strong> change access in iOS Settings. Photos already saved in DosePlan stay until you delete them.</li>
+					<li><strong>Language:</strong> choose DosePlan's language in Settings in the app or in iOS Settings.</li>
+					<li><strong>Deleting data:</strong> remove treatments, dose logs, weight entries and progress photos, and clear your notes, inside DosePlan, or delete the app to remove all of its data from that device. Copies may remain in device backups and in any files you exported or shared.</li>
+				</ul>
+				<p>Because your data stays on your device and we do not receive it, we cannot access, export, correct or delete it for you. You control it directly in the app and on your device.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="sharing"><span class="num">10</span>Sharing</h2>
+				<p>DosePlan does not sell, rent or share your personal or health information. Information leaves your device only:</p>
+				<ul>
+					<li>When you share, save, print or send a report, photo or file to an app, person or service you choose.</li>
+					<li>When Apple processes your subscription, which happens between you and Apple.</li>
+					<li>When you email us and include information in your message.</li>
+				</ul>
+				<p>If we are legally required to respond to a valid request about a support message we hold, we will do so only to the extent the law requires.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="security"><span class="num">11</span>Security and accuracy</h2>
+				<p>DosePlan relies on iOS protections such as app sandboxing and data protection for files on your device. No system is perfectly secure, so protect your device with a passcode, keep your Apple account secure, and take care with backups, exported reports and shared files.</p>
+				<p>DosePlan is only as accurate as the information you enter or import. Medication names, doses, schedules, supply counts, weights, symptoms and reports can be wrong if the entries are wrong, incomplete or out of date. Check important information against your prescription and records.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="other"><span class="num">12</span>Children, other countries and changes</h2>
+				<h3>Children</h3>
+				<p>DosePlan is not intended for children. Do not use DosePlan if you are under the age required in your country to manage health information and App Store purchases without a parent, guardian or clinician. We do not knowingly collect information from children; if a child has contacted us by email, let us know and we will delete the message.</p>
+				<h3>Other countries</h3>
+				<p>Medication names, approvals, prescription rules, units and privacy laws differ between countries. Use DosePlan only in ways that comply with the laws and medical guidance that apply to you.</p>
+				<h3>Changes</h3>
+				<p>DosePlan's features may change over time, and we may update this Privacy Policy and Terms. The "Last updated" date at the top shows the current version. Continuing to use DosePlan after an update means you accept the updated version.</p>
+			</section>
+
+			<section class="card">
+				<h2 id="liability"><span class="num">13</span>Limitation of liability</h2>
+				<p>To the maximum extent permitted by law, DosePlan and its developer are not liable for medical decisions, medication errors, missed or incorrect doses, incorrect entries or supply estimates, delayed or missed notifications, lost or deleted data, handling of exported or shared files, App Store billing decisions, clinician or pharmacy decisions, or any outcome related to your medication, treatment, health, symptoms, weight or use of the app.</p>
+				<p>You are responsible for checking all medication and health information against your prescription label, medication guide, clinician and pharmacy instructions, and your own records.</p>
+			</section>
+
+			<section class="card contact">
+				<h2 id="contact"><span class="num">14</span>Contact</h2>
+				<p>Questions about this Privacy Policy and Terms, or need help with DosePlan? Get in touch:</p>
+				<div class="contact-row">
+					<a href="mailto:devpaulcrp@gmail.com?subject=DosePlan">devpaulcrp@gmail.com</a>
+					<a class="secondary" href="https://paulcrp.com">paulcrp.com</a>
+				</div>
+				<p>Please do not send urgent medical questions or emergencies by email. Contact a licensed clinician, pharmacist or your local emergency number instead.</p>
+			</section>
+
+			<footer>
+				<p>DosePlan is a personal tracking tool for information you choose to enter. It does not provide medical advice.</p>
+			</footer>
+		</main>
 	</body>
 </html>
