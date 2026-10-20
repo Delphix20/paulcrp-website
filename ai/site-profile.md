@@ -35,9 +35,9 @@ Paul CRP creates thoughtful iOS applications, smart tools, wellness and producti
 - **Category:** Health & Fitness
 - **Price:** 0 USD
 
-### DosePlan - GLP-1 & Peptide Tracker
+### GLP1 Peptide Tracker: DosePlan
 
-- **Description:** A simple companion for planning injections, tracking doses, logging side effects, and staying organized through your GLP-1 or peptide routine with clear reminders and progress history.
+- **Description:** A simple, private tracker for your GLP-1 or peptide medication routine. Log every shot in seconds, see when the next one is due, get dose and refill reminders, track side effects and weight, and bring a clean PDF report to your appointments.
 - **Canonical page:** https://paulcrp.com/apps/doseplan/
 - **App Store:** https://apps.apple.com/app/glp1-peptide-tracker-doseplan/id6782329639
 - **Operating system:** iOS
