@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Daybeam is an independent Mac app for Google Calendar that shows your day as one line under the menu bar, so you always know how much free time you really have.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Daybeam for Google Calendar</title>
+  <link rel="canonical" href="https://paulcrp.com/daybeam">
+  <link rel="icon" type="image/png" href="images/daybeam-icon.png">
+  <style>
+    :root { color-scheme: light dark; --background: #fff; --text: #202124; --secondary: #535860; --line: #dce1e6; --link: #5b52d6; --free: #f2a63d; --meeting: #6f6af2; --event: #4fa8ed; --focus: #33bdab; --past: #9c98ab; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; overflow-wrap: anywhere; }
+    main { width: min(100% - 40px, 760px); margin-inline: auto; }
+    header { padding-block: 44px 28px; text-align: center; }
+    header img { display: block; width: 96px; height: 96px; margin: 0 auto 16px; }
+    h1 { margin: 0; font-size: 36px; line-height: 1.2; font-weight: 600; }
+    .subtitle { margin: 8px 0 12px; font-size: 20px; color: var(--secondary); }
+    .availability { margin: 0; font-size: 13px; color: var(--secondary); }
+    .beam { display: flex; gap: 5px; height: 8px; max-width: 420px; margin: 26px auto 0; }
+    .beam span { border-radius: 4px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 24px; margin-top: 22px; font-size: 14px; }
+    section { padding-block: 26px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: 22px; line-height: 1.4; font-weight: 600; }
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin: 0; padding-left: 22px; }
+    li { margin-block: 7px; }
+    .key { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+    footer { padding-block: 22px 36px; border-top: 1px solid var(--line); font-size: 13px; color: var(--secondary); }
+    footer p { margin: 0 0 8px; }
+    @media (prefers-color-scheme: dark) { :root { --background: #1c1d1f; --text: #f1f3f4; --secondary: #b6bcc5; --line: #41454b; --link: #b0a8ff; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="images/daybeam-icon.png" width="96" height="96" alt="Daybeam app icon">
+      <h1>Daybeam</h1>
+      <p class="subtitle">for Google Calendar</p>
+      <p class="availability">For Mac. In pre-release testing. Requires macOS 14 or later.</p>
+      <div class="beam" aria-hidden="true">
+        <span style="flex: 3; background: var(--past)"></span>
+        <span style="flex: 4; background: var(--free)"></span>
+        <span style="flex: 1.2; background: var(--meeting)"></span>
+        <span style="flex: 1; background: var(--free)"></span>
+        <span style="flex: 1.2; background: var(--event)"></span>
+        <span style="flex: 1.5; background: var(--focus)"></span>
+        <span style="flex: 5; background: var(--free)"></span>
+      </div>
+      <nav aria-label="Daybeam information">
+        <a href="daybeam_privacypolicy">Privacy Policy</a>
+        <a href="#support">Support</a>
+        <a href="daybeam_privacypolicy#service">Terms</a>
+      </nav>
+    </header>
+    <section aria-labelledby="day-title">
+      <h2 id="day-title">Your day, as one line</h2>
+      <p>Daybeam draws your Google Calendar day as a thin line just under your Mac's menu bar. A glance tells you how much time you really have before your next meeting, without opening a calendar.</p>
+      <ul>
+        <li><span class="key" style="background: var(--free)"></span>Amber is free time.</li>
+        <li><span class="key" style="background: var(--meeting)"></span>Violet is a meeting, with a video link or other people.</li>
+        <li><span class="key" style="background: var(--event)"></span>Blue is an event of your own.</li>
+        <li><span class="key" style="background: var(--focus)"></span>Teal is focus time.</li>
+        <li><span class="key" style="background: var(--past)"></span>Grey is time already gone, and a marker shows where you are now.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="features-title">
+      <h2 id="features-title">What Daybeam does</h2>
+      <ul>
+        <li><strong>Shows your real free time.</strong> Declined meetings and events marked free don't count against you.</li>
+        <li><strong>Warns when your free time shrinks,</strong> for example when someone books a meeting into a clear afternoon.</li>
+        <li><strong>Blocks focus time.</strong> One click turns a free stretch into a block on your Google Calendar.</li>
+        <li><strong>Focuses until your next event.</strong> A session ends a few minutes before you're due somewhere, and can turn on Do Not Disturb through the Shortcuts app.</li>
+        <li><strong>Gets you into calls.</strong> Join a meeting with one click, with an alert a few minutes before it starts.</li>
+        <li><strong>Shows your next 7 days,</strong> each day as its own line, where you can also create and edit events.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="google-title">
+      <h2 id="google-title">Connecting your Google Account</h2>
+      <ul>
+        <li>Google handles sign-in. Daybeam does not receive your Google password.</li>
+        <li>Calendar-list and calendar access identify your calendars, colors, and permissions. Event access loads your events and applies the changes you request, including focus blocks and Google Meet links.</li>
+        <li>Your Mac communicates directly with Google. A calendar copy is stored locally for offline viewing; calendars are not uploaded to a Daybeam server.</li>
+        <li>You can sign out in Daybeam or revoke access in <a href="https://myaccount.google.com/connections">Google Account connections</a>. These are separate from managing an Apple subscription.</li>
+      </ul>
+      <p>Read the <a href="daybeam_privacypolicy">Privacy Policy</a> for data handling, Google Limited Use, retention, and your choices.</p>
+    </section>
+    <section aria-labelledby="pro-title">
+      <h2 id="pro-title">Free to use. Optional Pro.</h2>
+      <p>Free: the line under the menu bar, today's schedule, Join, and reminders.</p>
+      <p>Daybeam Pro adds focus blocks, Focus until, Daybeam's alerts, every other day of the week, the event editor, and custom reminder timing. A complimentary seven-day Pro preview begins after your first successful calendar sync. It does not charge you or automatically start a subscription.</p>
+      <p>Pro offers a yearly auto-renewable subscription or a one-time lifetime purchase through Apple. The app shows Apple's current localized price before confirmation. Purchases can be restored using the associated Apple Account; subscriptions are managed through Apple.</p>
+    </section>
+    <section id="support" aria-labelledby="support-title">
+      <h2 id="support-title">Support</h2>
+      <p>For Daybeam support or privacy requests, <a href="mailto:devpaulcrp@gmail.com">contact Daybeam support</a>. Include the app version, macOS version, and a description of the issue. Do not send passwords, sign-in tokens, payment details, or unnecessary private calendar content.</p>
+      <p>Apple handles App Store billing and refund requests. You can <a href="https://apps.apple.com/account/subscriptions">manage a subscription</a> or <a href="https://reportaproblem.apple.com/">request a refund from Apple</a>. The app is licensed under Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard End User License Agreement</a>.</p>
+    </section>
+    <footer>
+      <p>Daybeam is an independent app. It is not made by, affiliated with, sponsored by, or endorsed by Google. Google Calendar and Google Meet are trademarks of their respective owner.</p>
+    </footer>
+  </main>
+</body>
+</html>
