@@ -217,4 +217,14 @@
   document.querySelectorAll('[data-deal-ends]').forEach(banner => {
     if (Date.now() >= Date.parse(banner.dataset.dealEnds)) banner.hidden = true;
   });
+  document.querySelectorAll('.deal-more-toggle').forEach(toggle => {
+    const more = document.getElementById(toggle.getAttribute('aria-controls'));
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      more.hidden = !open;
+      toggle.querySelector('span').textContent = open ? toggle.dataset.closeLabel : toggle.dataset.openLabel;
+      if (!open) toggle.closest('.deal-card').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+  });
 })();

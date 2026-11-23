@@ -2,3 +2,7 @@
 
 .carousel-arrow,.hover-hint{display:none}.shelf-hint{display:block}.shelf-scroll{scrollbar-width:thin}
 
+
+/* Black Week banner without JavaScript: show every offer. */
+.deal-grid-more[hidden] { display: grid !important; }
+.deal-more-toggle { display: none; }

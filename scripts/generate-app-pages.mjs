@@ -80,16 +80,32 @@ const graph = { '@context': 'https://schema.org', '@graph': [
 // Black Week 2026: homepage banner. It hides itself after `dealEnds` (assets/js/redesign.js); remove it after the deal.
 const dealEnds = '2026-12-01T11:00:00Z';
 const dealOffers = [
-  { slug: 'my-nurse-shift-planner', name: 'My Nurse Shift Planner', offer: '50% off Premium', detail: 'Yearly and monthly plans' },
-  { slug: 'my-work-shift-planner', name: 'My Work Shift Planner', offer: '50% off Premium', detail: 'Yearly and monthly plans' },
-  { slug: 'viento', name: 'Viento', offer: '50% off Viento+', detail: 'Your first year' }
+  { slug: 'my-nurse-shift-planner', name: 'My Nurse Shift Planner', offer: '50% off Premium', detail: 'Yearly and monthly plans', featured: true },
+  { slug: 'my-work-shift-planner', name: 'My Work Shift Planner', offer: '50% off Premium', detail: 'Yearly and monthly plans', featured: true },
+  { slug: 'viento', name: 'Viento', offer: '50% off Viento+', detail: 'Your first year', featured: true },
+  { slug: 'matchflare', name: 'MatchFlare', offer: '50% off Premium', detail: 'One-time purchase', featured: true },
+  { slug: 'proscan-pdf', name: 'ProScan PDF', offer: '50% off all plans', detail: 'Lifetime and subscriptions', featured: true },
+  { slug: 'eye-color-cam', name: 'Eye Color Cam', offer: '50% off all plans', detail: 'Unlock All and subscriptions', featured: true },
+  { slug: 'neurarush', name: 'Neura Rush', offer: '50% off Unlock All', detail: 'And the monthly plan' },
+  { slug: 'dash-pal', name: 'Dash Pal', offer: '50% off all plans', detail: 'Lifetime and subscriptions' },
+  { slug: 'doseplan', name: 'DosePlan', offer: '50% off Pro Monthly', detail: 'Your first 3 months' },
+  { slug: 'water-fasting-beyond', name: 'Water Fasting: Beyond', offer: '50% off monthly', detail: 'Your first 3 months' },
+  { slug: 'you-become', name: 'You Become', offer: '50% off Premium', detail: 'Your first year' },
+  { slug: 'cyphre', name: 'Cyphre', offer: '50% off Premium', detail: 'And the full game' },
+  { slug: 'pop-pop-aliens', name: 'Pop Pop Aliens', offer: '50% off Premium', detail: 'One-time purchase' },
+  { slug: 'pop-pop-piggies', name: 'Pop Pop Piggies', offer: '50% off Premium', detail: 'One-time purchase' },
+  { slug: 'pop-pop-fruits', name: 'Pop Pop Fruits', offer: '50% off Premium', detail: 'One-time purchase' },
+  { slug: 'bouncy-fruits', name: 'Bouncy Fruits', offer: '50% off Remove Ads', detail: 'One-time purchase' }
 ];
 const dealLink = app => app.appStoreUrl + (app.appStoreUrl.includes('?') ? '&' : '?') + 'pt=127823620&ct=paulcrp_blackweek&mt=8';
-const dealBanner = Date.now() < Date.parse(dealEnds) ? '<section class="deal-banner container" id="black-week" aria-labelledby="deal-title" data-deal-ends="' + dealEnds + '"><div class="deal-card"><div class="deal-top"><span class="deal-pill">BLACK WEEK</span><span class="deal-dates">Until November 30</span></div><div class="deal-intro"><h2 id="deal-title">Half price on these apps.</h2><p>Limited-time offers on the App Store, for new subscribers.</p></div><div class="deal-grid">' + dealOffers.map(offer => {
+const dealTile = offer => {
   const app = apps.find(a => a.slug === offer.slug);
   if (!app) throw new Error('Black Week banner: unknown app ' + offer.slug);
   return '<a class="deal-tile" href="' + e(dealLink(app)) + '" target="_blank" rel="noopener noreferrer" aria-label="' + e(offer.name + ': ' + offer.offer + ', ' + offer.detail.toLowerCase() + ', on the App Store') + '">' + icon(app, 64, 'deal-icon') + '<span class="deal-text"><span class="deal-name">' + e(offer.name) + '</span><span class="deal-offer">' + e(offer.offer) + '</span><span class="deal-detail">' + e(offer.detail) + '</span></span><span class="deal-cta"><span class="deal-cta-text">Get the deal</span> ' + arrow + '</span></a>';
-}).join('') + '</div></div></section>' : '';
+};
+const dealFeatured = dealOffers.filter(o => o.featured), dealMore = dealOffers.filter(o => !o.featured);
+const chevron = '<svg class="deal-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const dealBanner = Date.now() < Date.parse(dealEnds) ? '<section class="deal-banner container" id="black-week" aria-labelledby="deal-title" data-deal-ends="' + dealEnds + '"><div class="deal-card"><div class="deal-top"><span class="deal-pill">BLACK WEEK</span><span class="deal-dates">Until November 30</span></div><div class="deal-intro"><h2 id="deal-title">Half price on these apps.</h2><p>Limited-time offers on the App Store.</p></div><div class="deal-grid">' + dealFeatured.map(dealTile).join('') + '</div>' + (dealMore.length ? '<div class="deal-grid deal-grid-more" id="deal-more" hidden>' + dealMore.map(dealTile).join('') + '</div><button class="deal-more-toggle" type="button" aria-expanded="false" aria-controls="deal-more" data-open-label="Show all ' + dealOffers.length + ' offers" data-close-label="Show fewer offers"><span>Show all ' + dealOffers.length + ' offers</span>' + chevron + '</button>' : '') + '</div></section>' : '';
 const home = head('PAUL CRP — Thoughtful apps for iPhone & iPad', 'Discover independent iPhone and iPad apps for wellness, productivity, everyday tools, and a little fun. Thoughtfully made by PAUL CRP.', 'https://paulcrp.com/', graph) + '<body id="top">' + header(true) + '<main id="main-content">' +
 '<section class="hero container"><p class="platform-label">' + apple + '<span>Made for iPhone &amp; iPad</span></p><h1>Thoughtful apps.<br><span>For everyday life.</span></h1><p class="hero-description"><span class="hero-description-line">Useful tools for your day.</span> <span class="hero-description-line">A little fun for your downtime.</span><br class="desktop-break"> <span class="hero-description-line">Designed with purpose, developed with care.</span></p><div class="hero-actions"><a class="text-link" href="#apps">Explore the apps ' + arrow + '</a><a class="text-link" href="#games">Discover the games ' + arrow + '</a></div></section>' +
 dealBanner + gallery +
