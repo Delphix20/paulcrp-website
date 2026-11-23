@@ -211,3 +211,10 @@
   window.addEventListener('hashchange', revealLinkedApp);
   revealLinkedApp();
 })();
+
+(() => {
+  // Black Week banner: hide it once the deal has ended, even before the site is rebuilt.
+  document.querySelectorAll('[data-deal-ends]').forEach(banner => {
+    if (Date.now() >= Date.parse(banner.dataset.dealEnds)) banner.hidden = true;
+  });
+})();
